@@ -13,7 +13,6 @@
   <link rel="icon" href="northwild_mooncrest_primary_logo.png">
 
   <style>
-    /* Fade-in animation */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
@@ -26,13 +25,11 @@
       color: white;
       text-align: center;
 
-      /* TEMPORARY CINEMATIC BACKGROUND */
       background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
 
-      /* Dark overlay for readability */
       background-color: rgba(0,0,0,0.65);
       background-blend-mode: darken;
 
@@ -44,6 +41,14 @@
       letter-spacing: 1px;
       text-shadow: 0px 0px 12px rgba(255,255,255,0.15);
       animation: fadeIn 1.6s ease-out;
+    }
+
+    .signature-line {
+      font-size: 20px;
+      opacity: 0.85;
+      margin-top: 10px;
+      text-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+      animation: fadeIn 1.7s ease-out;
     }
 
     img {
@@ -105,11 +110,23 @@
       opacity: 0.75;
       font-size: 16px;
     }
+
+    footer {
+      margin-top: 80px;
+      padding: 20px;
+      opacity: 0.6;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-shadow: 0px 0px 6px rgba(0,0,0,0.4);
+      animation: fadeIn 2.4s ease-out;
+    }
   </style>
 </head>
 
 <body>
   <h1>Northwild Mooncrest™</h1>
+
+  <div class="signature-line">Nature • Wilderness • Cinematic Atmosphere</div>
 
   <img src="northwild_mooncrest_primary_logo.png"
        alt="Northwild Mooncrest Primary Logo"
@@ -130,6 +147,10 @@
     <h2>Portfolio Coming Soon</h2>
     <p>New cinematic nature collections are being prepared — wild horizons, moonlit forests, and atmospheric journeys. The wilderness is almost ready to be revealed.</p>
   </div>
+
+  <footer>
+    © Northwild Mooncrest™ — Minnesota, USA
+  </footer>
 
 </body>
 </html>
