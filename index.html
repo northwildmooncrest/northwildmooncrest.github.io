@@ -95,24 +95,42 @@
 
     /* Social Icons */
     .social-icons {
-      margin-top: 50px;
+      margin-top: 40px;
       display: flex;
       justify-content: center;
-      gap: 26px;
+      gap: 20px;
       animation: fadeIn 2.2s ease-out;
     }
 
-    .social-icons a svg {
-      width: 30px;
-      height: 30px;
-      fill: white;
-      opacity: 0.85;
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.35);
+      text-decoration: none;
       transition: 0.2s;
+      background: rgba(0,0,0,0.35);
+    }
+
+    .social-icons a svg {
+      width: 18px;
+      height: 18px;
+      fill: white;
+      opacity: 0.8;
+      transition: 0.2s;
+    }
+
+    .social-icons a:hover {
+      border-color: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.08);
     }
 
     .social-icons a:hover svg {
       opacity: 1;
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
 
     .coming-soon {
@@ -127,6 +145,19 @@
       backdrop-filter: blur(4px);
       box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
       animation: fadeIn 2.2s ease-out;
+    }
+
+    .coming-soon h2 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 10px;
+      font-size: 26px;
+      letter-spacing: 1px;
+      text-shadow: 0px 0px 8px rgba(0,0,0,0.5);
+    }
+
+    .coming-soon p {
+      opacity: 0.75;
+      font-size: 16px;
     }
 
     footer {
@@ -163,7 +194,7 @@
     <a href="#">Print Shop (Coming Soon)</a>
   </div>
 
-  <!-- Social Icons (Real Icons + Placeholder Links) -->
+  <!-- Social Icons (Refined) -->
   <div class="social-icons">
 
     <!-- Instagram -->
@@ -201,4 +232,6 @@
   <footer>© Northwild Mooncrest™ — Minnesota, USA</footer>
 
 </body>
+</html>
+
 </html>
