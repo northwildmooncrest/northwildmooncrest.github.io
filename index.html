@@ -14,12 +14,6 @@
   <meta property="og:url" content="https://northwildmooncrest.github.io/index.html">
   <meta property="og:type" content="website">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Northwild Mooncrest™ — Cinematic Nature Photography">
-  <meta name="twitter:description" content="Cinematic nature photography and wilderness storytelling.">
-  <meta name="twitter:image" content="northwild_mooncrest_primary_logo.png">
-
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="northwild_mooncrest_primary_logo.png">
   <meta name="theme-color" content="#000000">
@@ -28,7 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
-    /* Page fade-in and fade-out */
+    /* Page fade-in/out */
     body {
       opacity: 0;
       transition: opacity 0.6s ease-in-out;
@@ -37,20 +31,25 @@
       padding: 0;
       color: white;
       text-align: center;
+
       background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
+      background-size: 110%; /* slightly zoomed for breathing effect */
       background-position: center;
       background-attachment: fixed;
       background-color: rgba(0,0,0,0.65);
       background-blend-mode: darken;
+
+      animation: breathe 18s ease-in-out infinite;
     }
 
-    body.fade-in {
-      opacity: 1;
-    }
+    body.fade-in { opacity: 1; }
+    .fade-out { opacity: 0; }
 
-    .fade-out {
-      opacity: 0;
+    /* Breathing background animation */
+    @keyframes breathe {
+      0% { background-size: 110%; }
+      50% { background-size: 115%; }
+      100% { background-size: 110%; }
     }
 
     /* Navigation */
@@ -126,14 +125,9 @@
     }
 
     .social-icons a {
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .social-icons.show a {
       opacity: 1;
       transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
     .social-icons a svg {
@@ -167,23 +161,6 @@
             window.location.href = url;
           }, 400);
         });
-      }
-    });
-
-    /* Parallax background */
-    document.addEventListener('mousemove', (e) => {
-      const x = (e.clientX / window.innerWidth) * 10;
-      const y = (e.clientY / window.innerHeight) * 10;
-      document.body.style.backgroundPosition = `${x}% ${y}%`;
-    });
-
-    /* Social icons fade-in */
-    window.addEventListener('scroll', () => {
-      const icons = document.querySelector('.social-icons');
-      if (window.scrollY > 50) {
-        icons.classList.add('show');
-      } else {
-        icons.classList.remove('show');
       }
     });
   </script>
