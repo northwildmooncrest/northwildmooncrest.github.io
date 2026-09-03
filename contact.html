@@ -72,23 +72,26 @@
       box-shadow: 0 0 12px rgba(255,255,255,0.25);
     }
 
-    /* Copied animation */
+    /* NEW Copied animation (no movement) */
     #copied {
-      display: none;
-      margin-top: 10px;
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      background: rgba(255,255,255,0.15);
+      padding: 12px 20px;
+      border-radius: 6px;
+      backdrop-filter: blur(6px);
+      color: white;
       font-size: 16px;
-      color: #ffffffcc;
       opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.4s, transform 0.4s;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
     }
-
     #copied.show {
       opacity: 1;
-      transform: translateY(0);
     }
 
-    /* Social icons ALWAYS visible + animated */
+    /* Social icons (always visible) */
     .social-icons {
       margin-top: 50px;
       display: flex;
@@ -97,8 +100,8 @@
     }
 
     .social-icons a {
-      opacity: 1; /* ALWAYS visible */
-      transform: translateY(0); /* ALWAYS in place */
+      opacity: 1;
+      transform: translateY(0);
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
@@ -136,12 +139,11 @@
       }
     });
 
-    /* Copy animation */
+    /* NEW Copied animation (no layout shift) */
     function copyEmail() {
       navigator.clipboard.writeText('northwildmooncrest@outlook.com');
 
       const bubble = document.getElementById('copied');
-      bubble.style.display = 'block';
       bubble.classList.add('show');
 
       setTimeout(() => bubble.classList.remove('show'), 1500);
@@ -168,9 +170,10 @@
     <button class="contact-button" onclick="copyEmail()">Copy Email</button>
   </div>
 
+  <!-- Copied Notification -->
   <div id="copied">Copied!</div>
 
-  <!-- Social Icons (RESTORED + ALWAYS VISIBLE) -->
+  <!-- Social Icons -->
   <div class="social-icons">
     <a href="https://instagram.com/northwildmooncrest" target="_blank">
       <svg viewBox="0 0 24 24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.8-3.8a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z"/></svg>
