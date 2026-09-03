@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Character encoding + mobile scaling -->
+    <!-- SEO Metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Title -->
     <title>About — Northwild Mooncrest™</title>
-
-    <!-- Description -->
     <meta name="description" content="Learn about Northwild Mooncrest™, a cinematic nature photography brand inspired by northern wilderness, moonlit landscapes, and wild exploration.">
+    <meta name="author" content="John Robert">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://northwildmooncrest.github.io/about.html">
 
-    <!-- Favicon + Logo -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/northwild_mooncrest_primary_logo.png">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
@@ -45,11 +42,11 @@
             overflow-x: hidden;
         }
 
-        /* Global header */
+        /* Global header - transparent glass */
         nav {
             width: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(12px);
             position: fixed;
             top: 0;
             left: 0;
@@ -59,7 +56,7 @@
         }
 
         nav a {
-            color: #e6e6e6;
+            color: #ffffff;
             text-decoration: none;
             margin: 0 20px;
             font-size: 1.1rem;
@@ -71,24 +68,24 @@
             opacity: 0.6;
         }
 
-        /* Background animation (safe, slow, gentle) */
+        /* Cinematic blurred background */
         .background {
             position: fixed;
             top: 0;
             left: 0;
             width: 110%;
             height: 110%;
-            background-image: url("northwild_mooncrest_primary_logo.png");
+            background-image: url("cinematic_background.jpg"); /* Upload your photo with this name */
             background-size: cover;
             background-position: center;
-            opacity: 0.08;
-            animation: drift 40s ease-in-out infinite;
+            opacity: 0.22;
+            animation: drift 45s ease-in-out infinite;
             z-index: -1;
         }
 
         @keyframes drift {
             0% { transform: translate(0px, 0px) scale(1.05); }
-            50% { transform: translate(-20px, -20px) scale(1.07); }
+            50% { transform: translate(-25px, -15px) scale(1.07); }
             100% { transform: translate(0px, 0px) scale(1.05); }
         }
 
@@ -145,6 +142,11 @@
 
     <!-- Main Content -->
     <div class="content">
+        <h2>Founder</h2>
+        <p>
+            Northwild Mooncrest™ was created by <strong>John Robert</strong>, a nature-focused photographer inspired by northern wilderness, moonlit horizons, and cinematic storytelling.
+        </p>
+
         <h2>Message</h2>
         <p>
             Northwild Mooncrest™ is a cinematic nature photography brand shaped by northern wilderness, moonlit horizons, and the quiet stories carried by wind and water.
@@ -165,8 +167,12 @@
 
     <!-- Footer -->
     <footer>
-        © 2026 Northwild Mooncrest™ — All Rights Reserved.
+        © 2026 Northwild Mooncrest™ — Created by John Robert. All Rights Reserved.
     </footer>
+
+</body>
+</html>
+
 
 </body>
 </html>
