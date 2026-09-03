@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- SEO Metadata -->
-    <meta name="description" content="Cinematic nature photography and exploration. Northwild Mooncrest™ brand website." />
+    <title>Northwild Mooncrest™ — Cinematic Nature Photography</title>
+    <meta name="description" content="Cinematic nature photography inspired by wilderness, starlight, and northern landscapes. Explore the Northwild Mooncrest™ portfolio, print shop, and creative journey." />
 
     <!-- Open Graph Metadata -->
-    <meta property="og:title" content="Northwild Mooncrest™" />
-    <meta property="og:description" content="Cinematic nature photography and exploration." />
+    <meta property="og:title" content="Northwild Mooncrest™ — Cinematic Nature Photography" />
+    <meta property="og:description" content="Cinematic nature photography inspired by wilderness, starlight, and northern landscapes." />
+    <meta property="og:image" content="northwild_mooncrest_primary_logo.png" />
+    <meta property="og:url" content="https://northwildmooncrest.github.io/" />
+    <meta property="og:type" content="website" />
 
     <!-- Bing Webmaster Tools Verification -->
     <meta name="msvalidate.01" content="7FEFF593E9D1168668DFA838E1428AB3" />
@@ -19,46 +23,405 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="northwild_mooncrest_primary_logo.ico" />
+    <link rel="apple-touch-icon" href="northwild_mooncrest_primary_logo.png" />
 
-    <title>Northwild Mooncrest™ — Cinematic Nature Photography</title>
-
+    <!-- Styles -->
     <style>
-        body {
+        :root {
+            --bg-start: #020611;
+            --bg-mid: #042326;
+            --bg-end: #0b3b4f;
+            --aurora-green: #6af5b8;
+            --aurora-blue: #5ac8ff;
+            --text-main: #ffffff;
+            --text-soft: #cfd8e3;
+            --accent: #9fd6ff;
+            --glass-bg: rgba(5, 12, 24, 0.85);
+            --glass-border: rgba(159, 214, 255, 0.35);
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background: #000;
-            color: #fff;
-            font-family: 'Playfair Display', serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: radial-gradient(circle at top, #101b33 0%, #020611 40%, #000000 100%);
+            color: var(--text-main);
+            font-family: "Playfair Display", serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            overflow-x: hidden;
+        }
+
+        /* Aurora / forest gradient layer */
+        .aurora-bg {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -2;
+            background:
+                radial-gradient(circle at 15% 0%, rgba(106, 245, 184, 0.18) 0%, transparent 45%),
+                radial-gradient(circle at 85% 10%, rgba(90, 200, 255, 0.22) 0%, transparent 50%),
+                linear-gradient(to bottom, var(--bg-start), var(--bg-mid), var(--bg-end));
+        }
+
+        /* Subtle stars / mist */
+        .stars {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            background-image:
+                radial-gradient(circle, rgba(255, 255, 255, 0.35) 1px, transparent 0),
+                radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 0);
+            background-size: 120px 120px, 200px 200px;
+            opacity: 0.35;
+            mix-blend-mode: screen;
+        }
+
+        header {
+            padding: 60px 20px 30px;
             text-align: center;
         }
-        header {
-            padding: 40px 20px;
-        }
-        header img {
-            width: 160px;
+
+        .hero-logo {
+            width: 190px;
             height: auto;
+            filter: drop-shadow(0 0 18px rgba(159, 214, 255, 0.55));
+            animation: logoGlow 6s ease-in-out infinite alternate;
         }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
+
+        @keyframes logoGlow {
+            0% {
+                filter: drop-shadow(0 0 10px rgba(159, 214, 255, 0.4));
+            }
+            100% {
+                filter: drop-shadow(0 0 26px rgba(106, 245, 184, 0.7));
+            }
+        }
+
+        header h1 {
+            margin-top: 24px;
+            font-size: 44px;
+            letter-spacing: 1.2px;
+            text-shadow:
+                0 0 12px rgba(106, 245, 184, 0.45),
+                0 0 24px rgba(90, 200, 255, 0.35);
+        }
+
+        header p {
             font-size: 20px;
+            margin-top: 8px;
+            color: var(--text-soft);
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
         }
+
+        nav {
+            margin-top: 32px;
+            display: flex;
+            justify-content: center;
+            gap: 26px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 20px;
+            letter-spacing: 0.6px;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--aurora-green), var(--aurora-blue));
+            transition: width 0.25s ease-out;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
         nav a:hover {
-            text-decoration: underline;
+            color: var(--accent);
         }
+
+        main {
+            padding: 40px 20px 0;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: var(--text-soft);
+            margin-bottom: 18px;
+        }
+
+        .subcopy {
+            font-size: 16px;
+            color: #a9b4c7;
+            line-height: 1.6;
+        }
+
         footer {
-            margin-top: 40px;
+            margin-top: 60px;
             padding: 20px;
             font-size: 14px;
-            opacity: 0.7;
+            opacity: 0.75;
+            text-align: center;
+        }
+
+        /* Glass permissions / cookies modal */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .overlay.hidden {
+            display: none;
+        }
+
+        .modal {
+            max-width: 520px;
+            width: 90%;
+            padding: 26px 24px 22px;
+            border-radius: 18px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            box-shadow:
+                0 24px 60px rgba(0, 0, 0, 0.85),
+                0 0 40px rgba(106, 245, 184, 0.25);
+            backdrop-filter: blur(18px);
+        }
+
+        .modal-title {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .modal-sub {
+            font-size: 14px;
+            color: var(--text-soft);
+            margin-bottom: 18px;
+        }
+
+        .perm-group {
+            margin-bottom: 14px;
+        }
+
+        .perm-label {
+            font-size: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .perm-label span {
+            color: var(--text-soft);
+            font-size: 13px;
+        }
+
+        .perm-toggle {
+            appearance: none;
+            width: 40px;
+            height: 20px;
+            border-radius: 999px;
+            background: #1b2635;
+            position: relative;
+            cursor: pointer;
+            outline: none;
+            border: 1px solid #3a4a63;
+        }
+
+        .perm-toggle::before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 3px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #cfd8e3;
+            transition: transform 0.2s ease-out, background 0.2s ease-out;
+        }
+
+        .perm-toggle:checked {
+            background: linear-gradient(to right, var(--aurora-green), var(--aurora-blue));
+            border-color: transparent;
+        }
+
+        .perm-toggle:checked::before {
+            transform: translateX(18px);
+            background: #020611;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .btn {
+            border-radius: 999px;
+            padding: 8px 16px;
+            font-size: 14px;
+            border: 1px solid #3a4a63;
+            background: #050b16;
+            color: var(--text-soft);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            border-color: transparent;
+            background: linear-gradient(to right, var(--aurora-green), var(--aurora-blue));
+            color: #020611;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Small cookie bar for later re-open */
+        .cookie-bar {
+            position: fixed;
+            left: 50%;
+            bottom: 18px;
+            transform: translateX(-50%);
+            background: rgba(5, 12, 24, 0.9);
+            border-radius: 999px;
+            padding: 8px 16px;
+            border: 1px solid rgba(159, 214, 255, 0.35);
+            font-size: 13px;
+            color: var(--text-soft);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 9;
+        }
+
+        .cookie-bar.hidden {
+            display: none;
+        }
+
+        .cookie-bar button {
+            border-radius: 999px;
+            border: none;
+            padding: 6px 12px;
+            font-size: 12px;
+            cursor: pointer;
+            background: linear-gradient(to right, var(--aurora-green), var(--aurora-blue));
+            color: #020611;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 32px;
+            }
+            nav a {
+                font-size: 18px;
+            }
+            .modal {
+                padding: 20px 18px 18px;
+            }
         }
     </style>
 </head>
 
 <body>
+    <div class="aurora-bg"></div>
+    <div class="stars"></div>
+
+    <!-- Permissions / cookies / notifications modal -->
+    <div class="overlay" id="permissionsOverlay">
+        <div class="modal">
+            <div class="modal-title">Northwild Mooncrest™ Experience Settings</div>
+            <div class="modal-sub">
+                Choose what you’re comfortable allowing. You can change these later from the cookie bar at the bottom.
+            </div>
+
+            <div class="perm-group">
+                <div class="perm-label">
+                    <strong>Cookies</strong>
+                    <span>Session + basic analytics only</span>
+                    <input type="checkbox" class="perm-toggle" id="permCookies" checked />
+                </div>
+            </div>
+
+            <div class="perm-group">
+                <div class="perm-label">
+                    <strong>Notifications</strong>
+                    <span>New stories, journeys, and print releases</span>
+                    <input type="checkbox" class="perm-toggle" id="permNotifications" />
+                </div>
+            </div>
+
+            <div class="perm-group">
+                <div class="perm-label">
+                    <strong>Camera & Microphone</strong>
+                    <span>For future live sessions or Q&A</span>
+                    <input type="checkbox" class="perm-toggle" id="permCamMic" />
+                </div>
+            </div>
+
+            <div class="perm-group">
+                <div class="perm-label">
+                    <strong>Location</strong>
+                    <span>To tailor stories to your region</span>
+                    <input type="checkbox" class="perm-toggle" id="permLocation" />
+                </div>
+            </div>
+
+            <div class="perm-group">
+                <div class="perm-label">
+                    <strong>Motion & Light Sensors</strong>
+                    <span>Subtle ambient effects only</span>
+                    <input type="checkbox" class="perm-toggle" id="permSensors" />
+                </div>
+            </div>
+
+            <div class="perm-group">
+                <div class="perm-label">
+                    <strong>Background Sync & Downloads</strong>
+                    <span>Preloading images for smoother viewing</span>
+                    <input type="checkbox" class="perm-toggle" id="permSync" />
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn" id="btnMinimal">Allow essentials only</button>
+                <button class="btn-primary" id="btnAcceptAll">Accept all & continue</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie bar to reopen settings -->
+    <div class="cookie-bar hidden" id="cookieBar">
+        <span>Experience settings saved. You can adjust them anytime.</span>
+        <button id="cookieSettingsBtn">Review settings</button>
+    </div>
+
     <header>
-        <img src="northwild_mooncrest_primary_logo.png" alt="Northwild Mooncrest Logo" />
+        <img src="northwild_mooncrest_primary_logo.png" alt="Northwild Mooncrest Logo" class="hero-logo" />
         <h1>Northwild Mooncrest™</h1>
         <p>Cinematic Nature Photography</p>
     </header>
@@ -71,8 +434,97 @@
         <a href="contact.html">Contact</a>
     </nav>
 
+    <main>
+        <p class="tagline">
+            Wilderness, starlight, and northern quiet — translated into cinematic frames and slow, deliberate journeys.
+        </p>
+        <p class="subcopy">
+            Northwild Mooncrest™ is a growing body of nature‑driven work: stillness in forests, distant horizons, and
+            the quiet geometry of light. This homepage is your gateway to the portfolio, future print collections, and
+            the unfolding story behind each image.
+        </p>
+    </main>
+
     <footer>
         © 2026 Northwild Mooncrest™ — All Rights Reserved
     </footer>
+
+    <script>
+        const overlay = document.getElementById("permissionsOverlay");
+        const cookieBar = document.getElementById("cookieBar");
+        const btnAcceptAll = document.getElementById("btnAcceptAll");
+        const btnMinimal = document.getElementById("btnMinimal");
+        const cookieSettingsBtn = document.getElementById("cookieSettingsBtn");
+
+        function saveSettings(mode) {
+            const settings = {
+                mode,
+                cookies: document.getElementById("permCookies").checked,
+                notifications: document.getElementById("permNotifications").checked,
+                camMic: document.getElementById("permCamMic").checked,
+                location: document.getElementById("permLocation").checked,
+                sensors: document.getElementById("permSensors").checked,
+                sync: document.getElementById("permSync").checked,
+                timestamp: new Date().toISOString()
+            };
+            try {
+                localStorage.setItem("northwild_permissions", JSON.stringify(settings));
+            } catch (e) {
+                // ignore storage errors
+            }
+        }
+
+        function applyMinimal() {
+            document.getElementById("permCookies").checked = true;
+            document.getElementById("permNotifications").checked = false;
+            document.getElementById("permCamMic").checked = false;
+            document.getElementById("permLocation").checked = false;
+            document.getElementById("permSensors").checked = false;
+            document.getElementById("permSync").checked = false;
+        }
+
+        btnAcceptAll.addEventListener("click", () => {
+            document.getElementById("permCookies").checked = true;
+            document.getElementById("permNotifications").checked = true;
+            document.getElementById("permCamMic").checked = true;
+            document.getElementById("permLocation").checked = true;
+            document.getElementById("permSensors").checked = true;
+            document.getElementById("permSync").checked = true;
+            saveSettings("all");
+            overlay.classList.add("hidden");
+            cookieBar.classList.remove("hidden");
+        });
+
+        btnMinimal.addEventListener("click", () => {
+            applyMinimal();
+            saveSettings("minimal");
+            overlay.classList.add("hidden");
+            cookieBar.classList.remove("hidden");
+        });
+
+        cookieSettingsBtn.addEventListener("click", () => {
+            overlay.classList.remove("hidden");
+        });
+
+        // On load, check if settings exist
+        (function initPermissions() {
+            try {
+                const stored = localStorage.getItem("northwild_permissions");
+                if (stored) {
+                    const s = JSON.parse(stored);
+                    document.getElementById("permCookies").checked = !!s.cookies;
+                    document.getElementById("permNotifications").checked = !!s.notifications;
+                    document.getElementById("permCamMic").checked = !!s.camMic;
+                    document.getElementById("permLocation").checked = !!s.location;
+                    document.getElementById("permSensors").checked = !!s.sensors;
+                    document.getElementById("permSync").checked = !!s.sync;
+                    overlay.classList.add("hidden");
+                    cookieBar.classList.remove("hidden");
+                }
+            } catch (e) {
+                // if parsing fails, show overlay fresh
+            }
+        })();
+    </script>
 </body>
 </html>
