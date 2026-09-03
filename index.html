@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- SEO Metadata -->
-    <meta name="description" content="Cinematic nature photography and exploration. Northwild Mooncrest™ brand website.">
-    <meta property="og:title" content="Northwild Mooncrest™">
-    <meta property="og:description" content="Cinematic nature photography and exploration.">
+    <meta name="description" content="Cinematic nature photography and exploration. Northwild Mooncrest™ brand website." />
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Northwild Mooncrest™" />
+    <meta property="og:description" content="Cinematic nature photography and exploration." />
 
     <!-- Bing Webmaster Tools Verification -->
     <meta name="msvalidate.01" content="7FEFF593E9D1168668DFA838E1428AB3" />
 
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="TMf8lm-WHKqLEiv9ulKYKqQst8s98sm_ZQu9T1rjKcA" />
+
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="northwild_mooncrest_primary_logo.ico">
+    <link rel="icon" type="image/x-icon" href="northwild_mooncrest_primary_logo.ico" />
 
     <title>Northwild Mooncrest™ — Cinematic Nature Photography</title>
 
@@ -26,83 +31,37 @@
             font-family: 'Playfair Display', serif;
             text-align: center;
         }
-
         header {
             padding: 40px 20px;
         }
-
         header img {
             width: 160px;
             height: auto;
-            margin-bottom: 20px;
         }
-
         nav a {
             color: #fff;
-            margin: 0 15px;
             text-decoration: none;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
+            margin: 0 15px;
+            font-size: 20px;
         }
-
         nav a:hover {
-            opacity: 0.7;
+            text-decoration: underline;
         }
-
-        h1 {
-            font-size: 2.4rem;
-            margin-top: 20px;
-            letter-spacing: 2px;
-        }
-
-        p {
-            font-size: 1.1rem;
-            opacity: 0.85;
-            margin-top: 10px;
-        }
-
-        /* Permission Popup */
-        #permission-popup {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(20, 20, 20, 0.95);
+        footer {
+            margin-top: 40px;
             padding: 20px;
-            border-radius: 12px;
-            width: 260px;
-            display: none;
-            text-align: left;
-            border: 1px solid #444;
-        }
-
-        #permission-popup h3 {
-            margin-top: 0;
-            font-size: 1.2rem;
-        }
-
-        #permission-popup button {
-            margin-top: 10px;
-            width: 100%;
-            padding: 10px;
-            background: #444;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        #permission-popup button:hover {
-            background: #666;
+            font-size: 14px;
+            opacity: 0.7;
         }
     </style>
 </head>
 
 <body>
-
-<header>
-    <img src="northwild_mooncrest_primary_logo.png" alt="Northwild Mooncrest Logo">
-    <h1>Northwild Mooncrest™</h1>
-    <p>Cinematic Nature Photography & Wilderness Exploration</p>
+    <header>
+        <img src="northwild_mooncrest_primary_logo.png" alt="Northwild Mooncrest Logo" />
+        <h1>Northwild Mooncrest™</h1>
+        <p>Cinematic Nature Photography</p>
+    </header>
 
     <nav>
         <a href="index.html">Home</a>
@@ -111,44 +70,9 @@
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
     </nav>
-</header>
 
-<!-- Permission Popup -->
-<div id="permission-popup">
-    <h3>Enable Enhanced Experience</h3>
-    <p>Allow location, microphone, and motion access for interactive features.</p>
-    <button onclick="requestPermissions()">Enable</button>
-</div>
-
-<script>
-    function requestPermissions() {
-        // Location
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(() => {
-                console.log("Location granted");
-            });
-        }
-
-        // Microphone
-        navigator.mediaDevices.getUserMedia({ audio: true })
-            .then(() => console.log("Microphone granted"))
-            .catch(() => console.log("Microphone denied"));
-
-        // Motion Sensors
-        if (typeof DeviceMotionEvent.requestPermission === "function") {
-            DeviceMotionEvent.requestPermission().then(response => {
-                console.log("Motion permission:", response);
-            });
-        }
-
-        document.getElementById("permission-popup").style.display = "none";
-    }
-
-    // Show popup after delay
-    setTimeout(() => {
-        document.getElementById("permission-popup").style.display = "block";
-    }, 2000);
-</script>
-
+    <footer>
+        © 2026 Northwild Mooncrest™ — All Rights Reserved
+    </footer>
 </body>
 </html>
