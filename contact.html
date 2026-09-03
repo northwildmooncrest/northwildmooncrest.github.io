@@ -51,16 +51,6 @@
       text-shadow: 0px 0px 18px rgba(255,255,255,0.25);
     }
 
-    p {
-      font-size: 18px;
-      opacity: 0.85;
-    }
-
-    a {
-      color: #ffffff;
-      text-decoration: underline;
-    }
-
     .button-row {
       margin-top: 30px;
       display: flex;
@@ -84,8 +74,17 @@
       background: #ffffff33;
     }
 
+    #copied {
+      display: none;
+      margin-top: 10px;
+      font-size: 16px;
+      color: #ffffffcc;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
     .social-icons {
-      margin-top: 40px;
+      margin-top: 50px;
       display: flex;
       justify-content: center;
       gap: 22px;
@@ -104,12 +103,20 @@
       transform: scale(1.1);
     }
   </style>
+
+  <script>
+    function copyEmail() {
+      navigator.clipboard.writeText('northwildmooncrest@outlook.com');
+      const bubble = document.getElementById('copied');
+      bubble.style.display = 'block';
+      setTimeout(() => bubble.style.opacity = 1, 10);
+      setTimeout(() => bubble.style.opacity = 0, 1500);
+    }
+  </script>
 </head>
 
 <body>
   <h1>Contact</h1>
-
-  <p>Email: <a href="mailto:northwildmooncrest@outlook.com">northwildmooncrest@outlook.com</a></p>
 
   <!-- Buttons -->
   <div class="button-row">
@@ -117,10 +124,10 @@
       <button class="contact-button">Email Me</button>
     </a>
 
-    <button class="contact-button" onclick="navigator.clipboard.writeText('northwildmooncrest@outlook.com')">
-      Copy Email
-    </button>
+    <button class="contact-button" onclick="copyEmail()">Copy Email</button>
   </div>
+
+  <div id="copied">Copied!</div>
 
   <div class="social-icons">
     <!-- Instagram -->
