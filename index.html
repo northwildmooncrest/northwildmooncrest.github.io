@@ -200,14 +200,25 @@
 
     <script>
         window.addEventListener('load', function() {
+            // Cookie popup logic
             if (!localStorage.getItem('cookiesAccepted')) {
                 document.getElementById('cookie-popup').style.display = 'block';
             }
-        });
 
-        document.getElementById('accept-cookies').addEventListener('click', function() {
-            localStorage.setItem('cookiesAccepted', 'true');
-            document.getElementById('cookie-popup').style.display = 'none';
+            document.getElementById('accept-cookies').addEventListener('click', function() {
+                localStorage.setItem('cookiesAccepted', 'true');
+                document.getElementById('cookie-popup').style.display = 'none';
+            });
+
+            // Cinematic welcome notification
+            Notification.requestPermission().then(result => {
+                if (result === "granted") {
+                    new Notification("Northwild Mooncrest™", {
+                        body: "Welcome to the wilderness — cinematic nature awaits.",
+                        icon: "northwild_mooncrest_primary_logo.png"
+                    });
+                }
+            });
         });
     </script>
 
