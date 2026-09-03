@@ -30,6 +30,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
+    /* Fade-in page load */
     body {
       font-family: 'Lora', serif;
       margin: 0;
@@ -42,6 +43,12 @@
       background-attachment: fixed;
       background-color: rgba(0,0,0,0.65);
       background-blend-mode: darken;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     h1 {
@@ -72,15 +79,35 @@
 
     .contact-button:hover {
       background: #ffffff33;
+      box-shadow: 0 0 12px rgba(255,255,255,0.25);
     }
 
+    /* Copied animation */
     #copied {
       display: none;
       margin-top: 10px;
       font-size: 16px;
       color: #ffffffcc;
       opacity: 0;
-      transition: opacity 0.4s;
+      transform: translateY(10px);
+      transition: opacity 0.4s, transform 0.4s;
+    }
+
+    #copied.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Social icons fade-in */
+    .social-icons a {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .social-icons.show a {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .social-icons {
@@ -105,13 +132,34 @@
   </style>
 
   <script>
+    /* Copy animation */
     function copyEmail() {
       navigator.clipboard.writeText('northwildmooncrest@outlook.com');
       const bubble = document.getElementById('copied');
       bubble.style.display = 'block';
-      setTimeout(() => bubble.style.opacity = 1, 10);
-      setTimeout(() => bubble.style.opacity = 0, 1500);
+      bubble.classList.add('show');
+
+      setTimeout(() => {
+        bubble.classList.remove('show');
+      }, 1500);
     }
+
+    /* Parallax background */
+    document.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth) * 10;
+      const y = (e.clientY / window.innerHeight) * 10;
+      document.body.style.backgroundPosition = `${x}% ${y}%`;
+    });
+
+    /* Social icons fade-in + reset */
+    window.addEventListener('scroll', () => {
+      const icons = document.querySelector('.social-icons');
+      if (window.scrollY > 50) {
+        icons.classList.add('show');
+      } else {
+        icons.classList.remove('show'); /* resets icons to original position */
+      }
+    });
   </script>
 </head>
 
