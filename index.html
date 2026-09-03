@@ -49,6 +49,19 @@
 
         header {
             padding: 120px 20px 80px;
+            animation: fadein 2s ease;
+        }
+
+        @keyframes fadein {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo-small {
+            width: 110px;
+            opacity: 0.85;
+            margin-bottom: 25px;
+            animation: fadein 2.2s ease;
         }
 
         h1 {
@@ -83,11 +96,25 @@
             opacity: 0.6;
         }
 
+        .scroll-indicator {
+            margin-top: 60px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            animation: fadein 3s ease;
+        }
+
         footer {
             margin-top: 120px;
             padding: 40px 20px;
             font-size: 0.85rem;
             opacity: 0.7;
+        }
+
+        .footer-divider {
+            width: 60%;
+            height: 1px;
+            background-color: rgba(255,255,255,0.15);
+            margin: 0 auto 25px auto;
         }
 
         footer a {
@@ -99,12 +126,42 @@
         footer a:hover {
             opacity: 0.6;
         }
+
+        /* COOKIE POPUP */
+        #cookie-popup {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(20, 20, 20, 0.95);
+            color: #fff;
+            padding: 18px 26px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            box-shadow: 0 0 10px rgba(0,0,0,0.4);
+            display: none;
+            z-index: 9999;
+            text-align: center;
+        }
+
+        #cookie-popup button {
+            margin-left: 16px;
+            background-color: #ffffff;
+            color: #000;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+        }
     </style>
 </head>
 
 <body>
 
     <header>
+        <img src="northwild_mooncrest_primary_logo.svg" alt="Northwild Mooncrest Logo" class="logo-small">
+
         <h1>Northwild Mooncrest™</h1>
         <h2>Cinematic Nature Photography</h2>
 
@@ -115,7 +172,11 @@
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </nav>
+
+        <div class="scroll-indicator">▼ Scroll</div>
     </header>
+
+    <div class="footer-divider"></div>
 
     <footer>
         © 2026 Northwild Mooncrest™ — All Rights Reserved  
@@ -127,6 +188,26 @@
         <br><br>
         Site by John Robert
     </footer>
+
+    <!-- COOKIE POPUP -->
+    <div id="cookie-popup">
+        This website uses cookies to ensure you get the best experience. 
+        <a href="cookies.html" style="color:#fff; text-decoration:underline;">Learn more</a>
+        <button id="accept-cookies">Accept</button>
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            if (!localStorage.getItem('cookiesAccepted')) {
+                document.getElementById('cookie-popup').style.display = 'block';
+            }
+        });
+
+        document.getElementById('accept-cookies').addEventListener('click', function() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookie-popup').style.display = 'none';
+        });
+    </script>
 
 </body>
 </html>
