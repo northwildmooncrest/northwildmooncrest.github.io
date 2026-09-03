@@ -28,97 +28,75 @@
     <!-- Styles -->
     <style>
         :root {
-            --bg-start: #020611;
-            --bg-mid: #042326;
-            --bg-end: #0b3b4f;
-            --aurora-green: #6af5b8;
-            --aurora-blue: #5ac8ff;
             --text-main: #ffffff;
             --text-soft: #cfd8e3;
             --accent: #9fd6ff;
-            --glass-bg: rgba(5, 12, 24, 0.85);
+            --overlay-dark: rgba(0, 0, 0, 0.55);
+            --overlay-darker: rgba(0, 0, 0, 0.75);
+            --glass-bg: rgba(10, 15, 25, 0.85);
             --glass-border: rgba(159, 214, 255, 0.35);
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             min-height: 100vh;
-            background: radial-gradient(circle at top, #101b33 0%, #020611 40%, #000000 100%);
-            color: var(--text-main);
             font-family: "Playfair Display", serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
+            color: var(--text-main);
+            background: #000;
             overflow-x: hidden;
         }
 
-        /* Aurora / forest gradient layer */
-        .aurora-bg {
+        /* Background image */
+        .bg-image {
             position: fixed;
             inset: 0;
-            pointer-events: none;
+            background-image: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1920&q=80");
+            background-size: cover;
+            background-position: center;
+            filter: blur(6px) brightness(0.45);
             z-index: -2;
-            background:
-                radial-gradient(circle at 15% 0%, rgba(106, 245, 184, 0.18) 0%, transparent 45%),
-                radial-gradient(circle at 85% 10%, rgba(90, 200, 255, 0.22) 0%, transparent 50%),
-                linear-gradient(to bottom, var(--bg-start), var(--bg-mid), var(--bg-end));
         }
 
-        /* Subtle stars / mist */
-        .stars {
+        /* Dark overlay */
+        .bg-overlay {
             position: fixed;
             inset: 0;
-            pointer-events: none;
+            background: var(--overlay-dark);
             z-index: -1;
-            background-image:
-                radial-gradient(circle, rgba(255, 255, 255, 0.35) 1px, transparent 0),
-                radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 0);
-            background-size: 120px 120px, 200px 200px;
-            opacity: 0.35;
-            mix-blend-mode: screen;
         }
 
         header {
-            padding: 60px 20px 30px;
             text-align: center;
+            padding: 80px 20px 40px;
         }
 
         .hero-logo {
-            width: 190px;
+            width: 180px;
             height: auto;
-            filter: drop-shadow(0 0 18px rgba(159, 214, 255, 0.55));
+            filter: drop-shadow(0 0 18px rgba(159, 214, 255, 0.45));
             animation: logoGlow 6s ease-in-out infinite alternate;
         }
 
         @keyframes logoGlow {
-            0% {
-                filter: drop-shadow(0 0 10px rgba(159, 214, 255, 0.4));
-            }
-            100% {
-                filter: drop-shadow(0 0 26px rgba(106, 245, 184, 0.7));
-            }
+            0% { filter: drop-shadow(0 0 10px rgba(159, 214, 255, 0.3)); }
+            100% { filter: drop-shadow(0 0 22px rgba(159, 214, 255, 0.6)); }
         }
 
         header h1 {
             margin-top: 24px;
-            font-size: 44px;
+            font-size: 42px;
             letter-spacing: 1.2px;
-            text-shadow:
-                0 0 12px rgba(106, 245, 184, 0.45),
-                0 0 24px rgba(90, 200, 255, 0.35);
         }
 
         header p {
+            margin-top: 10px;
             font-size: 20px;
-            margin-top: 8px;
             color: var(--text-soft);
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
         }
 
         nav {
@@ -145,7 +123,7 @@
             bottom: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(to right, var(--aurora-green), var(--aurora-blue));
+            background: var(--accent);
             transition: width 0.25s ease-out;
         }
 
@@ -153,13 +131,10 @@
             width: 100%;
         }
 
-        nav a:hover {
-            color: var(--accent);
-        }
-
         main {
-            padding: 40px 20px 0;
             max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
             text-align: center;
         }
 
@@ -169,255 +144,118 @@
             margin-bottom: 18px;
         }
 
-        .subcopy {
-            font-size: 16px;
-            color: #a9b4c7;
-            line-height: 1.6;
-        }
-
-        footer {
-            margin-top: 60px;
-            padding: 20px;
-            font-size: 14px;
-            opacity: 0.75;
-            text-align: center;
-        }
-
-        /* Glass permissions / cookies modal */
-        .overlay {
-            position: fixed;
-            inset: 0;
-            background: radial-gradient(circle at top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-        }
-
-        .overlay.hidden {
-            display: none;
-        }
-
-        .modal {
-            max-width: 520px;
-            width: 90%;
-            padding: 26px 24px 22px;
-            border-radius: 18px;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            box-shadow:
-                0 24px 60px rgba(0, 0, 0, 0.85),
-                0 0 40px rgba(106, 245, 184, 0.25);
-            backdrop-filter: blur(18px);
-        }
-
-        .modal-title {
-            font-size: 22px;
-            margin-bottom: 8px;
-        }
-
-        .modal-sub {
-            font-size: 14px;
-            color: var(--text-soft);
-            margin-bottom: 18px;
-        }
-
-        .perm-group {
-            margin-bottom: 14px;
-        }
-
-        .perm-label {
-            font-size: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .perm-label span {
-            color: var(--text-soft);
-            font-size: 13px;
-        }
-
-        .perm-toggle {
-            appearance: none;
-            width: 40px;
-            height: 20px;
+        .cta-btn {
+            margin-top: 24px;
+            padding: 12px 26px;
             border-radius: 999px;
-            background: #1b2635;
-            position: relative;
-            cursor: pointer;
-            outline: none;
-            border: 1px solid #3a4a63;
-        }
-
-        .perm-toggle::before {
-            content: "";
-            position: absolute;
-            top: 2px;
-            left: 3px;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: #cfd8e3;
-            transition: transform 0.2s ease-out, background 0.2s ease-out;
-        }
-
-        .perm-toggle:checked {
-            background: linear-gradient(to right, var(--aurora-green), var(--aurora-blue));
-            border-color: transparent;
-        }
-
-        .perm-toggle:checked::before {
-            transform: translateX(18px);
-            background: #020611;
-        }
-
-        .modal-actions {
-            display: flex;
-            justify-content: flex-end;
-            gap: 10px;
-            margin-top: 18px;
-        }
-
-        .btn {
-            border-radius: 999px;
-            padding: 8px 16px;
-            font-size: 14px;
-            border: 1px solid #3a4a63;
-            background: #050b16;
-            color: var(--text-soft);
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            border-color: transparent;
-            background: linear-gradient(to right, var(--aurora-green), var(--aurora-blue));
+            background: var(--accent);
             color: #020611;
             font-weight: 600;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
         }
 
-        .btn:hover {
+        .cta-btn:hover {
             opacity: 0.9;
         }
 
-        /* Small cookie bar for later re-open */
-        .cookie-bar {
-            position: fixed;
-            left: 50%;
-            bottom: 18px;
-            transform: translateX(-50%);
-            background: rgba(5, 12, 24, 0.9);
-            border-radius: 999px;
-            padding: 8px 16px;
-            border: 1px solid rgba(159, 214, 255, 0.35);
-            font-size: 13px;
-            color: var(--text-soft);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            z-index: 9;
-        }
-
-        .cookie-bar.hidden {
+        /* Experience Settings (hidden by default) */
+        #experiencePanel {
             display: none;
+            position: fixed;
+            inset: 0;
+            background: var(--overlay-darker);
+            z-index: 20;
+            align-items: center;
+            justify-content: center;
         }
 
-        .cookie-bar button {
+        .panel-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 18px;
+            padding: 26px 24px;
+            width: 90%;
+            max-width: 480px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85);
+        }
+
+        .panel-card h2 {
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+
+        .panel-card p {
+            color: var(--text-soft);
+            margin-bottom: 18px;
+            font-size: 14px;
+        }
+
+        .panel-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .panel-btn {
+            padding: 8px 16px;
             border-radius: 999px;
             border: none;
-            padding: 6px 12px;
-            font-size: 12px;
             cursor: pointer;
-            background: linear-gradient(to right, var(--aurora-green), var(--aurora-blue));
+            font-size: 14px;
+        }
+
+        .panel-save {
+            background: var(--accent);
             color: #020611;
             font-weight: 600;
         }
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 32px;
-            }
-            nav a {
-                font-size: 18px;
-            }
-            .modal {
-                padding: 20px 18px 18px;
-            }
+        .panel-dismiss {
+            background: #1a1f2b;
+            color: var(--text-soft);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 80px;
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--text-soft);
+            font-size: 14px;
+        }
+
+        .footer-line {
+            width: 100%;
+            height: 1px;
+            background: rgba(159, 214, 255, 0.35);
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            width: 40px;
+            opacity: 0.85;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 
 <body>
-    <div class="aurora-bg"></div>
-    <div class="stars"></div>
+    <div class="bg-image"></div>
+    <div class="bg-overlay"></div>
 
-    <!-- Permissions / cookies / notifications modal -->
-    <div class="overlay" id="permissionsOverlay">
-        <div class="modal">
-            <div class="modal-title">Northwild Mooncrest™ Experience Settings</div>
-            <div class="modal-sub">
-                Choose what you’re comfortable allowing. You can change these later from the cookie bar at the bottom.
-            </div>
+    <!-- Experience Settings Panel -->
+    <div id="experiencePanel">
+        <div class="panel-card">
+            <h2>Experience Settings</h2>
+            <p>Adjust your viewing preferences. These settings help optimize your experience on Northwild Mooncrest™.</p>
 
-            <div class="perm-group">
-                <div class="perm-label">
-                    <strong>Cookies</strong>
-                    <span>Session + basic analytics only</span>
-                    <input type="checkbox" class="perm-toggle" id="permCookies" checked />
-                </div>
-            </div>
-
-            <div class="perm-group">
-                <div class="perm-label">
-                    <strong>Notifications</strong>
-                    <span>New stories, journeys, and print releases</span>
-                    <input type="checkbox" class="perm-toggle" id="permNotifications" />
-                </div>
-            </div>
-
-            <div class="perm-group">
-                <div class="perm-label">
-                    <strong>Camera & Microphone</strong>
-                    <span>For future live sessions or Q&A</span>
-                    <input type="checkbox" class="perm-toggle" id="permCamMic" />
-                </div>
-            </div>
-
-            <div class="perm-group">
-                <div class="perm-label">
-                    <strong>Location</strong>
-                    <span>To tailor stories to your region</span>
-                    <input type="checkbox" class="perm-toggle" id="permLocation" />
-                </div>
-            </div>
-
-            <div class="perm-group">
-                <div class="perm-label">
-                    <strong>Motion & Light Sensors</strong>
-                    <span>Subtle ambient effects only</span>
-                    <input type="checkbox" class="perm-toggle" id="permSensors" />
-                </div>
-            </div>
-
-            <div class="perm-group">
-                <div class="perm-label">
-                    <strong>Background Sync & Downloads</strong>
-                    <span>Preloading images for smoother viewing</span>
-                    <input type="checkbox" class="perm-toggle" id="permSync" />
-                </div>
-            </div>
-
-            <div class="modal-actions">
-                <button class="btn" id="btnMinimal">Allow essentials only</button>
-                <button class="btn-primary" id="btnAcceptAll">Accept all & continue</button>
+            <div class="panel-actions">
+                <button class="panel-btn panel-dismiss" onclick="closeExperience()">Dismiss</button>
+                <button class="panel-btn panel-save" onclick="saveExperience()">Save Settings</button>
             </div>
         </div>
-    </div>
-
-    <!-- Cookie bar to reopen settings -->
-    <div class="cookie-bar hidden" id="cookieBar">
-        <span>Experience settings saved. You can adjust them anytime.</span>
-        <button id="cookieSettingsBtn">Review settings</button>
     </div>
 
     <header>
@@ -438,93 +276,30 @@
         <p class="tagline">
             Wilderness, starlight, and northern quiet — translated into cinematic frames and slow, deliberate journeys.
         </p>
-        <p class="subcopy">
-            Northwild Mooncrest™ is a growing body of nature‑driven work: stillness in forests, distant horizons, and
-            the quiet geometry of light. This homepage is your gateway to the portfolio, future print collections, and
-            the unfolding story behind each image.
-        </p>
+
+        <button class="cta-btn" onclick="openExperience()">Experience Settings</button>
     </main>
 
     <footer>
-        © 2026 Northwild Mooncrest™ — All Rights Reserved
+        <div class="footer-line"></div>
+        <img src="northwild_mooncrest_primary_logo.png" class="footer-logo" alt="Logo" />
+        <div>Northwild Mooncrest™ Studio — Minnesota, USA</div>
+        <div>© 2026 Northwild Mooncrest™. All Rights Reserved.</div>
+        <div>Cinematic Nature Photography & Visual Storytelling.</div>
     </footer>
 
     <script>
-        const overlay = document.getElementById("permissionsOverlay");
-        const cookieBar = document.getElementById("cookieBar");
-        const btnAcceptAll = document.getElementById("btnAcceptAll");
-        const btnMinimal = document.getElementById("btnMinimal");
-        const cookieSettingsBtn = document.getElementById("cookieSettingsBtn");
-
-        function saveSettings(mode) {
-            const settings = {
-                mode,
-                cookies: document.getElementById("permCookies").checked,
-                notifications: document.getElementById("permNotifications").checked,
-                camMic: document.getElementById("permCamMic").checked,
-                location: document.getElementById("permLocation").checked,
-                sensors: document.getElementById("permSensors").checked,
-                sync: document.getElementById("permSync").checked,
-                timestamp: new Date().toISOString()
-            };
-            try {
-                localStorage.setItem("northwild_permissions", JSON.stringify(settings));
-            } catch (e) {
-                // ignore storage errors
-            }
+        function openExperience() {
+            document.getElementById("experiencePanel").style.display = "flex";
         }
 
-        function applyMinimal() {
-            document.getElementById("permCookies").checked = true;
-            document.getElementById("permNotifications").checked = false;
-            document.getElementById("permCamMic").checked = false;
-            document.getElementById("permLocation").checked = false;
-            document.getElementById("permSensors").checked = false;
-            document.getElementById("permSync").checked = false;
+        function closeExperience() {
+            document.getElementById("experiencePanel").style.display = "none";
         }
 
-        btnAcceptAll.addEventListener("click", () => {
-            document.getElementById("permCookies").checked = true;
-            document.getElementById("permNotifications").checked = true;
-            document.getElementById("permCamMic").checked = true;
-            document.getElementById("permLocation").checked = true;
-            document.getElementById("permSensors").checked = true;
-            document.getElementById("permSync").checked = true;
-            saveSettings("all");
-            overlay.classList.add("hidden");
-            cookieBar.classList.remove("hidden");
-        });
-
-        btnMinimal.addEventListener("click", () => {
-            applyMinimal();
-            saveSettings("minimal");
-            overlay.classList.add("hidden");
-            cookieBar.classList.remove("hidden");
-        });
-
-        cookieSettingsBtn.addEventListener("click", () => {
-            overlay.classList.remove("hidden");
-        });
-
-        // On load, check if settings exist
-        (function initPermissions() {
-            try {
-                const stored = localStorage.getItem("northwild_permissions");
-                if (stored) {
-                    const s = JSON.parse(stored);
-                    document.getElementById("permCookies").checked = !!s.cookies;
-                    document.getElementById("permNotifications").checked = !!s.notifications;
-                    document.getElementById("permCamMic").checked = !!s.camMic;
-                    document.getElementById("permLocation").checked = !!s.location;
-                    document.getElementById("permSensors").checked = !!s.sensors;
-                    document.getElementById("permSync").checked = !!s.sync;
-                    overlay.classList.add("hidden");
-                    cookieBar.classList.remove("hidden");
-                }
-            } catch (e) {
-                // if parsing fails, show overlay fresh
-            }
-        })();
+        function saveExperience() {
+            closeExperience();
+        }
     </script>
 </body>
 </html>
