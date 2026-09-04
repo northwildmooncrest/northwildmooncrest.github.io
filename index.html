@@ -52,7 +52,7 @@
             background-size: cover;
             background-position: center;
             filter: blur(6px) brightness(0.45);
-            z-index: -3;
+            z-index: -4;
         }
 
         /* Dark overlay */
@@ -60,32 +60,41 @@
             position: fixed;
             inset: 0;
             background: var(--overlay-dark);
-            z-index: -2;
+            z-index: -3;
         }
 
-        /* Aurora Layer */
+        /* Starfield Layer — Aurora Integrated */
+        .starfield {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            pointer-events: none;
+            background: radial-gradient(circle at 30% 20%, rgba(90, 200, 140, 0.25), transparent 70%),
+                        radial-gradient(circle at 70% 80%, rgba(120, 180, 255, 0.22), transparent 70%);
+            animation: starDrift 120s linear infinite;
+        }
+
+        @keyframes starDrift {
+            0% { transform: translateY(0); opacity: 0.55; }
+            100% { transform: translateY(-40px); opacity: 0.65; }
+        }
+
+        /* Aurora Layer — Hybrid Green + Blue */
         .aurora-layer {
             position: fixed;
             inset: 0;
             pointer-events: none;
             z-index: -1;
-            background: radial-gradient(
-                circle at 20% 80%,
-                rgba(120, 200, 255, 0.25),
-                transparent 60%
-            ),
-            radial-gradient(
-                circle at 80% 20%,
-                rgba(180, 120, 255, 0.20),
-                transparent 60%
-            );
+            background:
+                radial-gradient(circle at 25% 80%, rgba(90, 200, 140, 0.28), transparent 60%),
+                radial-gradient(circle at 75% 20%, rgba(120, 180, 255, 0.22), transparent 60%);
             animation: auroraShift 18s ease-in-out infinite alternate;
             filter: blur(80px);
         }
 
         @keyframes auroraShift {
             0% {
-                background-position: 20% 80%, 80% 20%;
+                background-position: 25% 80%, 75% 20%;
                 opacity: 0.45;
             }
             100% {
@@ -94,7 +103,7 @@
             }
         }
 
-        /* Breathing + Aurora Glow Logo Animation */
+        /* Breathing + Glow Logo Animation */
         .hero-logo {
             width: 180px;
             height: auto;
@@ -319,6 +328,9 @@
 <body>
     <div class="bg-image"></div>
     <div class="bg-overlay"></div>
+
+    <!-- Starfield -->
+    <div class="starfield"></div>
 
     <!-- Aurora Layer -->
     <div class="aurora-layer"></div>
