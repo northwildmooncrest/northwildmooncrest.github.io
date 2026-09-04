@@ -1,25 +1,28 @@
 <svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
 
-  <!-- Background (dark sky) -->
+  <!-- Background -->
   <rect width="256" height="256" fill="#0f1f2e"/>
 
-  <!-- Simple crescent moon (right-facing) -->
+  <!-- Crescent Moon (right-facing, guaranteed to render) -->
   <path
-    d="M160 64
-       A80 80 0 1 1 160 192
-       A56 56 0 1 0 160 64
-       Z"
+    d="
+      M128 40
+      A88 88 0 1 0 128 216
+      A60 60 0 1 1 128 40
+      Z"
     fill="#f5f5f5"
   />
 
-  <!-- Rune-like N inside the crescent -->
+  <!-- Rune-like N (bold, centered, guaranteed visible) -->
   <path
-    d="M96 80
-       L96 176
-       L144 80
-       L144 176"
+    d="
+      M100 80
+      L100 176
+      L156 80
+      L156 176
+    "
     stroke="#0f1f2e"
-    stroke-width="16"
+    stroke-width="20"
     stroke-linecap="round"
     fill="none"
   />
