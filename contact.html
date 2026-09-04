@@ -18,10 +18,12 @@
     <meta name="theme-color" content="#0b1118">
     <meta name="color-scheme" content="dark light">
 
-    <!-- Universal favicon block -->
+    <!-- UNIVERSAL FAVICON BLOCK (correct + unified) -->
     <link rel="icon" type="image/x-icon" href="northwild_mooncrest_primary_logo.ico">
     <link rel="icon" type="image/png" href="northwild_mooncrest_primary_logo.png">
-    <link rel="icon" type="image/svg+xml" href="northwild_mooncrest_primary_logo.svg">
+    <link rel="icon" type="image/svg+xml" href="northwild_mooncrest_icon.svg">
+    <link rel="apple-touch-icon" href="northwild_mooncrest_primary_logo.png">
+    <link rel="mask-icon" href="northwild_mooncrest_icon.svg" color="#0f1f2e">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -37,7 +39,7 @@
     <meta name="twitter:description" content="Get in touch for nature photography inquiries, prints, collaborations, or licensing.">
     <meta name="twitter:image" content="https://northwildmooncrest.github.io/images/featured2.jpg">
 
-    <!-- JSON-LD: Brand + Photographer + WebPage -->
+    <!-- JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -75,6 +77,7 @@
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="layout.css">
     <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="chat.css"> <!-- ADDED -->
 </head>
 
 <body>
@@ -89,7 +92,7 @@
             <li><a href="printshop.html" class="reveal">Print Shop</a></li>
             <li><a href="studio.html" class="reveal">Studio</a></li>
             <li><a href="about.html" class="reveal">About</a></li>
-            <li><a href="contact.html" class="reveal">Contact</a></li>
+            <li><a href="contact.html" class="reveal active">Contact</a></li>
         </ul>
     </nav>
 
@@ -140,8 +143,8 @@
 
 <div class="section-divider"></div>
 
-<footer class="reveal">
-    <p>© 2026 Northwild Mooncrest™</p>
+<footer class="site-footer reveal">
+    <p>© 2026 Northwild Mooncrest™ — The World, Reimagined.</p>
     <p>
         <a href="terms.html">Terms</a> ·
         <a href="privacy.html">Privacy</a> ·
@@ -157,7 +160,7 @@
     <button id="acceptCookies" class="btn-animate">Accept</button>
 </div>
 
-<div id="notifyPrompt" class="notify-prompt reveal">
+<div id="notifyPrompt" class="notification-prompt reveal">
     <p>Enable notifications for updates?</p>
     <button id="enableNotify" class="btn-animate">Enable</button>
     <button id="dismissNotify" class="btn-animate">Dismiss</button>
@@ -166,11 +169,20 @@
 <div id="chatBubble" class="chat-bubble card-hover">💬</div>
 
 <div id="chatModal" class="chat-modal">
-    <button id="closeChat" class="btn-animate">Close</button>
-    <h3>Chat with Northwild Mooncrest™</h3>
-    <textarea placeholder="Type your message..."></textarea>
-    <button class="btn-animate">Send</button>
+    <div class="chat-content">
+        <button id="closeChat" class="close-chat">×</button>
+        <h3>Chat with Northwild Mooncrest™</h3>
+        <textarea placeholder="Type your message..."></textarea>
+        <button class="btn-animate">Send</button>
+    </div>
 </div>
+
+<!-- Scripts -->
+<script src="scrollreveal.min.js"></script>
+<script src="chat.js"></script>
+<script src="notifications.js"></script>
+<script src="cookies.js"></script>
+<script src="safe.js"></script>
 
 <script>
     // Cookie Banner
@@ -220,4 +232,3 @@
 
 </body>
 </html>
-
