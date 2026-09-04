@@ -3,13 +3,12 @@
   <!-- Background -->
   <rect width="256" height="256" fill="#0f1f2e"/>
 
-  <!-- Crescent Moon (bulletproof) -->
+    <!-- Crescent Moon -->
   <path
-    d="
-      M128 40
-      A88 88 0 1 0 128 216
-      A60 60 0 1 1 128 40
-      Z"
+    d="M128 40
+       A88 88 0 1 0 128 216
+       A60 60 0 1 1 128 40
+       Z"
     fill="#f5f5f5"
     fill-rule="evenodd"
   />
