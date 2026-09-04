@@ -25,6 +25,9 @@
     <link rel="apple-touch-icon" href="northwild_mooncrest_primary_logo.png">
     <link rel="mask-icon" href="northwild_mooncrest_icon.svg" color="#0f1f2e">
 
+    <!-- DARK-MODE WHITE FAVICON -->
+    <link rel="icon" href="northwild_mooncrest_icon_light.svg" media="(prefers-color-scheme: dark)">
+
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Cookies Policy – Northwild Mooncrest™">
@@ -77,13 +80,16 @@
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="layout.css">
     <link rel="stylesheet" href="animations.css">
-    <link rel="stylesheet" href="chat.css"> <!-- ADDED -->
+    <link rel="stylesheet" href="chat.css">
 </head>
 
 <body>
 
 <header>
-    <a href="/" class="brand-logo">Northwild Mooncrest™</a>
+    <a href="/" class="brand-logo">
+        <img src="northwild_mooncrest_icon_light.svg" class="brand-logo-icon" alt="Northwild Mooncrest Logo">
+        <span class="brand-logo-text">Northwild Mooncrest™</span>
+    </a>
 
     <nav>
         <ul>
@@ -98,7 +104,7 @@
         </ul>
     </nav>
 
-    <div>
+    <div class="header-utilities">
         <button class="utility-btn btn-animate">Search</button>
         <button class="utility-btn btn-animate">Account</button>
     </div>
@@ -169,7 +175,6 @@
 </footer>
 
 <!-- SAFE FEATURE PACK -->
-
 <div id="cookieBanner" class="cookie-banner reveal">
     <p>We use cookies to enhance your experience.</p>
     <button id="acceptCookies" class="btn-animate">Accept</button>
