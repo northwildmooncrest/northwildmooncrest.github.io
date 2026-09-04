@@ -1,0 +1,27 @@
+/* Global Styles — Clean, Minimal, Stable */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Playfair Display", serif;
+    color: #ffffff;
+    background: #000000;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+h1, h4, p {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+}
