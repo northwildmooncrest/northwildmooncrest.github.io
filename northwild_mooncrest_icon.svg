@@ -1,14 +1,28 @@
 <svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background (deep northern blue) -->
-  <circle cx="128" cy="128" r="120" fill="#0f1f2e"/>
+  <!-- Background -->
+  <circle cx="128" cy="128" r="120" fill="#ffffff"/>
 
-  <!-- Geometric Crescent -->
+  <!-- Unique Mooncrest Glyph -->
   <path d="
-    M168 64
-    A72 72 0 1 1 104 192
-    A52 52 0 1 0 168 64Z"
-    fill="#f5f5f5"/>
+    M128 60
+    C160 60, 190 90, 190 128
+    C190 166, 160 196, 128 196
+    C96 196, 66 166, 66 128
+    C66 90, 96 60, 128 60
+    Z
 
-  <!-- Guiding Star -->
-  <circle cx="180" cy="78" r="6" fill="#f5f5f5"/>
+    M128 85
+    C150 85, 170 105, 170 128
+    C170 151, 150 171, 128 171
+    C106 171, 86 151, 86 128
+    C86 105, 106 85, 128 85
+    Z
+
+    M128 110
+    C140 110, 150 120, 150 128
+    C150 136, 140 146, 128 146
+    C116 146, 106 136, 106 128
+    C106 120, 116 110, 128 110
+    Z"
+    fill="#000000"/>
 </svg>
