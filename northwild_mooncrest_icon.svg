@@ -1,31 +1,37 @@
 <svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background (deep northern blue) -->
-  <circle cx="128" cy="128" r="120" fill="#0f1f2e"/>
-
-  <!-- Northern Rune Glyph -->
+  <!-- Celestial Arc Background -->
   <path d="
-    M128 48
-    L158 88
-    A80 80 0 0 1 158 168
-    L128 208
-    L98 168
-    A80 80 0 0 1 98 88
-    Z
-
-    M128 78
-    L145 102
-    A50 50 0 0 1 145 154
-    L128 178
-    L111 154
-    A50 50 0 0 1 111 102
-    Z
-
-    M128 108
-    L135 118
-    A25 25 0 0 1 135 138
-    L128 148
-    L121 138
-    A25 25 0 0 1 121 118
+    M128 20
+    A108 108 0 1 1 127 236
+    A108 108 0 1 1 128 20
     Z"
-    fill="#f5f5f5"/>
+    fill="#0f1f2e"/>
+
+  <!-- Mooncrest Arc Rune -->
+  <path d="
+    M128 60
+    L128 196
+
+    M128 60
+    C160 90, 160 166, 128 196
+
+    M128 60
+    C96 90, 96 166, 128 196
+
+    M128 110
+    L148 128
+
+    M128 110
+    L108 128
+
+    M128 146
+    L140 158
+
+    M128 146
+    L116 158
+    "
+    stroke="#f5f5f5"
+    stroke-width="10"
+    stroke-linecap="round"
+    fill="none"/>
 </svg>
