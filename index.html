@@ -3,7 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Northwild Mooncrest™ – The World, Reimagined.</title>
+
+    <!-- Primary SEO -->
+    <meta name="description" content="Northwild Mooncrest™ is a global creative brand redefining how the world is seen through cinematic nature photography, worldwide exploration, and atmospheric storytelling.">
+    <meta name="keywords" content="Northwild Mooncrest, nature photography, cinematic photography, wildlife, landscapes, night photography, prints, global creative brand">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://northwildmooncrest.github.io/index.html">
+
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Northwild Mooncrest™ – The World, Reimagined.">
+    <meta property="og:description" content="A global creative brand blending cinematic vision with worldwide exploration, inspiring a deeper connection to the world around us and the world still to come.">
+    <meta property="og:url" content="https://northwildmooncrest.github.io/index.html">
+    <meta property="og:image" content="https://northwildmooncrest.github.io/og-image.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Northwild Mooncrest™ – The World, Reimagined.">
+    <meta name="twitter:description" content="Cinematic nature photography and global creative storytelling from Northwild Mooncrest™.">
+    <meta name="twitter:image" content="https://northwildmooncrest.github.io/og-image.jpg">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="layout.css">
 </head>
@@ -20,11 +43,13 @@
 
         <!-- Left: Logo -->
         <div class="header-left">
-            <a href="/" class="brand-logo">Northwild Mooncrest™</a>
+            <a href="/" class="brand-logo" aria-label="Northwild Mooncrest Home">
+                Northwild Mooncrest™
+            </a>
         </div>
 
         <!-- Center: Navigation -->
-        <nav class="header-nav">
+        <nav class="header-nav" aria-label="Primary navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
 
@@ -57,14 +82,14 @@
             <button class="utility-btn" id="openSearch">Search</button>
             <button class="utility-btn">Account</button>
             <button class="utility-btn">Cart</button>
-            <button class="hamburger" id="openMenu">☰</button>
+            <button class="hamburger" id="openMenu" aria-label="Open menu">☰</button>
         </div>
 
     </header>
 
     <!-- Slide-In Mobile Menu (Right Side) -->
-    <div id="mobileMenu" class="mobile-menu">
-        <button class="close-menu" id="closeMenu">×</button>
+    <div id="mobileMenu" class="mobile-menu" aria-label="Mobile navigation">
+        <button class="close-menu" id="closeMenu" aria-label="Close menu">×</button>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
@@ -75,11 +100,11 @@
     </div>
 
     <!-- Search Modal -->
-    <div id="searchModal" class="search-modal">
+    <div id="searchModal" class="search-modal" aria-label="Site search">
         <div class="search-content">
-            <button class="close-search" id="closeSearch">×</button>
+            <button class="close-search" id="closeSearch" aria-label="Close search">×</button>
             <h3>Search Northwild Mooncrest™</h3>
-            <input type="text" placeholder="Search the world, reimagined...">
+            <input type="text" placeholder="Search the world, reimagined..." aria-label="Search input">
         </div>
     </div>
 
@@ -103,13 +128,19 @@
         <!-- STORE PREVIEW -->
         <section class="store-preview">
             <h3>Featured Prints</h3>
-            <p>Explore premium metal, canvas, and limited edition prints inspired by the northern wilderness.</p>
+            <p>
+                Explore premium metal, canvas, and limited edition prints inspired by the northern
+                wilderness, moonlit horizons, and the silent poetry of the night.
+            </p>
         </section>
 
         <!-- NEWS SECTION -->
         <section class="news-section">
             <h3>From the Studio</h3>
-            <p>Latest stories, updates, and creative releases from Northwild Mooncrest™.</p>
+            <p>
+                Latest stories, updates, and creative releases from Northwild Mooncrest™ — including
+                new collections, behind-the-scenes journeys, and upcoming projects.
+            </p>
         </section>
 
     </main>
