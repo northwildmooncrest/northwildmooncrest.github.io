@@ -1,5 +1,5 @@
 /* -------------------------------------------------- */
-/* GLOBAL BASE STYLES (from your original file)       */
+/* GLOBAL BASE STYLES                                  */
 /* -------------------------------------------------- */
 
 body {
@@ -29,7 +29,7 @@ img {
 }
 
 /* -------------------------------------------------- */
-/* GLOBAL TRANSPARENT HEADER                          */
+/* GLOBAL TRANSPARENT HEADER                           */
 /* -------------------------------------------------- */
 
 .site-header {
@@ -63,11 +63,11 @@ main {
 }
 
 /* -------------------------------------------------- */
-/* CINEMATIC HOMEPAGE SPACING                         */
+/* CINEMATIC HERO SECTION                              */
 /* -------------------------------------------------- */
 
 .hero {
-    padding: 160px 40px 120px;
+    padding: 240px 40px 120px;
     text-align: left;
     max-width: 900px;
     margin: 0 auto;
@@ -91,11 +91,11 @@ main {
 }
 
 /* -------------------------------------------------- */
-/* SECTION SPACING + TITLES                           */
+/* SECTION SPACING                                     */
 /* -------------------------------------------------- */
 
 section {
-    padding: 80px 40px;
+    padding: 80px 40px !important;
     max-width: 900px;
     margin: 0 auto;
 }
@@ -107,7 +107,7 @@ section h3 {
 }
 
 /* -------------------------------------------------- */
-/* FOOTER POLISH                                      */
+/* FOOTER POLISH                                       */
 /* -------------------------------------------------- */
 
 footer {
