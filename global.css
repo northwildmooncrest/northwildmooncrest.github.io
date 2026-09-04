@@ -33,89 +33,90 @@ img {
 }
 
 /* -------------------------------------------------- */
-/* GLOBAL HEADER (CENTERED + EVEN)                     */
+/* GLOBAL HEADER — FULL OVERRIDE                       */
 /* -------------------------------------------------- */
 
 .site-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 24px 40px !important;
-    display: flex;
-    justify-content: center !important;   /* FIXED */
-    gap: 36px;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+
+    padding: 20px 40px !important;
+
+    display: flex !important;
+    justify-content: center !important;   /* CENTERED */
+    align-items: center !important;
+
+    gap: 32px !important;
+
     background: transparent !important;
-    z-index: 999;
+    z-index: 999 !important;
 }
 
 .site-header a {
     color: #ffffff !important;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: opacity 0.2s ease;
-}
-
-.site-header a:hover {
-    opacity: 0.6;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.04em !important;
 }
 
 /* Push content down evenly */
 main {
-    margin-top: 140px !important;
+    margin-top: 120px !important;
 }
 
 /* -------------------------------------------------- */
-/* HERO (CINEMATIC + EVEN)                             */
+/* HERO — EVEN + CINEMATIC                             */
 /* -------------------------------------------------- */
 
 .hero {
-    padding: 260px 40px 140px !important;   /* EVEN + CLEAN */
+    padding: 200px 40px 100px !important;
     max-width: 900px !important;
     margin: 0 auto !important;
     text-align: left !important;
 }
 
 .hero h1 {
-    font-size: 3.6rem !important;
-    margin-bottom: 16px !important;
+    font-size: 3.3rem !important;
+    margin-bottom: 12px !important;
 }
 
 .hero h2 {
-    font-size: 1.9rem !important;
-    margin-bottom: 24px !important;
+    font-size: 1.7rem !important;
+    margin-bottom: 20px !important;
     opacity: 0.9 !important;
 }
 
 .hero p {
-    font-size: 1.25rem !important;
-    line-height: 1.65 !important;
+    font-size: 1.2rem !important;
+    line-height: 1.6 !important;
     max-width: 700px !important;
 }
 
 /* -------------------------------------------------- */
-/* SECTIONS (EVEN + OVERRIDE LAYOUT.CSS)               */
+/* SECTIONS — EVEN + CLEAN                             */
 /* -------------------------------------------------- */
 
 section {
-    padding: 100px 40px !important;   /* PERFECT EVEN SPACING */
+    padding: 80px 40px !important;
     max-width: 900px !important;
     margin: 0 auto !important;
 }
 
 section h3 {
-    font-size: 1.7rem !important;
-    margin-bottom: 24px !important;
+    font-size: 1.5rem !important;
+    margin-bottom: 20px !important;
     opacity: 0.9 !important;
 }
 
 /* -------------------------------------------------- */
-/* FOOTER (EVEN + CLEAN)                               */
+/* FOOTER — EVEN                                       */
 /* -------------------------------------------------- */
 
 footer {
     text-align: center !important;
-    padding: 70px 0 !important;
+    padding: 60px 0 !important;
     opacity: 0.8 !important;
-    font-size: 0.95rem !important;
+    font-size: 0.9rem !important;
 }
