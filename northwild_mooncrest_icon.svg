@@ -1,14 +1,15 @@
 <svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-  <!-- Wild Moon Crest Arc -->
+
+  <!-- Wild Crescent Moon (facing the correct direction) -->
   <path d="
     M180 60
-    A100 100 0 1 1 160 210
+    A100 100 0 1 1 180 196
     A70 70 0 1 0 180 60
     Z"
     fill="#0f1f2e"
   />
 
-  <!-- Rune-like N inside the crest -->
+  <!-- North-pointing Rune-like N (interlocked inside the crescent) -->
   <path d="
     M110 90
     L110 170
@@ -16,20 +17,9 @@
     L150 170
     "
     stroke="#f5f5f5"
-    stroke-width="18"
+    stroke-width="20"
     stroke-linecap="round"
     fill="none"
   />
 
-  <!-- Optional North Star -->
-  <path d="
-    M150 90
-    L150 115
-    M135 102
-    L165 102
-    "
-    stroke="#f5f5f5"
-    stroke-width="10"
-    stroke-linecap="round"
-  />
 </svg>
