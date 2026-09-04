@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Core document settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Northwild Mooncrest – Cinematic Nature Photography</title>
+    <title>Northwild Mooncrest™ – Cinematic Nature Photography</title>
 
+    <!-- Primary SEO -->
     <meta name="description" content="Cinematic nature photography inspired by wilderness, wildlife, night skies, and atmospheric landscapes.">
     <meta name="keywords" content="Northwild Mooncrest, nature photography, wildlife photography, atmospheric landscapes, Minnesota photographer">
-    <meta name="author" content="Northwild Mooncrest">
+    <meta name="author" content="Northwild Mooncrest™">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://northwildmooncrest.github.io/index.html">
 
+    <!-- Theme / UI hints -->
     <meta name="theme-color" content="#0b1118">
     <meta name="color-scheme" content="dark light">
 
+    <!-- UNIVERSAL FAVICON BLOCK -->
     <link rel="icon" type="image/x-icon" href="northwild_mooncrest_primary_logo.ico">
     <link rel="icon" type="image/png" href="northwild_mooncrest_primary_logo.png">
-    <link rel="icon" type="image/svg+xml" href="northwild_mooncrest_primary_logo.svg">
+    <link rel="icon" type="image/svg+xml" href="northwild_mooncrest_icon.svg">
+    <link rel="apple-touch-icon" href="northwild_mooncrest_primary_logo.png">
+    <link rel="mask-icon" href="northwild_mooncrest_icon.svg" color="#0f1f2e">
 
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Northwild Mooncrest – Cinematic Nature Photography">
+    <meta property="og:title" content="Northwild Mooncrest™ – Cinematic Nature Photography">
     <meta property="og:description" content="Explore cinematic nature photography across wilderness, wildlife, night skies, and atmospheric landscapes.">
     <meta property="og:url" content="https://northwildmooncrest.github.io/index.html">
-    <meta property="og:site_name" content="Northwild Mooncrest">
+    <meta property="og:site_name" content="Northwild Mooncrest™">
     <meta property="og:image" content="https://northwildmooncrest.github.io/images/featured1.jpg">
 
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Northwild Mooncrest – Cinematic Nature Photography">
+    <meta name="twitter:title" content="Northwild Mooncrest™ – Cinematic Nature Photography">
     <meta name="twitter:description" content="Cinematic nature photography inspired by wilderness, wildlife, night skies, and atmospheric landscapes.">
     <meta name="twitter:image" content="https://northwildmooncrest.github.io/images/featured1.jpg">
 
+    <!-- JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -38,14 +47,14 @@
         {
           "@type": "Organization",
           "@id": "https://northwildmooncrest.github.io/#organization",
-          "name": "Northwild Mooncrest",
+          "name": "Northwild Mooncrest™",
           "url": "https://northwildmooncrest.github.io/",
           "logo": "https://northwildmooncrest.github.io/northwild_mooncrest_primary_logo.png"
         },
         {
           "@type": "Person",
           "@id": "https://northwildmooncrest.github.io/#photographer",
-          "name": "Northwild Mooncrest",
+          "name": "Northwild Mooncrest™",
           "jobTitle": "Photographer & Creative Director",
           "worksFor": {
             "@id": "https://northwildmooncrest.github.io/#organization"
@@ -55,7 +64,7 @@
           "@type": "WebPage",
           "@id": "https://northwildmooncrest.github.io/index.html",
           "url": "https://northwildmooncrest.github.io/index.html",
-          "name": "Northwild Mooncrest – Cinematic Nature Photography",
+          "name": "Northwild Mooncrest™ – Cinematic Nature Photography",
           "isPartOf": {
             "@id": "https://northwildmooncrest.github.io/#website"
           }
@@ -64,9 +73,11 @@
     }
     </script>
 
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="layout.css">
     <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="chat.css"> <!-- ADDED -->
 </head>
 
 <body>
@@ -74,14 +85,14 @@
 <header>
   <a href="/" class="brand-logo" aria-label="Northwild Mooncrest home">
     <img src="northwild_mooncrest_primary_logo.svg"
-         alt="Northwild Mooncrest"
+         alt="Northwild Mooncrest™"
          class="brand-logo-icon">
-    <span class="brand-logo-text">Northwild Mooncrest</span>
+    <span class="brand-logo-text">Northwild Mooncrest™</span>
   </a>
 
   <nav>
     <ul>
-      <li><a href="index.html" class="reveal">Home</a></li>
+      <li><a href="index.html" class="reveal active">Home</a></li>
       <li><a href="portfolio.html" class="reveal">Portfolio</a></li>
       <li><a href="printshop.html" class="reveal">Print Shop</a></li>
       <li><a href="studio.html" class="reveal">Studio</a></li>
@@ -138,8 +149,8 @@
 
 <div class="section-divider"></div>
 
-<footer class="reveal">
-    <p>© 2026 Northwild Mooncrest. All Rights Reserved.</p>
+<footer class="site-footer reveal">
+    <p>© 2026 Northwild Mooncrest™ — The World, Reimagined.</p>
     <p>
         <a href="terms.html">Terms</a> ·
         <a href="privacy.html">Privacy</a> ·
@@ -148,12 +159,35 @@
     </p>
 </footer>
 
+<!-- SAFE FEATURE PACK -->
+<div id="cookieBanner" class="cookie-banner reveal">
+    <p>We use cookies to enhance your experience.</p>
+    <button id="acceptCookies" class="btn-animate">Accept</button>
+</div>
+
+<div id="notifyPrompt" class="notification-prompt reveal">
+    <p>Enable notifications for updates?</p>
+    <button id="enableNotify" class="btn-animate">Enable</button>
+    <button id="dismissNotify" class="btn-animate">Dismiss</button>
+</div>
+
+<div id="chatBubble" class="chat-bubble card-hover">💬</div>
+
+<div id="chatModal" class="chat-modal">
+    <div class="chat-content">
+        <button id="closeChat" class="close-chat">×</button>
+        <h3>Chat with Northwild Mooncrest™</h3>
+        <textarea placeholder="Type your message..."></textarea>
+        <button class="btn-animate">Send</button>
+    </div>
+</div>
+
 <!-- SEARCH OVERLAY -->
 <div id="searchOverlay" class="search-overlay" aria-hidden="true">
   <div class="search-overlay-inner">
     <button class="search-close btn-animate" id="closeSearch" aria-label="Close search">×</button>
     <form role="search" class="search-form" action="search.html" method="get">
-      <label for="site-search" class="visually-hidden">Search Northwild Mooncrest</label>
+      <label for="site-search" class="visually-hidden">Search Northwild Mooncrest™</label>
       <input id="site-search"
              name="q"
              type="search"
@@ -164,7 +198,60 @@
   </div>
 </div>
 
+<!-- Scripts -->
+<script src="scrollreveal.min.js"></script>
+<script src="chat.js"></script>
+<script src="notifications.js"></script>
+<script src="cookies.js"></script>
+<script src="safe.js"></script>
+<script src="tracking.js"></script>
+
 <script>
+    // Cookie Banner
+    const cookieBanner = document.getElementById('cookieBanner');
+    const acceptCookies = document.getElementById('acceptCookies');
+    acceptCookies.onclick = () => {
+        cookieBanner.style.display = 'none';
+        localStorage.setItem('cookiesAccepted', 'true');
+    };
+    if (localStorage.getItem('cookiesAccepted') === 'true') {
+        cookieBanner.style.display = 'none';
+    }
+
+    // Notification Prompt
+    const notifyPrompt = document.getElementById('notifyPrompt');
+    const enableNotify = document.getElementById('enableNotify');
+    const dismissNotify = document.getElementById('dismissNotify');
+    enableNotify.onclick = () => {
+        notifyPrompt.style.display = 'none';
+        localStorage.setItem('notifyAccepted', 'true');
+    };
+    dismissNotify.onclick = () => notifyPrompt.style.display = 'none';
+    if (localStorage.getItem('notifyAccepted') === 'true') {
+        notifyPrompt.style.display = 'none';
+    }
+
+    // Chat Modal
+    const chatBubble = document.getElementById('chatBubble');
+    const chatModal = document.getElementById('chatModal');
+    const closeChat = document.getElementById('closeChat');
+    chatBubble.onclick = () => chatModal.classList.add('active');
+    closeChat.onclick = () => chatModal.classList.remove('active');
+
+    // Scroll Reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+        reveals.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 80) {
+                el.classList.add('visible');
+            }
+        });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+
+    // Search Overlay
     const openSearch = document.getElementById('openSearch');
     const closeSearch = document.getElementById('closeSearch');
     const searchOverlay = document.getElementById('searchOverlay');
@@ -190,8 +277,6 @@
       });
     }
 </script>
-
-<script src="tracking.js"></script>
 
 </body>
 </html>
