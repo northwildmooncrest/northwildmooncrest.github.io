@@ -4,24 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO Metadata -->
     <title>Northwild Mooncrest™ — Cinematic Nature Photography</title>
-    <meta name="description" content="Cinematic nature photography inspired by wilderness, starlight, and northern landscapes. Explore the Northwild Mooncrest™ portfolio, print shop, and creative journey." />
+    <meta name="description" content="Cinematic nature photography inspired by wilderness, starlight, and northern landscapes." />
 
-    <!-- Open Graph Metadata -->
     <meta property="og:title" content="Northwild Mooncrest™ — Cinematic Nature Photography" />
     <meta property="og:description" content="Cinematic nature photography inspired by wilderness, starlight, and northern landscapes." />
     <meta property="og:image" content="northwild_mooncrest_primary_logo.png" />
     <meta property="og:url" content="https://northwildmooncrest.github.io/" />
     <meta property="og:type" content="website" />
 
-    <!-- Bing Webmaster Tools Verification -->
     <meta name="msvalidate.01" content="7FEFF593E9D1168668DFA838E1428AB3" />
-
-    <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="TMf8lm-WHKqLEiv9ulKYKqQst8s98sm_ZQu9T1rjKcA" />
 
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="northwild_mooncrest_primary_logo.ico" />
     <link rel="apple-touch-icon" href="northwild_mooncrest_primary_logo.png" />
 
@@ -58,7 +52,7 @@
             background-size: cover;
             background-position: center;
             filter: blur(6px) brightness(0.45);
-            z-index: -2;
+            z-index: -3;
         }
 
         /* Dark overlay */
@@ -66,7 +60,38 @@
             position: fixed;
             inset: 0;
             background: var(--overlay-dark);
+            z-index: -2;
+        }
+
+        /* Aurora Layer */
+        .aurora-layer {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
             z-index: -1;
+            background: radial-gradient(
+                circle at 20% 80%,
+                rgba(120, 200, 255, 0.25),
+                transparent 60%
+            ),
+            radial-gradient(
+                circle at 80% 20%,
+                rgba(180, 120, 255, 0.20),
+                transparent 60%
+            );
+            animation: auroraShift 18s ease-in-out infinite alternate;
+            filter: blur(80px);
+        }
+
+        @keyframes auroraShift {
+            0% {
+                background-position: 20% 80%, 80% 20%;
+                opacity: 0.45;
+            }
+            100% {
+                background-position: 30% 70%, 70% 30%;
+                opacity: 0.65;
+            }
         }
 
         header {
@@ -143,7 +168,7 @@
             margin-bottom: 18px;
         }
 
-        /* Experience Settings Panel (footer-triggered) */
+        /* Experience Settings Panel */
         #experiencePanel {
             display: none;
             position: fixed;
@@ -287,7 +312,10 @@
     <div class="bg-image"></div>
     <div class="bg-overlay"></div>
 
-    <!-- Experience Settings Panel (triggered from footer link) -->
+    <!-- Aurora Layer -->
+    <div class="aurora-layer"></div>
+
+    <!-- Experience Settings Panel -->
     <div id="experiencePanel">
         <div class="panel-card">
             <h2>Experience Settings</h2>
@@ -320,14 +348,12 @@
         <p class="tagline">
             Wilderness, starlight, and northern quiet — translated into cinematic frames and slow, deliberate journeys.
         </p>
-        <!-- You can add more hero content or featured work here later -->
     </main>
 
     <footer>
         <div class="footer-line"></div>
 
         <div class="footer-columns">
-            <!-- Legal -->
             <div>
                 <div class="footer-column-title">Legal</div>
                 <a href="terms.html" class="footer-link">Terms of Use</a>
@@ -336,29 +362,20 @@
                 <a href="cookies.html" class="footer-link">Cookies</a>
             </div>
 
-            <!-- Account -->
             <div>
                 <div class="footer-column-title">Account</div>
                 <a href="login.html" class="footer-link">Log In</a>
                 <a href="subscribe.html" class="footer-link">Subscribe</a>
             </div>
 
-            <!-- Global -->
             <div>
                 <div class="footer-column-title">Global</div>
                 <span class="footer-link">Language & Region</span>
-                <select class="footer-language-select" aria-label="Language and Region">
+                <select class="footer-language-select">
                     <option selected>English (US)</option>
-                    <!-- Future options:
-                    <option>English (UK)</option>
-                    <option>Español</option>
-                    <option>Français</option>
-                    <option>Deutsch</option>
-                    -->
                 </select>
             </div>
 
-            <!-- Support -->
             <div>
                 <div class="footer-column-title">Support</div>
                 <a href="help.html" class="footer-link">Help Center</a>
@@ -388,7 +405,6 @@
         }
 
         function saveExperience() {
-            // Placeholder for future preference saving logic
             closeExperience();
         }
     </script>
