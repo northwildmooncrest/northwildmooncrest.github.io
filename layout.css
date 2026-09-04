@@ -1,88 +1,129 @@
-/* Layout Styles — Clean, No Animations, No Clutter */
+/* --------------------------------------------------
+   LAYOUT.CSS — STRUCTURE & SPACING FOUNDATION
+   Northwild Mooncrest™
+-------------------------------------------------- */
 
-/* Background Image */
-.background {
-    position: fixed;
-    inset: 0;
-    background-image: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1920&q=80");
-    background-size: cover;
-    background-position: center;
-    filter: brightness(0.45);
-    z-index: -1;
-}
-
-/* Header */
-.site-header {
-    text-align: center;
-    padding: 60px 20px 20px;
-}
-
-.site-logo {
-    width: 140px;
-    margin: 0 auto 20px;
-}
-
-/* Navigation */
-.site-nav {
+/* GLOBAL PAGE SPACING */
+body {
     display: flex;
-    justify-content: center;
-    gap: 24px;
-    padding: 20px;
-    font-size: 18px;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Main Content */
-.site-main {
-    max-width: 800px;
-    margin: 40px auto;
+/* MAIN WRAPPER */
+main {
+    flex: 1;
+    padding-top: 40px;
+}
+
+/* SECTION SPACING */
+section {
+    padding: 80px 40px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* HERO OVERRIDES */
+.hero {
+    padding-top: 140px;
+    padding-bottom: 120px;
+    max-width: 900px;
     text-align: center;
-    padding: 0 20px;
 }
 
-.tagline {
-    font-size: 20px;
-    color: #cfd8e3;
+/* HEADER SPACING OVERRIDES */
+.pro-header {
+    padding: 20px 40px;
 }
 
-/* Footer */
-.site-footer {
-    text-align: center;
-    padding: 40px 20px;
-    color: #cfd8e3;
+/* NAVIGATION SPACING */
+.header-nav ul {
+    gap: 32px;
 }
 
-.footer-logo {
-    width: 40px;
-    margin: 0 auto 20px;
+/* DROPDOWN POSITIONING */
+.dropdown-menu {
+    top: 32px;
 }
 
-.footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 20px;
+/* PROMO BAR SPACING */
+.promo-bar {
+    padding: 10px 0;
 }
 
-.footer-links h4 {
-    color: #ffffff;
-    margin-bottom: 10px;
+/* STORE PREVIEW */
+.store-preview {
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
-.footer-links a {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 14px;
+/* NEWS SECTION */
+.news-section {
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
-.language-select {
-    padding: 6px 10px;
-    border-radius: 6px;
-    border: none;
-    background: #1a1f2b;
-    color: #ffffff;
+/* FOOTER SPACING */
+footer {
+    padding: 50px 0;
 }
 
-.footer-copy {
-    margin-top: 20px;
-    font-size: 14px;
+/* MOBILE MENU SPACING */
+.mobile-menu {
+    padding-top: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* SEARCH MODAL SPACING */
+.search-content {
+    padding: 50px;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 900px) {
+
+    .pro-header {
+        padding: 16px 20px;
+    }
+
+    .header-nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 100px 20px;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+
+    .store-preview,
+    .news-section {
+        padding: 80px 20px;
+    }
+
+    footer {
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .mobile-menu {
+        width: 260px;
+    }
 }
