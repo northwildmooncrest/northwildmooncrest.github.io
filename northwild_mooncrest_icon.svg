@@ -3,7 +3,7 @@
   <!-- Background -->
   <rect width="256" height="256" fill="#0f1f2e"/>
 
-  <!-- Crescent Moon (bulletproof method: two circles, even-odd fill) -->
+  <!-- Crescent Moon (bulletproof) -->
   <path
     d="
       M128 40
@@ -14,7 +14,7 @@
     fill-rule="evenodd"
   />
 
-  <!-- Your N (kept exactly as you like it, even backwards) -->
+  <!-- Your N (kept exactly as-is) -->
   <path
     d="
       M100 80
