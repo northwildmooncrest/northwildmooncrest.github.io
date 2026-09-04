@@ -28,6 +28,8 @@
 
     <!-- GLOBAL BRAND STYLES -->
     <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="animations.css">
 </head>
 
 <body>
@@ -37,55 +39,63 @@
 
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="printshop.html">Print Shop</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html" class="reveal">Home</a></li>
+            <li><a href="portfolio.html" class="reveal">Portfolio</a></li>
+            <li><a href="printshop.html" class="reveal">Print Shop</a></li>
+            <li><a href="about.html" class="reveal">About</a></li>
+            <li><a href="contact.html" class="reveal">Contact</a></li>
         </ul>
     </nav>
 
     <div>
-        <button class="utility-btn">Search</button>
-        <button class="utility-btn">Account</button>
+        <button class="utility-btn btn-animate">Search</button>
+        <button class="utility-btn btn-animate">Account</button>
     </div>
 </header>
 
 <section class="hero">
-    <h1>Northwild Mooncrest™</h1>
-    <h2>The World, Reimagined.</h2>
-    <p>
+    <h1 class="hero-title">Northwild Mooncrest™</h1>
+    <h2 class="hero-subtitle">The World, Reimagined.</h2>
+    <p class="hero-text">
         A global creative brand blending cinematic nature photography, atmospheric storytelling,
         and worldwide exploration. From the quiet edges of nature to the vast imagination beyond,
         we capture and reimagine the stories that shape our planet.
     </p>
 </section>
 
-<section>
+<div class="section-divider"></div>
+
+<section class="reveal">
     <h3>Featured Prints</h3>
     <p>Premium metal, canvas, and limited edition prints inspired by northern wilderness and moonlit horizons.</p>
 </section>
 
-<section>
+<div class="section-divider"></div>
+
+<section class="reveal">
     <h3>Featured Stories</h3>
     <p>Cinematic journeys, field notes, and atmospheric stories from the Northwild.</p>
 </section>
 
-<section>
+<div class="section-divider"></div>
+
+<section class="reveal">
     <h3>Journeys & Projects</h3>
     <p>Explore ongoing creative projects, expeditions, and long‑form storytelling.</p>
 </section>
 
-<section>
+<div class="section-divider"></div>
+
+<section class="reveal">
     <h3>Studio Journal</h3>
     <p>Behind‑the‑scenes insights, creative process notes, and updates from the studio.</p>
 </section>
 
-<section class="ad-placeholder">
+<section class="ad-placeholder reveal card-hover">
     <p>Ad Space — Promote your prints, stories, or partners here.</p>
 </section>
 
-<footer>
+<footer class="reveal">
     <p>© 2026 Northwild Mooncrest™</p>
     <p>
         <a href="terms.html">Terms</a> ·
@@ -97,24 +107,24 @@
 
 <!-- SAFE FEATURE PACK -->
 
-<div id="cookieBanner" class="cookie-banner">
+<div id="cookieBanner" class="cookie-banner reveal">
     <p>We use cookies to enhance your experience.</p>
-    <button id="acceptCookies">Accept</button>
+    <button id="acceptCookies" class="btn-animate">Accept</button>
 </div>
 
-<div id="notifyPrompt" class="notify-prompt">
+<div id="notifyPrompt" class="notify-prompt reveal">
     <p>Enable notifications for updates?</p>
-    <button id="enableNotify">Enable</button>
-    <button id="dismissNotify">Dismiss</button>
+    <button id="enableNotify" class="btn-animate">Enable</button>
+    <button id="dismissNotify" class="btn-animate">Dismiss</button>
 </div>
 
-<div id="chatBubble" class="chat-bubble">💬</div>
+<div id="chatBubble" class="chat-bubble card-hover">💬</div>
 
 <div id="chatModal" class="chat-modal">
-    <button id="closeChat">Close</button>
+    <button id="closeChat" class="btn-animate">Close</button>
     <h3>Chat with Northwild Mooncrest™</h3>
     <textarea placeholder="Type your message..."></textarea>
-    <button>Send</button>
+    <button class="btn-animate">Send</button>
 </div>
 
 <script>
@@ -148,6 +158,19 @@
     const closeChat = document.getElementById('closeChat');
     chatBubble.onclick = () => chatModal.classList.add('active');
     closeChat.onclick = () => chatModal.classList.remove('active');
+
+    // Scroll Reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+        reveals.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 80) {
+                el.classList.add('visible');
+            }
+        });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
 </script>
 
 </body>
