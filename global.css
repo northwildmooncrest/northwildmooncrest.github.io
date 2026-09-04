@@ -25,3 +25,37 @@ h1, h4, p {
 img {
     display: block;
 }
+
+/* -------------------------------------- */
+/* GLOBAL TRANSPARENT HEADER (NEW)        */
+/* -------------------------------------- */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    background: transparent;
+    z-index: 999;
+}
+
+.site-header a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+.site-header a:hover {
+    opacity: 0.6;
+}
+
+/* Push content down so header doesn't overlap */
+main {
+    margin-top: 120px;
+}
