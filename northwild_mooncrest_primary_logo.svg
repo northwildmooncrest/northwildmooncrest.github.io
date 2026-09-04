@@ -1,21 +1,18 @@
-<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
 
-  <!-- Background -->
-  <rect width="512" height="512" fill="#0f1f2e"/>
-
-  <!-- Circle emblem -->
-  <circle cx="256" cy="256" r="160" fill="#f5f5f5"/>
+  <!-- Circle emblem (moon) -->
+  <circle cx="128" cy="128" r="80" fill="#f5f5f5"/>
 
   <!-- Rune-like N -->
   <path
     d="
-      M200 160
-      L200 352
-      L312 160
-      L312 352
+      M100 80
+      L100 176
+      L156 80
+      L156 176
     "
     stroke="#0f1f2e"
-    stroke-width="40"
+    stroke-width="20"
     stroke-linecap="round"
     fill="none"
   />
