@@ -387,7 +387,7 @@
             border-radius: 999px;
         }
 
-        /* Ask Northwild Chat Bubble */
+        /* Ask Northwild Chat Bubble (updated opacity + logo) */
         .chat-toggle {
             position: fixed;
             right: 24px;
@@ -398,7 +398,7 @@
             gap: 10px;
             padding: 10px 16px;
             border-radius: 999px;
-            background: radial-gradient(circle at 30% 0%, rgba(90, 200, 140, 0.6), rgba(10, 15, 25, 0.95));
+            background: radial-gradient(circle at 30% 0%, rgba(90, 200, 140, 0.85), rgba(10, 15, 25, 0.98));
             border: 1px solid rgba(159, 214, 255, 0.6);
             color: var(--text-main);
             cursor: pointer;
@@ -415,11 +415,17 @@
             width: 26px;
             height: 26px;
             border-radius: 50%;
-            background: radial-gradient(circle at 30% 0%, rgba(159, 214, 255, 0.9), rgba(10, 15, 25, 1));
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
+            background: rgba(5, 10, 18, 0.9);
+        }
+
+        .chat-toggle-icon img {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
         }
 
         @keyframes chatPulse {
@@ -427,7 +433,7 @@
             100% { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.95); }
         }
 
-        /* Ask Northwild Chat Panel */
+        /* Ask Northwild Chat Panel (updated opacity + readability) */
         .chat-panel {
             position: fixed;
             right: 24px;
@@ -439,7 +445,7 @@
             border-radius: 18px;
             overflow: hidden;
             z-index: 29;
-            background: radial-gradient(circle at 0% 0%, rgba(90, 200, 140, 0.35), rgba(10, 15, 25, 0.98));
+            background: radial-gradient(circle at 0% 0%, rgba(90, 200, 140, 0.55), rgba(10, 15, 25, 0.98));
             border: 1px solid rgba(159, 214, 255, 0.6);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.95);
         }
@@ -496,6 +502,8 @@
             flex: 1;
             overflow-y: auto;
             font-size: 13px;
+            color: var(--text-main);
+            text-shadow: 0 0 4px rgba(0,0,0,0.8);
         }
 
         .chat-message {
@@ -533,196 +541,4 @@
             padding: 6px 10px;
             border-radius: 999px;
             border: none;
-            background: var(--accent);
-            color: #020611;
-            font-size: 12px;
-            cursor: pointer;
-            font-weight: 600;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="scroll-shadow-top"></div>
-    <div class="scroll-shadow-bottom"></div>
-
-    <div class="bg-image"></div>
-    <div class="bg-overlay"></div>
-
-    <div class="starfield"></div>
-    <div class="aurora-layer"></div>
-
-    <!-- Experience Settings Panel -->
-    <div id="experiencePanel">
-        <div class="panel-card">
-            <h2>Experience Settings</h2>
-            <p>
-                Adjust your viewing preferences. These settings help optimize your experience on
-                Northwild Mooncrest™ across devices and environments.
-            </p>
-            <div class="panel-actions">
-                <button class="panel-btn panel-dismiss" onclick="closeExperience()">Dismiss</button>
-                <button class="panel-btn panel-save" onclick="saveExperience()">Save Settings</button>
-            </div>
-        </div>
-    </div>
-
-    <header>
-        <img src="northwild_mooncrest_primary_logo.png" alt="Northwild Mooncrest Logo" class="hero-logo" />
-        <h1>Northwild Mooncrest™</h1>
-        <p>Cinematic Nature Photography</p>
-    </header>
-
-    <div class="section-divider"></div>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="printshop.html">Print Shop</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-
-    <div class="section-divider"></div>
-
-    <main>
-        <p class="tagline">
-            Wilderness, starlight, and northern quiet — translated into cinematic frames and slow, deliberate journeys.
-        </p>
-    </main>
-
-    <div class="section-divider"></div>
-
-    <footer>
-        <div class="footer-aurora"></div>
-
-        <div class="footer-line"></div>
-
-        <div class="footer-columns">
-            <div>
-                <div class="footer-column-title">Legal</div>
-                <a href="terms.html" class="footer-link">Terms of Use</a>
-                <a href="privacy.html" class="footer-link">Privacy Policy</a>
-                <a href="privacy-choices.html" class="footer-link">Your Privacy Choices</a>
-                <a href="cookies.html" class="footer-link">Cookies</a>
-            </div>
-
-            <div>
-                <div class="footer-column-title">Account</div>
-                <a href="login.html" class="footer-link">Log In</a>
-                <a href="subscribe.html" class="footer-link">Subscribe</a>
-            </div>
-
-            <div>
-                <div class="footer-column-title">Global</div>
-                <span class="footer-link">Language & Region</span>
-                <select class="footer-language-select">
-                    <option selected>English (US)</option>
-                </select>
-            </div>
-
-            <div>
-                <div class="footer-column-title">Support</div>
-                <a href="help.html" class="footer-link">Help Center</a>
-                <a href="accessibility.html" class="footer-link">Accessibility</a>
-                <a href="support.html" class="footer-link">Contact Support</a>
-                <a href="sitemap.html" class="footer-link">Site Map</a>
-            </div>
-        </div>
-
-        <div class="footer-experience">
-            <a href="javascript:void(0)" onclick="openExperience()">Experience Settings</a>
-        </div>
-
-        <img src="northwild_mooncrest_primary_logo.png" class="footer-logo" alt="Logo" />
-        <div class="footer-studio">Northwild Mooncrest™ Studio — Minnesota, USA</div>
-        <div class="footer-copy">© 2026 Northwild Mooncrest™. All Rights Reserved.</div>
-        <div>Cinematic Nature Photography & Visual Storytelling.</div>
-    </footer>
-
-    <!-- Ask Northwild Chat UI -->
-    <div class="chat-toggle" onclick="toggleChatPanel()">
-        <div class="chat-toggle-label">Ask Northwild</div>
-        <div class="chat-toggle-icon">✶</div>
-    </div>
-
-    <div class="chat-panel" id="chatPanel">
-        <div class="chat-header">
-            <div class="chat-header-left">
-                <div class="chat-header-logo">
-                    <img src="northwild_mooncrest_primary_logo.png" alt="Logo" />
-                </div>
-                <div>
-                    <div class="chat-header-title">Ask Northwild</div>
-                    <div class="chat-header-sub">Questions, thoughts, or quiet curiosities.</div>
-                </div>
-            </div>
-            <div class="chat-header-close" onclick="toggleChatPanel()">×</div>
-        </div>
-        <div class="chat-body" id="chatBody">
-            <div class="chat-message system">
-                Welcome to Northwild Mooncrest™.<br />
-                Share a thought, a question, or a moment you’d like to explore.
-            </div>
-        </div>
-        <div class="chat-input-row">
-            <input
-                type="text"
-                id="chatInput"
-                class="chat-input"
-                placeholder="Type a message..."
-                onkeydown="if(event.key==='Enter'){sendChatMessage();}"
-            />
-            <button class="chat-send-btn" onclick="sendChatMessage()">Send</button>
-        </div>
-    </div>
-
-    <script>
-        function openExperience() {
-            document.getElementById("experiencePanel").style.display = "flex";
-        }
-
-        function closeExperience() {
-            document.getElementById("experiencePanel").style.display = "none";
-        }
-
-        function saveExperience() {
-            closeExperience();
-        }
-
-        // Aurora-Tinted Scroll Shadows
-        window.addEventListener("scroll", () => {
-            const topShadow = document.querySelector(".scroll-shadow-top");
-            const bottomShadow = document.querySelector(".scroll-shadow-bottom");
-
-            const scrollTop = window.scrollY;
-            const scrollBottom = window.innerHeight + scrollTop >= document.body.offsetHeight - 10;
-
-            topShadow.style.opacity = scrollTop > 10 ? "1" : "0";
-            bottomShadow.style.opacity = scrollBottom ? "0" : "1";
-        });
-
-        // Ask Northwild Chat Logic
-        function toggleChatPanel() {
-            const panel = document.getElementById("chatPanel");
-            panel.style.display = panel.style.display === "flex" ? "none" : "flex";
-        }
-
-        function sendChatMessage() {
-            const input = document.getElementById("chatInput");
-            const text = input.value.trim();
-            if (!text) return;
-
-            const body = document.getElementById("chatBody");
-
-            const msg = document.createElement("div");
-            msg.className = "chat-message user";
-            msg.textContent = text;
-            body.appendChild(msg);
-
-            input.value = "";
-            body.scrollTop = body.scrollHeight;
-        }
-    </script>
-</body>
-</html>
+            background: var(--
