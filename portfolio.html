@@ -1,22 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Core document settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Portfolio – Northwild Mooncrest™</title>
 
-    <!-- SEO -->
-    <meta name="description" content="Explore the cinematic nature photography portfolio of Northwild Mooncrest™ — landscapes, wildlife, night photography, atmospheric scenes, and global journeys.">
-    <meta name="keywords" content="Northwild Mooncrest portfolio, nature photography, cinematic landscapes, wildlife photography, night photography">
+    <!-- Primary SEO -->
+    <meta name="description" content="Explore the Northwild Mooncrest™ portfolio — cinematic nature photography across wilderness, wildlife, night skies, atmospheric landscapes, and northern journeys.">
+    <meta name="keywords" content="Northwild Mooncrest portfolio, nature photography portfolio, wildlife photography, atmospheric landscapes, night sky photography, Minnesota photographer">
+    <meta name="author" content="Northwild Mooncrest™">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://northwildmooncrest.github.io/portfolio.html">
+
+    <!-- Theme / UI hints -->
+    <meta name="theme-color" content="#0b1118">
+    <meta name="color-scheme" content="dark light">
+
+    <!-- Universal favicon block -->
+    <link rel="icon" type="image/x-icon" href="northwild_mooncrest_primary_logo.ico">
+    <link rel="icon" type="image/png" href="northwild_mooncrest_primary_logo.png">
+    <link rel="icon" type="image/svg+xml" href="northwild_mooncrest_primary_logo.svg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Portfolio – Northwild Mooncrest™">
+    <meta property="og:description" content="Cinematic nature photography portfolio featuring wilderness, wildlife, night skies, and atmospheric landscapes.">
+    <meta property="og:url" content="https://northwildmooncrest.github.io/portfolio.html">
+    <meta property="og:site_name" content="Northwild Mooncrest™">
+    <meta property="og:image" content="https://northwildmooncrest.github.io/images/featured2.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portfolio – Northwild Mooncrest™">
+    <meta name="twitter:description" content="Explore cinematic nature photography across wilderness, wildlife, night skies, and atmospheric landscapes.">
+    <meta name="twitter:image" content="https://northwildmooncrest.github.io/images/featured2.jpg">
+
+    <!-- JSON-LD: Brand + Photographer + Website -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://northwildmooncrest.github.io/#organization",
+          "name": "Northwild Mooncrest™",
+          "url": "https://northwildmooncrest.github.io/",
+          "logo": "https://northwildmooncrest.github.io/northwild_mooncrest_primary_logo.png"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://northwildmooncrest.github.io/#photographer",
+          "name": "Northwild Mooncrest™",
+          "jobTitle": "Nature & Wilderness Photographer",
+          "worksFor": {
+            "@id": "https://northwildmooncrest.github.io/#organization"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://northwildmooncrest.github.io/portfolio.html",
+          "url": "https://northwildmooncrest.github.io/portfolio.html",
+          "name": "Portfolio – Northwild Mooncrest™",
+          "isPartOf": {
+            "@id": "https://northwildmooncrest.github.io/#website"
+          }
+        }
+      ]
+    }
+    </script>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="layout.css">
     <link rel="stylesheet" href="animations.css">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 
 <body>
@@ -43,51 +101,49 @@
 
 <section class="hero">
     <h1 class="hero-title">Portfolio</h1>
-    <h2 class="hero-subtitle">Cinematic Nature, Captured Worldwide</h2>
+    <h2 class="hero-subtitle">Cinematic Nature Photography</h2>
     <p class="hero-text">
-        A curated collection of landscapes, wildlife, night photography, atmospheric scenes,
-        and global journeys — each crafted with cinematic storytelling and natural authenticity.
+        A curated collection of wilderness, wildlife, night skies, and atmospheric landscapes —
+        crafted with cinematic storytelling and natural authenticity.
     </p>
 </section>
 
 <div class="section-divider"></div>
 
-<section class="portfolio-grid reveal">
-    <div class="portfolio-item card-hover">
-        <img src="images/landscape1.jpg" alt="Landscape 1">
+<section class="featured-grid reveal">
+    <article class="featured-item card-hover">
+        <img src="images/featured1.jpg" alt="Moonlit ridge under rising moonlight">
         <h3>Moonlit Ridge</h3>
-        <p>Cinematic mountain ridge captured under a rising moon.</p>
-    </div>
+        <p>Cinematic mountain ridge captured under rising moonlight.</p>
+    </article>
 
-    <div class="portfolio-item card-hover">
-        <img src="images/forest1.jpg" alt="Forest 1">
+    <article class="featured-item card-hover">
+        <img src="images/featured2.jpg" alt="Fog drifting through a forest at dawn">
         <h3>Mistfall Forest</h3>
-        <p>Atmospheric forest scene with layered morning fog.</p>
-    </div>
+        <p>Atmospheric forest scene layered with morning fog.</p>
+    </article>
 
-    <div class="portfolio-item card-hover">
-        <img src="images/wildlife1.jpg" alt="Wildlife 1">
+    <article class="featured-item card-hover">
+        <img src="images/featured3.jpg" alt="Wildlife portrait in natural low light">
         <h3>Silent Watcher</h3>
         <p>Wildlife portrait captured in natural low‑light conditions.</p>
-    </div>
+    </article>
 
-    <div class="portfolio-item card-hover">
-        <img src="images/night1.jpg" alt="Night Sky 1">
+    <article class="featured-item card-hover">
+        <img src="images/featured4.jpg" alt="Starlit horizon over northern wilderness">
         <h3>Starlight Horizon</h3>
         <p>Long‑exposure night sky over northern wilderness.</p>
-    </div>
+    </article>
+</section>
 
-    <div class="portfolio-item card-hover">
-        <img src="images/journey1.jpg" alt="Journey 1">
-        <h3>Edge of the World</h3>
-        <p>Global expedition moment from remote terrain.</p>
-    </div>
+<div class="section-divider"></div>
 
-    <div class="portfolio-item card-hover">
-        <img src="images/atmosphere1.jpg" alt="Atmospheric Scene 1">
-        <h3>Winter Veil</h3>
-        <p>Soft cinematic winter atmosphere with natural diffusion.</p>
-    </div>
+<section class="reveal">
+    <h3>Collections</h3>
+    <p>
+        Explore curated sets of landscapes, wildlife, night photography, and atmospheric studies —
+        each crafted with cinematic detail and natural authenticity.
+    </p>
 </section>
 
 <div class="section-divider"></div>
