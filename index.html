@@ -54,12 +54,34 @@
 
         <!-- Right: Utilities -->
         <div class="header-right">
-            <button class="utility-btn">Search</button>
+            <button class="utility-btn" id="openSearch">Search</button>
             <button class="utility-btn">Account</button>
             <button class="utility-btn">Cart</button>
+            <button class="hamburger" id="openMenu">☰</button>
         </div>
 
     </header>
+
+    <!-- Slide-In Mobile Menu (Right Side) -->
+    <div id="mobileMenu" class="mobile-menu">
+        <button class="close-menu" id="closeMenu">×</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="printshop.html">Print Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Search Modal -->
+    <div id="searchModal" class="search-modal">
+        <div class="search-content">
+            <button class="close-search" id="closeSearch">×</button>
+            <h3>Search Northwild Mooncrest™</h3>
+            <input type="text" placeholder="Search the world, reimagined...">
+        </div>
+    </div>
 
     <!-- Main Content -->
     <main>
@@ -78,23 +100,16 @@
             </p>
         </section>
 
-        <!-- INTRO SECTION -->
-        <section>
-            <h3>Explore the Journey</h3>
-            <p>
-                Discover curated collections of wildlife, landscapes, and night photography captured
-                across the northern wilderness. Each image is crafted with a cinematic approach,
-                blending natural beauty with atmospheric storytelling.
-            </p>
+        <!-- STORE PREVIEW -->
+        <section class="store-preview">
+            <h3>Featured Prints</h3>
+            <p>Explore premium metal, canvas, and limited edition prints inspired by the northern wilderness.</p>
         </section>
 
-        <!-- PRINT SHOP SECTION -->
-        <section>
-            <h3>Print Shop</h3>
-            <p>
-                Bring the northern wilderness into your home with premium prints available in metal,
-                canvas, and limited edition formats.
-            </p>
+        <!-- NEWS SECTION -->
+        <section class="news-section">
+            <h3>From the Studio</h3>
+            <p>Latest stories, updates, and creative releases from Northwild Mooncrest™.</p>
         </section>
 
     </main>
@@ -110,6 +125,23 @@
             <a href="privacy-choices.html">Privacy Choices</a>
         </p>
     </footer>
+
+    <!-- Basic JS for Menu & Search -->
+    <script>
+        const openMenu = document.getElementById('openMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        openMenu.onclick = () => mobileMenu.classList.add('active');
+        closeMenu.onclick = () => mobileMenu.classList.remove('active');
+
+        const openSearch = document.getElementById('openSearch');
+        const closeSearch = document.getElementById('closeSearch');
+        const searchModal = document.getElementById('searchModal');
+
+        openSearch.onclick = () => searchModal.classList.add('active');
+        closeSearch.onclick = () => searchModal.classList.remove('active');
+    </script>
 
 </body>
 </html>
