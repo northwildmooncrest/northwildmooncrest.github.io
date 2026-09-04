@@ -3,7 +3,7 @@
   <!-- Background -->
   <rect width="256" height="256" fill="#0f1f2e"/>
 
-  <!-- Crescent Moon (right-facing, guaranteed to render) -->
+  <!-- Crescent Moon -->
   <path
     d="
       M128 40
@@ -13,7 +13,7 @@
     fill="#f5f5f5"
   />
 
-  <!-- Rune-like N (bold, centered, guaranteed visible) -->
+  <!-- Rune-like N (white so it actually shows) -->
   <path
     d="
       M100 80
@@ -21,7 +21,7 @@
       L156 80
       L156 176
     "
-    stroke="#0f1f2e"
+    stroke="#ffffff"
     stroke-width="20"
     stroke-linecap="round"
     fill="none"
