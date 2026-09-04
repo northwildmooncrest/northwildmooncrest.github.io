@@ -1,14 +1,14 @@
 <svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-  <!-- Moon Crest Arc -->
+  <!-- Moon Crest Arc (hugging the N) -->
   <path d="
     M180 60
     A100 100 0 1 1 180 196
-    A70 70 0 1 0 180 60
+    A80 80 0 1 0 180 60
     Z"
     fill="#0f1f2e"
   />
 
-  <!-- N Shape -->
+  <!-- N Shape (refined, balanced) -->
   <path d="
     M90 70
     L90 186
@@ -16,12 +16,12 @@
     L166 186
     "
     stroke="#f5f5f5"
-    stroke-width="18"
+    stroke-width="20"
     stroke-linecap="round"
     fill="none"
   />
 
-  <!-- North Star -->
+  <!-- North Star (cleaner, centered on N tip) -->
   <path d="
     M166 70
     L166 100
@@ -29,7 +29,7 @@
     L181 85
     "
     stroke="#f5f5f5"
-    stroke-width="10"
+    stroke-width="12"
     stroke-linecap="round"
   />
 </svg>
