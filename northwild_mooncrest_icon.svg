@@ -1,35 +1,35 @@
 <svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-  <!-- Moon Crest Arc (hugging the N) -->
+  <!-- Wild Moon Crest Arc -->
   <path d="
     M180 60
-    A100 100 0 1 1 180 196
-    A80 80 0 1 0 180 60
+    A100 100 0 1 1 160 210
+    A70 70 0 1 0 180 60
     Z"
     fill="#0f1f2e"
   />
 
-  <!-- N Shape (refined, balanced) -->
+  <!-- Rune-like N inside the crest -->
   <path d="
-    M90 70
-    L90 186
-    L166 70
-    L166 186
+    M110 90
+    L110 170
+    L150 90
+    L150 170
     "
     stroke="#f5f5f5"
-    stroke-width="20"
+    stroke-width="18"
     stroke-linecap="round"
     fill="none"
   />
 
-  <!-- North Star (cleaner, centered on N tip) -->
+  <!-- Optional North Star -->
   <path d="
-    M166 70
-    L166 100
-    M151 85
-    L181 85
+    M150 90
+    L150 115
+    M135 102
+    L165 102
     "
     stroke="#f5f5f5"
-    stroke-width="12"
+    stroke-width="10"
     stroke-linecap="round"
   />
 </svg>
