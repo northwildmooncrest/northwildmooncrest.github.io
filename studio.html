@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Studio – Northwild Mooncrest™</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Inside the Northwild Mooncrest™ Studio — creative philosophy, process, tools, and atmospheric storytelling behind the cinematic nature brand.">
+    <meta name="keywords" content="Northwild Mooncrest studio, creative process, photography studio, cinematic nature brand">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+
+<body>
+
+<header>
+    <a href="/" class="brand-logo">Northwild Mooncrest™</a>
+
+    <nav>
+        <ul>
+            <li><a href="index.html" class="reveal">Home</a></li>
+            <li><a href="portfolio.html" class="reveal">Portfolio</a></li>
+            <li><a href="printshop.html" class="reveal">Print Shop</a></li>
+            <li><a href="studio.html" class="reveal">Studio</a></li>
+            <li><a href="about.html" class="reveal">About</a></li>
+            <li><a href="contact.html" class="reveal">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        <button class="utility-btn btn-animate">Search</button>
+        <button class="utility-btn btn-animate">Account</button>
+    </div>
+</header>
+
+<section class="hero">
+    <h1 class="hero-title">Studio</h1>
+    <h2 class="hero-subtitle">Where Cinematic Nature Comes to Life</h2>
+    <p class="hero-text">
+        The creative headquarters of Northwild Mooncrest™ — a space dedicated to atmospheric
+        storytelling, cinematic nature photography, and the pursuit of visual wonder.
+    </p>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="reveal">
+    <h3>Creative Philosophy</h3>
+    <p>
+        Northwild Mooncrest™ is built on the belief that nature is both quiet and infinite.
+        Every image, story, and project is crafted to honor the stillness, the vastness,
+        and the emotional resonance of the natural world.
+    </p>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="reveal">
+    <h3>Process & Approach</h3>
+    <p>
+        From moonlit ridges to mist‑filled forests, the studio focuses on cinematic composition,
+        atmospheric lighting, and intentional storytelling. Each project begins with exploration,
+        evolves through experimentation, and ends with a visual narrative that feels alive.
+    </p>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="reveal">
+    <h3>Tools & Equipment</h3>
+    <p>
+        The studio uses a blend of modern digital tools and classic techniques — full‑frame cameras,
+        prime lenses, long‑exposure setups, atmospheric filters, and post‑processing workflows
+        designed to preserve natural authenticity while enhancing cinematic mood.
+    </p>
+</section>
+
+<div class="section-divider"></div>
+
+<section class="reveal">
+    <h3>Current Projects</h3>
+    <p>
+        Ongoing work includes northern wildlife studies, moonlit landscape series, seasonal
+        atmospheric journals, and long‑form storytelling projects exploring the quiet edges
+        of the natural world.
+    </p>
+</section>
+
+<div class="section-divider"></div>
+
+<footer class="reveal">
+    <p>© 2026 Northwild Mooncrest™</p>
+    <p>
+        <a href="terms.html">Terms</a> ·
+        <a href="privacy.html">Privacy</a> ·
+        <a href="cookies.html">Cookies</a> ·
+        <a href="studio.html">Studio</a>
+    </p>
+</footer>
+
+<!-- SAFE FEATURE PACK -->
+
+<div id="cookieBanner" class="cookie-banner reveal">
+    <p>We use cookies to enhance your experience.</p>
+    <button id="acceptCookies" class="btn-animate">Accept</button>
+</div>
+
+<div id="notifyPrompt" class="notify-prompt reveal">
+    <p>Enable notifications for updates?</p>
+    <button id="enableNotify" class="btn-animate">Enable</button>
+    <button id="dismissNotify" class="btn-animate">Dismiss</button>
+</div>
+
+<div id="chatBubble" class="chat-bubble card-hover">💬</div>
+
+<div id="chatModal" class="chat-modal">
+    <button id="closeChat" class="btn-animate">Close</button>
+    <h3>Chat with Northwild Mooncrest™</h3>
+    <textarea placeholder="Type your message..."></textarea>
+    <button class="btn-animate">Send</button>
+</div>
+
+<script>
+    // Cookie Banner
+    const cookieBanner = document.getElementById('cookieBanner');
+    const acceptCookies = document.getElementById('acceptCookies');
+    acceptCookies.onclick = () => {
+        cookieBanner.style.display = 'none';
+        localStorage.setItem('cookiesAccepted', 'true');
+    };
+    if (localStorage.getItem('cookiesAccepted') === 'true') {
+        cookieBanner.style.display = 'none';
+    }
+
+    // Notification Prompt
+    const notifyPrompt = document.getElementById('notifyPrompt');
+    const enableNotify = document.getElementById('enableNotify');
+    const dismissNotify = document.getElementById('dismissNotify');
+    enableNotify.onclick = () => {
+        notifyPrompt.style.display = 'none';
+        localStorage.setItem('notifyAccepted', 'true');
+    };
+    dismissNotify.onclick = () => notifyPrompt.style.display = 'none';
+    if (localStorage.getItem('notifyAccepted') === 'true') {
+        notifyPrompt.style.display = 'none';
+    }
+
+    // Chat Modal
+    const chatBubble = document.getElementById('chatBubble');
+    const chatModal = document.getElementById('chatModal');
+    const closeChat = document.getElementById('closeChat');
+    chatBubble.onclick = () => chatModal.classList.add('active');
+    closeChat.onclick = () => chatModal.classList.remove('active');
+
+    // Scroll Reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+        reveals.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 80) {
+                el.classList.add('visible');
+            }
+        });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+</script>
+
+</body>
+</html>
