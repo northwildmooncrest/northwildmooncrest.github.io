@@ -3,7 +3,7 @@
   <!-- Background -->
   <rect width="256" height="256" fill="#0f1f2e"/>
 
-    <!-- Crescent Moon -->
+  <!-- Crescent Moon -->
   <path
     d="M128 40
        A88 88 0 1 0 128 216
@@ -13,7 +13,7 @@
     fill-rule="evenodd"
   />
 
-  <!-- Your N (kept exactly as-is) -->
+  <!-- Rune-like N -->
   <path
     d="
       M100 80
