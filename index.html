@@ -386,6 +386,159 @@
             filter: blur(1px);
             border-radius: 999px;
         }
+
+        /* Ask Northwild Chat Bubble */
+        .chat-toggle {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 30;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: radial-gradient(circle at 30% 0%, rgba(90, 200, 140, 0.6), rgba(10, 15, 25, 0.95));
+            border: 1px solid rgba(159, 214, 255, 0.6);
+            color: var(--text-main);
+            cursor: pointer;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
+            animation: chatPulse 8s ease-in-out infinite alternate;
+        }
+
+        .chat-toggle-label {
+            font-size: 14px;
+            letter-spacing: 0.6px;
+        }
+
+        .chat-toggle-icon {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 0%, rgba(159, 214, 255, 0.9), rgba(10, 15, 25, 1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        @keyframes chatPulse {
+            0% { transform: translateY(0); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.85); }
+            100% { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.95); }
+        }
+
+        /* Ask Northwild Chat Panel */
+        .chat-panel {
+            position: fixed;
+            right: 24px;
+            bottom: 80px;
+            width: 320px;
+            max-height: 420px;
+            display: none;
+            flex-direction: column;
+            border-radius: 18px;
+            overflow: hidden;
+            z-index: 29;
+            background: radial-gradient(circle at 0% 0%, rgba(90, 200, 140, 0.35), rgba(10, 15, 25, 0.98));
+            border: 1px solid rgba(159, 214, 255, 0.6);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.95);
+        }
+
+        .chat-header {
+            padding: 10px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(159, 214, 255, 0.35);
+        }
+
+        .chat-header-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chat-header-logo {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: rgba(5, 10, 18, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-header-logo img {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+        }
+
+        .chat-header-title {
+            font-size: 14px;
+            letter-spacing: 0.6px;
+        }
+
+        .chat-header-sub {
+            font-size: 11px;
+            color: var(--text-soft);
+        }
+
+        .chat-header-close {
+            font-size: 16px;
+            cursor: pointer;
+            color: var(--text-soft);
+        }
+
+        .chat-body {
+            padding: 10px 12px;
+            flex: 1;
+            overflow-y: auto;
+            font-size: 13px;
+        }
+
+        .chat-message {
+            margin-bottom: 8px;
+            max-width: 90%;
+        }
+
+        .chat-message.system {
+            color: var(--accent);
+        }
+
+        .chat-message.user {
+            align-self: flex-end;
+            text-align: right;
+        }
+
+        .chat-input-row {
+            padding: 10px 12px;
+            border-top: 1px solid rgba(159, 214, 255, 0.35);
+            display: flex;
+            gap: 8px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 6px 8px;
+            border-radius: 999px;
+            border: 1px solid rgba(159, 214, 255, 0.4);
+            background: rgba(5, 10, 18, 0.95);
+            color: var(--text-main);
+            font-size: 13px;
+        }
+
+        .chat-send-btn {
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: none;
+            background: var(--accent);
+            color: #020611;
+            font-size: 12px;
+            cursor: pointer;
+            font-weight: 600;
+        }
     </style>
 </head>
 
@@ -487,6 +640,43 @@
         <div>Cinematic Nature Photography & Visual Storytelling.</div>
     </footer>
 
+    <!-- Ask Northwild Chat UI -->
+    <div class="chat-toggle" onclick="toggleChatPanel()">
+        <div class="chat-toggle-label">Ask Northwild</div>
+        <div class="chat-toggle-icon">✶</div>
+    </div>
+
+    <div class="chat-panel" id="chatPanel">
+        <div class="chat-header">
+            <div class="chat-header-left">
+                <div class="chat-header-logo">
+                    <img src="northwild_mooncrest_primary_logo.png" alt="Logo" />
+                </div>
+                <div>
+                    <div class="chat-header-title">Ask Northwild</div>
+                    <div class="chat-header-sub">Questions, thoughts, or quiet curiosities.</div>
+                </div>
+            </div>
+            <div class="chat-header-close" onclick="toggleChatPanel()">×</div>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message system">
+                Welcome to Northwild Mooncrest™.<br />
+                Share a thought, a question, or a moment you’d like to explore.
+            </div>
+        </div>
+        <div class="chat-input-row">
+            <input
+                type="text"
+                id="chatInput"
+                class="chat-input"
+                placeholder="Type a message..."
+                onkeydown="if(event.key==='Enter'){sendChatMessage();}"
+            />
+            <button class="chat-send-btn" onclick="sendChatMessage()">Send</button>
+        </div>
+    </div>
+
     <script>
         function openExperience() {
             document.getElementById("experiencePanel").style.display = "flex";
@@ -511,6 +701,28 @@
             topShadow.style.opacity = scrollTop > 10 ? "1" : "0";
             bottomShadow.style.opacity = scrollBottom ? "0" : "1";
         });
+
+        // Ask Northwild Chat Logic
+        function toggleChatPanel() {
+            const panel = document.getElementById("chatPanel");
+            panel.style.display = panel.style.display === "flex" ? "none" : "flex";
+        }
+
+        function sendChatMessage() {
+            const input = document.getElementById("chatInput");
+            const text = input.value.trim();
+            if (!text) return;
+
+            const body = document.getElementById("chatBody");
+
+            const msg = document.createElement("div");
+            msg.className = "chat-message user";
+            msg.textContent = text;
+            body.appendChild(msg);
+
+            input.value = "";
+            body.scrollTop = body.scrollHeight;
+        }
     </script>
 </body>
 </html>
