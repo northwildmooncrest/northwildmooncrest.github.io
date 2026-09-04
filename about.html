@@ -18,10 +18,12 @@
     <meta name="theme-color" content="#0b1118">
     <meta name="color-scheme" content="dark light">
 
-    <!-- Universal favicon block -->
+    <!-- UNIVERSAL FAVICON BLOCK -->
     <link rel="icon" type="image/x-icon" href="northwild_mooncrest_primary_logo.ico">
     <link rel="icon" type="image/png" href="northwild_mooncrest_primary_logo.png">
-    <link rel="icon" type="image/svg+xml" href="northwild_mooncrest_primary_logo.svg">
+    <link rel="icon" type="image/svg+xml" href="northwild_mooncrest_icon.svg">
+    <link rel="apple-touch-icon" href="northwild_mooncrest_primary_logo.png">
+    <link rel="mask-icon" href="northwild_mooncrest_icon.svg" color="#0f1f2e">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -37,7 +39,7 @@
     <meta name="twitter:description" content="Explore the journey and philosophy behind Northwild Mooncrest™ cinematic nature photography.">
     <meta name="twitter:image" content="https://northwildmooncrest.github.io/images/featured1.jpg">
 
-    <!-- JSON-LD: Brand + Photographer + WebPage -->
+    <!-- JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -88,7 +90,7 @@
             <li><a href="portfolio.html" class="reveal">Portfolio</a></li>
             <li><a href="printshop.html" class="reveal">Print Shop</a></li>
             <li><a href="studio.html" class="reveal">Studio</a></li>
-            <li><a href="about.html" class="reveal">About</a></li>
+            <li><a href="about.html" class="reveal active">About</a></li>
             <li><a href="contact.html" class="reveal">Contact</a></li>
         </ul>
     </nav>
@@ -151,58 +153,52 @@
         <h3>Night Skies</h3>
         <p>Long‑exposure scenes revealing the quiet beauty of the night.</p>
     </article>
-
-    <article class="featured-item card-hover">
-        <img src="images/featured1.jpg" alt="Atmospheric nature scene">
-        <h3>Atmosphere</h3>
-        <p>Fog, light, weather, and mood — the elements that define cinematic nature.</p>
-    </article>
 </section>
 
 <div class="section-divider"></div>
 
-<section class="reveal">
-    <h3>Identity</h3>
-    <p>
-        Northwild Mooncrest™ represents exploration, discovery, and the emotional connection
-        between humans and nature. It is a journey — one captured through light, weather,
-        and the stories found in the wild.
-    </p>
-</section>
-
-<div class="section-divider"></div>
-
-<footer class="reveal">
-    <p>© 2026 Northwild Mooncrest™</p>
-    <p>
-        <a href="terms.html">Terms</a> ·
-        <a href="privacy.html">Privacy</a> ·
-        <a href="cookies.html">Cookies</a> ·
-        <a href="studio.html">Studio</a>
-    </p>
-</footer>
-
-<!-- SAFE FEATURE PACK -->
-
-<div id="cookieBanner" class="cookie-banner reveal">
-    <p>We use cookies to enhance your experience.</p>
-    <button id="acceptCookies" class="btn-animate">Accept</button>
-</div>
-
-<div id="notifyPrompt" class="notify-prompt reveal">
-    <p>Enable notifications for updates?</p>
-    <button id="enableNotify" class="btn-animate">Enable</button>
+<!-- Notification Prompt -->
+<div id="notifyPrompt" class="notification-prompt reveal">
+    <p>Stay updated with new releases, prints, and wilderness stories.</p>
+    <button id="enableNotify" class="btn-animate">Enable Notifications</button>
     <button id="dismissNotify" class="btn-animate">Dismiss</button>
 </div>
 
-<div id="chatBubble" class="chat-bubble card-hover">💬</div>
-
-<div id="chatModal" class="chat-modal">
-    <button id="closeChat" class="btn-animate">Close</button>
-    <h3>Chat with Northwild Mooncrest™</h3>
-    <textarea placeholder="Type your message..."></textarea>
-    <button class="btn-animate">Send</button>
+<!-- Cookie Banner -->
+<div id="cookieBanner" class="cookie-banner reveal">
+    <p>Northwild Mooncrest™ uses cookies to enhance your browsing experience.</p>
+    <button id="acceptCookies" class="btn-animate">Accept</button>
 </div>
+
+<!-- Safe Feature Pack -->
+<div id="safe-feature-pack" class="safe-feature-pack reveal">
+    <p>Your browsing is protected with enhanced privacy and safety features.</p>
+</div>
+
+<!-- Chat Bubble -->
+<div id="chatBubble" class="chat-bubble">💬</div>
+
+<!-- Chat Modal -->
+<div id="chatModal" class="chat-modal">
+    <div class="chat-content">
+        <button id="closeChat" class="close-chat">×</button>
+        <h3>Chat with Northwild Mooncrest™</h3>
+        <p>This is a placeholder chat window.</p>
+        <textarea placeholder="Type your message..."></textarea>
+        <button class="btn-animate">Send</button>
+    </div>
+</div>
+
+<footer class="site-footer">
+    <p>© 2026 Northwild Mooncrest™ — The World, Reimagined.</p>
+</footer>
+
+<!-- Scripts -->
+<script src="scrollreveal.min.js"></script>
+<script src="chat.js"></script>
+<script src="notifications.js"></script>
+<script src="cookies.js"></script>
+<script src="safe.js"></script>
 
 <script>
     // Cookie Banner
