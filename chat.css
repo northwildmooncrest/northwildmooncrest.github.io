@@ -1,0 +1,66 @@
+/* Chat System — Clean, Minimal, No Animations */
+
+/* Chat Toggle Button */
+#chat-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #1a1f2b;
+    color: #ffffff;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    z-index: 1000;
+}
+
+/* Chat Panel */
+#chat-panel {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    width: 300px;
+    height: 380px;
+    background: #0f1320;
+    border-radius: 10px;
+    padding: 12px;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+/* Chat Messages */
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 6px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+/* Chat Input */
+.chat-input {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    background: #1a1f2b;
+    color: #ffffff;
+}
+
+.chat-input button {
+    padding: 8px 12px;
+    background: #2b3247;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
