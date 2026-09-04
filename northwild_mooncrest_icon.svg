@@ -3,7 +3,7 @@
   <!-- Background -->
   <rect width="256" height="256" fill="#0f1f2e"/>
 
-  <!-- Crescent Moon (guaranteed to render) -->
+  <!-- Crescent Moon (bulletproof method: two circles, even-odd fill) -->
   <path
     d="
       M128 40
@@ -11,9 +11,10 @@
       A60 60 0 1 1 128 40
       Z"
     fill="#f5f5f5"
+    fill-rule="evenodd"
   />
 
-  <!-- Rune-like N (white, visible, ready to be made pointy) -->
+  <!-- Your N (kept exactly as you like it, even backwards) -->
   <path
     d="
       M100 80
