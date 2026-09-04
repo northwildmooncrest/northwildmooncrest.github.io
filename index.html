@@ -251,10 +251,24 @@
 
         /* Footer */
         footer {
+            position: relative;
             padding: 40px 20px 30px;
             text-align: center;
             color: var(--text-soft);
             font-size: 14px;
+            overflow: hidden;
+        }
+
+        /* Footer Aurora Accent */
+        .footer-aurora {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 50% 120%, rgba(90, 200, 140, 0.22), transparent 70%),
+                radial-gradient(circle at 50% 140%, rgba(120, 180, 255, 0.18), transparent 75%);
+            filter: blur(60px);
+            pointer-events: none;
+            z-index: -1;
         }
 
         .footer-line {
@@ -378,6 +392,8 @@
     </main>
 
     <footer>
+        <div class="footer-aurora"></div>
+
         <div class="footer-line"></div>
 
         <div class="footer-columns">
