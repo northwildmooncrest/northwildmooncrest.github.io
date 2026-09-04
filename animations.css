@@ -1,0 +1,179 @@
+/* --------------------------------------------------
+   ANIMATIONS.CSS — CINEMATIC MOTION SYSTEM
+   Northwild Mooncrest™ — Hybrid Premium Motion
+-------------------------------------------------- */
+
+/* --------------------------------------------------
+   GLOBAL FADE + SLIDE
+-------------------------------------------------- */
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 1.2s ease forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-left {
+    opacity: 0;
+    transform: translateX(40px);
+    animation: slideLeft 1.2s ease forwards;
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-right {
+    opacity: 0;
+    transform: translateX(-40px);
+    animation: slideRight 1.2s ease forwards;
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* --------------------------------------------------
+   HERO ENTRANCE — CINEMATIC
+-------------------------------------------------- */
+
+.hero-title {
+    opacity: 0;
+    animation: heroTitle 1.4s ease forwards;
+}
+
+@keyframes heroTitle {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+        letter-spacing: 2px;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: 1px;
+    }
+}
+
+.hero-subtitle {
+    opacity: 0;
+    animation: heroSubtitle 1.6s ease forwards;
+}
+
+@keyframes heroSubtitle {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-text {
+    opacity: 0;
+    animation: heroText 1.8s ease forwards;
+}
+
+@keyframes heroText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --------------------------------------------------
+   CARD HOVER — PREMIUM
+-------------------------------------------------- */
+
+.card-hover {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-6px) scale(1.02);
+    opacity: 0.95;
+}
+
+/* --------------------------------------------------
+   SCROLL REVEAL — CLASS TRIGGERS
+-------------------------------------------------- */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --------------------------------------------------
+   BUTTON INTERACTION — CLEAN + MODERN
+-------------------------------------------------- */
+
+.btn-animate {
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.btn-animate:hover {
+    transform: translateY(-3px);
+}
+
+/* --------------------------------------------------
+   MOBILE OPTIMIZATION
+-------------------------------------------------- */
+
+@media (max-width: 600px) {
+    .hero-title,
+    .hero-subtitle,
+    .hero-text {
+        animation-duration: 1.1s;
+    }
+
+    .reveal {
+        transform: translateY(30px);
+    }
+}
