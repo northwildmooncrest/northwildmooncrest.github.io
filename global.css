@@ -1,4 +1,6 @@
-/* Global Styles — Clean, Minimal, Stable */
+/* -------------------------------------------------- */
+/* GLOBAL BASE STYLES (from your original file)       */
+/* -------------------------------------------------- */
 
 body {
     margin: 0;
@@ -26,9 +28,9 @@ img {
     display: block;
 }
 
-/* -------------------------------------- */
-/* GLOBAL TRANSPARENT HEADER (NEW)        */
-/* -------------------------------------- */
+/* -------------------------------------------------- */
+/* GLOBAL TRANSPARENT HEADER                          */
+/* -------------------------------------------------- */
 
 .site-header {
     position: fixed;
@@ -58,4 +60,59 @@ img {
 /* Push content down so header doesn't overlap */
 main {
     margin-top: 120px;
+}
+
+/* -------------------------------------------------- */
+/* CINEMATIC HOMEPAGE SPACING                         */
+/* -------------------------------------------------- */
+
+.hero {
+    padding: 160px 40px 120px;
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 700px;
+}
+
+/* -------------------------------------------------- */
+/* SECTION SPACING + TITLES                           */
+/* -------------------------------------------------- */
+
+section {
+    padding: 80px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section h3 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+/* -------------------------------------------------- */
+/* FOOTER POLISH                                      */
+/* -------------------------------------------------- */
+
+footer {
+    text-align: center;
+    padding: 60px 0;
+    opacity: 0.8;
+    font-size: 0.9rem;
 }
