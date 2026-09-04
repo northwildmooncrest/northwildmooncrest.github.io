@@ -44,7 +44,13 @@
             overflow-x: hidden;
         }
 
-        /* Background image */
+        /* Background Breathing Animation */
+        @keyframes bgBreath {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.03); }
+        }
+
+        /* Background image with breathing motion */
         .bg-image {
             position: fixed;
             inset: 0;
@@ -53,6 +59,7 @@
             background-position: center;
             filter: blur(6px) brightness(0.45);
             z-index: -4;
+            animation: bgBreath 40s ease-in-out infinite alternate;
         }
 
         /* Dark overlay */
