@@ -1,6 +1,9 @@
 /* --------------------------------------------------
-   GLOBAL RESET & BASE
+   GLOBAL BRAND STYLING — NORTHWILD MOONCREST™
+   Cinematic Hybrid • Dark Mode • Premium Layout
 -------------------------------------------------- */
+
+/* Base Reset */
 * {
     margin: 0;
     padding: 0;
@@ -8,306 +11,136 @@
 }
 
 body {
-    font-family: "Inter", Arial, sans-serif;
-    background: #0e0e0e;
-    color: #f5f5f5;
+    font-family: "Inter", sans-serif;
+    background: linear-gradient(180deg, #0a0a0f 0%, #0d1b2a 40%, #12354b 100%);
+    color: #e6e6e6;
     line-height: 1.6;
-    overflow-x: hidden;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-h1, h2, h3 {
-    font-weight: 600;
-    letter-spacing: 0.5px;
 }
 
 /* --------------------------------------------------
-   PROMO BAR
+   HEADER — Hybrid Premium (HD4)
 -------------------------------------------------- */
-.promo-bar {
-    background: #111;
-    color: #ddd;
-    text-align: center;
-    padding: 8px 0;
-    font-size: 14px;
-    border-bottom: 1px solid #222;
-}
 
-/* --------------------------------------------------
-   HEADER
--------------------------------------------------- */
-.pro-header {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 40px;
-    background: rgba(10, 10, 10, 0.85);
+    padding: 22px 40px;
+    background: rgba(10, 10, 15, 0.85);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid #222;
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .brand-logo {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: #e6e6e6;
+    text-decoration: none;
+    letter-spacing: 0.5px;
 }
 
-/* --------------------------------------------------
-   NAVIGATION
--------------------------------------------------- */
-.header-nav ul {
+nav ul {
+    list-style: none;
     display: flex;
     gap: 28px;
-    list-style: none;
 }
 
-.header-nav a {
-    font-size: 16px;
-    padding: 6px 0;
+nav a {
+    color: #e6e6e6;
+    text-decoration: none;
+    font-size: 1rem;
     transition: opacity 0.2s ease;
 }
 
-.header-nav a:hover {
-    opacity: 0.6;
-}
-
-/* Dropdown */
-.dropdown {
-    position: relative;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 28px;
-    left: 0;
-    background: #111;
-    padding: 12px 0;
-    border: 1px solid #222;
-    width: 180px;
-}
-
-.dropdown-menu li {
-    padding: 8px 20px;
-}
-
-.dropdown-menu li:hover {
-    background: #1a1a1a;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-/* --------------------------------------------------
-   HEADER UTILITIES
--------------------------------------------------- */
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+nav a:hover {
+    opacity: 0.7;
 }
 
 .utility-btn {
-    background: #222;
-    border: none;
-    padding: 8px 14px;
-    color: #eee;
-    cursor: pointer;
+    background: none;
+    border: 1px solid #e6e6e6;
+    padding: 7px 14px;
+    color: #e6e6e6;
     border-radius: 4px;
-    transition: background 0.2s ease;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
 .utility-btn:hover {
-    background: #333;
-}
-
-.hamburger {
-    font-size: 26px;
-    background: none;
-    border: none;
-    color: #eee;
-    cursor: pointer;
+    background: #e6e6e6;
+    color: #0a0a0f;
 }
 
 /* --------------------------------------------------
-   MOBILE MENU (RIGHT SLIDE-IN)
+   HERO — Hybrid Cinematic (H4)
 -------------------------------------------------- */
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    right: -320px;
-    width: 320px;
-    height: 100vh;
-    background: #111;
-    padding: 40px 30px;
-    transition: right 0.35s ease;
-    border-left: 1px solid #222;
-    z-index: 2000;
-}
 
-.mobile-menu.active {
-    right: 0;
-}
-
-.mobile-menu ul {
-    list-style: none;
-    margin-top: 40px;
-}
-
-.mobile-menu li {
-    margin-bottom: 22px;
-}
-
-.mobile-menu a {
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.close-menu {
-    background: none;
-    border: none;
-    font-size: 32px;
-    color: #eee;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-/* --------------------------------------------------
-   SEARCH MODAL
--------------------------------------------------- */
-.search-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(10, 10, 10, 0.85);
-    backdrop-filter: blur(10px);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 3000;
-}
-
-.search-modal.active {
-    display: flex;
-}
-
-.search-content {
-    background: #111;
-    padding: 40px;
-    border: 1px solid #222;
-    width: 90%;
-    max-width: 500px;
-    text-align: center;
-}
-
-.search-content input {
-    width: 100%;
-    padding: 14px;
-    margin-top: 20px;
-    background: #222;
-    border: none;
-    color: #eee;
-    font-size: 16px;
-}
-
-.close-search {
-    background: none;
-    border: none;
-    font-size: 32px;
-    color: #eee;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-/* --------------------------------------------------
-   HERO SECTION
--------------------------------------------------- */
 .hero {
-    padding: 120px 40px;
+    padding: 140px 40px;
+    text-align: center;
     max-width: 900px;
     margin: auto;
-    text-align: center;
 }
 
 .hero h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
+    font-size: 3.2rem;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
 }
 
 .hero h2 {
-    font-size: 26px;
-    margin-bottom: 20px;
-    opacity: 0.85;
+    font-size: 1.7rem;
+    margin-bottom: 22px;
+    color: #cce7ff;
+    font-weight: 400;
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 1.1rem;
     opacity: 0.9;
 }
 
 /* --------------------------------------------------
-   STORE PREVIEW
+   SECTIONS — Cinematic Spacing
 -------------------------------------------------- */
-.store-preview {
-    padding: 80px 40px;
+
+section {
+    padding: 90px 40px;
     max-width: 900px;
     margin: auto;
 }
 
-.store-preview h3 {
-    font-size: 28px;
-    margin-bottom: 12px;
+section h3 {
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+    color: #cce7ff;
 }
 
-.store-preview p {
-    font-size: 18px;
-    opacity: 0.85;
-}
-
-/* --------------------------------------------------
-   NEWS SECTION
--------------------------------------------------- */
-.news-section {
-    padding: 80px 40px;
-    max-width: 900px;
-    margin: auto;
-}
-
-.news-section h3 {
-    font-size: 28px;
-    margin-bottom: 12px;
-}
-
-.news-section p {
-    font-size: 18px;
-    opacity: 0.85;
+section p {
+    font-size: 1.05rem;
+    opacity: 0.9;
 }
 
 /* --------------------------------------------------
-   FOOTER
+   FOOTER — Minimal Premium
 -------------------------------------------------- */
+
 footer {
     text-align: center;
-    padding: 40px 0;
-    opacity: 0.7;
-    font-size: 14px;
+    padding: 50px;
+    background: #0a0a0f;
+    color: #999;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 footer a {
+    color: #cce7ff;
+    text-decoration: none;
+    margin: 0 8px;
     opacity: 0.8;
 }
 
@@ -316,9 +149,96 @@ footer a:hover {
 }
 
 /* --------------------------------------------------
-   ANIMATIONS
+   SAFE FEATURES — Cookie, Notify, Chat
 -------------------------------------------------- */
-.mobile-menu,
-.search-modal {
-    transition: all 0.35s ease;
+
+.cookie-banner,
+.notify-prompt {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0d1b2a;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #12354b;
+    z-index: 2000;
+    max-width: 260px;
+}
+
+.cookie-banner button,
+.notify-prompt button {
+    margin-top: 10px;
+    padding: 6px 12px;
+    background: #12354b;
+    border: none;
+    color: #e6e6e6;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.chat-bubble {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    background: #12354b;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.4rem;
+    z-index: 2000;
+    transition: transform 0.2s ease;
+}
+
+.chat-bubble:hover {
+    transform: scale(1.1);
+}
+
+.chat-modal {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #0a0a0f;
+    padding: 25px;
+    border-top: 2px solid #12354b;
+    display: none;
+    z-index: 3000;
+}
+
+.chat-modal.active {
+    display: block;
+}
+
+.chat-modal textarea {
+    width: 100%;
+    height: 120px;
+    background: #0d1b2a;
+    border: 1px solid #12354b;
+    color: #e6e6e6;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+.chat-modal button {
+    margin-top: 12px;
+    padding: 8px 16px;
+    background: #12354b;
+    border: none;
+    color: #e6e6e6;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* --------------------------------------------------
+   AD PLACEHOLDER — Clean + Safe
+-------------------------------------------------- */
+
+.ad-placeholder {
+    background: #0d1b2a;
+    padding: 50px;
+    text-align: center;
+    border-top: 1px solid #12354b;
+    border-bottom: 1px solid #12354b;
+    margin-top: 40px;
 }
