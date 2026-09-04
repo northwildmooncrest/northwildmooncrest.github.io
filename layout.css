@@ -1,6 +1,6 @@
 /* --------------------------------------------------
    LAYOUT.CSS — STRUCTURE • SPACING • CINEMATIC FLOW
-   Northwild Mooncrest™ — Hybrid Premium System
+   Northwild Mooncrest™ — Unified Modern System
 -------------------------------------------------- */
 
 /* --------------------------------------------------
@@ -8,13 +8,13 @@
 -------------------------------------------------- */
 
 :root {
-    --space-xxs: 12px;
-    --space-xs: 20px;
-    --space-sm: 32px;
-    --space-md: 48px;
-    --space-lg: 72px;
-    --space-xl: 110px;
-    --space-xxl: 160px;
+    --space-xxs: 8px;
+    --space-xs: 16px;
+    --space-sm: 24px;
+    --space-md: 32px;
+    --space-lg: 48px;
+    --space-xl: 72px;
+    --space-xxl: 110px;
 
     --max-width-content: 900px;
     --max-width-wide: 1200px;
@@ -22,7 +22,7 @@
 
 /* Universal Section Layout */
 section {
-    padding: var(--space-xl) var(--space-sm);
+    padding: var(--space-lg) var(--space-sm);
     max-width: var(--max-width-content);
     margin: auto;
 }
@@ -95,7 +95,7 @@ section {
 
 .portfolio-card img {
     width: 100%;
-    height: 260px;
+    height: 240px;
     object-fit: cover;
 }
 
@@ -132,7 +132,7 @@ section {
 
 .product-card img {
     width: 100%;
-    height: 240px;
+    height: 220px;
     object-fit: cover;
     border-radius: 6px;
 }
@@ -172,20 +172,20 @@ section.wide {
 }
 
 /* --------------------------------------------------
-   HERO SPACING OVERRIDE
+   HERO SPACING (Unified)
 -------------------------------------------------- */
 
 .hero {
-    padding-top: var(--space-xxl);
-    padding-bottom: var(--space-xl);
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-lg);
 }
 
 /* --------------------------------------------------
-   FOOTER SPACING
+   FOOTER SPACING (Unified)
 -------------------------------------------------- */
 
 footer {
-    padding: var(--space-lg) var(--space-sm);
+    padding: var(--space-md) var(--space-sm);
 }
 
 /* --------------------------------------------------
@@ -206,6 +206,6 @@ footer {
     }
 
     section {
-        padding: var(--space-lg) var(--space-sm);
+        padding: var(--space-md) var(--space-sm);
     }
 }
