@@ -1,150 +1,146 @@
 /* ==========================================================
-   NORTHWILD MOONCREST — GLOBAL BASE STYLESHEET
-   Provides layout, typography, colors, spacing, and resets
+   NORTHWILD MOONCREST — VISUAL STYLES
+   Controls colors, typography, icons, nav, dropdown, logo
    ========================================================== */
 
-/* ---------- CSS RESET ---------- */
-*,
-*::before,
-*::after {
+/* ---------- GLOBAL COLORS ---------- */
+:root {
+    --text: #ffffff;
+    --text-dim: #cccccc;
+    --bg: #0b0d10;
+    --card: #1a1d22;
+    --border: #2a2d33;
+    --accent: #6bbcff;
+    --radius: 8px;
+}
+
+/* ---------- GLOBAL TYPOGRAPHY ---------- */
+body {
+    font-family: "Inter", sans-serif;
+    color: var(--text);
+    background: var(--bg);
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* ---------- ROOT VARIABLES ---------- */
-:root {
-    --bg: #0a0a0a;
-    --text: #f5f5f5;
-    --accent: #7fb8ff;
-    --accent-dark: #4a6fa8;
-    --card: #111;
-    --border: #222;
-    --radius: 12px;
-    --transition: 0.25s ease;
-    --font-main: 'Inter', sans-serif;
+/* ---------- LOGO ---------- */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 }
 
-/* ---------- GLOBAL BODY ---------- */
-body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--font-main);
-    line-height: 1.6;
-    overflow-x: hidden;
+.logo-img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
 }
 
-/* ---------- LINKS ---------- */
-a {
-    color: var(--accent);
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-a:hover {
-    color: var(--accent-dark);
-}
-
-/* ---------- HEADERS ---------- */
-h1, h2, h3, h4, h5 {
+.logo-text {
+    font-size: 1.25rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
 }
 
-/* ---------- PARAGRAPHS ---------- */
-p {
-    margin-bottom: 1rem;
+/* ---------- NAVIGATION ---------- */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 }
 
-/* ---------- CONTAINERS ---------- */
-.container {
-    width: min(1200px, 90%);
-    margin: 0 auto;
-    padding: 2rem 0;
+.nav a {
+    font-weight: 500;
+    opacity: 0.85;
+    transition: 0.25s ease;
+    text-decoration: none;
+    color: var(--text);
 }
 
-/* ---------- CARDS ---------- */
-.card {
+.nav a:hover {
+    opacity: 1;
+    color: var(--accent);
+}
+
+/* ---------- DROPDOWN MENU ---------- */
+.menu {
+    position: relative;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    color: var(--text);
+    font-weight: 500;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: 0.25s ease;
+}
+
+.menu-btn:hover {
+    opacity: 1;
+    color: var(--accent);
+}
+
+.menu-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 2rem;
     background: var(--card);
     border: 1px solid var(--border);
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: var(--radius);
-    transition: var(--transition);
+    min-width: 220px;
+    z-index: 10;
 }
 
-.card:hover {
-    border-color: var(--accent);
+.menu:hover .menu-dropdown {
+    display: block;
 }
 
-/* ---------- BUTTONS ---------- */
-button,
-.btn {
-    background: var(--accent);
-    color: #000;
-    padding: 0.75rem 1.25rem;
-    border: none;
-    border-radius: var(--radius);
+.menu-dropdown a {
+    display: block;
+    padding: 0.5rem 0;
+    opacity: 0.85;
+    text-decoration: none;
+    color: var(--text);
+    transition: 0.25s ease;
+}
+
+.menu-dropdown a:hover {
+    opacity: 1;
+    color: var(--accent);
+}
+
+/* ---------- HEADER UTILITIES (Search, Account, Store) ---------- */
+.header-utilities {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.utility-icon {
+    display: flex;
+    align-items: center;
     cursor: pointer;
-    font-weight: 600;
-    transition: var(--transition);
 }
 
-button:hover,
-.btn:hover {
-    background: var(--accent-dark);
+.utility-icon svg {
+    opacity: 0.85;
+    transition: opacity 0.25s ease, stroke 0.25s ease;
 }
 
-/* ---------- FLEX UTILS ---------- */
-.flex {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.utility-icon:hover svg {
+    opacity: 1;
+    stroke: var(--accent);
 }
 
-.flex-between {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* ---------- GRID UTILS ---------- */
-.grid {
-    display: grid;
-    gap: 2rem;
-}
-
-.grid-2 {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.grid-3 {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-/* ---------- SPACING UTILS ---------- */
-.mt-1 { margin-top: 1rem; }
-.mt-2 { margin-top: 2rem; }
-.mt-3 { margin-top: 3rem; }
-
-.mb-1 { margin-bottom: 1rem; }
-.mb-2 { margin-bottom: 2rem; }
-.mb-3 { margin-bottom: 3rem; }
-
-/* ---------- HERO SECTION ---------- */
-.hero {
-    text-align: center;
-    padding: 6rem 2rem;
-}
-
+/* ---------- HERO VISUALS ---------- */
 .hero h1 {
     font-size: 3rem;
-    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .hero p {
@@ -152,10 +148,16 @@ button:hover,
     opacity: 0.85;
 }
 
-/* ---------- FOOTER ---------- */
+/* ---------- FEATURED VISUALS ---------- */
+.featured-grid img {
+    width: 100%;
+    border-radius: var(--radius);
+    object-fit: cover;
+}
+
+/* ---------- FOOTER VISUALS ---------- */
 footer {
     text-align: center;
-    padding: 2rem;
-    opacity: 0.6;
     font-size: 0.9rem;
+    opacity: 0.7;
 }
