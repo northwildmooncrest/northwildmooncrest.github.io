@@ -38,30 +38,55 @@
     <div class="utility-bar">
 
         <!-- Search -->
-        <a class="utility-icon" href="search.html" title="Search">
+        <button class="utility-icon search-btn" title="Search">
             <svg viewBox="0 0 24 24">
                 <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/>
                 <line x1="16" y1="16" x2="21" y2="21" stroke="currentColor" stroke-width="2"/>
             </svg>
-        </a>
+        </button>
 
         <!-- Account -->
-        <a class="utility-icon" href="account.html" title="Account">
+        <button class="utility-icon account-btn" title="Account">
             <svg viewBox="0 0 24 24">
                 <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
                 <path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke="currentColor" stroke-width="2" fill="none"/>
             </svg>
-        </a>
+        </button>
 
-        <!-- Store / Cart -->
-        <a class="utility-icon" href="store.html" title="Store">
+        <!-- Store -->
+        <button class="utility-icon store-btn" title="Store">
             <svg viewBox="0 0 24 24">
                 <circle cx="9" cy="21" r="1" fill="currentColor"/>
                 <circle cx="20" cy="21" r="1" fill="currentColor"/>
                 <path d="M2 2h3l3 12h11l3-8H6" stroke="currentColor" stroke-width="2" fill="none"/>
             </svg>
-        </a>
+        </button>
 
+    </div>
+
+    <!-- SEARCH DROPDOWN -->
+    <div class="search-dropdown panel">
+        <input type="text" id="search-input" placeholder="Search..." />
+        <div class="search-results">
+            <p class="search-item">Mountains</p>
+            <p class="search-item">Wildlife</p>
+            <p class="search-item">Northern Lights</p>
+            <p class="search-item">Forests</p>
+            <p class="search-item">Rivers</p>
+        </div>
+    </div>
+
+    <!-- ACCOUNT DROPDOWN -->
+    <div class="account-dropdown panel">
+        <p>Profile</p>
+        <p>Settings</p>
+        <p>Logout</p>
+    </div>
+
+    <!-- STORE DROPDOWN -->
+    <div class="store-dropdown panel">
+        <h3>Your Cart</h3>
+        <p>No items yet.</p>
     </div>
 
 </header>
