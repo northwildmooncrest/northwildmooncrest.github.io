@@ -1,4 +1,37 @@
 <!-- ---------------------------------------------------------
+     NORTHWILD MOONCREST — GLOBAL SCRIPT LOADER
+     Enables modular HTML includes across all pages
+---------------------------------------------------------- -->
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const includes = document.querySelectorAll("[data-include]");
+
+    includes.forEach(async (el) => {
+        const file = el.getAttribute("data-include");
+
+        try {
+            const response = await fetch(file);
+            if (!response.ok) {
+                throw new Error(`Failed to load ${file}: ${response.status}`);
+            }
+
+            const html = await response.text();
+            el.innerHTML = html;
+
+        } catch (err) {
+            console.error(err);
+            el.innerHTML = `
+                <div style="color:red; padding:10px;">
+                    Error loading ${file}
+                </div>
+            `;
+        }
+    });
+});
+</script>
+
+<!-- ---------------------------------------------------------
      NORTHWILD MOONCREST — GLOBAL SCRIPTS (MODULAR VERSION)
 ---------------------------------------------------------- -->
 
