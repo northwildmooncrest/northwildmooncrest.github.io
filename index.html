@@ -248,11 +248,13 @@
 <body>
 
 <header>
+    <!-- Brand Logo -->
     <a href="/" class="brand-logo">
         <img src="northwild_mooncrest_icon_light.svg" class="brand-logo-icon">
         <span>Northwild Mooncrest</span>
     </a>
 
+    <!-- Navigation -->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -262,6 +264,7 @@
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
 
+            <!-- Explore Dropdown -->
             <li class="dropdown">
                 <span class="dropdown-btn">Explore ▼</span>
                 <div class="dropdown-menu" id="exploreMenu">
@@ -277,23 +280,24 @@
         </ul>
     </nav>
 
+    <!-- Header Utilities (Search + Account) -->
     <div class="header-utilities">
 
-        <!-- Search Icon (Geometric SVG) -->
-        <span id="searchBtn" class="utility-icon">
+        <!-- Search Icon -->
+        <a href="search.html" class="utility-icon">
             <svg width="22" height="22" stroke="white" fill="none" stroke-width="2">
                 <circle cx="10" cy="10" r="7"></circle>
                 <line x1="15" y1="15" x2="20" y2="20"></line>
             </svg>
-        </span>
+        </a>
 
-        <!-- Account Icon (Geometric SVG) -->
-        <span id="accountBtn" class="utility-icon">
+        <!-- Account Icon → Login Page -->
+        <a href="login.html" class="utility-icon">
             <svg width="22" height="22" stroke="white" fill="none" stroke-width="2">
                 <circle cx="11" cy="7" r="4"></circle>
                 <path d="M4 20c0-4 3-7 7-7s7 3 7 7"></path>
             </svg>
-        </span>
+        </a>
 
     </div>
 </header>
