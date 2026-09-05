@@ -1,254 +1,298 @@
 /* ---------------------------------------------------------
-   GLOBAL BRAND THEME — NORTHWILD MOONCREST
-   Midnight Aurora • Pure Teal • Soft Glow • Cinematic
---------------------------------------------------------- */
+   NORTHWILD MOONCREST — GLOBAL.CSS
+   Matte Navy + Medium Teal + Soft Glow Cinematic Theme
+   --------------------------------------------------------- */
 
 :root {
-    --nw-dark: #0b1118;
-    --nw-darker: #050b12;
-    --nw-panel: #0d141c;
-    --nw-soft: #142633;
-
-    --nw-text: #f5f5f5;
-    --nw-text-soft: #d6e3e8;
-
-    --nw-aurora: #4fffd4;        /* Pure teal glow */
-    --nw-aurora-soft: #2bbfa0;   /* Soft teal accent */
-    --nw-aurora-fade: rgba(79,255,212,0.18);
-
-    --nw-border: rgba(255,255,255,0.08);
-    --nw-border-strong: rgba(79,255,212,0.35);
-
-    --nw-shadow: rgba(0,0,0,0.65);
-    --nw-shadow-strong: rgba(0,0,0,0.85);
-
-    --nw-radius: 10px;
-    --nw-transition: 0.25s ease;
+    --navy-matte: #0c1a2b;              /* deep blue, not black */
+    --navy-matte-light: #13263c;        /* lighter matte navy */
+    --navy-matte-soft: #1b314a;         /* soft navy for panels */
+    --teal-soft: #4fffe0;               /* medium aurora teal */
+    --teal-soft-dim: #3cd8c2;           /* dimmed teal for hover */
+    --text-light: #e9f7ff;              /* soft white-blue */
+    --text-dim: #b8c9d9;                /* dimmed text */
+    --shadow-cine: 0 8px 22px rgba(0,0,0,0.45);
+    --shadow-cine-soft: 0 4px 14px rgba(0,0,0,0.35);
+    --border-soft: rgba(255,255,255,0.06);
 }
 
 /* ---------------------------------------------------------
-   GLOBAL RESET
---------------------------------------------------------- */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+   BASE
+   --------------------------------------------------------- */
 
 body {
-    background: var(--nw-dark);
-    color: var(--nw-text);
     font-family: 'Montserrat', sans-serif;
-    line-height: 1.5;
+    background-color: var(--navy-matte);
+    color: var(--text-light);
+    margin: 0;
+    padding: 0;
 }
 
 /* ---------------------------------------------------------
-   GLOBAL LINKS
---------------------------------------------------------- */
-
-a {
-    color: var(--nw-text);
-    text-decoration: none;
-    transition: var(--nw-transition);
-}
-
-a:hover {
-    color: var(--nw-aurora);
-    text-shadow: 0 0 6px var(--nw-aurora-soft);
-}
-
-/* ---------------------------------------------------------
-   GLOBAL PANELS / CARDS
---------------------------------------------------------- */
-
-.panel,
-.card,
-.section-block {
-    background: var(--nw-panel);
-    border: 1px solid var(--nw-border);
-    border-radius: var(--nw-radius);
-    padding: 20px;
-    box-shadow: 0 8px 20px var(--nw-shadow);
-    transition: var(--nw-transition);
-}
-
-.panel:hover,
-.card:hover,
-.section-block:hover {
-    border-color: var(--nw-border-strong);
-    box-shadow: 0 12px 28px var(--nw-shadow-strong),
-                0 0 12px var(--nw-aurora-fade);
-}
-
-/* ---------------------------------------------------------
-   GLOBAL BUTTONS
---------------------------------------------------------- */
-
-button,
-.btn {
-    background: transparent;
-    border: 1px solid var(--nw-border);
-    color: var(--nw-text);
-    padding: 10px 18px;
-    border-radius: var(--nw-radius);
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--nw-transition);
-}
-
-button:hover,
-.btn:hover {
-    border-color: var(--nw-aurora);
-    color: var(--nw-aurora);
-    box-shadow: 0 0 10px var(--nw-aurora-fade);
-}
-
-/* ---------------------------------------------------------
-   GLOBAL INPUTS
---------------------------------------------------------- */
-
-input,
-textarea {
-    background: var(--nw-soft);
-    border: 1px solid var(--nw-border);
-    color: var(--nw-text);
-    padding: 10px 14px;
-    border-radius: var(--nw-radius);
-    transition: var(--nw-transition);
-}
-
-input:focus,
-textarea:focus {
-    border-color: var(--nw-aurora);
-    box-shadow: 0 0 10px var(--nw-aurora-fade);
-}
-
-/* ---------------------------------------------------------
-   GLOBAL DIVIDERS / SECTION FADES
---------------------------------------------------------- */
-
-.section-divider {
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(
-        to right,
-        transparent,
-        var(--nw-aurora-fade),
-        transparent
-    );
-    margin: 40px 0;
-}
-
-/* ---------------------------------------------------------
-   GLOBAL HOVER GLOW EFFECTS
---------------------------------------------------------- */
-
-.glow-hover {
-    transition: var(--nw-transition);
-}
-
-.glow-hover:hover {
-    color: var(--nw-aurora);
-    text-shadow: 0 0 10px var(--nw-aurora-soft);
-}
-
-/* ---------------------------------------------------------
-   GLOBAL AURORA GRADIENT BACKGROUNDS
---------------------------------------------------------- */
-
-.aurora-bg {
-    background: radial-gradient(
-        circle at top,
-        var(--nw-soft),
-        var(--nw-darker) 70%
-    );
-}
-
-/* ---------------------------------------------------------
-   GLOBAL HEADER (APPLIES TO ALL PAGES)
---------------------------------------------------------- */
+   HEADER
+   --------------------------------------------------------- */
 
 header {
-    background: rgba(10, 15, 20, 0.85);
-    border-bottom: 1px solid var(--nw-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: var(--navy-matte);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px var(--nw-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    border-bottom: 1px solid var(--border-soft);
+    box-shadow: var(--shadow-cine-soft);
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text-light);
+}
+
+.brand-logo-icon {
+    height: 32px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 0;
 }
 
 nav a:hover {
-    color: var(--nw-aurora);
+    color: var(--teal-soft);
+    opacity: 1;
 }
 
 /* ---------------------------------------------------------
-   GLOBAL FOOTER
---------------------------------------------------------- */
+   DROPDOWN
+   --------------------------------------------------------- */
 
-footer {
-    background: var(--nw-panel);
-    border-top: 1px solid var(--nw-border);
-    box-shadow: 0 -6px 20px var(--nw-shadow);
+.dropdown {
+    position: relative;
 }
 
-footer a:hover {
-    color: var(--nw-aurora);
+.dropdown-btn {
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-light);
 }
 
-/* ---------------------------------------------------------
-   GLOBAL IMAGES
---------------------------------------------------------- */
-
-img {
-    border-radius: var(--nw-radius);
-    transition: var(--nw-transition);
+.dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: 32px;
+    background: var(--navy-matte-light);
+    border-radius: 8px;
+    padding: 12px 0;
+    display: none;
+    flex-direction: column;
+    min-width: 180px;
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--shadow-cine);
 }
 
-img:hover {
-    box-shadow: 0 0 18px var(--nw-aurora-fade);
+.dropdown-menu a {
+    padding: 10px 20px;
+    display: block;
+    color: var(--text-light);
+    text-decoration: none;
 }
 
-/* ---------------------------------------------------------
-   GLOBAL ANIMATIONS
---------------------------------------------------------- */
-
-@keyframes auroraBreath {
-    0% {
-        box-shadow: 0 0 10px var(--nw-aurora-fade);
-    }
-    50% {
-        box-shadow: 0 0 22px var(--nw-aurora);
-    }
-    100% {
-        box-shadow: 0 0 10px var(--nw-aurora-fade);
-    }
-}
-
-.breathing {
-    animation: auroraBreath 4s ease-in-out infinite;
+.dropdown-menu a:hover {
+    background: rgba(79,255,224,0.08);
+    color: var(--teal-soft);
 }
 
 /* ---------------------------------------------------------
-   GLOBAL UTILITY CLASSES
---------------------------------------------------------- */
+   HEADER UTILITIES
+   --------------------------------------------------------- */
 
-.center {
+.header-utilities {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.utility-icon {
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--text-light);
+}
+
+/* ---------------------------------------------------------
+   SEARCH OVERLAY
+   --------------------------------------------------------- */
+
+#searchOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(12, 26, 43, 0.92);
+    backdrop-filter: blur(8px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#searchOverlay input {
+    width: 60%;
+    padding: 18px;
+    font-size: 22px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: var(--navy-matte-light);
+    color: var(--text-light);
+}
+
+/* ---------------------------------------------------------
+   ACCOUNT MENU
+   --------------------------------------------------------- */
+
+.account-dropdown {
+    position: relative;
+}
+
+.account-menu {
+    position: absolute;
+    right: 0;
+    top: 32px;
+    background: var(--navy-matte-light);
+    border-radius: 8px;
+    padding: 12px 0;
+    display: none;
+    flex-direction: column;
+    min-width: 160px;
+    z-index: 999;
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--shadow-cine);
+}
+
+.account-menu a {
+    padding: 10px 20px;
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.account-menu a:hover {
+    background: rgba(79,255,224,0.08);
+    color: var(--teal-soft);
+}
+
+/* ---------------------------------------------------------
+   HERO
+   --------------------------------------------------------- */
+
+.hero {
+    text-align: center;
+    padding: 120px 40px 80px;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.hero-subtitle {
+    font-size: 22px;
+    margin-top: 10px;
+    color: var(--teal-soft);
+}
+
+.hero-text {
+    max-width: 780px;
+    margin: 20px auto;
+    font-size: 18px;
+    color: var(--text-dim);
+}
+
+.hero-ai {
+    margin-top: 12px;
+    font-size: 15px;
+    color: var(--text-dim);
+}
+
+/* ---------------------------------------------------------
+   FEATURED GRID
+   --------------------------------------------------------- */
+
+.featured-grid {
+    display: flex;
+    gap: 40px;
+    padding: 60px 40px;
+    justify-content: center;
+}
+
+.featured-item {
+    width: 300px;
     text-align: center;
 }
 
-.flex {
-    display: flex;
+.featured-item img {
+    width: 100%;
+    border-radius: 10px;
 }
 
-.flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.featured-item h3 {
+    color: var(--text-light);
 }
 
-.round {
-    border-radius: 50%;
+.featured-item p {
+    color: var(--text-dim);
 }
 
-.hidden {
-    display: none;
+/* ---------------------------------------------------------
+   FOOTER
+   --------------------------------------------------------- */
+
+footer {
+    background: var(--navy-matte);
+    padding: 60px 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    color: var(--text-light);
 }
+
+footer h4 {
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+footer a {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-dim);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--teal-soft);
+}
+
+.footer-bottom {
+    grid-column: span 4;
+    text-align: center;
+    margin-top: 40px;
+    color: var(--text-dim);
+}
+
+/* ---------------------------------------------------------
+   END GLOBAL.CSS
+   --------------------------------------------------------- */
