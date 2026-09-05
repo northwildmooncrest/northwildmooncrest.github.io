@@ -280,24 +280,34 @@
         </ul>
     </nav>
 
-    <!-- Header Utilities (Search + Account) -->
+    <!-- Header Utilities -->
     <div class="header-utilities">
 
         <!-- Search Icon -->
-        <a href="search.html" class="utility-icon">
+        <span id="searchBtn" class="utility-icon">
             <svg width="22" height="22" stroke="white" fill="none" stroke-width="2">
                 <circle cx="10" cy="10" r="7"></circle>
                 <line x1="15" y1="15" x2="20" y2="20"></line>
             </svg>
-        </a>
+        </span>
 
-        <!-- Account Icon → Login Page -->
-        <a href="login.html" class="utility-icon">
-            <svg width="22" height="22" stroke="white" fill="none" stroke-width="2">
-                <circle cx="11" cy="7" r="4"></circle>
-                <path d="M4 20c0-4 3-7 7-7s7 3 7 7"></path>
-            </svg>
-        </a>
+        <!-- Account Dropdown -->
+        <div class="account-dropdown">
+            <span class="utility-icon account-btn">
+                <svg width="22" height="22" stroke="white" fill="none" stroke-width="2">
+                    <circle cx="11" cy="7" r="4"></circle>
+                    <path d="M4 20c0-4 3-7 7-7s7 3 7 7"></path>
+                </svg>
+            </span>
+
+            <div class="account-menu">
+                <a href="login.html">Log In</a>
+                <a href="signup.html">Sign Up / Create Account</a>
+                <a href="forgot.html">Forgot Password</a>
+                <a href="help.html">Help Center</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+        </div>
 
     </div>
 </header>
