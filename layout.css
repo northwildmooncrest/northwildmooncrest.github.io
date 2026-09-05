@@ -1,22 +1,33 @@
 /* ==========================================================
    NORTHWILD MOONCREST — LAYOUT SYSTEM
-   Controls spacing, section flow, alignment, and structure
+   Controls spacing, structure, alignment, and section flow
    ========================================================== */
 
-/* ---------- SECTION SPACING ---------- */
+/* ---------- GLOBAL SECTION WRAPPER ---------- */
 section {
     width: min(1200px, 90%);
     margin: 0 auto;
     padding: 4rem 0;
 }
 
-/* ---------- HEADER ---------- */
-header {
-    padding: 1.5rem 0;
-    margin-bottom: 2rem;
+/* ---------- HEADER LAYOUT ---------- */
+.header-section {
+    padding: 2rem 0;
 }
 
-/* ---------- HERO ---------- */
+.header {
+    width: min(1200px, 90%);
+    margin: 0 auto;
+}
+
+/* Header Utilities (Search, Account, Store) */
+.header-utilities {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+/* ---------- HERO LAYOUT ---------- */
 .hero {
     padding: 6rem 0 4rem 0;
     text-align: center;
@@ -31,7 +42,7 @@ header {
     opacity: 0.85;
 }
 
-/* ---------- FEATURED GRID ---------- */
+/* ---------- FEATURED GRID LAYOUT ---------- */
 .featured {
     padding: 4rem 0;
 }
@@ -43,7 +54,7 @@ header {
     margin-top: 2rem;
 }
 
-/* ---------- FOOTER ---------- */
+/* ---------- FOOTER LAYOUT ---------- */
 footer {
     padding: 3rem 0;
     margin-top: 4rem;
@@ -61,4 +72,19 @@ footer {
 
 .section-gap-small {
     margin-top: 2rem;
+}
+
+/* ---------- RESPONSIVE BEHAVIOR ---------- */
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 0;
+    }
+
+    .header-utilities {
+        gap: 1rem;
+    }
+
+    .featured-grid {
+        gap: 2rem;
+    }
 }
