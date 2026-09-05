@@ -1,155 +1,146 @@
 /* ---------------------------------------------------------
-   GLOBAL ALWAYS-ON TEAL/GREEN GLOW SYSTEM
-   Midnight Aurora • Teal-Green • Medium Glow • Cinematic
+   NORTHWILD MOONCREST — DUAL-TONE CINEMATIC LAYOUT
+   Black Header/Footer • White Middle • Green Glow Accents
 --------------------------------------------------------- */
 
 /* ---------------------------------------------------------
-   GLOBAL TEXT GLOW (always on)
+   GLOBAL BACKGROUND (Aurora Wallpaper)
 --------------------------------------------------------- */
 
-body, p, span, li, a, h1, h2, h3, h4, h5, h6 {
+body {
+    background: radial-gradient(
+        circle at top,
+        #0f2a2f,
+        #051015 70%
+    );
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------------------------------------------------------
+   HEADER + FOOTER (Black Frame)
+--------------------------------------------------------- */
+
+header, footer {
+    background: #000000;
     color: #ffffff;
-    text-shadow: 0 0 6px rgba(79,255,212,0.35);
-}
-
-/* ---------------------------------------------------------
-   GLOBAL BORDER GLOW (always on)
---------------------------------------------------------- */
-
-.glow-border,
-header,
-footer,
-.section,
-.featured-block,
-.image-block,
-.card,
-.panel {
-    border-color: rgba(79,255,212,0.35) !important;
-    box-shadow:
-        0 0 18px rgba(79,255,212,0.25),
-        0 0 32px rgba(79,255,212,0.15);
-}
-
-/* ---------------------------------------------------------
-   GLOBAL SECTION GLOW (always on)
---------------------------------------------------------- */
-
-.section,
-.section-dark,
-.section-panel,
-.section-aurora {
-    box-shadow:
-        inset 0 0 40px rgba(79,255,212,0.18),
-        0 0 40px rgba(79,255,212,0.25);
-}
-
-/* ---------------------------------------------------------
-   HEADER GLOW (always on)
---------------------------------------------------------- */
-
-header {
-    background: rgba(5,11,18,0.9);
+    padding: 20px 30px;
     border-bottom: 2px solid rgba(79,255,212,0.45);
     box-shadow:
         0 4px 22px rgba(79,255,212,0.25),
         0 0 18px rgba(79,255,212,0.35);
 }
 
-/* ---------------------------------------------------------
-   NAV GLOW (always on)
---------------------------------------------------------- */
-
-nav a {
-    color: #ffffff;
-    text-shadow: 0 0 8px rgba(79,255,212,0.35);
-}
-
-nav a:hover {
-    color: #4fffd4;
-    text-shadow: 0 0 14px rgba(79,255,212,0.55);
-}
-
-/* ---------------------------------------------------------
-   FOOTER GLOW (always on)
---------------------------------------------------------- */
-
 footer {
     border-top: 2px solid rgba(79,255,212,0.45);
+    border-bottom: none;
     box-shadow:
         0 -4px 22px rgba(79,255,212,0.25),
         0 0 18px rgba(79,255,212,0.35);
 }
 
 /* ---------------------------------------------------------
-   DIVIDER GLOW (always on)
+   NAVIGATION (White Text → Green Hover)
 --------------------------------------------------------- */
 
-.aurora-divider {
-    background: linear-gradient(
-        to right,
-        transparent,
-        rgba(79,255,212,0.55),
-        transparent
-    );
-    box-shadow: 0 0 12px rgba(79,255,212,0.35);
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.25s ease;
+}
+
+nav a:hover {
+    color: #4fffd4;
+    text-shadow: 0 0 10px rgba(79,255,212,0.55);
 }
 
 /* ---------------------------------------------------------
-   FEATURED GRID GLOW (always on)
+   MAIN CONTENT AREA (Soft White Middle)
 --------------------------------------------------------- */
 
-.featured-item img {
+main, .section, .page-wrap {
+    background: #f5f5f5;
+    color: #000000;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow:
+        0 0 22px rgba(79,255,212,0.25),
+        0 0 32px rgba(79,255,212,0.18);
+}
+
+/* ---------------------------------------------------------
+   TEXT (Black → Green Hover)
+--------------------------------------------------------- */
+
+p, h1, h2, h3, h4, h5, h6, li, span {
+    color: #000000;
+    transition: 0.25s ease;
+}
+
+a, .link {
+    color: #000000;
+    transition: 0.25s ease;
+}
+
+a:hover, .link:hover {
+    color: #4fffd4;
+    text-shadow: 0 0 10px rgba(79,255,212,0.55);
+}
+
+/* ---------------------------------------------------------
+   FEATURE BLOCKS (White Cards + Green Glow)
+--------------------------------------------------------- */
+
+.featured-block {
+    background: #ffffff;
+    border: 2px solid rgba(79,255,212,0.45);
+    border-radius: 12px;
+    padding: 30px;
     box-shadow:
         0 0 22px rgba(79,255,212,0.35),
         0 0 32px rgba(79,255,212,0.25);
+    transition: 0.25s ease;
 }
 
-.featured-item img:hover {
+.featured-block:hover {
     box-shadow:
         0 0 32px rgba(79,255,212,0.55),
         0 0 48px rgba(79,255,212,0.45);
+    border-color: rgba(79,255,212,0.65);
 }
 
 /* ---------------------------------------------------------
-   HERO GLOW (always on)
+   DIVIDERS (Green Glow)
 --------------------------------------------------------- */
 
-.hero-title {
-    text-shadow:
-        0 0 18px rgba(79,255,212,0.45),
-        0 0 28px rgba(79,255,212,0.35);
-}
-
-.hero-subtitle {
-    text-shadow:
-        0 0 12px rgba(79,255,212,0.35);
-}
-
-.hero-wrap {
-    box-shadow:
-        inset 0 0 40px rgba(79,255,212,0.18),
-        0 0 40px rgba(79,255,212,0.25);
+.aurora-divider {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(79,255,212,0.65),
+        transparent
+    );
+    box-shadow: 0 0 12px rgba(79,255,212,0.45);
+    margin: 60px 0;
 }
 
 /* ---------------------------------------------------------
-   CARD / PANEL GLOW (always on)
---------------------------------------------------------- */
-
-.card,
-.panel,
-.featured-block {
-    box-shadow:
-        0 0 22px rgba(79,255,212,0.35),
-        0 0 32px rgba(79,255,212,0.25),
-        0 8px 20px rgba(0,0,0,0.65);
-}
-
-/* ---------------------------------------------------------
-   IMAGE GLOW (always on)
+   IMAGES (Green Glow)
 --------------------------------------------------------- */
 
 img {
+    border-radius: 10px;
     box-shadow:
         0 0 22px rgba(79,255,212,0.35),
         0 0 32px rgba(79,255,212,0.25);
+    transition: 0.25s ease;
+}
+
+img:hover {
+    box-shadow:
+        0 0 32px rgba(79,255,212,0.55),
+        0 0 48px rgba(79,255,212,0.45);
 }
