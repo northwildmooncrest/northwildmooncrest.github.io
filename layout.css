@@ -1,9 +1,9 @@
 /* ---------------------------------------------------------
-   NORTHWILD MOONCREST — MATTE CINEMATIC LAYOUT
-   No Glow • No Neon • Photography-First
+   NORTHWILD MOONCREST — MATTE TWO-TONE CINEMATIC LAYOUT
+   Black Header/Footer • Matte Green Middle • White Text
 --------------------------------------------------------- */
 
-/* GLOBAL BACKGROUND */
+/* GLOBAL BACKGROUND (Matte Black) */
 body {
     background: #000000;
     margin: 0;
@@ -12,7 +12,7 @@ body {
     font-family: system-ui, sans-serif;
 }
 
-/* HEADER + FOOTER (Matte Black) */
+/* HEADER + FOOTER (Matte Black, White Text) */
 header, footer {
     background: #000000;
     color: #ffffff;
@@ -25,7 +25,7 @@ footer {
     border-bottom: none;
 }
 
-/* NAVIGATION (Matte White → Teal Hover) */
+/* NAVIGATION (White → Teal Hover, No Glow) */
 nav a {
     color: #ffffff;
     text-decoration: none;
@@ -37,7 +37,7 @@ nav a:hover {
     color: #4fffd4;
 }
 
-/* MIDDLE CONTENT (Teal Aurora, Matte) */
+/* MIDDLE CONTENT (Matte Green/Teal Aurora) */
 main, .section, .page-wrap {
     background: radial-gradient(
         circle at top,
@@ -49,7 +49,7 @@ main, .section, .page-wrap {
     border-radius: 10px;
 }
 
-/* TEXT (Matte White → Teal Hover) */
+/* TEXT (White → Teal Hover, No Glow) */
 p, h1, h2, h3, h4, h5, h6, li, span {
     color: #ffffff;
     transition: 0.25s ease;
@@ -64,7 +64,7 @@ a:hover, .link:hover {
     color: #4fffd4;
 }
 
-/* FEATURE BLOCKS (Matte White Cards) */
+/* FEATURE BLOCKS (Matte White Cards, No Glow) */
 .featured-block {
     background: #ffffff;
     color: #000000;
@@ -95,3 +95,4 @@ img {
 img:hover {
     opacity: 0.95;
 }
+
