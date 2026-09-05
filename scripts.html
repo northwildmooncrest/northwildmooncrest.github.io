@@ -1,19 +1,20 @@
-<!-- ---------------------------------------------------------
+<!-- ==========================================================
      NORTHWILD MOONCREST — GLOBAL SCRIPT LOADER
      Enables modular HTML includes across all pages
----------------------------------------------------------- -->
+========================================================== -->
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-    const includes = document.querySelectorAll("[data-include]");
+    const base = window.location.origin + "/";
 
-    includes.forEach(async (el) => {
+    document.querySelectorAll("[data-include]").forEach(async (el) => {
         const file = el.getAttribute("data-include");
+        const url = base + file;
 
         try {
-            const response = await fetch(file);
+            const response = await fetch(url);
             if (!response.ok) {
-                throw new Error(`Failed to load ${file}: ${response.status}`);
+                throw new Error(`Failed to load ${url}`);
             }
 
             const html = await response.text();
@@ -31,9 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-<!-- ---------------------------------------------------------
-     NORTHWILD MOONCREST — GLOBAL SCRIPTS (MODULAR VERSION)
----------------------------------------------------------- -->
+<!-- ==========================================================
+     NORTHWILD MOONCREST — GLOBAL SCRIPTS
+========================================================== -->
 
 <!-- Chat System -->
 <script src="chat.js"></script>
@@ -41,11 +42,11 @@ document.addEventListener("DOMContentLoaded", () => {
 <!-- Header Dropdowns -->
 <script src="header.js"></script>
 
-<!-- Footer Interactions (optional future use) -->
+<!-- Footer Interactions -->
 <script src="footer.js"></script>
 
-<!-- Hero Animations (optional future use) -->
+<!-- Hero Animations -->
 <script src="hero.js"></script>
 
-<!-- Featured Section Scripts (optional future use) -->
+<!-- Featured Section Scripts -->
 <script src="featured.js"></script>
