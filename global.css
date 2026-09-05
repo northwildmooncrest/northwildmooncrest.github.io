@@ -431,3 +431,179 @@ textarea {
 .brand-logo-icon:hover {
     opacity: 1;
 }
+/* --------------------------------------------- */
+/* HEADER LAYOUT                                 */
+/* --------------------------------------------- */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    margin: 0;
+    height: 80px;
+}
+
+/* --------------------------------------------- */
+/* BRAND LOGO                                    */
+/* --------------------------------------------- */
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.brand-logo-icon {
+    height: 32px;
+    width: auto;
+    opacity: 0.9;
+    transition: opacity 0.2s ease;
+}
+
+.brand-logo-icon:hover {
+    opacity: 1;
+}
+
+/* --------------------------------------------- */
+/* NAVIGATION                                    */
+/* --------------------------------------------- */
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+    opacity: 1;
+}
+
+/* --------------------------------------------- */
+/* EXPLORE DROPDOWN                              */
+/* --------------------------------------------- */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-btn {
+    cursor: pointer;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+.dropdown-btn:hover {
+    opacity: 1;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: rgba(0,0,0,0.85);
+    padding: 12px 0;
+    border-radius: 8px;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    z-index: 999;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 16px;
+    color: white;
+    text-decoration: none;
+    opacity: 0.85;
+}
+
+.dropdown-menu a:hover {
+    opacity: 1;
+    background: rgba(255,255,255,0.1);
+}
+
+.dropdown.active .dropdown-menu {
+    display: block;
+}
+
+/* --------------------------------------------- */
+/* HEADER UTILITIES                              */
+/* --------------------------------------------- */
+
+.header-utilities {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.utility-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+.utility-icon:hover {
+    opacity: 1;
+}
+
+/* --------------------------------------------- */
+/* ACCOUNT DROPDOWN                              */
+/* --------------------------------------------- */
+
+.account-dropdown {
+    position: relative;
+}
+
+.account-btn {
+    cursor: pointer;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+.account-btn:hover {
+    opacity: 1;
+}
+
+.account-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: rgba(0,0,0,0.85);
+    padding: 12px 0;
+    border-radius: 8px;
+    min-width: 180px;
+    z-index: 999;
+}
+
+.account-menu a {
+    display: block;
+    padding: 10px 16px;
+    color: white;
+    text-decoration: none;
+    opacity: 0.85;
+}
+
+.account-menu a:hover {
+    opacity: 1;
+    background: rgba(255,255,255,0.1);
+}
+
+.account-dropdown.active .account-menu {
+    display: block;
+}
