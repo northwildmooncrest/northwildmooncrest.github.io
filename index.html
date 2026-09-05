@@ -3,49 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Northwild Mooncrest – Global Cinematic Photography</title>
-
-    <!-- Global Theme -->
-    <link rel="stylesheet" href="theme.css">
-
-    <!-- Global Utilities -->
-    <link rel="stylesheet" href="utilities.css">
+    <title>Northwild Mooncrest</title>
 
     <!-- Global Styles -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="utilities.css">
+    <link rel="stylesheet" href="global.css">
 </head>
 
 <body>
 
-    <!-- Global Header -->
+    <!-- Modular Includes -->
     <div data-include="header.html"></div>
-
-    <!-- Cookie Banner -->
-    <div data-include="cookie-banner.html"></div>
-
-    <!-- Accessibility -->
-    <div data-include="accessibility.html"></div>
-
-    <!-- Global Layout Wrapper -->
-    <div data-include="layout.html"></div>
-
-    <!-- Homepage Hero -->
     <div data-include="hero.html"></div>
-
-    <!-- Homepage Featured Section -->
     <div data-include="featured.html"></div>
-
-    <!-- Global Footer -->
     <div data-include="footer.html"></div>
 
-    <!-- Chat Orb -->
-    <div data-include="chat.html"></div>
+    <!-- ==========================================================
+         INCLUDE LOADER — MUST BE IN INDEX.HTML
+         GitHub Pages will NOT execute scripts inside includes.
+    =========================================================== -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const base = window.location.origin + "/";
 
-    <!-- Global Animations -->
-    <div data-include="animations.html"></div>
+        document.querySelectorAll("[data-include]").forEach(async (el) => {
+            const file = el.getAttribute("data-include");
+            const url = base + file;
 
-    <!-- Global Scripts (includes loader) -->
-    <div data-include="scripts.html"></div>
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`Failed to load ${url}`);
+                el.innerHTML = await response.text();
+            } catch (err) {
+                console.error(err);
+                el.innerHTML = `<div style="color:red;">Error loading ${file}</div>`;
+            }
+        });
+    });
+    </script>
+
+    <!-- Global Scripts -->
+    <script src="chat.js"></script>
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+    <script src="hero.js"></script>
+    <script src="featured.js"></script>
 
 </body>
 </html>
