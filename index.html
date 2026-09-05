@@ -278,12 +278,26 @@
     </nav>
 
     <div class="header-utilities">
-        <span class="utility-icon" id="searchBtn">🔍</span>
-        <span class="utility-icon" id="accountBtn">👤</span>
+
+        <!-- Search Icon (Geometric SVG) -->
+        <span id="searchBtn" class="utility-icon">
+            <svg width="22" height="22" stroke="white" fill="none" stroke-width="2">
+                <circle cx="10" cy="10" r="7"></circle>
+                <line x1="15" y1="15" x2="20" y2="20"></line>
+            </svg>
+        </span>
+
+        <!-- Account Icon (Geometric SVG) -->
+        <span id="accountBtn" class="utility-icon">
+            <svg width="22" height="22" stroke="white" fill="none" stroke-width="2">
+                <circle cx="11" cy="7" r="4"></circle>
+                <path d="M4 20c0-4 3-7 7-7s7 3 7 7"></path>
+            </svg>
+        </span>
+
     </div>
 </header>
 
-<!-- SEARCH OVERLAY -->
 <div id="searchOverlay">
     <input type="text" placeholder="Search Northwild Mooncrest...">
 </div>
@@ -297,7 +311,7 @@
 </div>
 
 <section class="hero">
-    <h1 class="hero-title">Cinematic Nature Photography</h1>
+    <h1 class="hero-title">Cinematic Nature Photography from Minnesota to the World</h1>
     <h2 class="hero-subtitle">Wilderness · Wildlife · Night Skies</h2>
     <p class="hero-text">
         Atmospheric wilderness moments shaped by northern landscapes, dramatic weather, wildlife encounters, and the quiet beauty of the night.
@@ -359,6 +373,26 @@
     </div>
 </footer>
 
+<script>
+    // Explore Dropdown
+    document.querySelector('.dropdown-btn').onclick = () => {
+        const menu = document.getElementById('exploreMenu');
+        menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    };
+
+    // Search Overlay
+    document.getElementById('searchBtn').onclick = () => {
+        document.getElementById('searchOverlay').style.display = 'flex';
+    };
+    document.getElementById('searchOverlay').onclick = () => {
+        document.getElementById('searchOverlay').style.display = 'none';
+    };
+
+    // Account Menu
+    document.getElementById('accountBtn').onclick = () => {
+        const menu = document.getElementById('accountMenu');
+        menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    };
 <script>
     // Explore Dropdown
     document.querySelector('.dropdown-btn').onclick = () => {
