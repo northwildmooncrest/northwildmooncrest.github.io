@@ -1,6 +1,6 @@
 /* ---------------------------------------------------------
-   NORTHWILD MOONCREST — LAYOUT SYSTEM
-   Midnight Aurora • Pure Teal • Soft Glow • Cinematic
+   NORTHWILD MOONCREST — LAYOUT SYSTEM (FINAL FRAMEWORK)
+   Midnight Aurora • Teal-Green • Medium Glow • Cinematic
 --------------------------------------------------------- */
 
 /* ---------------------------------------------------------
@@ -72,21 +72,22 @@
 --------------------------------------------------------- */
 
 .section-dark {
-    background: var(--nw-darker);
+    background: #050b12;
 }
 
 .section-panel {
-    background: var(--nw-panel);
-    border-top: 1px solid var(--nw-border);
-    border-bottom: 1px solid var(--nw-border);
+    background: #0d141c;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .section-aurora {
     background: radial-gradient(
         circle at top,
-        var(--nw-soft),
-        var(--nw-darker) 70%
+        #142633,
+        #050b12 70%
     );
+    box-shadow: inset 0 0 40px rgba(79,255,212,0.12);
 }
 
 /* ---------------------------------------------------------
@@ -98,6 +99,8 @@
     font-weight: 600;
     margin-bottom: 16px;
     text-align: center;
+    color: #f5f5f5;
+    text-shadow: 0 0 12px rgba(79,255,212,0.35);
 }
 
 .section-subtitle {
@@ -105,6 +108,7 @@
     opacity: 0.75;
     text-align: center;
     margin-bottom: 40px;
+    color: #d6e3e8;
 }
 
 /* ---------------------------------------------------------
@@ -112,19 +116,21 @@
 --------------------------------------------------------- */
 
 .featured-block {
-    background: var(--nw-panel);
-    border: 1px solid var(--nw-border);
-    border-radius: var(--nw-radius);
+    background: #0d141c;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
     padding: 30px;
-    box-shadow: 0 8px 20px var(--nw-shadow);
-    transition: var(--nw-transition);
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.65),
+        0 0 14px rgba(79,255,212,0.18);
+    transition: 0.25s ease;
 }
 
 .featured-block:hover {
-    border-color: var(--nw-border-strong);
+    border-color: rgba(79,255,212,0.35);
     box-shadow:
-        0 12px 28px var(--nw-shadow-strong),
-        0 0 12px var(--nw-aurora-fade);
+        0 12px 28px rgba(0,0,0,0.85),
+        0 0 22px rgba(79,255,212,0.35);
 }
 
 /* ---------------------------------------------------------
@@ -132,16 +138,18 @@
 --------------------------------------------------------- */
 
 .image-block {
-    border-radius: var(--nw-radius);
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 6px 18px var(--nw-shadow);
-    transition: var(--nw-transition);
+    box-shadow:
+        0 6px 18px rgba(0,0,0,0.65),
+        0 0 12px rgba(79,255,212,0.18);
+    transition: 0.25s ease;
 }
 
 .image-block:hover {
     box-shadow:
-        0 12px 28px var(--nw-shadow-strong),
-        0 0 16px var(--nw-aurora-fade);
+        0 12px 28px rgba(0,0,0,0.85),
+        0 0 26px rgba(79,255,212,0.35);
 }
 
 /* ---------------------------------------------------------
@@ -151,7 +159,7 @@
 .text-block {
     padding: 20px 10px;
     font-size: 16px;
-    color: var(--nw-text-soft);
+    color: #d6e3e8;
     line-height: 1.6;
 }
 
@@ -202,7 +210,7 @@
     background: linear-gradient(
         to right,
         transparent,
-        var(--nw-aurora-fade),
+        rgba(79,255,212,0.35),
         transparent
     );
     margin: 60px 0;
@@ -242,19 +250,23 @@
 .hero-title {
     font-size: 48px;
     font-weight: 600;
+    color: #f5f5f5;
+    text-shadow: 0 0 18px rgba(79,255,212,0.35);
 }
 
 .hero-subtitle {
     font-size: 22px;
-    opacity: 0.8;
+    opacity: 0.85;
     margin-top: 10px;
+    color: #d6e3e8;
 }
 
 .hero-text {
     max-width: 780px;
     margin: 20px auto;
     font-size: 18px;
-    opacity: 0.85;
+    opacity: 0.9;
+    color: #d6e3e8;
 }
 
 /* ---------------------------------------------------------
@@ -276,13 +288,15 @@
 
 .featured-item img {
     width: 100%;
-    border-radius: var(--nw-radius);
-    box-shadow: 0 6px 18px var(--nw-shadow);
-    transition: var(--nw-transition);
+    border-radius: 10px;
+    box-shadow:
+        0 6px 18px rgba(0,0,0,0.65),
+        0 0 12px rgba(79,255,212,0.18);
+    transition: 0.25s ease;
 }
 
 .featured-item img:hover {
     box-shadow:
-        0 12px 28px var(--nw-shadow-strong),
-        0 0 16px var(--nw-aurora-fade);
+        0 12px 28px rgba(0,0,0,0.85),
+        0 0 26px rgba(79,255,212,0.35);
 }
