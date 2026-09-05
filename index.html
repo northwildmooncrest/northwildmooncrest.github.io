@@ -43,6 +43,7 @@
             position: sticky;
             top: 0;
             z-index: 999;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
 
         .brand-logo {
@@ -113,13 +114,28 @@
         .header-utilities {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 22px;
         }
 
         .utility-icon {
             cursor: pointer;
             font-size: 20px;
             color: #fff;
+        }
+
+        .ask-btn {
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.12);
+            color: #fff;
+            transition: 0.2s;
+        }
+
+        .ask-btn:hover {
+            background: rgba(255,255,255,0.18);
         }
 
         /* SEARCH OVERLAY */
@@ -195,6 +211,12 @@
             opacity: 0.85;
         }
 
+        .hero-ai {
+            margin-top: 12px;
+            font-size: 15px;
+            opacity: 0.65;
+        }
+
         /* FEATURED GRID */
         .featured-grid {
             display: flex;
@@ -266,7 +288,7 @@
             <li><a href="contact.html">Contact</a></li>
 
             <li class="dropdown">
-                <span class="dropdown-btn">Explore ▼</span>
+                <span class="dropdown-btn">Menu ▼</span>
                 <div class="dropdown-menu">
                     <a href="privacy.html">Privacy</a>
                     <a href="cookies.html">Cookies</a>
@@ -281,6 +303,8 @@
     </nav>
 
     <div class="header-utilities">
+        <span class="ask-btn">Ask Northwild Mooncrest</span>
+
         <span class="utility-icon" id="searchBtn">
             <svg width="22" height="22" stroke="white" fill="none" stroke-width="2">
                 <circle cx="10" cy="10" r="7"></circle>
@@ -317,6 +341,7 @@
     <p class="hero-text">
         Northwild Mooncrest delivers atmospheric, cinematic photography from across the globe—capturing world landscapes, wildlife encounters, night skies, and the human experience of exploration. Built for worldwide audiences, brands, creators, and collectors who want imagery that feels powerful, premium, and unforgettable.
     </p>
+    <p class="hero-ai">Ask Northwild Mooncrest — your AI guide for prints, projects, and world photography.</p>
 </section>
 
 <section class="featured-grid">
@@ -359,6 +384,7 @@
         <a href="contact.html">Contact</a>
         <a href="licensing.html">Licensing</a>
         <a href="faq.html">FAQ</a>
+        <a href="ask.html">Ask Northwild Mooncrest (AI Assistant)</a>
     </div>
 
     <div>
