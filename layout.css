@@ -1,46 +1,43 @@
 /* ---------------------------------------------------------
-   NORTHWILD MOONCREST — DUAL-TONE CINEMATIC LAYOUT
-   Black Header/Footer • White Middle • Green Glow Accents
+   NORTHWILD MOONCREST — REFINED CINEMATIC LAYOUT
+   Black Frame • White Text • Teal Aurora Middle • Minimal Glow
 --------------------------------------------------------- */
 
 /* ---------------------------------------------------------
-   GLOBAL BACKGROUND (Aurora Wallpaper)
+   GLOBAL BACKGROUND (Black Wallpaper)
 --------------------------------------------------------- */
 
 body {
-    background: radial-gradient(
-        circle at top,
-        #0f2a2f,
-        #051015 70%
-    );
+    background: #000000;
     margin: 0;
     padding: 0;
+    color: #ffffff;
+    font-family: system-ui, sans-serif;
 }
 
 /* ---------------------------------------------------------
-   HEADER + FOOTER (Black Frame)
+   HEADER + FOOTER (Black Frame, White Text)
 --------------------------------------------------------- */
 
 header, footer {
     background: #000000;
     color: #ffffff;
     padding: 20px 30px;
-    border-bottom: 2px solid rgba(79,255,212,0.45);
-    box-shadow:
-        0 4px 22px rgba(79,255,212,0.25),
-        0 0 18px rgba(79,255,212,0.35);
+    border-bottom: 1px solid rgba(79,255,212,0.25);
 }
 
 footer {
-    border-top: 2px solid rgba(79,255,212,0.45);
+    border-top: 1px solid rgba(79,255,212,0.25);
     border-bottom: none;
-    box-shadow:
-        0 -4px 22px rgba(79,255,212,0.25),
-        0 0 18px rgba(79,255,212,0.35);
+}
+
+/* Hover glow ONLY on interaction */
+header:hover, footer:hover {
+    box-shadow: 0 0 18px rgba(79,255,212,0.35);
 }
 
 /* ---------------------------------------------------------
-   NAVIGATION (White Text → Green Hover)
+   NAVIGATION (White Text → Teal/Green Hover)
 --------------------------------------------------------- */
 
 nav a {
@@ -52,66 +49,62 @@ nav a {
 
 nav a:hover {
     color: #4fffd4;
-    text-shadow: 0 0 10px rgba(79,255,212,0.55);
 }
 
 /* ---------------------------------------------------------
-   MAIN CONTENT AREA (Soft White Middle)
+   MIDDLE CONTENT AREA (Teal/Green Aurora Wallpaper)
 --------------------------------------------------------- */
 
 main, .section, .page-wrap {
-    background: #f5f5f5;
-    color: #000000;
+    background: radial-gradient(
+        circle at top,
+        #0f2a2f,
+        #051015 70%
+    );
+    color: #ffffff;
     padding: 40px 30px;
     border-radius: 10px;
-    box-shadow:
-        0 0 22px rgba(79,255,212,0.25),
-        0 0 32px rgba(79,255,212,0.18);
 }
 
 /* ---------------------------------------------------------
-   TEXT (Black → Green Hover)
+   TEXT (White → Teal/Green Hover)
 --------------------------------------------------------- */
 
 p, h1, h2, h3, h4, h5, h6, li, span {
-    color: #000000;
+    color: #ffffff;
     transition: 0.25s ease;
 }
 
 a, .link {
-    color: #000000;
+    color: #ffffff;
     transition: 0.25s ease;
 }
 
 a:hover, .link:hover {
     color: #4fffd4;
-    text-shadow: 0 0 10px rgba(79,255,212,0.55);
 }
 
 /* ---------------------------------------------------------
-   FEATURE BLOCKS (White Cards + Green Glow)
+   FEATURE BLOCKS (Clean White Cards, Minimal Glow)
 --------------------------------------------------------- */
 
 .featured-block {
     background: #ffffff;
-    border: 2px solid rgba(79,255,212,0.45);
+    color: #000000;
+    border: 1px solid rgba(79,255,212,0.25);
     border-radius: 12px;
     padding: 30px;
-    box-shadow:
-        0 0 22px rgba(79,255,212,0.35),
-        0 0 32px rgba(79,255,212,0.25);
     transition: 0.25s ease;
 }
 
+/* Hover glow ONLY */
 .featured-block:hover {
-    box-shadow:
-        0 0 32px rgba(79,255,212,0.55),
-        0 0 48px rgba(79,255,212,0.45);
-    border-color: rgba(79,255,212,0.65);
+    border-color: rgba(79,255,212,0.45);
+    box-shadow: 0 0 22px rgba(79,255,212,0.35);
 }
 
 /* ---------------------------------------------------------
-   DIVIDERS (Green Glow)
+   DIVIDERS (Subtle Teal Line)
 --------------------------------------------------------- */
 
 .aurora-divider {
@@ -120,27 +113,21 @@ a:hover, .link:hover {
     background: linear-gradient(
         to right,
         transparent,
-        rgba(79,255,212,0.65),
+        rgba(79,255,212,0.45),
         transparent
     );
-    box-shadow: 0 0 12px rgba(79,255,212,0.45);
     margin: 60px 0;
 }
 
 /* ---------------------------------------------------------
-   IMAGES (Green Glow)
+   IMAGES (Minimal Glow on Hover Only)
 --------------------------------------------------------- */
 
 img {
     border-radius: 10px;
-    box-shadow:
-        0 0 22px rgba(79,255,212,0.35),
-        0 0 32px rgba(79,255,212,0.25);
     transition: 0.25s ease;
 }
 
 img:hover {
-    box-shadow:
-        0 0 32px rgba(79,255,212,0.55),
-        0 0 48px rgba(79,255,212,0.45);
+    box-shadow: 0 0 22px rgba(79,255,212,0.35);
 }
