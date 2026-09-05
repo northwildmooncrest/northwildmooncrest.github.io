@@ -1,98 +1,64 @@
-/* ---------------------------------------------------------
-   NORTHWILD MOONCREST — MATTE TWO-TONE CINEMATIC LAYOUT
-   Black Header/Footer • Matte Green Middle • White Text
---------------------------------------------------------- */
+/* ==========================================================
+   NORTHWILD MOONCREST — LAYOUT SYSTEM
+   Controls spacing, section flow, alignment, and structure
+   ========================================================== */
 
-/* GLOBAL BACKGROUND (Matte Black) */
-body {
-    background: #000000;
-    margin: 0;
-    padding: 0;
-    color: #ffffff;
-    font-family: system-ui, sans-serif;
+/* ---------- SECTION SPACING ---------- */
+section {
+    width: min(1200px, 90%);
+    margin: 0 auto;
+    padding: 4rem 0;
 }
 
-/* HEADER + FOOTER (Matte Black, White Text) */
-header, footer {
-    background: #000000;
-    color: #ffffff;
-    padding: 20px 30px;
-    border-bottom: 1px solid #1a1a1a;
+/* ---------- HEADER ---------- */
+header {
+    padding: 1.5rem 0;
+    margin-bottom: 2rem;
 }
 
+/* ---------- HERO ---------- */
+.hero {
+    padding: 6rem 0 4rem 0;
+    text-align: center;
+}
+
+.hero h1 {
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    margin-top: 0.5rem;
+    opacity: 0.85;
+}
+
+/* ---------- FEATURED GRID ---------- */
+.featured {
+    padding: 4rem 0;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+/* ---------- FOOTER ---------- */
 footer {
-    border-top: 1px solid #1a1a1a;
-    border-bottom: none;
+    padding: 3rem 0;
+    margin-top: 4rem;
+    opacity: 0.7;
 }
 
-/* NAVIGATION (White → Teal Hover, No Glow) */
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.25s ease;
+/* ---------- GLOBAL SPACING UTILITIES ---------- */
+.section-gap {
+    margin-top: 4rem;
 }
 
-nav a:hover {
-    color: #4fffd4;
+.section-gap-large {
+    margin-top: 6rem;
 }
 
-/* MIDDLE CONTENT (Matte Green/Teal Aurora) */
-main, .section, .page-wrap {
-    background: radial-gradient(
-        circle at top,
-        #0f2a2f,
-        #051015 70%
-    );
-    color: #ffffff;
-    padding: 40px 30px;
-    border-radius: 10px;
+.section-gap-small {
+    margin-top: 2rem;
 }
-
-/* TEXT (White → Teal Hover, No Glow) */
-p, h1, h2, h3, h4, h5, h6, li, span {
-    color: #ffffff;
-    transition: 0.25s ease;
-}
-
-a, .link {
-    color: #ffffff;
-    transition: 0.25s ease;
-}
-
-a:hover, .link:hover {
-    color: #4fffd4;
-}
-
-/* FEATURE BLOCKS (Matte White Cards, No Glow) */
-.featured-block {
-    background: #ffffff;
-    color: #000000;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 30px;
-    transition: 0.25s ease;
-}
-
-.featured-block:hover {
-    border-color: #4fffd4;
-}
-
-/* DIVIDERS (Matte Teal Line) */
-.aurora-divider {
-    width: 100%;
-    height: 2px;
-    background: #4fffd4;
-    margin: 60px 0;
-}
-
-/* IMAGES (Matte, No Glow) */
-img {
-    border-radius: 10px;
-    transition: 0.25s ease;
-}
-
-img:hover {
-    opacity: 0.95;
-}
-
