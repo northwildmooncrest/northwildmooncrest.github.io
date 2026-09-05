@@ -1,0 +1,87 @@
+<!-- ---------------------------------------------------------
+     NORTHWILD MOONCREST — GLOBAL ANIMATIONS MODULE
+     Unified cinematic animations for all pages
+---------------------------------------------------------- -->
+
+<style>
+    /* Fade In */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeIn var(--transition-slow) forwards;
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Slide Up */
+    .slide-up {
+        opacity: 0;
+        transform: translateY(40px);
+        animation: slideUp var(--transition-medium) forwards;
+    }
+
+    @keyframes slideUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Pulse (Chat Orb) */
+    .pulse {
+        animation: pulse 2.5s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.08); }
+        100% { transform: scale(1); }
+    }
+
+    /* Fade In Slow */
+    .fade-in-slow {
+        opacity: 0;
+        animation: fadeInSlow 1.8s forwards;
+    }
+
+    @keyframes fadeInSlow {
+        to { opacity: 1; }
+    }
+
+    /* Section Reveal */
+    .reveal {
+        opacity: 0;
+        transform: translateY(60px);
+        animation: reveal var(--transition-slow) forwards;
+    }
+
+    @keyframes reveal {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Hover Glow */
+    .hover-glow:hover {
+        box-shadow: 0 0 20px var(--brand-accent);
+        transition: box-shadow var(--transition-fast);
+    }
+</style>
+
+<script>
+    /* Auto-apply reveal animations on scroll */
+    document.addEventListener("scroll", () => {
+        document.querySelectorAll(".reveal").forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                el.style.animationPlayState = "running";
+            }
+        });
+    });
+</script>
