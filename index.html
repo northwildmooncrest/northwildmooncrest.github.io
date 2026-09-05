@@ -413,7 +413,6 @@
         }
     </style>
 </head>
-
 <body>
 
 <header>
@@ -542,6 +541,105 @@
     </div>
 </footer>
 
-<!-- AI CHAT ORB + PANEL -->
+<!-- AI CHAT ORB -->
 <div class="ai-chat-orb" id="aiChatOrb">
-    <svg class="ai-chat-orb
+    <svg class="ai-chat-orb-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="M8 10h8M8 14h5"></path>
+    </svg>
+</div>
+
+<div class="ai-chat-orb-tooltip">Ask Northwild Mooncrest</div>
+
+<!-- AI CHAT PANEL -->
+<div id="aiChatPanel">
+    <div class="ai-chat-header">
+        <div>
+            <div class="ai-chat-header-title">Northwild Mooncrest AI</div>
+            <div class="ai-chat-header-sub">Your cinematic photography assistant</div>
+        </div>
+        <span class="ai-chat-close" id="aiChatClose">×</span>
+    </div>
+
+    <div class="ai-chat-body">
+        Hi there — I’m your Northwild Mooncrest AI assistant.  
+        Ask me anything about prints, licensing, world photography, gear, or your next project.
+    </div>
+
+    <div class="ai-chat-input">
+        <input type="text" placeholder="Ask something...">
+        <button>Send</button>
+    </div>
+</div>
+<!-- INTERACTIVITY SCRIPTS -->
+<script>
+    /* DROPDOWN MENU */
+    const dropdownBtn = document.querySelector('.dropdown-btn');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    dropdownBtn.addEventListener('click', () => {
+        dropdownMenu.style.display =
+            dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+
+    /* SEARCH OVERLAY */
+    const searchBtn = document.getElementById('searchBtn');
+    const searchOverlay = document.getElementById('searchOverlay');
+
+    searchBtn.addEventListener('click', () => {
+        searchOverlay.style.display = 'flex';
+    });
+
+    searchOverlay.addEventListener('click', (e) => {
+        if (e.target === searchOverlay) {
+            searchOverlay.style.display = 'none';
+        }
+    });
+
+    /* ACCOUNT MENU */
+    const accountBtn = document.querySelector('.account-btn');
+    const accountMenu = document.querySelector('.account-menu');
+
+    accountBtn.addEventListener('click', () => {
+        accountMenu.style.display =
+            accountMenu.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!accountBtn.contains(e.target) && !accountMenu.contains(e.target)) {
+            accountMenu.style.display = 'none';
+        }
+    });
+
+    /* AI CHAT ORB + PANEL */
+    const aiOrb = document.getElementById('aiChatOrb');
+    const aiPanel = document.getElementById('aiChatPanel');
+    const aiClose = document.getElementById('aiChatClose');
+
+    aiOrb.addEventListener('click', () => {
+        aiPanel.style.display = 'flex';
+    });
+
+    aiClose.addEventListener('click', () => {
+        aiPanel.style.display = 'none';
+    });
+
+    document.addEventListener('click', (e) => {
+        if (
+            aiPanel.style.display === 'flex' &&
+            !aiPanel.contains(e.target) &&
+            !aiOrb.contains(e.target)
+        ) {
+            aiPanel.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>
