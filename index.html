@@ -1,198 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Core document settings -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Northwild Mooncrest™ – Cinematic Nature Photography</title>
+    <title>Northwild Mooncrest – Cinematic Nature Photography</title>
 
-    <!-- Primary SEO -->
-    <meta name="description" content="Northwild Mooncrest™ — cinematic nature photography rooted in wilderness, wildlife, night skies, and atmospheric storytelling.">
-    <meta name="keywords" content="Northwild Mooncrest, nature photography, wilderness photographer, cinematic landscapes, Minnesota photographer">
-    <meta name="author" content="Northwild Mooncrest™">
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- SEO -->
+    <meta name="description" content="Northwild Mooncrest – cinematic nature photography rooted in wilderness, wildlife, night skies, and atmospheric storytelling.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://northwildmooncrest.github.io/index.html">
 
-    <!-- Theme / UI hints -->
-    <meta name="theme-color" content="#0b1118">
-    <meta name="color-scheme" content="dark light">
-
-    <!-- UNIVERSAL FAVICON BLOCK -->
-    <link rel="icon" type="image/x-icon" href="northwild_mooncrest_primary_logo.ico">
-    <link rel="icon" type="image/png" href="northwild_mooncrest_primary_logo.png">
-    <link rel="icon" type="image/svg+xml" href="northwild_mooncrest_icon.svg">
-    <link rel="apple-touch-icon" href="northwild_mooncrest_primary_logo.png">
-    <link rel="mask-icon" href="northwild_mooncrest_icon.svg" color="#0f1f2e">
-
-    <!-- DARK-MODE WHITE FAVICON -->
-    <link rel="icon" href="northwild_mooncrest_icon_light.svg" media="(prefers-color-scheme: dark)">
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Northwild Mooncrest™ – Cinematic Nature Photography">
-    <meta property="og:description" content="Explore cinematic wilderness, wildlife, and night sky photography.">
-    <meta property="og:url" content="https://northwildmooncrest.github.io/index.html">
-    <meta property="og:site_name" content="Northwild Mooncrest™">
-    <meta property="og:image" content="https://northwildmooncrest.github.io/images/featured1.jpg">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Northwild Mooncrest™ – Cinematic Nature Photography">
-    <meta name="twitter:description" content="Atmospheric nature photography rooted in wilderness and northern landscapes.">
-    <meta name="twitter:image" content="https://northwildmooncrest.github.io/images/featured1.jpg">
+    <!-- Favicon -->
+    <link rel="icon" href="northwild_mooncrest_icon_light.svg">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="layout.css">
     <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="chat.css">
+
+    <style>
+        /* --- GLOBAL BRAND FONT --- */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0b1118;
+            color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- HEADER --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 40px;
+            background: rgba(10, 15, 20, 0.85);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .brand-logo-icon {
+            height: 32px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 6px 0;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        /* --- EXPLORE DROPDOWN --- */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-btn {
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            right: 0;
+            top: 32px;
+            background: #111a22;
+            border-radius: 8px;
+            padding: 12px 0;
+            display: none;
+            flex-direction: column;
+            min-width: 180px;
+        }
+
+        .dropdown-menu a {
+            padding: 10px 20px;
+            display: block;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        /* --- HEADER UTILITIES --- */
+        .header-utilities {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .utility-icon {
+            cursor: pointer;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        /* --- SEARCH OVERLAY --- */
+        #searchOverlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(6px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #searchOverlay input {
+            width: 60%;
+            padding: 18px;
+            font-size: 22px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+        }
+
+        /* --- ACCOUNT DROPDOWN --- */
+        #accountMenu {
+            position: absolute;
+            right: 40px;
+            top: 70px;
+            background: #111a22;
+            border-radius: 8px;
+            padding: 12px 0;
+            display: none;
+            flex-direction: column;
+            min-width: 160px;
+            z-index: 999;
+        }
+
+        #accountMenu a {
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        #accountMenu a:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        /* --- HERO --- */
+        .hero {
+            text-align: center;
+            padding: 120px 40px 80px;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 600;
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+
+        .hero-text {
+            max-width: 700px;
+            margin: 20px auto;
+            font-size: 18px;
+            opacity: 0.85;
+        }
+
+        /* --- FEATURED GRID --- */
+        .featured-grid {
+            display: flex;
+            gap: 40px;
+            padding: 60px 40px;
+            justify-content: center;
+        }
+
+        .featured-item {
+            width: 300px;
+            text-align: center;
+        }
+
+        .featured-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #0d141c;
+            padding: 60px 40px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        footer h4 {
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        footer a {
+            display: block;
+            margin-bottom: 8px;
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        footer a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            grid-column: span 4;
+            text-align: center;
+            margin-top: 40px;
+            opacity: 0.7;
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
     <a href="/" class="brand-logo">
-        <img src="northwild_mooncrest_icon_light.svg" class="brand-logo-icon" alt="Northwild Mooncrest Logo">
-        <span class="brand-logo-text">Northwild Mooncrest™</span>
+        <img src="northwild_mooncrest_icon_light.svg" class="brand-logo-icon">
+        <span>Northwild Mooncrest</span>
     </a>
 
     <nav>
         <ul>
-            <li><a href="index.html" class="reveal active">Home</a></li>
-            <li><a href="portfolio.html" class="reveal">Portfolio</a></li>
-            <li><a href="printshop.html" class="reveal">Print Shop</a></li>
-            <li><a href="studio.html" class="reveal">Studio</a></li>
-            <li><a href="about.html" class="reveal">About</a></li>
-            <li><a href="contact.html" class="reveal">Contact</a></li>
-            <li><a href="privacy.html" class="reveal">Privacy</a></li>
-            <li><a href="cookies.html" class="reveal">Cookies</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="printshop.html">Print Shop</a></li>
+            <li><a href="studio.html">Studio</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+
+            <li class="dropdown">
+                <span class="dropdown-btn">Explore ▼</span>
+                <div class="dropdown-menu" id="exploreMenu">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="cookies.html">Cookies</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="privacy-choices.html">Privacy Choices</a>
+                    <a href="licensing.html">Licensing</a>
+                    <a href="journal.html">Journal</a>
+                    <a href="studio-gear.html">Studio Gear</a>
+                </div>
+            </li>
         </ul>
     </nav>
 
     <div class="header-utilities">
-        <button class="utility-btn btn-animate">Search</button>
-        <button class="utility-btn btn-animate">Account</button>
+        <span class="utility-icon" id="searchBtn">🔍</span>
+        <span class="utility-icon" id="accountBtn">👤</span>
     </div>
 </header>
+
+<!-- SEARCH OVERLAY -->
+<div id="searchOverlay">
+    <input type="text" placeholder="Search Northwild Mooncrest...">
+</div>
+
+<!-- ACCOUNT MENU -->
+<div id="accountMenu">
+    <a href="#">Sign In</a>
+    <a href="#">Create Account</a>
+    <a href="#">Orders</a>
+    <a href="#">Saved Items</a>
+</div>
 
 <section class="hero">
     <h1 class="hero-title">Cinematic Nature Photography</h1>
     <h2 class="hero-subtitle">Wilderness · Wildlife · Night Skies</h2>
     <p class="hero-text">
-        Northwild Mooncrest™ captures atmospheric wilderness moments shaped by northern landscapes,
-        dramatic weather, wildlife encounters, and the quiet beauty of the night.
+        Atmospheric wilderness moments shaped by northern landscapes, dramatic weather, wildlife encounters, and the quiet beauty of the night.
     </p>
 </section>
 
-<div class="section-divider"></div>
-
-<section class="featured-grid reveal">
-    <article class="featured-item card-hover">
-        <img src="images/featured2.jpg" alt="Northern wilderness landscape">
+<section class="featured-grid">
+    <article class="featured-item">
+        <img src="images/featured2.jpg">
         <h3>Wilderness</h3>
         <p>Landscapes shaped by northern weather, seasons, and atmosphere.</p>
     </article>
 
-    <article class="featured-item card-hover">
-        <img src="images/featured3.jpg" alt="Wildlife portrait">
+    <article class="featured-item">
+        <img src="images/featured3.jpg">
         <h3>Wildlife</h3>
         <p>Natural encounters captured with cinematic detail and authenticity.</p>
     </article>
 
-    <article class="featured-item card-hover">
-        <img src="images/featured4.jpg" alt="Night sky long exposure">
+    <article class="featured-item">
+        <img src="images/featured4.jpg">
         <h3>Night Skies</h3>
         <p>Long‑exposure scenes revealing the quiet beauty of the night.</p>
     </article>
 </section>
 
-<div class="section-divider"></div>
+<footer>
+    <div>
+        <h4>Northwild Mooncrest</h4>
+        <a>Cinematic Nature Photography</a>
+        <a>From Minnesota to the World</a>
+    </div>
 
-<footer class="site-footer reveal">
-    <p>© 2026 Northwild Mooncrest™ — The World, Reimagined.</p>
-    <p>
-        <a href="terms.html">Terms</a> ·
-        <a href="privacy.html">Privacy</a> ·
-        <a href="privacy-choices.html">Privacy Choices</a> ·
+    <div>
+        <h4>Explore</h4>
+        <a href="portfolio.html">Portfolio</a>
         <a href="studio.html">Studio</a>
-    </p>
+        <a href="printshop.html">Print Shop</a>
+        <a href="journal.html">Journal</a>
+    </div>
+
+    <div>
+        <h4>Support</h4>
+        <a href="contact.html">Contact</a>
+        <a href="licensing.html">Licensing</a>
+        <a href="faq.html">FAQ</a>
+    </div>
+
+    <div>
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="terms.html">Terms</a>
+        <a href="privacy-choices.html">Privacy Choices</a>
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Northwild Mooncrest — The World, Reimagined.
+    </div>
 </footer>
 
-<!-- SAFE FEATURE PACK -->
-<div id="cookieBanner" class="cookie-banner reveal">
-    <p>We use cookies to enhance your experience.</p>
-    <button id="acceptCookies" class="btn-animate">Accept</button>
-</div>
-
-<div id="notifyPrompt" class="notification-prompt reveal">
-    <p>Enable notifications for updates?</p>
-    <button id="enableNotify" class="btn-animate">Enable</button>
-    <button id="dismissNotify" class="btn-animate">Dismiss</button>
-</div>
-
-<div id="chatBubble" class="chat-bubble card-hover">💬</div>
-
-<div id="chatModal" class="chat-modal">
-    <div class="chat-content">
-        <button id="closeChat" class="close-chat">×</button>
-        <h3>Chat with Northwild Mooncrest™</h3>
-        <textarea placeholder="Type your message..."></textarea>
-        <button class="btn-animate">Send</button>
-    </div>
-</div>
-
-<!-- Scripts -->
-<script src="scrollreveal.min.js"></script>
-<script src="chat.js"></script>
-<script src="notifications.js"></script>
-<script src="cookies.js"></script>
-<script src="safe.js"></script>
-
 <script>
-    // Cookie Banner
-    const cookieBanner = document.getElementById('cookieBanner');
-    const acceptCookies = document.getElementById('acceptCookies');
-    acceptCookies.onclick = () => {
-        cookieBanner.style.display = 'none';
-        localStorage.setItem('cookiesAccepted', 'true');
+    // Explore Dropdown
+    document.querySelector('.dropdown-btn').onclick = () => {
+        const menu = document.getElementById('exploreMenu');
+        menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
     };
-    if (localStorage.getItem('cookiesAccepted') === 'true') {
-        cookieBanner.style.display = 'none';
-    }
 
-    // Notification Prompt
-    const notifyPrompt = document.getElementById('notifyPrompt');
-    const enableNotify = document.getElementById('enableNotify');
-    const dismissNotify = document.getElementById('dismissNotify');
-    enableNotify.onclick = () => {
-        notifyPrompt.style.display = 'none';
-        localStorage.setItem('notifyAccepted', 'true');
+    // Search Overlay
+    document.getElementById('searchBtn').onclick = () => {
+        document.getElementById('searchOverlay').style.display = 'flex';
     };
-    dismissNotify.onclick = () => notifyPrompt.style.display = 'none';
-    if (localStorage.getItem('notifyAccepted') === 'true') {
-        notifyPrompt.style.display = 'none';
-    }
-
-    // Chat Modal
-    const chatBubble = document.getElementById('chatBubble');
-    const chatModal = document.getElementById('chatModal');
-    const closeChat = document.getElementById('closeChat');
-    chatBubble.onclick = () => chatModal.classList.add('active');
-    closeChat.onclick = () => chatModal.classList.remove('active');
-
-    // Scroll Reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const revealOnScroll = () => {
-        reveals.forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 80) {
-                el.classList.add('visible');
-            }
-        });
+    document.getElementById('searchOverlay').onclick = () => {
+        document.getElementById('searchOverlay').style.display = 'none';
     };
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll();
+
+    // Account Menu
+    document.getElementById('accountBtn').onclick = () => {
+        const menu = document.getElementById('accountMenu');
+        menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    };
 </script>
 
 </body>
