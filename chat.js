@@ -1,39 +1,87 @@
-// Minimal Chat System — Clean, No Animations
+// ---------------------------------------------------------
+// NORTHWILD MOONCREST — CHAT.JS
+// Orb + panel + messaging + AI hook
+// ---------------------------------------------------------
 
-document.addEventListener("DOMContentLoaded", () => {
-    const toggle = document.getElementById("chat-toggle");
-    const panel = document.getElementById("chat-panel");
+// Open panel when orb is clicked
+const orb = document.querySelector(".ai-chat-orb");
+const panel = document.getElementById("aiChatPanel");
+const closeBtn = document.getElementById("aiChatClose");
+const input = document.getElementById("aiChatInput");
+const sendBtn = document.getElementById("aiChatSend");
+const body = document.querySelector(".ai-chat-body");
 
-    // Build chat structure
-    panel.innerHTML = `
-        <div class="chat-messages" id="chat-messages"></div>
-        <div class="chat-input">
-            <input id="chat-text" type="text" placeholder="Type a message...">
-            <button id="chat-send">Send</button>
-        </div>
-    `;
-
-    const messages = document.getElementById("chat-messages");
-    const input = document.getElementById("chat-text");
-    const send = document.getElementById("chat-send");
-
-    // Toggle chat panel
-    toggle.addEventListener("click", () => {
-        panel.style.display = panel.style.display === "flex" ? "none" : "flex";
+if (orb && panel) {
+    orb.addEventListener("click", () => {
+        panel.style.display = "flex";
     });
+}
 
-    // Send message
-    send.addEventListener("click", () => {
-        const text = input.value.trim();
-        if (!text) return;
-
-        // User message
-        messages.innerHTML += `<p><strong>You:</strong> ${text}</p>`;
-        input.value = "";
-
-        // Simple bot reply
-        messages.innerHTML += `<p><strong>Northwild:</strong> I hear you — what else is on your mind?</p>`;
-
-        messages.scrollTop = messages.scrollHeight;
+if (closeBtn && panel) {
+    closeBtn.addEventListener("click", () => {
+        panel.style.display = "none";
     });
-});
+}
+
+// Add message bubble
+function addMessage(role, text) {
+    if (!body) return;
+
+    const bubble = document.createElement("div");
+    bubble.className = role === "user" ? "user-bubble" : "ai-bubble";
+    bubble.textContent = text;
+
+    body.appendChild(bubble);
+    body.scrollTop = body.scrollHeight;
+}
+
+// Send message handler
+async function handleSend() {
+    if (!input) return;
+
+    const message = input.value.trim();
+    if (!message) return;
+
+    addMessage("user", message);
+    input.value = "";
+
+    // Show a temporary "thinking" message
+    const thinking = document.createElement("div");
+    thinking.className = "ai-bubble";
+    thinking.textContent = "Thinking...";
+    body.appendChild(thinking);
+    body.scrollTop = body.scrollHeight;
+
+    try {
+        const reply = await sendToAI(message);
+        thinking.remove();
+        addMessage("ai", reply);
+    } catch (e) {
+        thinking.remove();
+        addMessage("ai", "Sorry, something went wrong. Please try again later.");
+    }
+}
+
+// Attach send button + Enter key
+if (sendBtn) {
+    sendBtn.addEventListener("click", handleSend);
+}
+
+if (input) {
+    input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            handleSend();
+        }
+    });
+}
+
+// ---------------------------------------------------------
+// AI CALL — replace this with your real backend/API
+// ---------------------------------------------------------
+
+async function sendToAI(message) {
+    // TODO: point this to your backend or AI API.
+    // For now, this is a placeholder that echoes back.
+    return `You said: "${message}". Northwild AI will be wired to a real model next.`;
+}
