@@ -1,70 +1,45 @@
-/* --------------------------------------------------
-   LAYOUT.CSS — STRUCTURE • SPACING • CINEMATIC FLOW
-   Northwild Mooncrest™ — Unified Modern System
--------------------------------------------------- */
+/* ---------------------------------------------------------
+   NORTHWILD MOONCREST — LAYOUT SYSTEM
+   Midnight Aurora • Pure Teal • Soft Glow • Cinematic
+--------------------------------------------------------- */
 
-/* --------------------------------------------------
-   GLOBAL SPACING SYSTEM
--------------------------------------------------- */
+/* ---------------------------------------------------------
+   PAGE WRAPPER
+--------------------------------------------------------- */
 
-:root {
-    --space-xxs: 8px;
-    --space-xs: 16px;
-    --space-sm: 24px;
-    --space-md: 32px;
-    --space-lg: 48px;
-    --space-xl: 72px;
-    --space-xxl: 110px;
-
-    --max-width-content: 900px;
-    --max-width-wide: 1200px;
-}
-
-/* Universal Section Layout */
-section {
-    padding: var(--space-lg) var(--space-sm);
-    max-width: var(--max-width-content);
-    margin: auto;
-}
-
-/* --------------------------------------------------
-   CINEMATIC SECTION DIVIDERS
--------------------------------------------------- */
-
-.section-divider {
+.page-wrap {
     width: 100%;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.08);
-    margin: var(--space-lg) 0;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 30px;
 }
 
-/* --------------------------------------------------
-   GRID SYSTEM — RESPONSIVE
--------------------------------------------------- */
+/* ---------------------------------------------------------
+   GRID SYSTEM
+--------------------------------------------------------- */
 
 .grid-2 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-md);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
 }
 
 .grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-md);
+    gap: 40px;
 }
 
 .grid-4 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-md);
+    gap: 40px;
 }
 
-/* Responsive collapse */
 @media (max-width: 900px) {
     .grid-3,
     .grid-4 {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -76,136 +51,238 @@ section {
     }
 }
 
-/* --------------------------------------------------
-   PORTFOLIO CARD LAYOUT
--------------------------------------------------- */
+/* ---------------------------------------------------------
+   SECTION SPACING
+--------------------------------------------------------- */
 
-.portfolio-card {
-    background: #0d1b2a;
-    border: 1px solid #12354b;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.25s ease, opacity 0.25s ease;
+.section {
+    padding: 80px 30px;
 }
 
-.portfolio-card:hover {
-    transform: scale(1.02);
-    opacity: 0.95;
+.section-small {
+    padding: 40px 30px;
 }
 
-.portfolio-card img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
+.section-large {
+    padding: 120px 30px;
 }
 
-.portfolio-card .card-body {
-    padding: var(--space-sm);
+/* ---------------------------------------------------------
+   SECTION BACKGROUNDS
+--------------------------------------------------------- */
+
+.section-dark {
+    background: var(--nw-darker);
 }
 
-.portfolio-card h4 {
-    margin-bottom: var(--space-xs);
-    color: #cce7ff;
+.section-panel {
+    background: var(--nw-panel);
+    border-top: 1px solid var(--nw-border);
+    border-bottom: 1px solid var(--nw-border);
 }
 
-.portfolio-card p {
-    opacity: 0.85;
+.section-aurora {
+    background: radial-gradient(
+        circle at top,
+        var(--nw-soft),
+        var(--nw-darker) 70%
+    );
 }
 
-/* --------------------------------------------------
-   PRINT SHOP PRODUCT LAYOUT
--------------------------------------------------- */
+/* ---------------------------------------------------------
+   HEADERS / TITLES
+--------------------------------------------------------- */
 
-.product-card {
-    background: #0d1b2a;
-    border: 1px solid #12354b;
-    border-radius: 10px;
-    padding: var(--space-sm);
+.section-title {
+    font-size: 34px;
+    font-weight: 600;
+    margin-bottom: 16px;
     text-align: center;
-    transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-.product-card:hover {
-    transform: scale(1.03);
-    opacity: 0.95;
+.section-subtitle {
+    font-size: 18px;
+    opacity: 0.75;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.product-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 6px;
+/* ---------------------------------------------------------
+   FEATURED BLOCKS
+--------------------------------------------------------- */
+
+.featured-block {
+    background: var(--nw-panel);
+    border: 1px solid var(--nw-border);
+    border-radius: var(--nw-radius);
+    padding: 30px;
+    box-shadow: 0 8px 20px var(--nw-shadow);
+    transition: var(--nw-transition);
 }
 
-.product-card h4 {
-    margin-top: var(--space-xs);
-    margin-bottom: var(--space-xs);
-    color: #cce7ff;
+.featured-block:hover {
+    border-color: var(--nw-border-strong);
+    box-shadow:
+        0 12px 28px var(--nw-shadow-strong),
+        0 0 12px var(--nw-aurora-fade);
 }
 
-.product-card p {
-    opacity: 0.85;
+/* ---------------------------------------------------------
+   IMAGE BLOCKS
+--------------------------------------------------------- */
+
+.image-block {
+    border-radius: var(--nw-radius);
+    overflow: hidden;
+    box-shadow: 0 6px 18px var(--nw-shadow);
+    transition: var(--nw-transition);
 }
 
-.product-card button {
-    margin-top: var(--space-xs);
-    padding: 10px 18px;
-    background: #12354b;
-    border: none;
-    color: #e6e6e6;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.2s ease;
+.image-block:hover {
+    box-shadow:
+        0 12px 28px var(--nw-shadow-strong),
+        0 0 16px var(--nw-aurora-fade);
 }
 
-.product-card button:hover {
-    background: #cce7ff;
-    color: #0a0a0f;
+/* ---------------------------------------------------------
+   TEXT BLOCKS
+--------------------------------------------------------- */
+
+.text-block {
+    padding: 20px 10px;
+    font-size: 16px;
+    color: var(--nw-text-soft);
+    line-height: 1.6;
 }
 
-/* --------------------------------------------------
-   WIDE SECTIONS (STUDIO, JOURNEYS)
--------------------------------------------------- */
+/* ---------------------------------------------------------
+   BUTTON ROWS
+--------------------------------------------------------- */
 
-section.wide {
-    max-width: var(--max-width-wide);
+.button-row {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
 }
-
-/* --------------------------------------------------
-   HERO SPACING (Unified)
--------------------------------------------------- */
-
-.hero {
-    padding-top: var(--space-xl);
-    padding-bottom: var(--space-lg);
-}
-
-/* --------------------------------------------------
-   FOOTER SPACING (Unified)
--------------------------------------------------- */
-
-footer {
-    padding: var(--space-md) var(--space-sm);
-}
-
-/* --------------------------------------------------
-   MOBILE OPTIMIZATION
--------------------------------------------------- */
 
 @media (max-width: 600px) {
-    header {
-        padding: var(--space-xs) var(--space-sm);
+    .button-row {
+        flex-direction: column;
     }
+}
 
-    .hero h1 {
-        font-size: 2.4rem;
-    }
+/* ---------------------------------------------------------
+   FORM LAYOUT
+--------------------------------------------------------- */
 
-    .hero h2 {
-        font-size: 1.3rem;
-    }
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
 
-    section {
-        padding: var(--space-md) var(--space-sm);
+.form-row input,
+.form-row textarea {
+    flex: 1;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
     }
+}
+
+/* ---------------------------------------------------------
+   AURORA DIVIDER
+--------------------------------------------------------- */
+
+.aurora-divider {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--nw-aurora-fade),
+        transparent
+    );
+    margin: 60px 0;
+}
+
+/* ---------------------------------------------------------
+   FOOTER LAYOUT
+--------------------------------------------------------- */
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------------------------------------------------------
+   HERO LAYOUT
+--------------------------------------------------------- */
+
+.hero-wrap {
+    text-align: center;
+    padding: 120px 30px 80px;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.hero-subtitle {
+    font-size: 22px;
+    opacity: 0.8;
+    margin-top: 10px;
+}
+
+.hero-text {
+    max-width: 780px;
+    margin: 20px auto;
+    font-size: 18px;
+    opacity: 0.85;
+}
+
+/* ---------------------------------------------------------
+   FEATURED GRID (Homepage)
+--------------------------------------------------------- */
+
+.featured-grid {
+    display: flex;
+    gap: 40px;
+    padding: 60px 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.featured-item {
+    width: 300px;
+    text-align: center;
+}
+
+.featured-item img {
+    width: 100%;
+    border-radius: var(--nw-radius);
+    box-shadow: 0 6px 18px var(--nw-shadow);
+    transition: var(--nw-transition);
+}
+
+.featured-item img:hover {
+    box-shadow:
+        0 12px 28px var(--nw-shadow-strong),
+        0 0 16px var(--nw-aurora-fade);
 }
