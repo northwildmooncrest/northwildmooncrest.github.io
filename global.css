@@ -1,609 +1,254 @@
-/* GLOBAL RESET */
+/* ---------------------------------------------------------
+   GLOBAL BRAND THEME — NORTHWILD MOONCREST
+   Midnight Aurora • Pure Teal • Soft Glow • Cinematic
+--------------------------------------------------------- */
+
+:root {
+    --nw-dark: #0b1118;
+    --nw-darker: #050b12;
+    --nw-panel: #0d141c;
+    --nw-soft: #142633;
+
+    --nw-text: #f5f5f5;
+    --nw-text-soft: #d6e3e8;
+
+    --nw-aurora: #4fffd4;        /* Pure teal glow */
+    --nw-aurora-soft: #2bbfa0;   /* Soft teal accent */
+    --nw-aurora-fade: rgba(79,255,212,0.18);
+
+    --nw-border: rgba(255,255,255,0.08);
+    --nw-border-strong: rgba(79,255,212,0.35);
+
+    --nw-shadow: rgba(0,0,0,0.65);
+    --nw-shadow-strong: rgba(0,0,0,0.85);
+
+    --nw-radius: 10px;
+    --nw-transition: 0.25s ease;
+}
+
+/* ---------------------------------------------------------
+   GLOBAL RESET
+--------------------------------------------------------- */
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #0b1118;
-  color: #f5f5f5;
-  line-height: 1.6;
+    background: var(--nw-dark);
+    color: var(--nw-text);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
 }
 
-/* LINKS */
+/* ---------------------------------------------------------
+   GLOBAL LINKS
+--------------------------------------------------------- */
+
 a {
-  color: #f5f5f5;
-  text-decoration: none;
+    color: var(--nw-text);
+    text-decoration: none;
+    transition: var(--nw-transition);
 }
 
 a:hover {
-  opacity: 0.8;
+    color: var(--nw-aurora);
+    text-shadow: 0 0 6px var(--nw-aurora-soft);
 }
 
-/* HEADER */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.25rem 2rem;
-  background-color: #0b1118;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+/* ---------------------------------------------------------
+   GLOBAL PANELS / CARDS
+--------------------------------------------------------- */
+
+.panel,
+.card,
+.section-block {
+    background: var(--nw-panel);
+    border: 1px solid var(--nw-border);
+    border-radius: var(--nw-radius);
+    padding: 20px;
+    box-shadow: 0 8px 20px var(--nw-shadow);
+    transition: var(--nw-transition);
 }
 
-/* BRAND LOGO (UPDATED FOR WHITE ICON) */
-.brand-logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: rgba(255,255,255,0.92);
-  letter-spacing: 0.5px;
-  font-weight: 600;
+.panel:hover,
+.card:hover,
+.section-block:hover {
+    border-color: var(--nw-border-strong);
+    box-shadow: 0 12px 28px var(--nw-shadow-strong),
+                0 0 12px var(--nw-aurora-fade);
 }
 
-.brand-logo-icon {
-  height: 32px;
-  width: auto;
+/* ---------------------------------------------------------
+   GLOBAL BUTTONS
+--------------------------------------------------------- */
+
+button,
+.btn {
+    background: transparent;
+    border: 1px solid var(--nw-border);
+    color: var(--nw-text);
+    padding: 10px 18px;
+    border-radius: var(--nw-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--nw-transition);
 }
 
-.brand-logo-text {
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+button:hover,
+.btn:hover {
+    border-color: var(--nw-aurora);
+    color: var(--nw-aurora);
+    box-shadow: 0 0 10px var(--nw-aurora-fade);
 }
 
-/* NAVIGATION */
-nav ul {
-  display: flex;
-  gap: 1.25rem;
-  list-style: none;
-}
+/* ---------------------------------------------------------
+   GLOBAL INPUTS
+--------------------------------------------------------- */
 
-.header-utilities {
-  display: flex;
-  gap: 0.75rem;
-}
-
-/* BUTTONS */
-.utility-btn,
-.btn-animate {
-  background: #1a2533;
-  border: none;
-  padding: 0.5rem 1rem;
-  color: #f5f5f5;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: 0.2s ease;
-}
-
-.utility-btn:hover,
-.btn-animate:hover {
-  background: #243447;
-}
-
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 4rem 2rem;
-}
-
-.hero-title {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.hero-subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero-text {
-  max-width: 600px;
-  margin: 0 auto;
-  opacity: 0.85;
-}
-
-/* GRID */
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-}
-
-.featured-item img {
-  width: 100%;
-  border-radius: 6px;
-}
-
-.card-hover {
-  transition: 0.3s ease;
-}
-
-.card-hover:hover {
-  transform: translateY(-4px);
-  opacity: 0.95;
-}
-
-/* DIVIDERS */
-.section-divider {
-  width: 100%;
-  height: 1px;
-  background: rgba(255,255,255,0.08);
-  margin: 2rem 0;
-}
-
-/* FOOTER */
-.site-footer {
-  text-align: center;
-  padding: 2rem;
-  opacity: 0.85;
-}
-
-/* REVEAL ANIMATION */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: 0.6s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* FORMS */
 input,
 textarea {
-  width: 100%;
-  padding: 0.75rem;
-  margin: 0.5rem 0 1rem;
-  border: 1px solid rgba(255,255,255,0.15);
-  background: #0b1118;
-  color: #f5f5f5;
-  border-radius: 4px;
+    background: var(--nw-soft);
+    border: 1px solid var(--nw-border);
+    color: var(--nw-text);
+    padding: 10px 14px;
+    border-radius: var(--nw-radius);
+    transition: var(--nw-transition);
 }
 
-textarea {
-  min-height: 120px;
-  resize: vertical;
+input:focus,
+textarea:focus {
+    border-color: var(--nw-aurora);
+    box-shadow: 0 0 10px var(--nw-aurora-fade);
 }
 
-/* COOKIE BANNER */
-.cookie-banner {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: #1a2533;
-  padding: 1rem;
-  text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.08);
+/* ---------------------------------------------------------
+   GLOBAL DIVIDERS / SECTION FADES
+--------------------------------------------------------- */
+
+.section-divider {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--nw-aurora-fade),
+        transparent
+    );
+    margin: 40px 0;
 }
 
-/* NOTIFICATION PROMPT */
-.notification-prompt {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  background: #1a2533;
-  padding: 1rem;
-  border-radius: 6px;
-  border: 1px solid rgba(255,255,255,0.08);
+/* ---------------------------------------------------------
+   GLOBAL HOVER GLOW EFFECTS
+--------------------------------------------------------- */
+
+.glow-hover {
+    transition: var(--nw-transition);
 }
 
-/* SAFE FEATURE PACK */
-.safe-feature-pack {
-  position: fixed;
-  bottom: 140px;
-  right: 20px;
-  background: #1a2533;
-  padding: 1rem;
-  border-radius: 6px;
-  border: 1px solid rgba(255,255,255,0.08);
+.glow-hover:hover {
+    color: var(--nw-aurora);
+    text-shadow: 0 0 10px var(--nw-aurora-soft);
 }
 
-/* CHAT */
-.chat-bubble {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #1a2533;
-  padding: 0.75rem;
-  border-radius: 50%;
-  cursor: pointer;
-  border: 1px solid rgba(255,255,255,0.08);
+/* ---------------------------------------------------------
+   GLOBAL AURORA GRADIENT BACKGROUNDS
+--------------------------------------------------------- */
+
+.aurora-bg {
+    background: radial-gradient(
+        circle at top,
+        var(--nw-soft),
+        var(--nw-darker) 70%
+    );
 }
 
-.chat-modal {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #1a2533;
-  padding: 1rem;
-  border-radius: 6px;
-  display: none;
-  width: 300px;
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.chat-modal.active {
-  display: block;
-}
-
-.chat-content textarea {
-  width: 100%;
-  margin-top: 1rem;
-  min-height: 100px;
-  background: #0b1118;
-  color: #f5f5f5;
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 4px;
-}
-
-/* SEARCH OVERLAY */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
-.search-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(5, 8, 13, 0.9);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.search-overlay.active {
-  display: flex;
-}
-
-.search-overlay-inner {
-  width: 90%;
-  max-width: 640px;
-}
-
-.search-form {
-  display: flex;
-  gap: 0.5rem;
-  background: #0b1118;
-  padding: 1rem;
-  border-radius: 9999px;
-}
-
-.search-form input[type="search"] {
-  flex: 1;
-  border: none;
-  background: transparent;
-  color: #f5f5f5;
-  outline: none;
-}
-
-.search-close {
-  background: none;
-  border: none;
-  color: #f5f5f5;
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
-  cursor: pointer;
-}
-
-/* --------------------------------------------- */
-/* HEADER UTILITY ICONS                          */
-/* --------------------------------------------- */
-
-.utility-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 18px;
-    cursor: pointer;
-    opacity: 0.85;
-    transition: opacity 0.2s ease;
-}
-
-.utility-icon:hover {
-    opacity: 1;
-}
-
-/* --------------------------------------------- */
-/* EXPLORE DROPDOWN                              */
-/* --------------------------------------------- */
-
-.dropdown {
-    position: relative;
-}
-
-.dropdown-btn {
-    cursor: pointer;
-    opacity: 0.85;
-    transition: opacity 0.2s ease;
-}
-
-.dropdown-btn:hover {
-    opacity: 1;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    background: rgba(0,0,0,0.85);
-    padding: 12px 0;
-    border-radius: 8px;
-    top: 100%;
-    left: 0;
-    min-width: 180px;
-    z-index: 999;
-}
-
-.dropdown-menu a {
-    display: block;
-    padding: 10px 16px;
-    color: white;
-    text-decoration: none;
-    opacity: 0.85;
-}
-
-.dropdown-menu a:hover {
-    opacity: 1;
-    background: rgba(255,255,255,0.1);
-}
-
-.dropdown.active .dropdown-menu {
-    display: block;
-}
-
-/* --------------------------------------------- */
-/* ACCOUNT DROPDOWN                              */
-/* --------------------------------------------- */
-
-.account-dropdown {
-    position: relative;
-}
-
-.account-btn {
-    cursor: pointer;
-    opacity: 0.85;
-    transition: opacity 0.2s ease;
-}
-
-.account-btn:hover {
-    opacity: 1;
-}
-
-.account-menu {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 100%;
-    background: rgba(0,0,0,0.85);
-    padding: 12px 0;
-    border-radius: 8px;
-    min-width: 180px;
-    z-index: 999;
-}
-
-.account-menu a {
-    display: block;
-    padding: 10px 16px;
-    color: white;
-    text-decoration: none;
-    opacity: 0.85;
-}
-
-.account-menu a:hover {
-    opacity: 1;
-    background: rgba(255,255,255,0.1);
-}
-
-.account-dropdown.active .account-menu {
-    display: block;
-}
-
-/* --------------------------------------------- */
-/* BRAND LOGO                                    */
-/* --------------------------------------------- */
-
-.brand-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: white;
-}
-
-.brand-logo-icon {
-    height: 32px;
-    width: auto;
-    opacity: 0.9;
-    transition: opacity 0.2s ease;
-}
-
-.brand-logo-icon:hover {
-    opacity: 1;
-}
-/* --------------------------------------------- */
-/* HEADER LAYOUT                                 */
-/* --------------------------------------------- */
+/* ---------------------------------------------------------
+   GLOBAL HEADER (APPLIES TO ALL PAGES)
+--------------------------------------------------------- */
 
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 40px;
-    margin: 0;
-    height: 80px;
-}
-
-/* --------------------------------------------- */
-/* BRAND LOGO                                    */
-/* --------------------------------------------- */
-
-.brand-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: white;
-}
-
-.brand-logo-icon {
-    height: 32px;
-    width: auto;
-    opacity: 0.9;
-    transition: opacity 0.2s ease;
-}
-
-.brand-logo-icon:hover {
-    opacity: 1;
-}
-
-/* --------------------------------------------- */
-/* NAVIGATION                                    */
-/* --------------------------------------------- */
-
-nav ul {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    opacity: 0.85;
-    transition: opacity 0.2s ease;
+    background: rgba(10, 15, 20, 0.85);
+    border-bottom: 1px solid var(--nw-border);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px var(--nw-shadow);
 }
 
 nav a:hover {
-    opacity: 1;
+    color: var(--nw-aurora);
 }
 
-/* --------------------------------------------- */
-/* EXPLORE DROPDOWN                              */
-/* --------------------------------------------- */
+/* ---------------------------------------------------------
+   GLOBAL FOOTER
+--------------------------------------------------------- */
 
-.dropdown {
-    position: relative;
+footer {
+    background: var(--nw-panel);
+    border-top: 1px solid var(--nw-border);
+    box-shadow: 0 -6px 20px var(--nw-shadow);
 }
 
-.dropdown-btn {
-    cursor: pointer;
-    opacity: 0.85;
-    transition: opacity 0.2s ease;
+footer a:hover {
+    color: var(--nw-aurora);
 }
 
-.dropdown-btn:hover {
-    opacity: 1;
+/* ---------------------------------------------------------
+   GLOBAL IMAGES
+--------------------------------------------------------- */
+
+img {
+    border-radius: var(--nw-radius);
+    transition: var(--nw-transition);
 }
 
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    background: rgba(0,0,0,0.85);
-    padding: 12px 0;
-    border-radius: 8px;
-    top: 100%;
-    left: 0;
-    min-width: 180px;
-    z-index: 999;
+img:hover {
+    box-shadow: 0 0 18px var(--nw-aurora-fade);
 }
 
-.dropdown-menu a {
-    display: block;
-    padding: 10px 16px;
-    color: white;
-    text-decoration: none;
-    opacity: 0.85;
+/* ---------------------------------------------------------
+   GLOBAL ANIMATIONS
+--------------------------------------------------------- */
+
+@keyframes auroraBreath {
+    0% {
+        box-shadow: 0 0 10px var(--nw-aurora-fade);
+    }
+    50% {
+        box-shadow: 0 0 22px var(--nw-aurora);
+    }
+    100% {
+        box-shadow: 0 0 10px var(--nw-aurora-fade);
+    }
 }
 
-.dropdown-menu a:hover {
-    opacity: 1;
-    background: rgba(255,255,255,0.1);
+.breathing {
+    animation: auroraBreath 4s ease-in-out infinite;
 }
 
-.dropdown.active .dropdown-menu {
-    display: block;
+/* ---------------------------------------------------------
+   GLOBAL UTILITY CLASSES
+--------------------------------------------------------- */
+
+.center {
+    text-align: center;
 }
 
-/* --------------------------------------------- */
-/* HEADER UTILITIES                              */
-/* --------------------------------------------- */
-
-.header-utilities {
+.flex {
     display: flex;
-    align-items: center;
-    gap: 18px;
 }
 
-.utility-icon {
-    display: inline-flex;
-    align-items: center;
+.flex-center {
+    display: flex;
     justify-content: center;
-    cursor: pointer;
-    opacity: 0.85;
-    transition: opacity 0.2s ease;
+    align-items: center;
 }
 
-.utility-icon:hover {
-    opacity: 1;
+.round {
+    border-radius: 50%;
 }
 
-/* --------------------------------------------- */
-/* ACCOUNT DROPDOWN                              */
-/* --------------------------------------------- */
-
-.account-dropdown {
-    position: relative;
-}
-
-.account-btn {
-    cursor: pointer;
-    opacity: 0.85;
-    transition: opacity 0.2s ease;
-}
-
-.account-btn:hover {
-    opacity: 1;
-}
-
-.account-menu {
+.hidden {
     display: none;
-    position: absolute;
-    right: 0;
-    top: 100%;
-    background: rgba(0,0,0,0.85);
-    padding: 12px 0;
-    border-radius: 8px;
-    min-width: 180px;
-    z-index: 999;
-}
-
-.account-menu a {
-    display: block;
-    padding: 10px 16px;
-    color: white;
-    text-decoration: none;
-    opacity: 0.85;
-}
-
-.account-menu a:hover {
-    opacity: 1;
-    background: rgba(255,255,255,0.1);
-}
-
-.account-dropdown.active .account-menu {
-    display: block;
 }
