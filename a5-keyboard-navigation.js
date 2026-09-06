@@ -1,6 +1,8 @@
+<!-- A5 — Keyboard Navigation -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
 /* A5 — Cinematic Keyboard Navigation */
-/* World of Northwild Mooncrest */
-/* Creator: John Robert */
 
 /* Detect keyboard navigation */
 let nwKeyboardActive = false;
