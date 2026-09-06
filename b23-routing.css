@@ -1,0 +1,109 @@
+<!-- B23 — Cinematic Routing & Page Linking System -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
+/* B23 — Routing & Page Linking System */
+
+/* Global Link Style */
+.nw-link {
+  color: var(--nw-color-mooncrest-mid);
+  text-decoration: none;
+  transition: all var(--nw-interaction-fast);
+}
+
+.nw-link:hover {
+  color: var(--nw-accent-blue-mid);
+  transform: var(--nw-hover-lift);
+}
+
+/* Routing Blocks */
+.nw-route-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nw-space-sm);
+  padding: var(--nw-space-md) 0;
+}
+
+/* Route Title */
+.nw-route-title {
+  font-family: var(--nw-font-secondary);
+  font-size: 1.3rem;
+  font-weight: var(--nw-weight-bold);
+  color: var(--nw-color-mooncrest-mid);
+}
+
+/* Route Description */
+.nw-route-desc {
+  font-family: var(--nw-font-primary);
+  font-size: 1rem;
+  color: var(--nw-border-dark);
+  max-width: 600px;
+}
+
+/* Inline Route Link */
+.nw-route-inline {
+  font-family: var(--nw-font-primary);
+  font-size: 1rem;
+  color: var(--nw-accent-blue-mid);
+  text-decoration: none;
+  border-bottom: 1px solid var(--nw-accent-blue-light);
+  transition: all var(--nw-interaction-fast);
+}
+
+.nw-route-inline:hover {
+  color: var(--nw-accent-blue-deep);
+  border-bottom-color: var(--nw-accent-blue-deep);
+}
+
+/* Route Grid */
+.nw-route-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--nw-space-xl);
+  margin-top: var(--nw-space-xl);
+}
+
+/* Route Card */
+.nw-route-card {
+  background: var(--nw-surface-secondary);
+  padding: var(--nw-space-xl);
+  border-radius: var(--nw-radius-lg);
+  box-shadow: var(--nw-shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: var(--nw-space-md);
+  transition: all var(--nw-interaction-medium);
+}
+
+.nw-route-card:hover {
+  transform: var(--nw-hover-lift);
+  box-shadow: var(--nw-shadow-medium);
+}
+
+/* Route Card Title */
+.nw-route-card-title {
+  font-family: var(--nw-font-secondary);
+  font-size: 1.4rem;
+  font-weight: var(--nw-weight-bold);
+  color: var(--nw-color-mooncrest-mid);
+}
+
+/* Route Card Link */
+.nw-route-card-link {
+  font-family: var(--nw-font-primary);
+  font-size: 1rem;
+  color: var(--nw-accent-blue-mid);
+  text-decoration: none;
+  transition: all var(--nw-interaction-fast);
+}
+
+.nw-route-card-link:hover {
+  color: var(--nw-accent-blue-deep);
+}
+
+/* Motion Reduction */
+.motion-reduction-mode .nw-route-card {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+}
