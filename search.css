@@ -1,0 +1,39 @@
+/* -----------------------------------------------------------
+   Search Page — Layout and Results Styling
+   Clean, simple, modular styling for search.html
+----------------------------------------------------------- */
+
+.search-container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.search-container h1 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.search-input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.search-results {
+    margin-top: 20px;
+}
+
+.search-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.search-item:hover {
+    color: #0077cc;
+}
