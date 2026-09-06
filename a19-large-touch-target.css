@@ -1,0 +1,70 @@
+<!-- A19 — Large Touch Target Mode -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
+/* A19 — Cinematic Large Touch Target Mode */
+
+/* Global adjustments for touch accessibility */
+.large-touch-target-mode {
+  background: #ffffff !important;
+  color: #0b1118 !important;
+  line-height: 1.9 !important;
+}
+
+/* Increase tap target sizes */
+.large-touch-target-mode button,
+.large-touch-target-mode a,
+.large-touch-target-mode .touch-target,
+.large-touch-target-mode input[type="checkbox"],
+.large-touch-target-mode input[type="radio"] {
+  min-height: 52px !important;
+  min-width: 52px !important;
+  padding: 1rem 1.4rem !important;
+  font-size: 1.15rem !important;
+  border-radius: 10px !important;
+}
+
+/* Increase spacing between interactive elements */
+.large-touch-target-mode button,
+.large-touch-target-mode a,
+.large-touch-target-mode .touch-target {
+  margin-bottom: 1rem !important;
+}
+
+/* High-contrast borders for clarity */
+.large-touch-target-mode button,
+.large-touch-target-mode a,
+.large-touch-target-mode .touch-target {
+  border: 3px solid #3fa9f5 !important;
+  background: #e9f7ff !important;
+  color: #0b1118 !important;
+  font-weight: 700 !important;
+}
+
+/* Form elements */
+.large-touch-target-mode input,
+.large-touch-target-mode textarea,
+.large-touch-target-mode select {
+  padding: 1.2rem !important;
+  font-size: 1.15rem !important;
+  border-radius: 10px !important;
+  border: 3px solid #3fa9f5 !important;
+}
+
+/* Navigation links */
+.large-touch-target-mode nav a {
+  display: block !important;
+  padding: 1rem !important;
+  margin-bottom: 1rem !important;
+  font-size: 1.15rem !important;
+  border-radius: 10px !important;
+  border: 3px solid #3fa9f5 !important;
+}
+
+/* Disable animations */
+.large-touch-target-mode *,
+.large-touch-target-mode *::before,
+.large-touch-target-mode *::after {
+  transition: none !important;
+  animation: none !important;
+}
