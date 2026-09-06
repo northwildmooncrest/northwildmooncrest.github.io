@@ -1,6 +1,8 @@
+<!-- A12 — Motion Reduction Logic -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
 /* A12 — Motion Reduction Logic */
-/* World of Northwild Mooncrest */
-/* Creator: John Robert */
 
 /* Toggle motion reduction mode */
 function nwToggleMotionReduction() {
