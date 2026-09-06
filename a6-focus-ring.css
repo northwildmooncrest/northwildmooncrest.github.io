@@ -1,44 +1,41 @@
-/* A6 — High Visibility Focus Ring */
-/* Updated for Northwild Mooncrest cinematic global-brand design */
+/* A6 — Cinematic High-Visibility Focus Ring System */
+/* World of Northwild Mooncrest */
+/* Creator: John Robert */
 
-/* Base focus ring (activated when .keyboard-nav is present) */
-.keyboard-nav .focus-ring,
-.keyboard-nav :focus {
+/* Universal Focus Ring */
+:focus {
   outline: 3px solid #3fa9f5 !important;
   outline-offset: 4px !important;
-  border-radius: 6px;
-  transition: outline-color 0.2s ease, outline-offset 0.2s ease;
+  border-radius: 4px;
 }
 
-/* Buttons */
-.keyboard-nav button:focus {
-  outline-color: #5fc0ff !important;
+/* Keyboard Navigation Enhanced Focus */
+.keyboard-nav :focus {
+  outline: 4px solid #5fc0ff !important;
+  outline-offset: 6px !important;
 }
 
-/* Links */
-.keyboard-nav a:focus {
-  outline-color: #7fd4ff !important;
+/* High Contrast Mode Focus */
+.high-contrast-mode :focus {
+  outline: 3px solid #e9f7ff !important;
+  outline-offset: 4px !important;
 }
 
-/* Inputs */
-.keyboard-nav input:focus,
-.keyboard-nav textarea:focus,
-.keyboard-nav select:focus {
-  outline-color: #3fa9f5 !important;
-  background: rgba(63, 169, 245, 0.08);
-}
-
-/* Interactive elements */
-.keyboard-nav [tabindex]:focus {
-  outline-color: #3fa9f5 !important;
+/* Dyslexia Mode Focus */
+.dyslexia-mode :focus {
+  outline: 3px solid #0b1118 !important;
+  outline-offset: 4px !important;
 }
 
 /* Remove default browser focus styles */
-:focus {
-  outline: none;
+*:focus {
+  box-shadow: none !important;
 }
 
-/* Smooth transitions for accessibility */
-* {
-  transition: outline 0.2s ease, background 0.2s ease;
+/* Smooth focus transitions disabled for accessibility */
+.screenreader-mode :focus,
+.high-contrast-mode :focus,
+.dyslexia-mode :focus,
+.keyboard-nav :focus {
+  transition: none !important;
 }
