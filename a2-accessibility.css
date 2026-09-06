@@ -1,119 +1,94 @@
-/* A2 — Accessibility Styles */
-/* Updated for Northwild Mooncrest cinematic global-brand design */
+/* A2 — Global Accessibility Styles */
+/* Cinematic Edition for Northwild Mooncrest */
+/* Creator: John Robert */
 
-/* Container */
-.accessibility {
-  padding: 4rem 2rem;
-  background: #0b1118;
-  color: #e9f7ff;
-  opacity: 0;
-  transform: translateY(25px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+/* Root adjustments for all accessibility modes */
+:root {
+  --nw-focus-color: #3fa9f5;
+  --nw-contrast-bg: #0b1118;
+  --nw-contrast-text: #e9f7ff;
+  --nw-dyslexia-font: "OpenDyslexic", "Arial", sans-serif;
 }
 
-.accessibility-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.accessibility-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
-/* Header */
-.accessibility-title {
-  font-size: 2.2rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  text-align: center;
-}
-
-.accessibility-description {
-  text-align: center;
-  font-size: 1.1rem;
-  opacity: 0.85;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-/* Controls */
-.accessibility-controls {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
-}
-
-.accessibility-control {
-  background: #0f1a24;
-  padding: 2rem;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.accessibility-control:hover {
-  background: #13202c;
-  transform: translateY(-3px);
-}
-
-.accessibility-control h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-}
-
-.accessibility-control p {
-  font-size: 0.95rem;
-  opacity: 0.8;
-  margin-bottom: 1rem;
-}
-
-/* Buttons */
-.accessibility-control button {
-  padding: 0.8rem 1.6rem;
+/* Skip Navigation Link */
+.skip-nav {
+  position: absolute;
+  top: -100px;
+  left: 0;
   background: #3fa9f5;
   color: #0b1118;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
+  padding: 1rem 1.5rem;
+  z-index: 9999;
+  border-radius: 6px;
+  font-weight: 700;
+  transition: top 0.3s ease;
 }
 
-.accessibility-control button:hover {
-  background: #5fc0ff;
-  transform: translateY(-2px);
+.skip-nav:focus {
+  top: 20px;
 }
 
-.accessibility-control button:active {
-  transform: translateY(0);
+/* Focus Ring System */
+:focus {
+  outline: 3px solid var(--nw-focus-color);
+  outline-offset: 4px;
 }
 
-/* ARIA Map */
-.accessibility-aria {
-  text-align: center;
-  font-size: 0.95rem;
-  opacity: 0.75;
+/* Screenreader Mode */
+.screenreader-mode * {
+  font-size: 1.25rem !important;
+  line-height: 1.9 !important;
+  letter-spacing: 0.02em !important;
 }
 
-.accessibility-aria a {
-  color: #3fa9f5;
-  text-decoration: none;
-  font-weight: 600;
+/* High Contrast Mode */
+.high-contrast-mode {
+  background: var(--nw-contrast-bg) !important;
+  color: var(--nw-contrast-text) !important;
 }
 
-.accessibility-aria a:hover {
-  text-decoration: underline;
+.high-contrast-mode a {
+  color: #5fc0ff !important;
+  text-decoration: underline !important;
 }
 
-/* Responsive */
-@media (max-width: 800px) {
-  .accessibility-controls {
-    grid-template-columns: 1fr;
-  }
+/* Dyslexia-Friendly Mode */
+.dyslexia-mode {
+  font-family: var(--nw-dyslexia-font) !important;
+  letter-spacing: 0.03em !important;
+  word-spacing: 0.15em !important;
+  line-height: 1.9 !important;
+  background: #f7f9fb !important;
+  color: #0b1118 !important;
+}
+
+.dyslexia-mode p {
+  max-width: 70ch !important;
+  margin-bottom: 1.4rem !important;
+}
+
+/* Keyboard Navigation Enhancements */
+.keyboard-nav *:focus {
+  outline: 3px solid #5fc0ff !important;
+  outline-offset: 6px !important;
+}
+
+/* Hide animations for accessibility modes */
+.screenreader-mode *,
+.dyslexia-mode *,
+.high-contrast-mode *,
+.keyboard-nav * {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* ARIA Live Region */
+#nw-live-region {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  aria-live: polite;
 }
