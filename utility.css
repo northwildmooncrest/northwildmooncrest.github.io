@@ -1,0 +1,41 @@
+/* -----------------------------------------------------------
+   Utility Bar — Search, Account, Store Icons
+   Clean, simple styling for header utility icons.
+----------------------------------------------------------- */
+
+.utility-bar {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Icon buttons */
+.utility-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* SVG icons */
+.utility-icon svg {
+    height: 24px;
+    width: 24px;
+    color: #222;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover effect */
+.utility-icon:hover svg {
+    color: #0077cc;
+    transform: scale(1.08);
+}
+
+/* Active (when dropdown is open) */
+.utility-icon.active svg {
+    color: #005fa3;
+    transform: scale(1.12);
+}
