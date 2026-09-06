@@ -1,32 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Northwild Mooncrest</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Northwild Mooncrest</title>
 
-    <!-- Global Styles -->
-    <link rel="stylesheet" href="global.css">
-    <link rel="stylesheet" href="theme.css">
-    <link rel="stylesheet" href="layout.css">
+  <!-- Basic styles so the page isn’t black -->
+  <style>
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Visible fallback text -->
+  <h1>Northwild Mooncrest</h1>
+  <p>Loading site content…</p>
 
-    <!-- Header Include -->
-    <div data-include="header.html"></div>
+  <!-- Modular includes (all files must be in the root folder) -->
+  <div data-include="header.html"></div>
+  <div data-include="hero.html"></div>
+  <div data-include="featured.html"></div>
+  <div data-include="footer.html"></div>
 
-    <!-- Hero Section -->
-    <div data-include="hero.html"></div>
-
-    <!-- Featured Section -->
-    <div data-include="featured.html"></div>
-
-    <!-- Footer Include -->
-    <div data-include="footer.html"></div>
-
-    <!-- Modular Script Loader -->
-    <div data-include="scripts.html"></div>
-
+  <!-- Loader script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-include]").forEach(async (el) => {
+        const file = el.getAttribute("data-include");
+        try {
+          const response = await fetch(file);
+          if (!response.ok) throw new Error(`Failed to load ${file}`);
+          el.innerHTML = await response.text();
+        } catch (err) {
+          console.error(err);
+          el.innerHTML = `<div style="color:red;">Error loading ${file}</div>`;
+        }
+      });
+    });
+  </script>
 </body>
 </html>
