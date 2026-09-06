@@ -1,0 +1,108 @@
+/* I5 — footer-global.css */
+/* Matte global footer system for Northwild Mooncrest */
+
+.footer-global {
+  padding: 4rem 2rem;
+  background: #0a0f14;
+  color: #e9f7ff;
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.footer-global-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-global-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Brand Identity */
+.footer-global-brand {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-global-title {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.footer-global-tagline {
+  font-size: 1rem;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* Columns */
+.footer-global-columns {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2.5rem;
+  padding-top: 1rem;
+}
+
+.footer-col h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-col a {
+  color: #e9f7ff;
+  text-decoration: none;
+  opacity: 0.75;
+  font-size: 0.95rem;
+  transition: opacity 0.3s ease;
+}
+
+.footer-col a:hover {
+  opacity: 1;
+}
+
+/* Copyright */
+.footer-global-copy {
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  padding-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .footer-global-columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .footer-global-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-global-columns {
+    grid-template-columns: 1fr;
+  }
+}
