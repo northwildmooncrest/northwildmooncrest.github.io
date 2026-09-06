@@ -3,53 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Northwild Mooncrest</title>
+    <title>Northwild Mooncrest™ — Cinematic Nature Photography</title>
 
-    <!-- Global Styles -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="theme.css">
-    <link rel="stylesheet" href="utilities.css">
-    <link rel="stylesheet" href="global.css">
+    <!-- CSS Loader -->
+    <link rel="stylesheet" href="styles.html">
 </head>
 
 <body>
 
-    <!-- Modular Includes -->
+    <!-- Header -->
     <div data-include="header.html"></div>
-    <div data-include="hero.html"></div>
-    <div data-include="featured.html"></div>
+
+    <!-- Main Layout Wrapper -->
+    <main class="page-layout">
+
+        <!-- Hero Section -->
+        <div data-include="hero.html"></div>
+
+        <!-- Featured Section -->
+        <div data-include="featured.html"></div>
+
+    </main>
+
+    <!-- Footer -->
     <div data-include="footer.html"></div>
 
-    <!-- ==========================================================
-         INCLUDE LOADER — MUST BE IN INDEX.HTML
-         GitHub Pages will NOT execute scripts inside includes.
-    =========================================================== -->
-    <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const base = window.location.origin + "/";
-
-        document.querySelectorAll("[data-include]").forEach(async (el) => {
-            const file = el.getAttribute("data-include");
-            const url = base + file;
-
-            try {
-                const response = await fetch(url);
-                if (!response.ok) throw new Error(`Failed to load ${url}`);
-                el.innerHTML = await response.text();
-            } catch (err) {
-                console.error(err);
-                el.innerHTML = `<div style="color:red;">Error loading ${file}</div>`;
-            }
-        });
-    });
-    </script>
-
-    <!-- Global Scripts -->
-    <script src="chat.js"></script>
-    <script src="header.js"></script>
-    <script src="footer.js"></script>
-    <script src="hero.js"></script>
-    <script src="featured.js"></script>
+    <!-- JS Loader -->
+    <script src="scripts.html"></script>
 
 </body>
 </html>
