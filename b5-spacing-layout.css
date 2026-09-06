@@ -1,0 +1,117 @@
+<!-- B5 — Cinematic Spacing & Layout Tokens -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
+/* B5 — Cinematic Spacing & Layout System */
+
+/* Spacing Scale (Cinematic Rhythm) */
+:root {
+  --nw-space-xxs: 0.25rem;
+  --nw-space-xs: 0.5rem;
+  --nw-space-sm: 0.75rem;
+  --nw-space-md: 1rem;
+  --nw-space-lg: 1.5rem;
+  --nw-space-xl: 2rem;
+  --nw-space-xxl: 3rem;
+  --nw-space-hero: 6rem;
+}
+
+/* Layout Containers */
+.nw-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: var(--nw-space-md);
+  padding-right: var(--nw-space-md);
+}
+
+/* Section Spacing */
+.nw-section {
+  padding-top: var(--nw-space-xxl);
+  padding-bottom: var(--nw-space-xxl);
+}
+
+.nw-section-tight {
+  padding-top: var(--nw-space-lg);
+  padding-bottom: var(--nw-space-lg);
+}
+
+.nw-section-loose {
+  padding-top: var(--nw-space-hero);
+  padding-bottom: var(--nw-space-hero);
+}
+
+/* Vertical Rhythm */
+.nw-stack > * + * {
+  margin-top: var(--nw-space-md);
+}
+
+.nw-stack-lg > * + * {
+  margin-top: var(--nw-space-lg);
+}
+
+.nw-stack-xl > * + * {
+  margin-top: var(--nw-space-xl);
+}
+
+/* Grid System */
+.nw-grid {
+  display: grid;
+  gap: var(--nw-space-lg);
+}
+
+.nw-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.nw-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.nw-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Responsive Grid Collapse */
+@media (max-width: 900px) {
+  .nw-grid-3,
+  .nw-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .nw-grid-2,
+  .nw-grid-3,
+  .nw-grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Panel Spacing */
+.nw-panel {
+  padding: var(--nw-space-xl);
+  border-radius: var(--nw-radius-lg);
+  background: var(--nw-surface-primary);
+  box-shadow: var(--nw-shadow-soft);
+}
+
+/* Card Spacing */
+.nw-card {
+  padding: var(--nw-space-lg);
+  border-radius: var(--nw-radius-md);
+  background: var(--nw-surface-secondary);
+  box-shadow: var(--nw-shadow-medium);
+}
+
+/* Hero Layout */
+.nw-hero {
+  padding-top: var(--nw-space-hero);
+  padding-bottom: var(--nw-space-hero);
+  text-align: center;
+}
+
+/* Motion Reduction Compatibility */
+.motion-reduction-mode * {
+  transition: none !important;
+}
