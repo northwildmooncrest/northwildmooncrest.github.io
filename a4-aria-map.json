@@ -1,28 +1,69 @@
 {
-  "landmarks": {
-    "header": "Site header containing navigation",
-    "main": "Primary content area",
-    "footer": "Site footer with legal and contact information",
-    "nav": "Main navigation menu",
-    "aside": "Complementary sidebar content"
-  },
+  "site": "Northwild Mooncrest",
+  "version": "2026.09",
+  "ariaMap": {
+    "header": {
+      "role": "banner",
+      "elements": {
+        "brandTitle": "heading",
+        "brandSubtitle": "text",
+        "navigation": {
+          "role": "navigation",
+          "links": ["Gallery", "Journeys", "About", "Contact"]
+        }
+      }
+    },
 
-  "roles": {
-    "banner": "Header banner area",
-    "contentinfo": "Footer information area",
-    "navigation": "Navigation region",
-    "search": "Search input and results",
-    "dialog": "Modal dialog window",
-    "button": "Clickable button element",
-    "link": "Navigational link element"
-  },
+    "hero": {
+      "role": "region",
+      "label": "Hero Section",
+      "elements": {
+        "heading": "heading",
+        "text": "paragraph",
+        "cta": "button"
+      }
+    },
 
-  "labels": {
-    "menuToggle": "Toggle navigation menu",
-    "searchInput": "Search the site",
-    "chatOpen": "Open chat assistant",
-    "chatClose": "Close chat assistant",
-    "themeSwitch": "Toggle light or dark theme",
-    "accessibilityPanel": "Open accessibility settings"
+    "gallery": {
+      "role": "region",
+      "label": "Gallery",
+      "elements": {
+        "filters": {
+          "role": "toolbar",
+          "buttons": ["All", "Mountains", "Forest", "Water", "Night"]
+        },
+        "grid": {
+          "role": "list",
+          "items": "listitem"
+        }
+      }
+    },
+
+    "accessibilityHub": {
+      "role": "region",
+      "label": "Accessibility Settings",
+      "elements": {
+        "highContrast": "button",
+        "dyslexiaMode": "button",
+        "screenreaderMode": "button",
+        "keyboardNavigation": "button",
+        "ariaMapLink": "link"
+      }
+    },
+
+    "footer": {
+      "role": "contentinfo",
+      "elements": {
+        "brand": "heading",
+        "columns": {
+          "legal": "list",
+          "account": "list",
+          "global": "list",
+          "support": "list",
+          "experience": "list"
+        },
+        "copyright": "text"
+      }
+    }
   }
 }
