@@ -1,0 +1,84 @@
+/* -----------------------------------------------------------
+   Dropdown Panels — Search, Account, Store, Menu
+   Clean, simple, modular styling for all header dropdowns.
+----------------------------------------------------------- */
+
+.panel {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 80px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    width: 260px;
+}
+
+/* Utility icon buttons */
+.utility-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+/* Search dropdown */
+.search-dropdown input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 12px;
+}
+
+.search-results .search-item {
+    padding: 6px 0;
+    cursor: pointer;
+}
+
+.search-results .search-item:hover {
+    color: #0077cc;
+}
+
+/* Account dropdown */
+.account-dropdown p {
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+.account-dropdown p:hover {
+    color: #0077cc;
+}
+
+/* Store dropdown */
+.store-dropdown h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.store-dropdown p {
+    padding: 6px 0;
+}
+
+/* Menu dropdown (optional but included for consistency) */
+.menu-dropdown {
+    display: none;
+    position: absolute;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    top: 60px;
+    left: 0;
+    z-index: 999;
+}
+
+.menu-dropdown li {
+    padding: 6px 0;
+}
+
+.menu-dropdown li a:hover {
+    color: #0077cc;
+}
