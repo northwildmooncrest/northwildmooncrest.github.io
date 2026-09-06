@@ -31,22 +31,8 @@
   <!-- AI Chat Orb -->
   <div data-include="chat.html"></div>
 
-  <!-- Modular Loader -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll("[data-include]").forEach(async (el) => {
-        const file = el.getAttribute("data-include");
-        try {
-          const response = await fetch(file);
-          if (!response.ok) throw new Error(`Failed to load ${file}`);
-          el.innerHTML = await response.text();
-        } catch (err) {
-          console.error(err);
-          el.innerHTML = `<div style="color:red;">Error loading ${file}</div>`;
-        }
-      });
-    });
-  </script>
+  <!-- Clean Modular Loader -->
+  <script src="loader.js"></script>
 
   <!-- JS Modules -->
   <script src="header.js"></script>
@@ -54,18 +40,6 @@
   <script src="featured.js"></script>
   <script src="footer.js"></script>
   <script src="chat.js"></script>
-
-  <!-- Load dropdown.js AFTER all includes finish -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // Wait for the include loader to finish inserting header.html
-      setTimeout(() => {
-        const script = document.createElement("script");
-        script.src = "dropdown.js";
-        document.body.appendChild(script);
-      }, 150); // ensures header is fully loaded
-    });
-  </script>
 
 </body>
 </html>
