@@ -1,65 +1,56 @@
-// -----------------------------------------------------------
-// Dropdown Controls — Search, Account, Store, Menu
-// Class-based toggle system (matches your CSS)
-// -----------------------------------------------------------
+// dropdown.js — clean dropdown logic
 
-// Close all dropdown panels
-function closeAllPanels() {
-    document.querySelectorAll(".panel, .menu-dropdown").forEach(panel => {
-        panel.classList.remove("open");
-    });
-}
-
-// Toggle a panel by class
-function togglePanel(selector) {
-    const panel = document.querySelector(selector);
-    const isOpen = panel.classList.contains("open");
-    closeAllPanels();
-    if (!isOpen) {
-        panel.classList.add("open");
-    }
-}
-
-// SEARCH DROPDOWN
+// Buttons
 const searchBtn = document.querySelector(".search-btn");
-if (searchBtn) {
-    searchBtn.addEventListener("click", () => {
-        togglePanel(".search-dropdown");
-    });
-}
-
-// ACCOUNT DROPDOWN
 const accountBtn = document.querySelector(".account-btn");
-if (accountBtn) {
-    accountBtn.addEventListener("click", () => {
-        togglePanel(".account-dropdown");
-    });
-}
-
-// STORE DROPDOWN
 const storeBtn = document.querySelector(".store-btn");
-if (storeBtn) {
-    storeBtn.addEventListener("click", () => {
-        togglePanel(".store-dropdown");
-    });
-}
-
-// MENU DROPDOWN
 const menuBtn = document.querySelector(".menu-btn");
-if (menuBtn) {
-    menuBtn.addEventListener("click", () => {
-        togglePanel(".menu-dropdown");
-    });
+
+// Panels
+const searchPanel = document.querySelector(".search-dropdown");
+const accountPanel = document.querySelector(".account-dropdown");
+const storePanel = document.querySelector(".store-dropdown");
+const menuPanel = document.querySelector(".menu-dropdown");
+
+// Helper: close all panels
+function closeAll() {
+  searchPanel?.classList.remove("open");
+  accountPanel?.classList.remove("open");
+  storePanel?.classList.remove("open");
+  menuPanel?.classList.remove("open");
 }
 
-// Close dropdowns when clicking outside
-document.addEventListener("click", (event) => {
-    if (
-        !event.target.closest(".panel") &&
-        !event.target.closest(".menu-dropdown") &&
-        !event.target.closest(".utility-icon") &&
-        !event.target.closest(".menu-btn")
-    ) {
-        closeAllPanels();
-    }
+// Toggle functions
+searchBtn?.addEventListener("click", () => {
+  closeAll();
+  searchPanel?.classList.toggle("open");
+});
+
+accountBtn?.addEventListener("click", () => {
+  closeAll();
+  accountPanel?.classList.toggle("open");
+});
+
+storeBtn?.addEventListener("click", () => {
+  closeAll();
+  storePanel?.classList.toggle("open");
+});
+
+menuBtn?.addEventListener("click", () => {
+  closeAll();
+  menuPanel?.classList.toggle("open");
+});
+
+// Close when clicking outside
+document.addEventListener("click", (e) => {
+  const isButton = e.target.closest(
+    ".search-btn, .account-btn, .store-btn, .menu-btn"
+  );
+  const isPanel = e.target.closest(
+    ".search-dropdown, .account-dropdown, .store-dropdown, .menu-dropdown"
+  );
+
+  if (!isButton && !isPanel) {
+    closeAll();
+  }
 });
