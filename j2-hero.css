@@ -1,0 +1,138 @@
+/* J2 — hero.css */
+/* Cinematic global-brand styling for header + hero */
+
+.header {
+  padding: 2rem 2rem;
+  background: #0b1118;
+  color: #e9f7ff;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.header-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-title {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.header-subtitle {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-top: 0.2rem;
+}
+
+/* Navigation */
+.header-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav a {
+  color: #e9f7ff;
+  text-decoration: none;
+  font-size: 1rem;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.header-nav a:hover {
+  opacity: 1;
+}
+
+/* Hero Section */
+.hero {
+  padding: 8rem 2rem;
+  background: linear-gradient(to bottom, #0b1118, #0f1a24);
+  color: #e9f7ff;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.hero-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-heading {
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 1.5rem;
+}
+
+.hero-text {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cta {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: #3fa9f5;
+  color: #0b1118;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.hero-cta:hover {
+  background: #5fc0ff;
+  transform: translateY(-2px);
+}
+
+.hero-cta:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .header-nav ul {
+    gap: 1.5rem;
+  }
+
+  .hero-heading {
+    font-size: 2.4rem;
+  }
+
+  .hero-text {
+    font-size: 1.1rem;
+  }
+}
