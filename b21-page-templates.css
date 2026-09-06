@@ -1,0 +1,109 @@
+<!-- B21 — Cinematic Page Templates -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: Northwild Mooncrest™ -->
+
+/* B21 — Cinematic Page Templates */
+
+/* Base Page Wrapper */
+.nw-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--nw-space-xxl) var(--nw-space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--nw-space-xxl);
+}
+
+/* Page Title */
+.nw-page-title {
+  font-family: var(--nw-font-secondary);
+  font-size: 2.6rem;
+  font-weight: var(--nw-weight-bold);
+  color: var(--nw-color-mooncrest-mid);
+}
+
+/* Page Subtitle */
+.nw-page-subtitle {
+  font-family: var(--nw-font-primary);
+  font-size: 1.3rem;
+  color: var(--nw-border-dark);
+  max-width: 700px;
+}
+
+/* Page Section */
+.nw-page-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nw-space-xl);
+}
+
+/* Page Split Layout */
+.nw-page-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--nw-space-xl);
+}
+
+@media (max-width: 900px) {
+  .nw-page-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Page Media */
+.nw-page-media {
+  width: 100%;
+  border-radius: var(--nw-radius-lg);
+  box-shadow: var(--nw-shadow-soft);
+  object-fit: cover;
+}
+
+/* Page Card Grid */
+.nw-page-grid {
+  display: grid;
+  gap: var(--nw-space-xl);
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+/* Page Callout */
+.nw-page-callout {
+  background: var(--nw-surface-secondary);
+  padding: var(--nw-space-xl);
+  border-radius: var(--nw-radius-lg);
+  box-shadow: var(--nw-shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: var(--nw-space-md);
+}
+
+/* Page CTA */
+.nw-page-cta {
+  display: flex;
+  gap: var(--nw-space-md);
+  flex-wrap: wrap;
+}
+
+/* Page Divider */
+.nw-page-divider {
+  width: 100%;
+  height: 2px;
+  background: var(--nw-border-light);
+  margin: var(--nw-space-xl) 0;
+}
+
+/* Page Footer Note */
+.nw-page-note {
+  font-family: var(--nw-font-primary);
+  font-size: 1rem;
+  color: var(--nw-border-dark);
+  text-align: center;
+  margin-top: var(--nw-space-xl);
+}
+
+/* Motion Reduction Compatibility */
+.motion-reduction-mode .nw-page-media {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+}
