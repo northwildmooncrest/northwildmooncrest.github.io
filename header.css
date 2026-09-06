@@ -1,65 +1,184 @@
-/* -----------------------------------------------------------
-   Header Layout — Logo, Navigation, Utility Bar
-   Clean, simple, modular styling for the site header.
------------------------------------------------------------ */
+/* ============================
+   NORTHWILD MOONCREST — HEADER
+   Cinematic Nature Aesthetic
+   ============================ */
 
 .site-header {
+    width: 100%;
+    padding: 20px 40px;
+    background: #0b0d0f; /* deep moonlit black */
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 18px 30px;
     position: relative;
-    z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-/* Logo */
+/* LOGO */
 .logo img {
     height: 48px;
-    width: auto;
+    filter: drop-shadow(0 0 4px rgba(0,255,255,0.25)); /* subtle aurora glow */
 }
 
-/* Navigation */
+/* NAVIGATION */
 .main-nav ul {
-    display: flex;
-    gap: 24px;
     list-style: none;
+    display: flex;
+    gap: 28px;
+    align-items: center;
     margin: 0;
     padding: 0;
 }
 
 .main-nav a {
+    color: #e6f7ff;
     text-decoration: none;
-    font-weight: 500;
-    color: #222;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: color 0.25s ease;
 }
 
 .main-nav a:hover {
-    color: #0077cc;
+    color: #7fe0ff; /* soft aurora blue */
 }
 
-/* Utility Bar */
-.utility-bar {
-    display: flex;
-    gap: 18px;
+/* DROPDOWN MENU */
+.menu {
+    position: relative;
 }
 
-.utility-icon svg {
-    height: 24px;
-    width: 24px;
-    color: #222;
-}
-
-.utility-icon:hover svg {
-    color: #0077cc;
-}
-
-/* Menu Button */
 .menu-btn {
     background: none;
     border: none;
-    font-weight: 600;
+    color: #e6f7ff;
+    font-size: 15px;
     cursor: pointer;
-    padding: 6px 10px;
+    letter-spacing: 0.5px;
+    transition: color 0.25s ease;
+}
+
+.menu-btn:hover {
+    color: #7fe0ff;
+}
+
+.menu-dropdown {
+    display: none;
+    position: absolute;
+    top: 32px;
+    right: 0;
+    background: #111315;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 12px 0;
+    border-radius: 8px;
+    min-width: 160px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.menu-dropdown li {
+    padding: 8px 18px;
+}
+
+.menu-dropdown a {
+    color: #e6f7ff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.menu-dropdown a:hover {
+    color: #7fe0ff;
+}
+
+/* Show dropdown when JS adds .open */
+.menu.open .menu-dropdown {
+    display: block;
+}
+
+/* UTILITY BAR */
+.utility-bar {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.utility-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    color: #e6f7ff;
+    transition: color 0.25s ease, transform 0.2s ease;
+}
+
+.utility-icon:hover {
+    color: #7fe0ff;
+    transform: scale(1.1);
+}
+
+.utility-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* PANELS (Search, Account, Store) */
+.panel {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 40px;
+    background: #111315;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 20px;
+    border-radius: 10px;
+    width: 260px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.45);
+}
+
+/* Show when JS adds .open */
+.panel.open {
+    display: block;
+}
+
+/* SEARCH PANEL */
+.search-dropdown input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    background: #1a1d20;
+    color: #e6f7ff;
+    margin-bottom: 12px;
+}
+
+.search-item {
+    padding: 6px 0;
+    color: #e6f7ff;
+    cursor: pointer;
+}
+
+.search-item:hover {
+    color: #7fe0ff;
+}
+
+/* ACCOUNT PANEL */
+.account-dropdown p {
+    padding: 8px 0;
+    color: #e6f7ff;
+    cursor: pointer;
+}
+
+.account-dropdown p:hover {
+    color: #7fe0ff;
+}
+
+/* STORE PANEL */
+.store-dropdown h3 {
+    margin-top: 0;
+    color: #e6f7ff;
+}
+
+.store-dropdown p {
+    color: #cfd8dc;
 }
 
 .menu-btn:hover {
