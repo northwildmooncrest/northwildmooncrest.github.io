@@ -1,0 +1,97 @@
+/* H2 — contact.css */
+/* Cinematic global-brand styling for the Northwild Mooncrest Contact section */
+
+.contact {
+  padding: 5rem 2rem;
+  background: #0b1118;
+  color: #e9f7ff;
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.contact-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 1rem;
+}
+
+.contact-lead {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.85;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #13202c;
+  color: #e9f7ff;
+  font-size: 1rem;
+  outline: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  background: #162836;
+  box-shadow: 0 0 0 2px #3fa9f5;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact-submit {
+  padding: 1rem 1.5rem;
+  background: #3fa9f5;
+  color: #0b1118;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-submit:hover {
+  background: #5fc0ff;
+  transform: translateY(-2px);
+}
+
+.contact-submit:active {
+  transform: translateY(0);
+}
