@@ -13,6 +13,7 @@
     justify-content: space-between;
     position: relative;
     border-bottom: 1px solid rgba(255,255,255,0.08);
+    z-index: 100;
 }
 
 /* LOGO */
@@ -46,6 +47,7 @@
 /* DROPDOWN MENU */
 .menu {
     position: relative;
+    z-index: 101;
 }
 
 .menu-btn {
@@ -62,17 +64,20 @@
     color: #7fe0ff;
 }
 
+/* FIX: Dropdown must be hidden by default */
 .menu-dropdown {
-    display: none;
-    position: absolute;
-    top: 32px;
-    right: 0;
+    display: none !important;
+    position: absolute !important;
+    top: 32px !important;
+    right: 0 !important;
     background: #111315;
     border: 1px solid rgba(255,255,255,0.08);
     padding: 12px 0;
     border-radius: 8px;
     min-width: 160px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4),
+                0 0 12px rgba(0,255,255,0.15);
+    z-index: 200;
 }
 
 .menu-dropdown li {
@@ -89,9 +94,9 @@
     color: #7fe0ff;
 }
 
-/* Show dropdown when JS adds .open */
+/* Show dropdown ONLY when JS adds .open */
 .menu.open .menu-dropdown {
-    display: block;
+    display: block !important;
 }
 
 /* UTILITY BAR */
@@ -99,6 +104,8 @@
     display: flex;
     align-items: center;
     gap: 18px;
+    position: relative;
+    z-index: 101;
 }
 
 .utility-icon {
@@ -131,7 +138,9 @@
     padding: 20px;
     border-radius: 10px;
     width: 260px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.45);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.45),
+                0 0 12px rgba(0,255,255,0.15);
+    z-index: 102;
 }
 
 /* Show when JS adds .open */
@@ -179,8 +188,4 @@
 
 .store-dropdown p {
     color: #cfd8dc;
-}
-
-.menu-btn:hover {
-    color: #0077cc;
 }
