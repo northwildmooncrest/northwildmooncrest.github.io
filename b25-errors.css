@@ -1,0 +1,85 @@
+<!-- B25 — Cinematic Error Pages (404 / 500) -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
+/* B25 — Cinematic Error Pages */
+
+/* Error Page Container */
+.nw-error-page {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--nw-space-xxl) var(--nw-space-xl);
+  background: var(--nw-surface-primary);
+  text-align: center;
+  gap: var(--nw-space-xl);
+}
+
+/* Error Code */
+.nw-error-code {
+  font-family: var(--nw-font-secondary);
+  font-size: 4rem;
+  font-weight: var(--nw-weight-bold);
+  color: var(--nw-accent-blue-deep);
+}
+
+/* Error Title */
+.nw-error-title {
+  font-family: var(--nw-font-secondary);
+  font-size: 2rem;
+  font-weight: var(--nw-weight-bold);
+  color: var(--nw-color-mooncrest-mid);
+}
+
+/* Error Description */
+.nw-error-desc {
+  font-family: var(--nw-font-primary);
+  font-size: 1.2rem;
+  color: var(--nw-border-dark);
+  max-width: 700px;
+  line-height: 1.7;
+}
+
+/* Return Home Button */
+.nw-error-btn {
+  padding: var(--nw-space-md) var(--nw-space-xl);
+  background: var(--nw-accent-blue-mid);
+  color: white;
+  font-family: var(--nw-font-primary);
+  font-size: 1.1rem;
+  border-radius: var(--nw-radius-md);
+  text-decoration: none;
+  transition: all var(--nw-interaction-medium);
+  box-shadow: var(--nw-shadow-soft);
+}
+
+.nw-error-btn:hover {
+  background: var(--nw-accent-blue-deep);
+  transform: var(--nw-hover-lift);
+  box-shadow: var(--nw-shadow-medium);
+}
+
+/* Cinematic Error Illustration */
+.nw-error-illustration {
+  width: 260px;
+  height: 260px;
+  background: var(--nw-surface-secondary);
+  border-radius: var(--nw-radius-lg);
+  box-shadow: var(--nw-shadow-soft);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  color: var(--nw-color-mooncrest-mid);
+}
+
+/* Motion Reduction */
+.motion-reduction-mode .nw-error-btn,
+.motion-reduction-mode .nw-error-illustration {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+}
