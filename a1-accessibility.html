@@ -1,13 +1,54 @@
-<!-- A1 — accessibility.html -->
-<!-- Core accessibility tools -->
+<!-- A1 — Accessibility Hub -->
+<section class="accessibility" id="accessibility">
+  <div class="accessibility-inner">
 
-<!-- Skip Navigation Link -->
-<a href="#main-content" class="skip-nav">Skip to main content</a>
+    <!-- Header -->
+    <h2 class="accessibility-title">Accessibility Settings</h2>
+    <p class="accessibility-description">
+      Customize your viewing experience. These tools help ensure Northwild
+      Mooncrest is usable, readable, and comfortable for all visitors.
+    </p>
 
-<!-- Accessibility Toolbar -->
-<div class="accessibility-toolbar">
-  <button class="a11y-btn" data-action="increase-text">A+</button>
-  <button class="a11y-btn" data-action="decrease-text">A−</button>
-  <button class="a11y-btn" data-action="high-contrast">High Contrast</button>
-  <button class="a11y-btn" data-action="reset">Reset</button>
-</div>
+    <!-- Accessibility Controls -->
+    <div class="accessibility-controls">
+
+      <!-- High Contrast -->
+      <div class="accessibility-control">
+        <h3>High Contrast Mode</h3>
+        <p>Increase contrast for improved visibility.</p>
+        <button onclick="toggleHighContrast()">Enable High Contrast</button>
+      </div>
+
+      <!-- Dyslexia Mode -->
+      <div class="accessibility-control">
+        <h3>Dyslexia-Friendly Mode</h3>
+        <p>Adjust typography for improved readability.</p>
+        <button onclick="toggleDyslexiaMode()">Enable Dyslexia Mode</button>
+      </div>
+
+      <!-- Screenreader Mode -->
+      <div class="accessibility-control">
+        <h3>Screenreader Mode</h3>
+        <p>Optimize layout and labels for assistive technologies.</p>
+        <button onclick="toggleScreenreader()">Enable Screenreader Mode</button>
+      </div>
+
+      <!-- Keyboard Navigation -->
+      <div class="accessibility-control">
+        <h3>Keyboard Navigation</h3>
+        <p>Enhance focus rings and tab navigation.</p>
+        <button onclick="enableKeyboardNavigation()">Enable Keyboard Nav</button>
+      </div>
+
+    </div>
+
+    <!-- ARIA Map Link -->
+    <div class="accessibility-aria">
+      <p>
+        View the full ARIA map:
+        <a href="a4-aria-map.json" target="_blank">ARIA Structure</a>
+      </p>
+    </div>
+
+  </div>
+</section>
