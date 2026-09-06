@@ -1,0 +1,26 @@
+/* A9 — dyslexia-mode.css */
+/* Dyslexia-friendly reading mode */
+
+.dyslexia-mode {
+  --font: 'OpenDyslexic', 'Arial', sans-serif;
+  --text: #111;
+  --surface: #fafafa;
+
+  background: var(--surface) !important;
+  color: var(--text) !important;
+
+  letter-spacing: 0.12em;
+  word-spacing: 0.16em;
+  line-height: 1.6;
+}
+
+.dyslexia-mode p,
+.dyslexia-mode li,
+.dyslexia-mode a,
+.dyslexia-mode span {
+  font-family: var(--font) !important;
+}
+
+.dyslexia-mode a {
+  text-decoration: underline;
+}
