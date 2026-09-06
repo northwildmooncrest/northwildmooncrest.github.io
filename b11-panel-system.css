@@ -1,0 +1,127 @@
+<!-- B11 — Cinematic Panel System -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
+/* B11 — Cinematic Panel System */
+
+/* Base Panel */
+.nw-panel {
+  background: var(--nw-surface-primary);
+  border-radius: var(--nw-radius-lg);
+  border: var(--nw-border-bold) solid var(--nw-border-light);
+  padding: var(--nw-space-xl);
+  box-shadow: var(--nw-shadow-medium);
+  display: flex;
+  flex-direction: column;
+  gap: var(--nw-space-lg);
+  transition: all var(--nw-interaction-medium);
+}
+
+/* Panel Hover */
+.nw-panel:hover {
+  box-shadow: var(--nw-shadow-strong);
+  transform: var(--nw-hover-lift);
+  filter: var(--nw-hover-brighten);
+}
+
+/* Panel Active */
+.nw-panel:active {
+  transform: var(--nw-active-press);
+  filter: var(--nw-active-darken);
+}
+
+/* Panel Header */
+.nw-panel-header {
+  font-family: var(--nw-font-secondary);
+  font-size: 1.8rem;
+  font-weight: var(--nw-weight-bold);
+  color: var(--nw-color-mooncrest-mid);
+  margin-bottom: var(--nw-space-sm);
+}
+
+/* Panel Subheader */
+.nw-panel-subheader {
+  font-family: var(--nw-font-primary);
+  font-size: 1.1rem;
+  font-weight: var(--nw-weight-medium);
+  color: var(--nw-border-dark);
+  margin-bottom: var(--nw-space-md);
+}
+
+/* Panel Body */
+.nw-panel-body {
+  font-family: var(--nw-font-primary);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--nw-color-mooncrest-mid);
+}
+
+/* Panel Footer */
+.nw-panel-footer {
+  margin-top: var(--nw-space-lg);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--nw-space-md);
+}
+
+/* Panel Variants */
+
+/* Cinematic Panel */
+.nw-panel-cinematic {
+  background: var(--nw-gradient-summit);
+  border-color: var(--nw-border-mid);
+  box-shadow: var(--nw-shadow-cinematic);
+}
+
+/* Forest Panel */
+.nw-panel-forest {
+  background: var(--nw-gradient-forest);
+  color: #ffffff;
+  border-color: var(--nw-color-forest-light);
+}
+
+/* Ember Panel */
+.nw-panel-ember {
+  background: var(--nw-gradient-ember);
+  color: #ffffff;
+  border-color: var(--nw-accent-ember-light);
+}
+
+/* Minimal Panel */
+.nw-panel-minimal {
+  background: #ffffff;
+  border-color: var(--nw-border-light);
+  box-shadow: none;
+}
+
+/* Interactive Panel */
+.nw-panel-interactive {
+  cursor: pointer;
+  transition: all var(--nw-interaction-medium);
+}
+
+.nw-panel-interactive:hover {
+  box-shadow: var(--nw-shadow-cinematic);
+  transform: var(--nw-hover-lift);
+}
+
+.nw-panel-interactive:active {
+  transform: var(--nw-active-press);
+}
+
+/* Panel Sizes */
+.nw-panel-sm {
+  padding: var(--nw-space-lg);
+}
+
+.nw-panel-lg {
+  padding: var(--nw-space-xxl);
+}
+
+/* Motion Reduction Compatibility */
+.motion-reduction-mode .nw-panel {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+  box-shadow: var(--nw-shadow-medium) !important;
+}
