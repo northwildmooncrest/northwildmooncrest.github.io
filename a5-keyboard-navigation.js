@@ -1,62 +1,43 @@
-// A5 — keyboard-navigation.js
-// Enhanced keyboard navigation for accessibility
+/* A5 — Enhanced Keyboard Navigation */
+/* Updated for Northwild Mooncrest cinematic global-brand design */
 
-(function () {
-  const focusableSelectors = [
-    "a[href]",
-    "button",
-    "input",
-    "textarea",
-    "select",
-    "[tabindex]:not([tabindex='-1'])"
-  ];
-
-  function getFocusableElements(container = document) {
-    return Array.from(container.querySelectorAll(focusableSelectors.join(",")))
-      .filter(el => !el.disabled && el.offsetParent !== null);
+/* Add keyboard navigation class when user presses Tab */
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Tab") {
+    document.body.classList.add("keyboard-nav");
+    localStorage.setItem("keyboardNav", true);
   }
+});
 
-  // Trap focus inside a container (used for modals, menus, panels)
-  function trapFocus(container) {
-    const elements = getFocusableElements(container);
-    if (elements.length === 0) return;
+/* Remove keyboard navigation class when user clicks */
+document.addEventListener("mousedown", () => {
+  document.body.classList.remove("keyboard-nav");
+  localStorage.setItem("keyboardNav", false);
+});
 
-    const first = elements[0];
-    const last = elements[elements.length - 1];
+/* Restore saved keyboard navigation preference */
+document.addEventListener("DOMContentLoaded", () => {
+  const saved = localStorage.getItem("keyboardNav");
+  if (saved === "true") {
+    document.body.classList.add("keyboard-nav");
+  }
+});
 
-    container.addEventListener("keydown", (e) => {
-      if (e.key !== "Tab") return;
+/* Improve focus ring visibility */
+function applyFocusRing() {
+  const elements = document.querySelectorAll(
+    "a, button, input, textarea, select, [tabindex]"
+  );
 
-      if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault();
-        last.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first.focus();
-      }
+  elements.forEach((el) => {
+    el.addEventListener("focus", () => {
+      el.classList.add("focus-ring");
     });
-  }
 
-  // Global Escape key handler
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      document.dispatchEvent(new CustomEvent("globalEscape"));
-    }
+    el.addEventListener("blur", () => {
+      el.classList.remove("focus-ring");
+    });
   });
+}
 
-  // Auto-focus skip link target
-  const skipNav = document.querySelector(".skip-nav");
-  if (skipNav) {
-    skipNav.addEventListener("click", () => {
-      const main = document.querySelector("#main-content");
-      if (main) main.setAttribute("tabindex", "-1");
-      main?.focus();
-    });
-  }
-
-  // Expose utilities globally
-  window.KeyboardNav = {
-    getFocusableElements,
-    trapFocus
-  };
-})();
+applyFocusRing();
