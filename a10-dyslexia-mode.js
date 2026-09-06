@@ -1,6 +1,8 @@
+<!-- A10 — Dyslexia Mode Logic -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
 /* A10 — Cinematic Dyslexia Mode Logic */
-/* World of Northwild Mooncrest */
-/* Creator: John Robert */
 
 /* Toggle dyslexia mode */
 function nwToggleDyslexia() {
