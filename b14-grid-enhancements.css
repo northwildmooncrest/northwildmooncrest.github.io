@@ -1,0 +1,150 @@
+<!-- B14 — Cinematic Grid Enhancements -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
+/* B14 — Cinematic Grid Enhancements */
+
+/* Base Grid */
+.nw-grid {
+  display: grid;
+  gap: var(--nw-space-xl);
+  width: 100%;
+}
+
+/* Grid Alignment */
+.nw-grid-center {
+  align-items: center;
+  justify-items: center;
+}
+
+.nw-grid-top {
+  align-items: start;
+}
+
+.nw-grid-bottom {
+  align-items: end;
+}
+
+/* Standard Grid Templates */
+.nw-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.nw-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.nw-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Responsive Collapse */
+@media (max-width: 900px) {
+  .nw-grid-3,
+  .nw-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .nw-grid-2,
+  .nw-grid-3,
+  .nw-grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Asymmetric Cinematic Grids */
+.nw-grid-asym-60-40 {
+  grid-template-columns: 60% 40%;
+}
+
+.nw-grid-asym-40-60 {
+  grid-template-columns: 40% 60%;
+}
+
+@media (max-width: 900px) {
+  .nw-grid-asym-60-40,
+  .nw-grid-asym-40-60 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Media-First Grid */
+.nw-grid-media-first {
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--nw-space-xl);
+}
+
+@media (max-width: 900px) {
+  .nw-grid-media-first {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Storytelling Grid */
+.nw-grid-story {
+  grid-template-columns: 1fr 1fr;
+  gap: var(--nw-space-xxl);
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .nw-grid-story {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Wilderness-Themed Grids */
+
+/* Forest Grid */
+.nw-grid-forest {
+  background: var(--nw-gradient-forest);
+  padding: var(--nw-space-xl);
+  border-radius: var(--nw-radius-lg);
+  color: #ffffff;
+}
+
+/* Summit Grid */
+.nw-grid-summit {
+  background: var(--nw-gradient-summit);
+  padding: var(--nw-space-xl);
+  border-radius: var(--nw-radius-lg);
+}
+
+/* Ember Grid */
+.nw-grid-ember {
+  background: var(--nw-gradient-ember);
+  padding: var(--nw-space-xl);
+  border-radius: var(--nw-radius-lg);
+  color: #ffffff;
+}
+
+/* Grid Flow */
+.nw-grid-flow-row {
+  grid-auto-flow: row;
+}
+
+.nw-grid-flow-column {
+  grid-auto-flow: column;
+}
+
+.nw-grid-flow-dense {
+  grid-auto-flow: dense;
+}
+
+/* Grid Gap Modifiers */
+.nw-grid-gap-sm {
+  gap: var(--nw-space-md);
+}
+
+.nw-grid-gap-lg {
+  gap: var(--nw-space-xxl);
+}
+
+/* Motion Reduction Compatibility */
+.motion-reduction-mode .nw-grid {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+}
