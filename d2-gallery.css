@@ -1,0 +1,64 @@
+/* D2 — gallery.css */
+/* Cinematic gallery styling for Northwild of Starlight™ */
+
+.gallery {
+  padding: 4rem 2rem;
+  background: #0b1118;
+  color: #e9f7ff;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.gallery-title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #111a22;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Hover cinematic zoom */
+.gallery-item:hover img {
+  transform: scale(1.06);
+  opacity: 0.9;
+}
+
+/* Subtle overlay on hover */
+.gallery-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.4s ease;
+}
+
+.gallery-item:hover::after {
+  background: rgba(0, 0, 0, 0.25);
+}
