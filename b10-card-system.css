@@ -1,0 +1,141 @@
+<!-- B10 — Cinematic Card System -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
+/* B10 — Cinematic Card System */
+
+/* Base Card */
+.nw-card {
+  background: var(--nw-surface-secondary);
+  border-radius: var(--nw-radius-md);
+  border: var(--nw-border-regular) solid var(--nw-border-light);
+  padding: var(--nw-space-lg);
+  box-shadow: var(--nw-shadow-soft);
+  transition: all var(--nw-interaction-medium);
+  display: flex;
+  flex-direction: column;
+  gap: var(--nw-space-md);
+}
+
+/* Card Hover */
+.nw-card:hover {
+  box-shadow: var(--nw-shadow-medium);
+  transform: var(--nw-hover-lift);
+  filter: var(--nw-hover-brighten);
+}
+
+/* Card Active */
+.nw-card:active {
+  transform: var(--nw-active-press);
+  filter: var(--nw-active-darken);
+}
+
+/* Card Header */
+.nw-card-header {
+  font-family: var(--nw-font-secondary);
+  font-size: 1.4rem;
+  font-weight: var(--nw-weight-bold);
+  color: var(--nw-color-mooncrest-mid);
+  margin-bottom: var(--nw-space-sm);
+}
+
+/* Card Subheader */
+.nw-card-subheader {
+  font-family: var(--nw-font-primary);
+  font-size: 1rem;
+  font-weight: var(--nw-weight-medium);
+  color: var(--nw-border-dark);
+  margin-bottom: var(--nw-space-md);
+}
+
+/* Card Body */
+.nw-card-body {
+  font-family: var(--nw-font-primary);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--nw-color-mooncrest-mid);
+}
+
+/* Card Footer */
+.nw-card-footer {
+  margin-top: var(--nw-space-md);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--nw-space-sm);
+}
+
+/* Card Media */
+.nw-card-media {
+  width: 100%;
+  height: auto;
+  border-radius: var(--nw-radius-sm);
+  object-fit: cover;
+  box-shadow: var(--nw-shadow-soft);
+}
+
+/* Card Variants */
+
+/* Elevated Card */
+.nw-card-elevated {
+  box-shadow: var(--nw-shadow-medium);
+}
+
+/* Cinematic Card */
+.nw-card-cinematic {
+  background: var(--nw-gradient-summit);
+  border-color: var(--nw-border-mid);
+  box-shadow: var(--nw-shadow-cinematic);
+}
+
+/* Forest Card */
+.nw-card-forest {
+  background: var(--nw-gradient-forest);
+  color: #ffffff;
+  border-color: var(--nw-color-forest-light);
+}
+
+/* Ember Card */
+.nw-card-ember {
+  background: var(--nw-gradient-ember);
+  color: #ffffff;
+  border-color: var(--nw-accent-ember-light);
+}
+
+/* Minimal Card */
+.nw-card-minimal {
+  background: #ffffff;
+  border-color: var(--nw-border-light);
+  box-shadow: none;
+}
+
+/* Interactive Card */
+.nw-card-interactive {
+  cursor: pointer;
+  transition: all var(--nw-interaction-medium);
+}
+
+.nw-card-interactive:hover {
+  box-shadow: var(--nw-shadow-cinematic);
+  transform: var(--nw-hover-lift);
+}
+
+.nw-card-interactive:active {
+  transform: var(--nw-active-press);
+}
+
+/* Card Sizes */
+.nw-card-sm {
+  padding: var(--nw-space-md);
+}
+
+.nw-card-lg {
+  padding: var(--nw-space-xl);
+}
+
+/* Motion Reduction Compatibility */
+.motion-reduction-mode .nw-card {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+  box-shadow: var(--nw-shadow-soft) !important;
+}
