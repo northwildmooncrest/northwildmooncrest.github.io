@@ -1,32 +1,54 @@
-// A3 — accessibility.js
-// Core accessibility logic
+/* A3 — Accessibility Logic */
+/* Updated for Northwild Mooncrest cinematic global-brand design */
 
-(function () {
-  const html = document.documentElement;
+/* High Contrast Mode */
+function toggleHighContrast() {
+  document.body.classList.toggle("high-contrast");
+  localStorage.setItem(
+    "highContrast",
+    document.body.classList.contains("high-contrast")
+  );
+}
 
-  const actions = {
-    "increase-text": () => {
-      let size = parseFloat(getComputedStyle(html).fontSize);
-      html.style.fontSize = size + 1 + "px";
-    },
-    "decrease-text": () => {
-      let size = parseFloat(getComputedStyle(html).fontSize);
-      html.style.fontSize = Math.max(size - 1, 12) + "px";
-    },
-    "high-contrast": () => {
-      html.classList.toggle("high-contrast");
-    },
-    "reset": () => {
-      html.style.fontSize = "";
-      html.classList.remove("high-contrast");
-    }
-  };
+/* Dyslexia-Friendly Mode */
+function toggleDyslexiaMode() {
+  document.body.classList.toggle("dyslexia-mode");
+  localStorage.setItem(
+    "dyslexiaMode",
+    document.body.classList.contains("dyslexia-mode")
+  );
+}
 
-  document.addEventListener("click", (e) => {
-    const btn = e.target.closest(".a11y-btn");
-    if (!btn) return;
+/* Screenreader Mode */
+function toggleScreenreader() {
+  document.body.classList.toggle("screenreader-mode");
+  localStorage.setItem(
+    "screenreaderMode",
+    document.body.classList.contains("screenreader-mode")
+  );
+}
 
-    const action = btn.dataset.action;
-    if (actions[action]) actions[action]();
-  });
-})();
+/* Keyboard Navigation Enhancements */
+function enableKeyboardNavigation() {
+  document.body.classList.add("keyboard-nav");
+  localStorage.setItem("keyboardNav", true);
+}
+
+/* Restore Saved Settings */
+document.addEventListener("DOMContentLoaded", () => {
+  if (localStorage.getItem("highContrast") === "true") {
+    document.body.classList.add("high-contrast");
+  }
+
+  if (localStorage.getItem("dyslexiaMode") === "true") {
+    document.body.classList.add("dyslexia-mode");
+  }
+
+  if (localStorage.getItem("screenreaderMode") === "true") {
+    document.body.classList.add("screenreader-mode");
+  }
+
+  if (localStorage.getItem("keyboardNav") === "true") {
+    document.body.classList.add("keyboard-nav");
+  }
+});
