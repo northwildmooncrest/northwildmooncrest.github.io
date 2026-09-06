@@ -1,0 +1,144 @@
+<!-- B13 — Cinematic Layout Blocks -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
+/* B13 — Cinematic Layout Blocks */
+
+/* Base Block */
+.nw-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nw-space-lg);
+  padding: var(--nw-space-xl);
+  border-radius: var(--nw-radius-lg);
+  background: var(--nw-surface-primary);
+  box-shadow: var(--nw-shadow-soft);
+  transition: all var(--nw-interaction-medium);
+}
+
+/* Block Hover */
+.nw-block:hover {
+  box-shadow: var(--nw-shadow-medium);
+  transform: var(--nw-hover-lift);
+  filter: var(--nw-hover-brighten);
+}
+
+/* Block Header */
+.nw-block-header {
+  font-family: var(--nw-font-secondary);
+  font-size: 1.8rem;
+  font-weight: var(--nw-weight-bold);
+  color: var(--nw-color-mooncrest-mid);
+}
+
+/* Block Subheader */
+.nw-block-subheader {
+  font-family: var(--nw-font-primary);
+  font-size: 1.1rem;
+  font-weight: var(--nw-weight-medium);
+  color: var(--nw-border-dark);
+}
+
+/* Block Body */
+.nw-block-body {
+  font-family: var(--nw-font-primary);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--nw-color-mooncrest-mid);
+}
+
+/* Block Footer */
+.nw-block-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--nw-space-md);
+}
+
+/* Feature Block */
+.nw-block-feature {
+  background: var(--nw-gradient-summit);
+  border-left: 6px solid var(--nw-accent-blue-mid);
+}
+
+/* Split Block (Two Columns) */
+.nw-block-split {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--nw-space-xl);
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .nw-block-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Callout Block */
+.nw-block-callout {
+  background: var(--nw-surface-secondary);
+  border-left: 6px solid var(--nw-accent-gold-mid);
+}
+
+/* Highlight Block */
+.nw-block-highlight {
+  background: var(--nw-gradient-mooncrest);
+  color: #ffffff;
+  box-shadow: var(--nw-shadow-cinematic);
+}
+
+/* Media Block */
+.nw-block-media img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--nw-radius-md);
+  object-fit: cover;
+  box-shadow: var(--nw-shadow-soft);
+}
+
+/* Text + Media Hybrid Block */
+.nw-block-hybrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--nw-space-xl);
+}
+
+@media (max-width: 900px) {
+  .nw-block-hybrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Forest Block */
+.nw-block-forest {
+  background: var(--nw-gradient-forest);
+  color: #ffffff;
+}
+
+/* Ember Block */
+.nw-block-ember {
+  background: var(--nw-gradient-ember);
+  color: #ffffff;
+}
+
+/* Minimal Block */
+.nw-block-minimal {
+  background: #ffffff;
+  box-shadow: none;
+}
+
+/* Block Sizes */
+.nw-block-sm {
+  padding: var(--nw-space-lg);
+}
+
+.nw-block-lg {
+  padding: var(--nw-space-xxl);
+}
+
+/* Motion Reduction Compatibility */
+.motion-reduction-mode .nw-block {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+}
