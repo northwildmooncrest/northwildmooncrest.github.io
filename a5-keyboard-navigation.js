@@ -1,43 +1,54 @@
-/* A5 — Enhanced Keyboard Navigation */
-/* Updated for Northwild Mooncrest cinematic global-brand design */
+/* A5 — Cinematic Keyboard Navigation */
+/* World of Northwild Mooncrest */
+/* Creator: John Robert */
 
-/* Add keyboard navigation class when user presses Tab */
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Tab") {
+/* Detect keyboard navigation */
+let nwKeyboardActive = false;
+
+/* Activate keyboard navigation mode */
+function activateKeyboardNavigation() {
+  if (!nwKeyboardActive) {
+    nwKeyboardActive = true;
     document.body.classList.add("keyboard-nav");
-    localStorage.setItem("keyboardNav", true);
+
+    const region = document.getElementById("nw-live-region");
+    if (region) {
+      region.textContent = "Keyboard navigation activated.";
+    }
   }
-});
-
-/* Remove keyboard navigation class when user clicks */
-document.addEventListener("mousedown", () => {
-  document.body.classList.remove("keyboard-nav");
-  localStorage.setItem("keyboardNav", false);
-});
-
-/* Restore saved keyboard navigation preference */
-document.addEventListener("DOMContentLoaded", () => {
-  const saved = localStorage.getItem("keyboardNav");
-  if (saved === "true") {
-    document.body.classList.add("keyboard-nav");
-  }
-});
-
-/* Improve focus ring visibility */
-function applyFocusRing() {
-  const elements = document.querySelectorAll(
-    "a, button, input, textarea, select, [tabindex]"
-  );
-
-  elements.forEach((el) => {
-    el.addEventListener("focus", () => {
-      el.classList.add("focus-ring");
-    });
-
-    el.addEventListener("blur", () => {
-      el.classList.remove("focus-ring");
-    });
-  });
 }
 
-applyFocusRing();
+/* Listen for keyboard usage */
+window.addEventListener("keydown", (event) => {
+  // Ignore modifier-only keys
+  if (event.key === "Shift" || event.key === "Control" || event.key === "Alt") return;
+
+  activateKeyboardNavigation();
+});
+
+/* Enhance tab focus movement */
+window.addEventListener("keyup", (event) => {
+  if (event.key === "Tab") {
+    const active = document.activeElement;
+
+    if (active) {
+      active.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    }
+  }
+});
+
+/* Initialize on load */
+document.addEventListener("DOMContentLoaded", () => {
+  // If keyboard mode was previously active, restore it
+  const saved = localStorage.getItem("nw-accessibility");
+  if (saved) {
+    const parsed = JSON.parse(saved);
+    if (parsed.keyboardNav) {
+      nwKeyboardActive = true;
+      document.body.classList.add("keyboard-nav");
+    }
+  }
+});
