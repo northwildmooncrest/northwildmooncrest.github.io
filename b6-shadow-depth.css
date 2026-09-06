@@ -1,0 +1,106 @@
+<!-- B6 — Cinematic Shadow & Depth System -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
+/* B6 — Cinematic Shadow & Depth System */
+
+/* Core Shadow Tokens */
+:root {
+  --nw-shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --nw-shadow-medium: 0 6px 18px rgba(0, 0, 0, 0.12);
+  --nw-shadow-strong: 0 10px 28px rgba(0, 0, 0, 0.16);
+  --nw-shadow-cinematic: 0 16px 48px rgba(0, 0, 0, 0.22);
+
+  /* Ambient Glows */
+  --nw-glow-blue: 0 0 24px rgba(63, 169, 245, 0.35);
+  --nw-glow-gold: 0 0 24px rgba(245, 197, 66, 0.35);
+  --nw-glow-forest: 0 0 24px rgba(47, 79, 79, 0.35);
+
+  /* Elevation Levels */
+  --nw-elevation-0: none;
+  --nw-elevation-1: var(--nw-shadow-soft);
+  --nw-elevation-2: var(--nw-shadow-medium);
+  --nw-elevation-3: var(--nw-shadow-strong);
+  --nw-elevation-4: var(--nw-shadow-cinematic);
+}
+
+/* Elevation Classes */
+.nw-elevation-0 {
+  box-shadow: var(--nw-elevation-0);
+}
+
+.nw-elevation-1 {
+  box-shadow: var(--nw-elevation-1);
+}
+
+.nw-elevation-2 {
+  box-shadow: var(--nw-elevation-2);
+}
+
+.nw-elevation-3 {
+  box-shadow: var(--nw-elevation-3);
+}
+
+.nw-elevation-4 {
+  box-shadow: var(--nw-elevation-4);
+}
+
+/* Cinematic Hover Depth */
+.nw-hover-depth {
+  transition: box-shadow var(--nw-transition-medium), transform var(--nw-transition-medium);
+}
+
+.nw-hover-depth:hover {
+  box-shadow: var(--nw-shadow-cinematic);
+  transform: translateY(-4px);
+}
+
+/* Panels */
+.nw-panel-depth {
+  box-shadow: var(--nw-shadow-medium);
+  border-radius: var(--nw-radius-lg);
+  background: var(--nw-surface-primary);
+}
+
+/* Cards */
+.nw-card-depth {
+  box-shadow: var(--nw-shadow-soft);
+  border-radius: var(--nw-radius-md);
+  background: var(--nw-surface-secondary);
+}
+
+/* Ambient Glow Variants */
+.nw-glow-blue {
+  box-shadow: var(--nw-glow-blue);
+}
+
+.nw-glow-gold {
+  box-shadow: var(--nw-glow-gold);
+}
+
+.nw-glow-forest {
+  box-shadow: var(--nw-glow-forest);
+}
+
+/* Cinematic Lighting */
+.nw-light-top {
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nw-light-bottom {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nw-light-left {
+  box-shadow: -10px 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.nw-light-right {
+  box-shadow: 10px 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Motion Reduction Compatibility */
+.motion-reduction-mode * {
+  transition: none !important;
+  transform: none !important;
+}
