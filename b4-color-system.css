@@ -1,0 +1,124 @@
+<!-- B4 — Cinematic Color System Expansion -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
+/* B4 — Cinematic Color System Expansion */
+
+/* Extended Wilderness Palette */
+:root {
+  --nw-color-sky-light: #dff0ff;
+  --nw-color-sky-mid: #b7d9f7;
+  --nw-color-sky-deep: #6bb3e8;
+
+  --nw-color-forest-light: #4f6f6f;
+  --nw-color-forest-mid: #2f4f4f;
+  --nw-color-forest-deep: #1e3a3a;
+
+  --nw-color-stone-light: #f4f6f8;
+  --nw-color-stone-mid: #dfe4ea;
+  --nw-color-stone-deep: #b5bcc4;
+
+  --nw-color-mooncrest-light: #1a2633;
+  --nw-color-mooncrest-mid: #0b1118;
+  --nw-color-mooncrest-deep: #05080c;
+
+  --nw-color-summit-light: #f7fcff;
+  --nw-color-summit-mid: #e9f7ff;
+  --nw-color-summit-deep: #cfe9f7;
+
+  /* Accent Expansion */
+  --nw-accent-blue-light: #7cc8ff;
+  --nw-accent-blue-mid: #3fa9f5;
+  --nw-accent-blue-deep: #0077cc;
+
+  --nw-accent-gold-light: #ffe89c;
+  --nw-accent-gold-mid: #f5c542;
+  --nw-accent-gold-deep: #c49a1a;
+
+  --nw-accent-ember-light: #f3a07a;
+  --nw-accent-ember-mid: #d96b3b;
+  --nw-accent-ember-deep: #a84a24;
+
+  /* Semantic Colors */
+  --nw-semantic-success: #4caf50;
+  --nw-semantic-warning: #ffb300;
+  --nw-semantic-error: #e53935;
+  --nw-semantic-info: #3fa9f5;
+
+  /* UI Surface Colors */
+  --nw-surface-primary: #ffffff;
+  --nw-surface-secondary: #f7f9fb;
+  --nw-surface-tertiary: #eef3f7;
+  --nw-surface-overlay: rgba(0, 0, 0, 0.4);
+
+  /* UI Border Colors */
+  --nw-border-light: #dfe4ea;
+  --nw-border-mid: #b5bcc4;
+  --nw-border-dark: #6b7a8a;
+
+  /* Gradient Expansion */
+  --nw-gradient-forest: linear-gradient(180deg, #2f4f4f 0%, #1e3a3a 100%);
+  --nw-gradient-summit-glow: linear-gradient(180deg, #e9f7ff 0%, #b7d9f7 50%, #6bb3e8 100%);
+  --nw-gradient-ember: linear-gradient(180deg, #d96b3b 0%, #a84a24 100%);
+}
+
+/* UI Color Roles */
+.nw-ui-primary {
+  background: var(--nw-color-mooncrest-mid);
+  color: #ffffff;
+}
+
+.nw-ui-secondary {
+  background: var(--nw-surface-secondary);
+  color: var(--nw-color-mooncrest-mid);
+}
+
+.nw-ui-accent {
+  background: var(--nw-accent-blue-mid);
+  color: #ffffff;
+}
+
+/* Alerts */
+.nw-alert-success {
+  background: #d8f5d0;
+  border-left: 6px solid var(--nw-semantic-success);
+}
+
+.nw-alert-warning {
+  background: #fff4d0;
+  border-left: 6px solid var(--nw-semantic-warning);
+}
+
+.nw-alert-error {
+  background: #ffe0e0;
+  border-left: 6px solid var(--nw-semantic-error);
+}
+
+.nw-alert-info {
+  background: #e9f7ff;
+  border-left: 6px solid var(--nw-semantic-info);
+}
+
+/* Buttons */
+button.nw-btn-primary {
+  background: var(--nw-accent-blue-mid);
+  color: #ffffff;
+  border: 3px solid var(--nw-accent-blue-deep);
+}
+
+button.nw-btn-secondary {
+  background: var(--nw-surface-secondary);
+  color: var(--nw-color-mooncrest-mid);
+  border: 3px solid var(--nw-border-mid);
+}
+
+button.nw-btn-ghost {
+  background: transparent;
+  color: var(--nw-accent-blue-mid);
+  border: 3px solid var(--nw-accent-blue-mid);
+}
+
+/* Motion Reduction Compatibility */
+.motion-reduction-mode * {
+  transition: none !important;
+}
