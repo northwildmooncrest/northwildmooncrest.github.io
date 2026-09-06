@@ -1,0 +1,45 @@
+/* -----------------------------------------------------------
+   Account Page — Profile, Login, Settings Layout
+   Clean, simple, modular styling for account.html
+----------------------------------------------------------- */
+
+.account-container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.account-container h1 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.account-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    margin-bottom: 24px;
+}
+
+.account-section h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.account-section p {
+    margin: 8px 0;
+}
+
+.account-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: #0077cc;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.account-link:hover {
+    color: #005fa3;
+}
