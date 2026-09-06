@@ -1,182 +1,43 @@
-/* ---------------------------------------------------------
-   NORTHWILD MOONCREST — ANIMATIONS
-   Midnight Aurora • Pure Teal • Soft Glow • Cinematic
---------------------------------------------------------- */
+/* -----------------------------------------------------------
+   Animations — Dropdown fade, slide, and icon interactions
+   Clean, simple, modular animation effects for header UI.
+----------------------------------------------------------- */
 
-/* ---------------------------------------------------------
-   GLOBAL FADE-IN
---------------------------------------------------------- */
-
-.fade-in {
+/* Fade + slide for dropdown panels */
+.panel {
     opacity: 0;
-    animation: fadeIn 1.2s ease forwards;
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(10px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-/* ---------------------------------------------------------
-   SOFT AURORA GLOW PULSE
---------------------------------------------------------- */
-
-.aurora-pulse {
-    animation: auroraPulse 3.8s ease-in-out infinite;
-}
-
-@keyframes auroraPulse {
-    0% {
-        box-shadow: 0 0 10px rgba(79,255,212,0.18);
-    }
-    50% {
-        box-shadow: 0 0 22px rgba(79,255,212,0.45);
-    }
-    100% {
-        box-shadow: 0 0 10px rgba(79,255,212,0.18);
-    }
-}
-
-/* ---------------------------------------------------------
-   BREATHING AURORA (AI ORB STYLE)
---------------------------------------------------------- */
-
-.breathing-aurora {
-    animation: breathingAurora 4s ease-in-out infinite;
-}
-
-@keyframes breathingAurora {
-    0% {
-        transform: scale(1);
-        box-shadow:
-            0 0 10px rgba(79,255,212,0.25),
-            0 0 24px rgba(79,255,212,0.15);
-    }
-    50% {
-        transform: scale(1.06);
-        box-shadow:
-            0 0 18px rgba(79,255,212,0.55),
-            0 0 36px rgba(79,255,212,0.35);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow:
-            0 0 10px rgba(79,255,212,0.25),
-            0 0 24px rgba(79,255,212,0.15);
-    }
-}
-
-/* ---------------------------------------------------------
-   AURORA MIST (SECTION TRANSITIONS)
---------------------------------------------------------- */
-
-.aurora-mist {
-    animation: auroraMist 6s ease-in-out infinite;
-}
-
-@keyframes auroraMist {
-    0% {
-        background: radial-gradient(circle at top, #142633, #050b12 70%);
-    }
-    50% {
-        background: radial-gradient(circle at top, #1a3a4d, #050b12 70%);
-    }
-    100% {
-        background: radial-gradient(circle at top, #142633, #050b12 70%);
-    }
-}
-
-/* ---------------------------------------------------------
-   FLOAT-UP (IMAGE + CARD HOVER)
---------------------------------------------------------- */
-
-.float-up {
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.float-up:hover {
     transform: translateY(-6px);
-    box-shadow:
-        0 12px 28px rgba(0,0,0,0.85),
-        0 0 16px rgba(79,255,212,0.25);
+    transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* ---------------------------------------------------------
-   NAV LINK GLOW
---------------------------------------------------------- */
-
-.nav-glow:hover {
-    color: #4fffd4;
-    text-shadow: 0 0 10px rgba(79,255,212,0.45);
+.panel[style*="block"] {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* ---------------------------------------------------------
-   BUTTON GLOW
---------------------------------------------------------- */
-
-.btn-glow:hover {
-    border-color: #4fffd4;
-    color: #4fffd4;
-    box-shadow: 0 0 12px rgba(79,255,212,0.25);
-}
-
-/* ---------------------------------------------------------
-   IMAGE SOFT GLOW
---------------------------------------------------------- */
-
-.image-glow:hover {
-    box-shadow:
-        0 0 18px rgba(79,255,212,0.25),
-        0 0 32px rgba(79,255,212,0.15);
-}
-
-/* ---------------------------------------------------------
-   TEXT FADE-UP
---------------------------------------------------------- */
-
-.text-fade-up {
+/* Menu dropdown animation */
+.menu-dropdown {
     opacity: 0;
-    animation: textFadeUp 1.4s ease forwards;
+    transform: translateY(-6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-@keyframes textFadeUp {
-    0% { opacity: 0; transform: translateY(14px); }
-    100% { opacity: 1; transform: translateY(0); }
+.menu-dropdown[style*="block"] {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* ---------------------------------------------------------
-   SOFT SCALE-IN
---------------------------------------------------------- */
-
-.scale-in {
-    opacity: 0;
-    animation: scaleIn 0.9s ease forwards;
+/* Utility icon hover animation */
+.utility-icon svg {
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
-@keyframes scaleIn {
-    0% { opacity: 0; transform: scale(0.94); }
-    100% { opacity: 1; transform: scale(1); }
+.utility-icon:hover svg {
+    transform: scale(1.08);
 }
 
-/* ---------------------------------------------------------
-   AURORA BORDER SHIMMER
---------------------------------------------------------- */
-
-.border-shimmer {
-    position: relative;
-}
-
-.border-shimmer::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    border: 1px solid rgba(79,255,212,0.25);
-    animation: borderShimmer 4.5s linear infinite;
-}
-
-@keyframes borderShimmer {
-    0% { border-color: rgba(79,255,212,0.15); }
-    50% { border-color: rgba(79,255,212,0.35); }
-    100% { border-color: rgba(79,255,212,0.15); }
+/* Active icon animation */
+.utility-icon.active svg {
+    transform: scale(1.12);
+    color: #005fa3;
 }
