@@ -1,96 +1,99 @@
+<!-- A3 — Accessibility Logic -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
 /* A3 — Cinematic Accessibility Logic */
-/* World of Northwild Mooncrest */
-/* Creator: John Robert */
 
-/* Accessibility State */
-const nwState = {
-  screenreader: false,
-  contrast: false,
-  dyslexia: false,
-  keyboardNav: false
-};
-
-/* Save State */
-function saveNWState() {
-  localStorage.setItem("nw-accessibility", JSON.stringify(nwState));
-}
-
-/* Load State */
-function loadNWState() {
+/* Restore saved accessibility settings */
+document.addEventListener("DOMContentLoaded", () => {
   const saved = localStorage.getItem("nw-accessibility");
   if (!saved) return;
+
   const parsed = JSON.parse(saved);
 
-  nwState.screenreader = parsed.screenreader;
-  nwState.contrast = parsed.contrast;
-  nwState.dyslexia = parsed.dyslexia;
-  nwState.keyboardNav = parsed.keyboardNav;
+  if (parsed.highContrast) {
+    document.body.classList.add("high-contrast-mode");
+  }
 
-  applyNWState();
-}
+  if (parsed.largeText) {
+    document.body.classList.add("large-text-mode");
+  }
 
-/* Apply State to the World */
-function applyNWState() {
-  const body = document.body;
+  if (parsed.dyslexia) {
+    document.body.classList.add("dyslexia-mode");
+  }
 
-  body.classList.toggle("screenreader-mode", nwState.screenreader);
-  body.classList.toggle("high-contrast-mode", nwState.contrast);
-  body.classList.toggle("dyslexia-mode", nwState.dyslexia);
-  body.classList.toggle("keyboard-nav", nwState.keyboardNav);
+  if (parsed.motionReduction) {
+    document.body.classList.add("motion-reduction-mode");
+  }
 
-  announceNWState();
-}
+  if (parsed.cognitiveLoad) {
+    document.body.classList.add("reduced-cognitive-load-mode");
+  }
 
-/* ARIA Live Announcer */
-function announceNWState() {
   const region = document.getElementById("nw-live-region");
-  if (!region) return;
-
-  let message = "Accessibility updated.";
-
-  if (nwState.screenreader) message = "Screenreader mode activated.";
-  if (nwState.contrast) message = "High contrast mode enabled.";
-  if (nwState.dyslexia) message = "Dyslexia-friendly mode enabled.";
-  if (nwState.keyboardNav) message = "Keyboard navigation active.";
-
-  region.textContent = message;
-}
-
-/* Toggle Functions */
-function toggleScreenreader() {
-  nwState.screenreader = !nwState.screenreader;
-  saveNWState();
-  applyNWState();
-}
-
-function toggleContrast() {
-  nwState.contrast = !nwState.contrast;
-  saveNWState();
-  applyNWState();
-}
-
-function toggleDyslexia() {
-  nwState.dyslexia = !nwState.dyslexia;
-  saveNWState();
-  applyNWState();
-}
-
-function toggleKeyboardNav() {
-  nwState.keyboardNav = !nwState.keyboardNav;
-  saveNWState();
-  applyNWState();
-}
-
-/* Keyboard Detection */
-window.addEventListener("keydown", () => {
-  if (!nwState.keyboardNav) {
-    nwState.keyboardNav = true;
-    saveNWState();
-    applyNWState();
+  if (region) {
+    region.textContent = "Accessibility settings restored.";
   }
 });
 
-/* Initialize the World */
-document.addEventListener("DOMContentLoaded", () => {
-  loadNWState();
-});
+/* Toggle high contrast mode */
+function nwToggleHighContrast() {
+  const body = document.body;
+  const newState = !body.classList.contains("high-contrast-mode");
+  body.classList.toggle("high-contrast-mode", newState);
+  nwSaveSetting("highContrast", newState);
+  nwAnnounce(newState ? "High contrast enabled." : "High contrast disabled.");
+}
+
+/* Toggle large text mode */
+function nwToggleLargeText() {
+  const body = document.body;
+  const newState = !body.classList.contains("large-text-mode");
+  body.classList.toggle("large-text-mode", newState);
+  nwSaveSetting("largeText", newState);
+  nwAnnounce(newState ? "Large text enabled." : "Large text disabled.");
+}
+
+/* Toggle dyslexia-friendly mode */
+function nwToggleDyslexia() {
+  const body = document.body;
+  const newState = !body.classList.contains("dyslexia-mode");
+  body.classList.toggle("dyslexia-mode", newState);
+  nwSaveSetting("dyslexia", newState);
+  nwAnnounce(newState ? "Dyslexia mode enabled." : "Dyslexia mode disabled.");
+}
+
+/* Toggle motion reduction mode */
+function nwToggleMotionReduction() {
+  const body = document.body;
+  const newState = !body.classList.contains("motion-reduction-mode");
+  body.classList.toggle("motion-reduction-mode", newState);
+  nwSaveSetting("motionReduction", newState);
+  nwAnnounce(newState ? "Motion reduction enabled." : "Motion reduction disabled.");
+}
+
+/* Toggle reduced cognitive load mode */
+function nwToggleCognitiveLoad() {
+  const body = document.body;
+  const newState = !body.classList.contains("reduced-cognitive-load-mode");
+  body.classList.toggle("reduced-cognitive-load-mode", newState);
+  nwSaveSetting("cognitiveLoad", newState);
+  nwAnnounce(newState ? "Reduced cognitive load enabled." : "Reduced cognitive load disabled.");
+}
+
+/* Save accessibility settings */
+function nwSaveSetting(key, value) {
+  const saved = localStorage.getItem("nw-accessibility");
+  let parsed = saved ? JSON.parse(saved) : {};
+  parsed[key] = value;
+  localStorage.setItem("nw-accessibility", JSON.stringify(parsed));
+}
+
+/* Announce changes to screen readers */
+function nwAnnounce(message) {
+  const region = document.getElementById("nw-live-region");
+  if (region) {
+    region.textContent = message;
+  }
+}
