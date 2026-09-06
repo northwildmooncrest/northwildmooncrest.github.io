@@ -1,1 +1,49 @@
+<!-- B1 — Brand Variables -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
 
+/* B1 — Brand Variables */
+
+/* Core Tokens */
+:root {
+  /* Typography */
+  --nw-font-primary: 'Inter', sans-serif;
+  --nw-font-secondary: 'Merriweather', serif;
+
+  /* Colors */
+  --nw-color-mooncrest-light: #f5f7fa;
+  --nw-color-mooncrest-mid: #dfe3e8;
+  --nw-color-mooncrest-dark: #0d0f11;
+
+  --nw-color-accent: #7aa6ff;
+  --nw-color-accent-soft: #a8c4ff;
+
+  /* Surfaces */
+  --nw-surface-primary: #0d0f11;
+  --nw-surface-secondary: #16181c;
+  --nw-surface-tertiary: #1f2227;
+
+  /* Spacing */
+  --nw-space-xxs: 4px;
+  --nw-space-xs: 8px;
+  --nw-space-sm: 12px;
+  --nw-space-md: 20px;
+  --nw-space-lg: 32px;
+  --nw-space-xl: 48px;
+  --nw-space-xxl: 72px;
+
+  /* Radius */
+  --nw-radius-sm: 6px;
+  --nw-radius-md: 12px;
+  --nw-radius-lg: 20px;
+
+  /* Shadows */
+  --nw-shadow-soft: 0 4px 12px rgba(0,0,0,0.25);
+  --nw-shadow-medium: 0 8px 24px rgba(0,0,0,0.35);
+  --nw-shadow-strong: 0 12px 32px rgba(0,0,0,0.45);
+
+  /* Interaction */
+  --nw-transition-fast: 120ms ease;
+  --nw-transition-medium: 240ms ease;
+  --nw-transition-slow: 360ms ease;
+}
