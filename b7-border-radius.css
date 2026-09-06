@@ -1,0 +1,119 @@
+<!-- B7 — Cinematic Border & Radius System -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
+/* B7 — Cinematic Border & Radius System */
+
+/* Border Radius Tokens */
+:root {
+  --nw-radius-sm: 6px;
+  --nw-radius-md: 10px;
+  --nw-radius-lg: 16px;
+  --nw-radius-xl: 24px;
+  --nw-radius-xxl: 36px;
+  --nw-radius-full: 999px;
+}
+
+/* Border Thickness Tokens */
+:root {
+  --nw-border-thin: 1px;
+  --nw-border-regular: 2px;
+  --nw-border-bold: 3px;
+  --nw-border-heavy: 4px;
+}
+
+/* Border Color Tokens */
+:root {
+  --nw-border-light: #dfe4ea;
+  --nw-border-mid: #b5bcc4;
+  --nw-border-dark: #6b7a8a;
+  --nw-border-accent-blue: var(--nw-accent-blue-mid);
+  --nw-border-accent-gold: var(--nw-accent-gold-mid);
+}
+
+/* Universal Border Classes */
+.nw-border-thin {
+  border: var(--nw-border-thin) solid var(--nw-border-mid);
+}
+
+.nw-border-regular {
+  border: var(--nw-border-regular) solid var(--nw-border-mid);
+}
+
+.nw-border-bold {
+  border: var(--nw-border-bold) solid var(--nw-border-dark);
+}
+
+.nw-border-heavy {
+  border: var(--nw-border-heavy) solid var(--nw-border-dark);
+}
+
+/* Accent Borders */
+.nw-border-accent-blue {
+  border-color: var(--nw-border-accent-blue);
+}
+
+.nw-border-accent-gold {
+  border-color: var(--nw-border-accent-gold);
+}
+
+/* Radius Classes */
+.nw-radius-sm {
+  border-radius: var(--nw-radius-sm);
+}
+
+.nw-radius-md {
+  border-radius: var(--nw-radius-md);
+}
+
+.nw-radius-lg {
+  border-radius: var(--nw-radius-lg);
+}
+
+.nw-radius-xl {
+  border-radius: var(--nw-radius-xl);
+}
+
+.nw-radius-xxl {
+  border-radius: var(--nw-radius-xxl);
+}
+
+.nw-radius-full {
+  border-radius: var(--nw-radius-full);
+}
+
+/* Card Geometry */
+.nw-card-geometry {
+  border-radius: var(--nw-radius-md);
+  border: var(--nw-border-regular) solid var(--nw-border-light);
+}
+
+/* Panel Geometry */
+.nw-panel-geometry {
+  border-radius: var(--nw-radius-lg);
+  border: var(--nw-border-bold) solid var(--nw-border-mid);
+}
+
+/* Button Geometry */
+.nw-btn-geometry {
+  border-radius: var(--nw-radius-md);
+  border: var(--nw-border-bold) solid var(--nw-border-accent-blue);
+}
+
+/* Cinematic Geometry Variants */
+.nw-geometry-soft {
+  border-radius: var(--nw-radius-lg);
+}
+
+.nw-geometry-cinematic {
+  border-radius: var(--nw-radius-xl);
+}
+
+.nw-geometry-pill {
+  border-radius: var(--nw-radius-full);
+}
+
+/* Motion Reduction Compatibility */
+.motion-reduction-mode * {
+  transition: none !important;
+}
