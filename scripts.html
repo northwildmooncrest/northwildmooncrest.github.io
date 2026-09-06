@@ -13,19 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
             const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error(`Failed to load ${url}`);
-            }
-
-            const html = await response.text();
-            el.innerHTML = html;
+            if (!response.ok) throw new Error(`Failed to load ${url}`);
+            el.innerHTML = await response.text();
         } catch (err) {
             console.error(err);
-            el.innerHTML = `
-                <div style="color:red; padding:10px;">
-                    Error loading ${file}
-                </div>
-            `;
+            el.innerHTML = `<div style="color:red; padding:10px;">Error loading ${file}</div>`;
         }
     });
 });
