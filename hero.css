@@ -1,0 +1,103 @@
+/* ============================
+   NORTHWILD MOONCREST — HERO
+   Cinematic Aurora Aesthetic
+   ============================ */
+
+/* HERO SECTION */
+.hero {
+    width: 100%;
+    padding: 120px 40px 140px;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 20, 30, 0.85) 0%,
+        rgba(0, 10, 15, 0.95) 100%
+    );
+    color: var(--nw-white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* OPTIONAL BACKGROUND IMAGE */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('hero-bg.jpg') center/cover no-repeat;
+    opacity: 0.25;
+    filter: blur(2px);
+    z-index: 0;
+}
+
+/* CONTENT */
+.hero h1 {
+    font-size: 64px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin: 0;
+    color: var(--nw-aurora);
+    text-shadow: 0 0 18px var(--nw-aurora-glow);
+    position: relative;
+    z-index: 1;
+}
+
+.hero h2 {
+    font-size: 28px;
+    font-weight: 300;
+    margin-top: 12px;
+    color: var(--nw-white);
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+.hero p {
+    max-width: 780px;
+    margin: 28px auto 0;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--nw-white);
+    opacity: 0.85;
+    position: relative;
+    z-index: 1;
+}
+
+/* BUTTON */
+.hero .cta-btn {
+    margin-top: 40px;
+    padding: 14px 32px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--nw-aurora);
+    background: transparent;
+    color: var(--nw-white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.hero .cta-btn:hover {
+    background: var(--nw-aurora);
+    color: var(--nw-black);
+    box-shadow: 0 0 18px var(--nw-aurora-glow);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero {
+        padding: 100px 20px 120px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
