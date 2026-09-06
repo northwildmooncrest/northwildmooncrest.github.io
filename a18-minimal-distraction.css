@@ -1,0 +1,92 @@
+<!-- A18 — Minimal Distraction Mode -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
+/* A18 — Cinematic Minimal Distraction Mode */
+
+/* Global minimal distraction environment */
+.minimal-distraction-mode {
+  background: #ffffff !important;
+  color: #0b1118 !important;
+  line-height: 1.85 !important;
+}
+
+/* Hide all non-essential UI elements */
+.minimal-distraction-mode .decorative,
+.minimal-distraction-mode .visual-only,
+.minimal-distraction-mode .ambient,
+.minimal-distraction-mode .accent,
+.minimal-distraction-mode .sidebar,
+.minimal-distraction-mode .popup,
+.minimal-distraction-mode .notification,
+.minimal-distraction-mode .banner,
+.minimal-distraction-mode .ad,
+.minimal-distraction-mode .promo {
+  display: none !important;
+}
+
+/* Remove hover effects */
+.minimal-distraction-mode *:hover {
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Remove micro-animations */
+.minimal-distraction-mode *,
+.minimal-distraction-mode *::before,
+.minimal-distraction-mode *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Simplify layout spacing */
+.minimal-distraction-mode section,
+.minimal-distraction-mode .panel,
+.minimal-distraction-mode .section-box {
+  padding: 1.25rem !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Paragraph readability */
+.minimal-distraction-mode p {
+  max-width: 75ch !important;
+  margin-bottom: 1.4rem !important;
+}
+
+/* Headings simplified */
+.minimal-distraction-mode h1,
+.minimal-distraction-mode h2,
+.minimal-distraction-mode h3 {
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+  font-weight: 700 !important;
+}
+
+/* Links simplified */
+.minimal-distraction-mode a {
+  text-decoration: underline !important;
+  font-weight: 600 !important;
+  color: #005bbb !important;
+}
+
+/* Buttons simplified */
+.minimal-distraction-mode button {
+  padding: 1rem 1.25rem !important;
+  font-size: 1.1rem !important;
+  border-radius: 6px !important;
+  background: #e9f7ff !important;
+  color: #0b1118 !important;
+  border: 2px solid #3fa9f5 !important;
+}
+
+/* Inputs simplified */
+.minimal-distraction-mode input,
+.minimal-distraction-mode textarea,
+.minimal-distraction-mode select {
+  padding: 1rem !important;
+  font-size: 1.1rem !important;
+  border-radius: 6px !important;
+  border: 2px solid #3fa9f5 !important;
+  background: #ffffff !important;
+  color: #0b1118 !important;
+}
