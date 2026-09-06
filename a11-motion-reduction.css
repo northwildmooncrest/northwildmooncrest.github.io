@@ -1,0 +1,46 @@
+/* A11 — Cinematic Motion Reduction Mode */
+/* World of Northwild Mooncrest */
+/* Creator: John Robert */
+
+/* Disable all animations and transitions */
+.motion-reduction-mode *,
+.motion-reduction-mode *::before,
+.motion-reduction-mode *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Disable parallax backgrounds */
+.motion-reduction-mode .parallax,
+.motion-reduction-mode .parallax-bg {
+  background-attachment: scroll !important;
+  transform: none !important;
+}
+
+/* Disable scroll-based motion */
+.motion-reduction-mode .scroll-animate,
+.motion-reduction-mode .fade-in,
+.motion-reduction-mode .slide-up,
+.motion-reduction-mode .zoom-in {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Disable hover animations */
+.motion-reduction-mode *:hover {
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Disable decorative movement */
+.motion-reduction-mode .floating,
+.motion-reduction-mode .drift,
+.motion-reduction-mode .pulse,
+.motion-reduction-mode .glow {
+  animation: none !important;
+}
+
+/* Smooth scrolling disabled */
+.motion-reduction-mode {
+  scroll-behavior: auto !important;
+}
