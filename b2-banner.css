@@ -1,60 +1,105 @@
-/* B2 — banner.css */
-/* Cinematic hero banner styling for Northwild of Starlight™ */
+/* B2 — Cinematic Hero Banner Styles */
+/* Updated for Northwild Mooncrest global-brand design */
 
-.banner {
-  position: relative;
-  padding: 6rem 2rem;
-  text-align: center;
+/* Banner Container */
+.hero-banner {
+  width: 100%;
+  padding: 8rem 2rem;
   background: linear-gradient(
-      to bottom,
-      rgba(11, 17, 24, 0.85),
-      rgba(11, 17, 24, 0.95)
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.55)
     ),
-    url('assets/hero/sky-mountains.jpg');
-  background-size: cover;
-  background-position: center;
-  color: #f5f5f5;
+    url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') center/cover no-repeat;
+  color: #e9f7ff;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
-.banner-inner {
-  max-width: 720px;
+.hero-banner-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Inner Layout */
+.hero-banner-inner {
+  max-width: 900px;
   margin: 0 auto;
-  position: relative;
-  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.banner-title {
+/* Title */
+.hero-banner-title {
   font-size: 3rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
-.banner-subtitle {
-  font-size: 1.25rem;
+/* Subtitle */
+.hero-banner-subtitle {
+  font-size: 1.2rem;
   opacity: 0.85;
-  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-.banner-cta {
-  background: #1a2533;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  color: #f5f5f5;
+/* CTA Buttons */
+.hero-banner-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.hero-banner-btn {
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
   font-size: 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: 0.25s ease;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.banner-cta:hover {
-  background: #243447;
-  transform: translateY(-2px);
+/* Primary Button */
+.hero-banner-btn.primary {
+  background: #3fa9f5;
+  color: #0b1118;
 }
 
-.banner-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.25);
-  z-index: 1;
+.hero-banner-btn.primary:hover {
+  background: #5fc0ff;
+  transform: translateY(-3px);
+}
+
+/* Secondary Button */
+.hero-banner-btn.secondary {
+  background: transparent;
+  border: 2px solid #e9f7ff;
+  color: #e9f7ff;
+}
+
+.hero-banner-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .hero-banner-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-banner-actions {
+    flex-direction: column;
+  }
+
+  .hero-banner-btn {
+    width: 100%;
+    text-align: center;
+  }
 }
