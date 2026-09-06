@@ -1,0 +1,87 @@
+<!-- A13 — Reduced Cognitive Load Mode -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
+/* A13 — Cinematic Reduced Cognitive Load Mode */
+
+/* Global cognitive load reduction */
+.reduced-cognitive-load-mode {
+  background: #f7f9fb !important;
+  color: #0b1118 !important;
+  line-height: 1.85 !important;
+  letter-spacing: 0.02em !important;
+  word-spacing: 0.12em !important;
+}
+
+/* Remove decorative and non-essential elements */
+.reduced-cognitive-load-mode .decorative,
+.reduced-cognitive-load-mode .visual-only,
+.reduced-cognitive-load-mode .ambient,
+.reduced-cognitive-load-mode .accent {
+  display: none !important;
+}
+
+/* Simplify layout spacing */
+.reduced-cognitive-load-mode section,
+.reduced-cognitive-load-mode .section-box,
+.reduced-cognitive-load-mode .panel {
+  margin-bottom: 2.5rem !important;
+  padding: 1.5rem !important;
+}
+
+/* Paragraph readability */
+.reduced-cognitive-load-mode p {
+  max-width: 75ch !important;
+  margin-bottom: 1.4rem !important;
+}
+
+/* Headings more structured */
+.reduced-cognitive-load-mode h1,
+.reduced-cognitive-load-mode h2,
+.reduced-cognitive-load-mode h3 {
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+  font-weight: 700 !important;
+}
+
+/* Links simplified */
+.reduced-cognitive-load-mode a {
+  text-decoration: underline !important;
+  font-weight: 600 !important;
+}
+
+/* Buttons simplified */
+.reduced-cognitive-load-mode button {
+  padding: 1rem 1.25rem !important;
+  font-size: 1.1rem !important;
+  border-radius: 6px !important;
+  background: #e9f7ff !important;
+  color: #0b1118 !important;
+  border: 2px solid #3fa9f5 !important;
+}
+
+/* Inputs simplified */
+.reduced-cognitive-load-mode input,
+.reduced-cognitive-load-mode textarea,
+.reduced-cognitive-load-mode select {
+  padding: 1rem !important;
+  font-size: 1.1rem !important;
+  border-radius: 6px !important;
+  border: 2px solid #3fa9f5 !important;
+  background: #ffffff !important;
+  color: #0b1118 !important;
+}
+
+/* Navigation spacing */
+.reduced-cognitive-load-mode nav a {
+  display: block !important;
+  margin-bottom: 0.8rem !important;
+}
+
+/* Disable animations */
+.reduced-cognitive-load-mode *,
+.reduced-cognitive-load-mode *::before,
+.reduced-cognitive-load-mode *::after {
+  transition: none !important;
+  animation: none !important;
+}
