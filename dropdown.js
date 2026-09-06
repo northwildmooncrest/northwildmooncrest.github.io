@@ -1,21 +1,23 @@
 // -----------------------------------------------------------
 // Dropdown Controls — Search, Account, Store, Menu
-// Clean, simple, modular toggle logic for all header dropdowns.
+// Class-based toggle system (matches your CSS)
 // -----------------------------------------------------------
-
-// Utility function to toggle a panel
-function togglePanel(selector) {
-    const panel = document.querySelector(selector);
-    const isOpen = panel.style.display === "block";
-    closeAllPanels();
-    panel.style.display = isOpen ? "none" : "block";
-}
 
 // Close all dropdown panels
 function closeAllPanels() {
     document.querySelectorAll(".panel, .menu-dropdown").forEach(panel => {
-        panel.style.display = "none";
+        panel.classList.remove("open");
     });
+}
+
+// Toggle a panel by class
+function togglePanel(selector) {
+    const panel = document.querySelector(selector);
+    const isOpen = panel.classList.contains("open");
+    closeAllPanels();
+    if (!isOpen) {
+        panel.classList.add("open");
+    }
 }
 
 // SEARCH DROPDOWN
