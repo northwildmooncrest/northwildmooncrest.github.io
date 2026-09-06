@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const html = await response.text();
             el.innerHTML = html;
-
         } catch (err) {
             console.error(err);
             el.innerHTML = `
@@ -33,20 +32,20 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <!-- ==========================================================
-     NORTHWILD MOONCREST — GLOBAL SCRIPTS
+     NORTHWILD MOONCREST — MODULAR JS FILES
 ========================================================== -->
 
-<!-- Chat System -->
+<script src="scripts.js"></script>
+<script src="menu.js"></script>
+<script src="dropdown.js"></script>
+
+<script src="search.js"></script>
+<script src="account.js"></script>
+<script src="store.js"></script>
+<script src="cart.js"></script>
+<script src="featured.js"></script>
+<script src="hero.js"></script>
 <script src="chat.js"></script>
-
-<!-- Header Dropdowns -->
-<script src="header.js"></script>
-
-<!-- Footer Interactions -->
 <script src="footer.js"></script>
 
-<!-- Hero Animations -->
-<script src="hero.js"></script>
-
-<!-- Featured Section Scripts -->
-<script src="featured.js"></script>
+<script src="tracking.js"></script>
