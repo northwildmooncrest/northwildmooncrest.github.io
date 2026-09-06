@@ -1,0 +1,118 @@
+<!-- B20 — Cinematic Story Page System -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: Northwild Mooncrest™ -->
+
+/* B20 — Cinematic Story Page System */
+
+/* Story Wrapper */
+.nw-story {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--nw-space-xxl) var(--nw-space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--nw-space-xxl);
+}
+
+/* Story Title */
+.nw-story-title {
+  font-family: var(--nw-font-secondary);
+  font-size: 2.8rem;
+  font-weight: var(--nw-weight-bold);
+  color: var(--nw-color-mooncrest-mid);
+  line-height: 1.2;
+}
+
+/* Story Subtitle */
+.nw-story-subtitle {
+  font-family: var(--nw-font-primary);
+  font-size: 1.3rem;
+  color: var(--nw-border-dark);
+  margin-top: var(--nw-space-sm);
+  max-width: 700px;
+}
+
+/* Story Section */
+.nw-story-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nw-space-xl);
+}
+
+/* Story Paragraph */
+.nw-story-text {
+  font-family: var(--nw-font-primary);
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: var(--nw-color-mooncrest-mid);
+}
+
+/* Story Quote */
+.nw-story-quote {
+  font-family: var(--nw-font-secondary);
+  font-size: 1.6rem;
+  font-style: italic;
+  color: var(--nw-accent-blue-deep);
+  padding-left: var(--nw-space-lg);
+  border-left: 4px solid var(--nw-accent-blue-mid);
+}
+
+/* Story Image */
+.nw-story-image {
+  width: 100%;
+  border-radius: var(--nw-radius-lg);
+  box-shadow: var(--nw-shadow-soft);
+  object-fit: cover;
+}
+
+/* Full-Width Cinematic Image */
+.nw-story-image-wide {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  border-radius: 0;
+  box-shadow: var(--nw-shadow-medium);
+}
+
+/* Story Metadata */
+.nw-story-meta {
+  font-family: var(--nw-font-primary);
+  font-size: 0.95rem;
+  color: var(--nw-border-dark);
+  display: flex;
+  gap: var(--nw-space-md);
+  flex-wrap: wrap;
+}
+
+/* Story Tags */
+.nw-story-tag {
+  background: var(--nw-surface-secondary);
+  padding: var(--nw-space-xs) var(--nw-space-sm);
+  border-radius: var(--nw-radius-md);
+  font-size: 0.85rem;
+  color: var(--nw-color-mooncrest-mid);
+}
+
+/* Story Divider */
+.nw-story-divider {
+  width: 100%;
+  height: 2px;
+  background: var(--nw-border-light);
+  margin: var(--nw-space-xl) 0;
+}
+
+/* Story Ending */
+.nw-story-end {
+  font-family: var(--nw-font-secondary);
+  font-size: 1.4rem;
+  color: var(--nw-border-dark);
+  text-align: center;
+  margin-top: var(--nw-space-xxl);
+}
+
+/* Motion Reduction Compatibility */
+.motion-reduction-mode .nw-story-image,
+.motion-reduction-mode .nw-story-image-wide {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+}
