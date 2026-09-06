@@ -1,65 +1,93 @@
-/* A9 — Dyslexia-Friendly Mode */
-/* Updated for Northwild Mooncrest cinematic global-brand design */
+/* A9 — Cinematic Dyslexia-Friendly Mode */
+/* World of Northwild Mooncrest */
+/* Creator: John Robert */
 
-/* Activate dyslexia mode */
+/* Global dyslexia mode */
 .dyslexia-mode {
   font-family: "OpenDyslexic", "Arial", sans-serif !important;
+  background: #f7f9fb !important;
+  color: #0b1118 !important;
   letter-spacing: 0.03em !important;
   word-spacing: 0.15em !important;
   line-height: 1.9 !important;
-  background: #f7f9fb !important;
-  color: #0b1118 !important;
 }
 
-/* Improve paragraph readability */
+/* Paragraph readability */
 .dyslexia-mode p {
   max-width: 70ch !important;
-  margin-bottom: 1.4rem !important;
+  margin-bottom: 1.6rem !important;
 }
 
-/* Improve headings */
+/* Headings */
 .dyslexia-mode h1,
 .dyslexia-mode h2,
-.dyslexia-mode h3 {
+.dyslexia-mode h3,
+.dyslexia-mode h4 {
   font-weight: 700 !important;
-  letter-spacing: 0.02em !important;
+  margin-top: 2rem !important;
   margin-bottom: 1rem !important;
 }
 
-/* Improve link clarity */
+/* Links */
 .dyslexia-mode a {
-  color: #005fcc !important;
   text-decoration: underline !important;
   font-weight: 600 !important;
 }
 
 /* Buttons */
 .dyslexia-mode button {
-  font-family: "OpenDyslexic", "Arial", sans-serif !important;
   padding: 1rem 1.5rem !important;
-  background: #3fa9f5 !important;
+  font-size: 1.15rem !important;
+  border-radius: 6px !important;
+  background: #e9f7ff !important;
   color: #0b1118 !important;
-  border-radius: 8px !important;
-  font-size: 1.1rem !important;
-  font-weight: 700 !important;
-}
-
-/* Lists */
-.dyslexia-mode li {
-  margin-bottom: 0.8rem !important;
-}
-
-/* Inputs */
-.dyslexia-mode input,
-.dyslexia-mode textarea {
-  font-family: "OpenDyslexic", "Arial", sans-serif !important;
-  font-size: 1.1rem !important;
-  padding: 0.8rem !important;
   border: 2px solid #3fa9f5 !important;
 }
 
-/* Remove animations */
-.dyslexia-mode * {
+/* Inputs & Forms */
+.dyslexia-mode input,
+.dyslexia-mode textarea,
+.dyslexia-mode select {
+  padding: 1rem !important;
+  font-size: 1.15rem !important;
+  border-radius: 6px !important;
+  border: 2px solid #3fa9f5 !important;
+  background: #ffffff !important;
+  color: #0b1118 !important;
+}
+
+/* Navigation spacing */
+.dyslexia-mode nav a {
+  display: block !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Remove decorative elements */
+.dyslexia-mode .decorative,
+.dyslexia-mode .visual-only {
+  display: none !important;
+}
+
+/* Images outlined for clarity */
+.dyslexia-mode img {
+  border: 2px solid #3fa9f5 !important;
+  border-radius: 4px !important;
+}
+
+/* Cards & containers */
+.dyslexia-mode .card,
+.dyslexia-mode .panel,
+.dyslexia-mode .section-box {
+  background: #ffffff !important;
+  border: 2px solid #3fa9f5 !important;
+  padding: 2rem !important;
+  border-radius: 8px !important;
+}
+
+/* Disable animations */
+.dyslexia-mode *,
+.dyslexia-mode *::before,
+.dyslexia-mode *::after {
   transition: none !important;
   animation: none !important;
 }
