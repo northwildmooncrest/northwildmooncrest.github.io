@@ -1,0 +1,104 @@
+/* C2 — navigation.css */
+/* Global navigation styling for Northwild of Starlight™ */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(11, 17, 24, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #e9f7ff;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #e9f7ff;
+  text-decoration: none;
+  font-size: 1rem;
+  opacity: 0.85;
+  transition: opacity 0.25s ease;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+/* Mobile Toggle */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle-bar {
+  width: 22px;
+  height: 2px;
+  background: #e9f7ff;
+  border-radius: 2px;
+}
+
+/* Mobile Drawer */
+.nav-drawer {
+  display: none;
+  background: rgba(11, 17, 24, 0.95);
+  padding: 1.5rem;
+}
+
+.nav-drawer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.nav-drawer-links a {
+  color: #e9f7ff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  opacity: 0.85;
+  transition: opacity 0.25s ease;
+}
+
+.nav-drawer-links a:hover {
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 820px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-drawer {
+    display: block;
+  }
+}
