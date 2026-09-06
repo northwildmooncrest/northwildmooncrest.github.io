@@ -1,0 +1,114 @@
+<!-- B19 — Cinematic Collection System -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: Northwild Mooncrest™ -->
+
+/* B19 — Cinematic Collection System */
+
+/* Collection Wrapper */
+.nw-collection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nw-space-xxl);
+  padding: var(--nw-space-xxl) 0;
+}
+
+/* Collection Header */
+.nw-collection-header {
+  font-family: var(--nw-font-secondary);
+  font-size: 2.4rem;
+  font-weight: var(--nw-weight-bold);
+  color: var(--nw-color-mooncrest-mid);
+  margin-bottom: var(--nw-space-md);
+}
+
+/* Collection Subtitle */
+.nw-collection-subtitle {
+  font-family: var(--nw-font-primary);
+  font-size: 1.2rem;
+  color: var(--nw-border-dark);
+  margin-bottom: var(--nw-space-xl);
+  max-width: 700px;
+}
+
+/* Collection Grid */
+.nw-collection-grid {
+  display: grid;
+  gap: var(--nw-space-xl);
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+/* Collection Card */
+.nw-collection-card {
+  background: var(--nw-surface-primary);
+  border-radius: var(--nw-radius-lg);
+  box-shadow: var(--nw-shadow-soft);
+  overflow: hidden;
+  transition: all var(--nw-interaction-medium);
+  display: flex;
+  flex-direction: column;
+}
+
+.nw-collection-card:hover {
+  transform: var(--nw-hover-lift);
+  box-shadow: var(--nw-shadow-medium);
+}
+
+/* Card Image */
+.nw-collection-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+/* Card Content */
+.nw-collection-card-content {
+  padding: var(--nw-space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--nw-space-sm);
+}
+
+/* Card Title */
+.nw-collection-card-title {
+  font-family: var(--nw-font-secondary);
+  font-size: 1.4rem;
+  font-weight: var(--nw-weight-bold);
+  color: var(--nw-color-mooncrest-mid);
+}
+
+/* Card Description */
+.nw-collection-card-desc {
+  font-family: var(--nw-font-primary);
+  font-size: 1rem;
+  color: var(--nw-border-dark);
+  line-height: 1.6;
+}
+
+/* Collection Variants */
+.nw-collection-forest .nw-collection-card {
+  border-left: 6px solid var(--nw-color-forest-light);
+}
+
+.nw-collection-summit .nw-collection-card {
+  border-left: 6px solid var(--nw-accent-blue-mid);
+}
+
+.nw-collection-ember .nw-collection-card {
+  border-left: 6px solid var(--nw-accent-ember-light);
+}
+
+/* Flow Modifiers */
+.nw-collection-tight {
+  gap: var(--nw-space-lg);
+}
+
+.nw-collection-loose {
+  gap: var(--nw-space-hero);
+}
+
+/* Motion Reduction Compatibility */
+.motion-reduction-mode .nw-collection-card {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+}
