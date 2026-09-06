@@ -1,138 +1,151 @@
-/* J2 — hero.css */
-/* Cinematic global-brand styling for header + hero */
+<!-- J2 — Hero CSS -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert */
 
-.header {
-  padding: 2rem 2rem;
-  background: #0b1118;
-  color: #e9f7ff;
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
-}
+/* J2 — Hero CSS */
 
-.header-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.header-inner {
-  max-width: 1400px;
-  margin: 0 auto;
+/* Hero Container */
+.nw-hero {
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  padding: var(--nw-space-xl) var(--nw-space-lg);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
+  background: var(--nw-surface-primary);
+  overflow: hidden;
 }
 
-.header-brand {
+/* Backdrop — Moonlit Gradient */
+.nw-hero-backdrop {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 20%,
+    rgba(122, 166, 255, 0.25),
+    rgba(13, 15, 17, 0.95)
+  );
+  z-index: 1;
+}
+
+/* Inner Layout */
+.nw-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  gap: var(--nw-space-xl);
 }
 
-.header-title {
-  font-size: 2rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-}
-
-.header-subtitle {
-  font-size: 1rem;
-  opacity: 0.8;
-  margin-top: 0.2rem;
-}
-
-/* Navigation */
-.header-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
-
-.header-nav a {
-  color: #e9f7ff;
-  text-decoration: none;
-  font-size: 1rem;
-  opacity: 0.85;
-  transition: opacity 0.3s ease;
-}
-
-.header-nav a:hover {
-  opacity: 1;
-}
-
-/* Hero Section */
-.hero {
-  padding: 8rem 2rem;
-  background: linear-gradient(to bottom, #0b1118, #0f1a24);
-  color: #e9f7ff;
+/* Header */
+.nw-hero-header {
   text-align: center;
-  opacity: 0;
-  transform: translateY(25px);
-  transition: opacity 1s ease, transform 1s ease;
 }
 
-.hero-visible {
-  opacity: 1;
-  transform: translateY(0);
+.nw-hero-logo-wrap {
+  margin-bottom: var(--nw-space-sm);
 }
 
-.hero-inner {
-  max-width: 900px;
-  margin: 0 auto;
+.nw-hero-tagline {
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  opacity: 0.75;
+  color: var(--nw-color-mooncrest-mid);
 }
 
-.hero-heading {
+/* Content Layout */
+.nw-hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--nw-space-xl);
+  flex-wrap: wrap;
+}
+
+/* Text Block */
+.nw-hero-text {
+  max-width: 600px;
+}
+
+.nw-hero-title {
+  font-family: var(--nw-font-secondary);
   font-size: 3rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  margin-bottom: 1.5rem;
+  color: var(--nw-color-mooncrest-light);
+  margin-bottom: var(--nw-space-sm);
 }
 
-.hero-text {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  opacity: 0.9;
-  margin-bottom: 2.5rem;
-}
-
-.hero-cta {
-  display: inline-block;
-  padding: 1rem 2rem;
-  background: #3fa9f5;
-  color: #0b1118;
+.nw-hero-subtitle {
   font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 8px;
+  color: var(--nw-color-mooncrest-mid);
+  margin-bottom: var(--nw-space-lg);
+  line-height: 1.7;
+}
+
+/* Buttons */
+.nw-hero-actions {
+  display: flex;
+  gap: var(--nw-space-md);
+}
+
+.nw-hero-primary,
+.nw-hero-secondary {
+  padding: var(--nw-space-sm) var(--nw-space-md);
+  border-radius: var(--nw-radius-md);
+  font-size: 1rem;
   text-decoration: none;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition: background var(--nw-transition-fast), color var(--nw-transition-fast);
 }
 
-.hero-cta:hover {
-  background: #5fc0ff;
-  transform: translateY(-2px);
+/* Primary CTA */
+.nw-hero-primary {
+  background: var(--nw-color-accent);
+  color: var(--nw-surface-primary);
 }
 
-.hero-cta:active {
-  transform: translateY(0);
+.nw-hero-primary:hover {
+  background: var(--nw-color-accent-soft);
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .header-inner {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
+/* Secondary CTA */
+.nw-hero-secondary {
+  border: 1px solid var(--nw-color-accent);
+  color: var(--nw-color-accent);
+}
 
-  .header-nav ul {
-    gap: 1.5rem;
-  }
+.nw-hero-secondary:hover {
+  background: rgba(122, 166, 255, 0.15);
+}
 
-  .hero-heading {
-    font-size: 2.4rem;
-  }
+/* Visual Orbit */
+.nw-hero-visual {
+  position: relative;
+  width: 280px;
+  height: 280px;
+}
 
-  .hero-text {
-    font-size: 1.1rem;
-  }
+.nw-hero-orbit {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nw-hero-orbit-ring {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid rgba(122, 166, 255, 0.25);
+  box-shadow: var(--nw-shadow-soft);
+}
+
+.nw-hero-orbit-core {
+  width: 60px;
+  height: 60px;
+  background: var(--nw-color-accent);
+  border-radius: 50%;
+  box-shadow: var(--nw-shadow-medium);
 }
