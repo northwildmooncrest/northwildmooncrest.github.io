@@ -1,0 +1,26 @@
+/* A8 — high-contrast.css */
+/* High contrast mode for improved visibility */
+
+.high-contrast {
+  --text: #000;
+  --surface: #fff;
+  --accent: #ff0;
+
+  background: var(--surface) !important;
+  color: var(--text) !important;
+}
+
+.high-contrast a,
+.high-contrast button,
+.high-contrast input,
+.high-contrast select,
+.high-contrast textarea {
+  background: #ff0 !important;
+  color: #000 !important;
+  border-color: #000 !important;
+}
+
+.high-contrast .a11y-btn {
+  background: #ff0 !important;
+  color: #000 !important;
+}
