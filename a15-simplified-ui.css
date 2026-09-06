@@ -1,0 +1,65 @@
+<!-- A15 — Simplified UI Mode -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
+/* A15 — Cinematic Simplified UI Mode */
+
+/* Global simplified UI */
+.simplified-ui-mode {
+  background: #ffffff !important;
+  color: #0b1118 !important;
+  line-height: 1.8 !important;
+}
+
+/* Hide advanced or complex UI elements */
+.simplified-ui-mode .advanced,
+.simplified-ui-mode .complex,
+.simplified-ui-mode .multi-step,
+.simplified-ui-mode .dense,
+.simplified-ui-mode .interactive-heavy {
+  display: none !important;
+}
+
+/* Simplify layout */
+.simplified-ui-mode section,
+.simplified-ui-mode .panel,
+.simplified-ui-mode .section-box {
+  padding: 1.25rem !important;
+  margin-bottom: 2rem !important;
+  border-radius: 6px !important;
+}
+
+/* Simplify navigation */
+.simplified-ui-mode nav a {
+  display: block !important;
+  padding: 0.75rem 0 !important;
+  font-weight: 600 !important;
+}
+
+/* Simplify buttons */
+.simplified-ui-mode button {
+  padding: 0.9rem 1.2rem !important;
+  font-size: 1.05rem !important;
+  border-radius: 6px !important;
+  background: #e9f7ff !important;
+  color: #0b1118 !important;
+  border: 2px solid #3fa9f5 !important;
+}
+
+/* Simplify forms */
+.simplified-ui-mode input,
+.simplified-ui-mode textarea,
+.simplified-ui-mode select {
+  padding: 0.9rem !important;
+  font-size: 1.05rem !important;
+  border-radius: 6px !important;
+  border: 2px solid #3fa9f5 !important;
+}
+
+/* Disable animations */
+.simplified-ui-mode *,
+.simplified-ui-mode *::before,
+.simplified-ui-mode *::after {
+  transition: none !important;
+  animation: none !important;
+}
