@@ -1,25 +1,71 @@
-/* A7 — screenreader.css */
-/* Styles for screenreader-only content */
+/* A7 — Screenreader Mode */
+/* Updated for Northwild Mooncrest cinematic global-brand design */
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+/* Activate screenreader mode */
+.screenreader-mode * {
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
-.sr-only-focusable:active,
-.sr-only-focusable:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  clip: auto;
-  white-space: normal;
+/* Hide decorative elements */
+.screenreader-mode .hero,
+.screenreader-mode .gallery-filters,
+.screenreader-mode .gallery-item img,
+.screenreader-mode .footer-global,
+.screenreader-mode .header-subtitle {
+  display: none !important;
+}
+
+/* Improve text visibility */
+.screenreader-mode body {
+  background: #ffffff !important;
+  color: #000000 !important;
+  font-size: 1.2rem !important;
+  line-height: 1.8 !important;
+}
+
+/* Ensure headings are clear */
+.screenreader-mode h1,
+.screenreader-mode h2,
+.screenreader-mode h3 {
+  font-weight: 700 !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Ensure links are obvious */
+.screenreader-mode a {
+  color: #005fcc !important;
+  text-decoration: underline !important;
+}
+
+/* Ensure buttons are readable */
+.screenreader-mode button {
+  background: #005fcc !important;
+  color: #ffffff !important;
+  padding: 1rem 1.5rem !important;
+  border-radius: 6px !important;
+  font-size: 1.1rem !important;
+}
+
+/* Remove animations */
+.screenreader-mode * {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Improve spacing */
+.screenreader-mode section,
+.screenreader-mode div {
+  padding: 1.5rem !important;
+  margin: 0 !important;
+}
+
+/* Force linear reading order */
+.screenreader-mode {
+  display: block !important;
+}
+
+.screenreader-mode * {
+  float: none !important;
+  position: static !important;
 }
