@@ -1,23 +1,44 @@
-/* A6 — focus-ring.css */
-/* High-visibility focus styles for keyboard navigation */
+/* A6 — High Visibility Focus Ring */
+/* Updated for Northwild Mooncrest cinematic global-brand design */
 
-:root {
-  --focus-ring: 2px solid #0af;
-  --focus-shadow: 0 0 0 4px rgba(0, 170, 255, 0.35);
-}
-
-:focus {
-  outline: var(--focus-ring);
-  box-shadow: var(--focus-shadow);
+/* Base focus ring (activated when .keyboard-nav is present) */
+.keyboard-nav .focus-ring,
+.keyboard-nav :focus {
+  outline: 3px solid #3fa9f5 !important;
+  outline-offset: 4px !important;
   border-radius: 6px;
+  transition: outline-color 0.2s ease, outline-offset 0.2s ease;
 }
 
-:focus:not(:focus-visible) {
+/* Buttons */
+.keyboard-nav button:focus {
+  outline-color: #5fc0ff !important;
+}
+
+/* Links */
+.keyboard-nav a:focus {
+  outline-color: #7fd4ff !important;
+}
+
+/* Inputs */
+.keyboard-nav input:focus,
+.keyboard-nav textarea:focus,
+.keyboard-nav select:focus {
+  outline-color: #3fa9f5 !important;
+  background: rgba(63, 169, 245, 0.08);
+}
+
+/* Interactive elements */
+.keyboard-nav [tabindex]:focus {
+  outline-color: #3fa9f5 !important;
+}
+
+/* Remove default browser focus styles */
+:focus {
   outline: none;
-  box-shadow: none;
 }
 
-:focus-visible {
-  outline: var(--focus-ring);
-  box-shadow: var(--focus-shadow);
+/* Smooth transitions for accessibility */
+* {
+  transition: outline 0.2s ease, background 0.2s ease;
 }
