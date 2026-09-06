@@ -1,0 +1,132 @@
+<!-- B12 — Cinematic Section Architecture -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
+/* B12 — Cinematic Section Architecture */
+
+/* Base Section */
+.nw-section {
+  width: 100%;
+  padding-top: var(--nw-space-xxl);
+  padding-bottom: var(--nw-space-xxl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--nw-space-xl);
+}
+
+/* Section Container */
+.nw-section-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: var(--nw-space-md);
+  padding-right: var(--nw-space-md);
+}
+
+/* Section Title */
+.nw-section-title {
+  font-family: var(--nw-font-secondary);
+  font-size: 2.4rem;
+  font-weight: var(--nw-weight-bold);
+  color: var(--nw-color-mooncrest-mid);
+  margin-bottom: var(--nw-space-md);
+}
+
+/* Section Subtitle */
+.nw-section-subtitle {
+  font-family: var(--nw-font-primary);
+  font-size: 1.2rem;
+  font-weight: var(--nw-weight-medium);
+  color: var(--nw-border-dark);
+  margin-bottom: var(--nw-space-lg);
+}
+
+/* Section Variants */
+
+/* Hero Section */
+.nw-section-hero {
+  padding-top: var(--nw-space-hero);
+  padding-bottom: var(--nw-space-hero);
+  background: var(--nw-gradient-skyline);
+  text-align: center;
+}
+
+/* Cinematic Section */
+.nw-section-cinematic {
+  background: var(--nw-gradient-summit);
+}
+
+/* Forest Section */
+.nw-section-forest {
+  background: var(--nw-gradient-forest);
+  color: #ffffff;
+}
+
+/* Ember Section */
+.nw-section-ember {
+  background: var(--nw-gradient-ember);
+  color: #ffffff;
+}
+
+/* Minimal Section */
+.nw-section-minimal {
+  background: #ffffff;
+}
+
+/* Split Section (Two Columns) */
+.nw-section-split {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--nw-space-xl);
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .nw-section-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Feature Section */
+.nw-section-feature {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nw-space-xl);
+  padding-top: var(--nw-space-xxl);
+  padding-bottom: var(--nw-space-xxl);
+}
+
+/* Callout Section */
+.nw-section-callout {
+  background: var(--nw-surface-secondary);
+  border-left: 6px solid var(--nw-accent-blue-mid);
+  padding: var(--nw-space-xl);
+  border-radius: var(--nw-radius-lg);
+}
+
+/* Section Spacing Modifiers */
+.nw-section-tight {
+  padding-top: var(--nw-space-lg);
+  padding-bottom: var(--nw-space-lg);
+}
+
+.nw-section-loose {
+  padding-top: var(--nw-space-hero);
+  padding-bottom: var(--nw-space-hero);
+}
+
+/* Section Depth */
+.nw-section-depth {
+  box-shadow: var(--nw-shadow-medium);
+}
+
+.nw-section-depth:hover {
+  box-shadow: var(--nw-shadow-strong);
+}
+
+/* Motion Reduction Compatibility */
+.motion-reduction-mode .nw-section {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+}
