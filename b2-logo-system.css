@@ -1,0 +1,25 @@
+<!-- B2 — Logo System -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
+/* B2 — Logo System */
+
+/* Logo Token */
+:root {
+  --nw-logo-text: "Northwild Mooncrest";
+}
+
+/* Logo Styling */
+.nw-logo {
+  font-family: var(--nw-font-secondary);
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--nw-color-mooncrest-light);
+  text-transform: uppercase;
+}
+
+/* Logo Accent */
+.nw-logo-accent {
+  color: var(--nw-color-accent);
+}
