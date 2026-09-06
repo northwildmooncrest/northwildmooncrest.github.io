@@ -1,0 +1,128 @@
+<!-- B8 — Cinematic Interaction Tokens -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
+/* B8 — Cinematic Interaction System */
+
+/* Interaction Timing Tokens */
+:root {
+  --nw-interaction-fast: 120ms ease;
+  --nw-interaction-medium: 240ms ease;
+  --nw-interaction-slow: 480ms ease;
+}
+
+/* Hover Tokens */
+:root {
+  --nw-hover-brighten: brightness(1.08);
+  --nw-hover-darken: brightness(0.92);
+  --nw-hover-lift: translateY(-3px);
+}
+
+/* Active Tokens */
+:root {
+  --nw-active-press: translateY(1px);
+  --nw-active-darken: brightness(0.85);
+}
+
+/* Focus Tokens */
+:root {
+  --nw-focus-ring: 0 0 0 4px rgba(63, 169, 245, 0.45);
+  --nw-focus-ring-strong: 0 0 0 4px rgba(245, 197, 66, 0.45);
+}
+
+/* Disabled Tokens */
+:root {
+  --nw-disabled-opacity: 0.45;
+  --nw-disabled-filter: grayscale(0.4);
+}
+
+/* Universal Hover */
+.nw-hover {
+  transition: all var(--nw-interaction-medium);
+}
+
+.nw-hover:hover {
+  filter: var(--nw-hover-brighten);
+  transform: var(--nw-hover-lift);
+}
+
+/* Universal Active */
+.nw-active:active {
+  filter: var(--nw-active-darken);
+  transform: var(--nw-active-press);
+}
+
+/* Universal Focus */
+.nw-focus:focus {
+  outline: none;
+  box-shadow: var(--nw-focus-ring);
+}
+
+/* Strong Focus Variant */
+.nw-focus-strong:focus {
+  outline: none;
+  box-shadow: var(--nw-focus-ring-strong);
+}
+
+/* Disabled State */
+.nw-disabled,
+.nw-disabled:hover,
+.nw-disabled:active {
+  opacity: var(--nw-disabled-opacity);
+  filter: var(--nw-disabled-filter);
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* Cinematic Button Interactions */
+button.nw-btn {
+  transition: all var(--nw-interaction-medium);
+}
+
+button.nw-btn:hover {
+  filter: var(--nw-hover-brighten);
+  transform: var(--nw-hover-lift);
+}
+
+button.nw-btn:active {
+  filter: var(--nw-active-darken);
+  transform: var(--nw-active-press);
+}
+
+button.nw-btn:focus {
+  box-shadow: var(--nw-focus-ring);
+}
+
+/* Cinematic Card Interactions */
+.nw-card-interactive {
+  transition: all var(--nw-interaction-medium);
+}
+
+.nw-card-interactive:hover {
+  box-shadow: var(--nw-shadow-cinematic);
+  transform: var(--nw-hover-lift);
+}
+
+.nw-card-interactive:active {
+  transform: var(--nw-active-press);
+}
+
+/* Cinematic Panel Interactions */
+.nw-panel-interactive {
+  transition: all var(--nw-interaction-medium);
+}
+
+.nw-panel-interactive:hover {
+  box-shadow: var(--nw-shadow-strong);
+}
+
+.nw-panel-interactive:active {
+  box-shadow: var(--nw-shadow-medium);
+}
+
+/* Motion Reduction Compatibility */
+.motion-reduction-mode * {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+}
