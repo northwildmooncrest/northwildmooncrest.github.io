@@ -1,0 +1,76 @@
+<!-- B24 — Cinematic Page Metadata & SEO System -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
+/* B24 — Metadata & SEO Helpers */
+
+/* Page Title Helper */
+.nw-meta-title {
+  font-family: var(--nw-font-secondary);
+  font-size: 2.4rem;
+  font-weight: var(--nw-weight-bold);
+  color: var(--nw-color-mooncrest-mid);
+}
+
+/* Page Subtitle Helper */
+.nw-meta-subtitle {
+  font-family: var(--nw-font-primary);
+  font-size: 1.2rem;
+  color: var(--nw-border-dark);
+  max-width: 700px;
+}
+
+/* Metadata Block */
+.nw-meta-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nw-space-sm);
+  margin-bottom: var(--nw-space-xl);
+}
+
+/* Metadata Label */
+.nw-meta-label {
+  font-family: var(--nw-font-secondary);
+  font-size: 1rem;
+  font-weight: var(--nw-weight-bold);
+  color: var(--nw-color-mooncrest-mid);
+}
+
+/* Metadata Value */
+.nw-meta-value {
+  font-family: var(--nw-font-primary);
+  font-size: 1rem;
+  color: var(--nw-border-dark);
+}
+
+/* SEO Preview Card */
+.nw-seo-preview {
+  background: var(--nw-surface-secondary);
+  padding: var(--nw-space-xl);
+  border-radius: var(--nw-radius-lg);
+  box-shadow: var(--nw-shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: var(--nw-space-md);
+  max-width: 700px;
+}
+
+.nw-seo-preview-title {
+  font-family: var(--nw-font-secondary);
+  font-size: 1.4rem;
+  font-weight: var(--nw-weight-bold);
+  color: var(--nw-color-mooncrest-mid);
+}
+
+.nw-seo-preview-desc {
+  font-family: var(--nw-font-primary);
+  font-size: 1rem;
+  color: var(--nw-border-dark);
+}
+
+/* Motion Reduction */
+.motion-reduction-mode .nw-seo-preview {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+}
