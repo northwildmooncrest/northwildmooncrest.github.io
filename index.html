@@ -1,18 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Northwild Mooncrest</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Northwild Mooncrest — Cinematic Nature Photography</title>
 
-  <!-- Foundation -->
-  <link rel="stylesheet" href="global.css">
+  <!-- Brand Identity Modules -->
+  <link rel="stylesheet" href="styles/b1-brand-variables.css">
+  <link rel="stylesheet" href="styles/b2-logo-system.css">
+  <link rel="stylesheet" href="styles/b3-typography.css">
+  <link rel="stylesheet" href="styles/b4-color-system.css">
+  <link rel="stylesheet" href="styles/b5-spacing-layout.css">
+  <link rel="stylesheet" href="styles/b6-shadow-depth.css">
+  <link rel="stylesheet" href="styles/b7-border-radius.css">
+  <link rel="stylesheet" href="styles/b8-interaction-tokens.css">
+  <link rel="stylesheet" href="styles/b9-button-system.css">
+  <link rel="stylesheet" href="styles/b10-card-system.css">
+  <link rel="stylesheet" href="styles/b11-panel-system.css">
+  <link rel="stylesheet" href="styles/b12-section-architecture.css">
+  <link rel="stylesheet" href="styles/b13-layout-blocks.css">
+  <link rel="stylesheet" href="styles/b14-grid-enhancements.css">
+
+  <style>
+    body {
+      margin: 0;
+      background: var(--nw-surface-primary);
+      font-family: var(--nw-font-primary);
+      color: var(--nw-color-mooncrest-mid);
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- Modules will be added AFTER A–Z is built -->
+  <!-- HERO SECTION -->
+  <section class="nw-section nw-section-hero">
+    <div class="nw-section-container">
+      <h1 class="nw-section-title">Northwild Mooncrest</h1>
+      <p class="nw-section-subtitle">Cinematic nature photography & wilderness exploration</p>
+      <button class="nw-btn nw-btn-primary nw-btn-lg">Explore the Wild</button>
+    </div>
+  </section>
 
-  <script src="loader.js"></script>
+  <!-- FEATURE BLOCK -->
+  <section class="nw-section nw-section-cinematic">
+    <div class="nw-section-container">
+      <div class="nw-block nw-block-feature">
+        <h2 class="nw-block-header">A Cinematic Wilderness</h2>
+        <p class="nw-block-body">
+          Experience nature through a cinematic lens — vast landscapes, quiet forests,
+          moonlit ridges, and the untamed beauty of the Northwild.
+        </p>
+        <div class="nw-block-footer">
+          <button class="nw-btn nw-btn-secondary">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPLIT SECTION -->
+  <section class="nw-section nw-section-split">
+    <div>
+      <h2 class="nw-section-title">Photography That Breathes</h2>
+      <p class="nw-section-subtitle">
+        Every frame is crafted with depth, emotion, and cinematic storytelling.
+      </p>
+      <button class="nw-btn nw-btn-ghost">View Gallery</button>
+    </div>
+
+    <div class="nw-block-media">
+      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Mountain Landscape">
+    </div>
+  </section>
+
+  <!-- CARD GRID -->
+  <section class="nw-section nw-section-minimal">
+    <div class="nw-section-container">
+      <h2 class="nw-section-title">Featured Collections</h2>
+
+      <div class="nw-grid nw-grid-3 nw-grid-center">
+        <div class="nw-card nw-card-interactive">
+          <img class="nw-card-media" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="">
+          <h3 class="nw-card-header">Forest Spirits</h3>
+          <p class="nw-card-body">Mist, moss, and the quiet breath of ancient trees.</p>
+        </div>
+
+        <div class="nw-card nw-card-interactive">
+          <img class="nw-card-media" src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429" alt="">
+          <h3 class="nw-card-header">Summit Dreams</h3>
+          <p class="nw-card-body">Ridges, peaks, and the endless horizon.</p>
+        </div>
+
+        <div class="nw-card nw-card-interactive">
+          <img class="nw-card-media" src="https://images.unsplash.com/photo-1500534623283-312aade485b7" alt="">
+          <h3 class="nw-card-header">Mooncrest Nights</h3>
+          <p class="nw-card-body">Stars, silence, and the glow of the ember sky.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALLOUT -->
+  <section class="nw-section">
+    <div class="nw-section-container">
+      <div class="nw-block nw-block-callout">
+        <h2 class="nw-block-header">Join the Journey</h2>
+        <p class="nw-block-body">
+          Follow the Northwild expedition — new photography, wilderness stories,
+          and cinematic adventures.
+        </p>
+        <button class="nw-btn nw-btn-accent">Subscribe</button>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>
