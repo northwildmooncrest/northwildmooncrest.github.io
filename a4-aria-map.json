@@ -1,69 +1,70 @@
 {
-  "site": "Northwild Mooncrest",
-  "version": "2026.09",
   "ariaMap": {
+    "global": {
+      "role": "document",
+      "aria-label": "Northwild Mooncrest — Cinematic World",
+      "description": "A mythic northern world created by John Robert."
+    },
+
     "header": {
       "role": "banner",
-      "elements": {
-        "brandTitle": "heading",
-        "brandSubtitle": "text",
-        "navigation": {
-          "role": "navigation",
-          "links": ["Gallery", "Journeys", "About", "Contact"]
-        }
-      }
+      "aria-label": "Site Header",
+      "description": "Contains the Northwild Mooncrest identity and global navigation."
+    },
+
+    "navigation": {
+      "role": "navigation",
+      "aria-label": "Primary Navigation",
+      "description": "Guides explorers through the world of Northwild Mooncrest."
     },
 
     "hero": {
       "role": "region",
-      "label": "Hero Section",
-      "elements": {
-        "heading": "heading",
-        "text": "paragraph",
-        "cta": "button"
-      }
+      "aria-label": "Cinematic Hero",
+      "description": "The atmospheric introduction to the northern world."
     },
 
     "gallery": {
       "role": "region",
-      "label": "Gallery",
-      "elements": {
-        "filters": {
-          "role": "toolbar",
-          "buttons": ["All", "Mountains", "Forest", "Water", "Night"]
-        },
-        "grid": {
-          "role": "list",
-          "items": "listitem"
-        }
-      }
+      "aria-label": "Gallery",
+      "description": "A curated collection of visual stories from the Northwild Mooncrest universe."
     },
 
-    "accessibilityHub": {
+    "journeys": {
       "role": "region",
-      "label": "Accessibility Settings",
-      "elements": {
-        "highContrast": "button",
-        "dyslexiaMode": "button",
-        "screenreaderMode": "button",
-        "keyboardNavigation": "button",
-        "ariaMapLink": "link"
-      }
+      "aria-label": "Journeys",
+      "description": "Narrative paths and explorations within the world."
+    },
+
+    "about": {
+      "role": "region",
+      "aria-label": "About the Creator",
+      "description": "Information about John Robert, creator of Northwild Mooncrest."
+    },
+
+    "contact": {
+      "role": "form",
+      "aria-label": "Contact Form",
+      "description": "Allows explorers to reach out to the creator."
     },
 
     "footer": {
       "role": "contentinfo",
-      "elements": {
-        "brand": "heading",
-        "columns": {
-          "legal": "list",
-          "account": "list",
-          "global": "list",
-          "support": "list",
-          "experience": "list"
-        },
-        "copyright": "text"
-      }
+      "aria-label": "Footer",
+      "description": "Global information and links for the Northwild Mooncrest world."
+    },
+
+    "accessibility": {
+      "role": "region",
+      "aria-label": "Accessibility Hub",
+      "description": "Controls for screenreader mode, high contrast mode, dyslexia mode, and keyboard navigation."
+    },
+
+    "liveRegion": {
+      "role": "status",
+      "aria-live": "polite",
+      "aria-label": "Accessibility Announcements",
+      "description": "Announces accessibility changes to screenreader users."
     }
   }
 }
