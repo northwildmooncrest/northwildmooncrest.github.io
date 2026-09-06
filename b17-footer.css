@@ -1,0 +1,103 @@
+<!-- B17 — Cinematic Footer System -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: Northwild Mooncrest™ -->
+
+/* B17 — Cinematic Footer System */
+
+/* Footer Container */
+.nw-footer {
+  width: 100%;
+  background: var(--nw-surface-primary);
+  border-top: var(--nw-border-regular) solid var(--nw-border-light);
+  padding: var(--nw-space-xxl) var(--nw-space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--nw-space-xl);
+  box-shadow: var(--nw-shadow-soft);
+}
+
+/* Footer Grid */
+.nw-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--nw-space-xl);
+}
+
+@media (max-width: 900px) {
+  .nw-footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer Section Title */
+.nw-footer-title {
+  font-family: var(--nw-font-secondary);
+  font-size: 1.4rem;
+  font-weight: var(--nw-weight-bold);
+  color: var(--nw-color-mooncrest-mid);
+  margin-bottom: var(--nw-space-sm);
+}
+
+/* Footer Links */
+.nw-footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nw-space-sm);
+}
+
+.nw-footer-link {
+  font-family: var(--nw-font-primary);
+  font-size: 1rem;
+  color: var(--nw-color-mooncrest-mid);
+  text-decoration: none;
+  transition: all var(--nw-interaction-fast);
+}
+
+.nw-footer-link:hover {
+  color: var(--nw-accent-blue-mid);
+  transform: var(--nw-hover-lift);
+}
+
+/* Footer Logo */
+.nw-footer-logo {
+  font-family: var(--nw-font-secondary);
+  font-size: 1.6rem;
+  font-weight: var(--nw-weight-bold);
+  color: var(--nw-color-mooncrest-mid);
+}
+
+/* Footer Description */
+.nw-footer-desc {
+  font-family: var(--nw-font-primary);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--nw-color-mooncrest-mid);
+}
+
+/* Social Icons */
+.nw-footer-social {
+  display: flex;
+  gap: var(--nw-space-md);
+}
+
+.nw-footer-social a {
+  font-size: 1.4rem;
+  color: var(--nw-color-mooncrest-mid);
+  text-decoration: none;
+  transition: all var(--nw-interaction-fast);
+}
+
+.nw-footer-social a:hover {
+  color: var(--nw-accent-blue-mid);
+  transform: var(--nw-hover-lift);
+}
+
+/* Copyright */
+.nw-footer-copy {
+  text-align: center;
+  font-family: var(--nw-font-primary);
+  font-size: 0.9rem;
+  color: var(--nw-border-dark);
+  padding-top: var(--nw-space-lg);
+  border-top: var(--nw-border-light) solid var(--nw-border-regular);
+}
