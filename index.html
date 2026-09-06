@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Northwild Mooncrest — Cinematic Nature Photography</title>
 
+  <!-- Metadata (B24) -->
+  <meta name="description" content="Cinematic nature photography, wilderness exploration, and atmospheric storytelling across forests, mountains, and moonlit ridges.">
+  <meta name="author" content="John Robert">
+  <link rel="canonical" href="https://northwildmooncrest.github.io/">
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Northwild Mooncrest — Cinematic Nature Photography">
+  <meta property="og:description" content="Explore cinematic landscapes, forest spirits, summit dreams, and moonlit wilderness journeys.">
+  <meta property="og:image" content="assets/og-cover.jpg">
+  <meta property="og:url" content="https://northwildmooncrest.github.io/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Northwild Mooncrest — Cinematic Nature Photography">
+  <meta name="twitter:description" content="Explore cinematic landscapes, forest spirits, summit dreams, and moonlit wilderness journeys.">
+  <meta name="twitter:image" content="assets/og-cover.jpg">
+
   <!-- Brand Identity Modules -->
   <link rel="stylesheet" href="styles/b1-brand-variables.css">
   <link rel="stylesheet" href="styles/b2-logo-system.css">
@@ -20,6 +38,25 @@
   <link rel="stylesheet" href="styles/b12-section-architecture.css">
   <link rel="stylesheet" href="styles/b13-layout-blocks.css">
   <link rel="stylesheet" href="styles/b14-grid-enhancements.css">
+  <link rel="stylesheet" href="styles/b22-home.css">
+  <link rel="stylesheet" href="styles/b23-routing.css">
+  <link rel="stylesheet" href="styles/b24-metadata.css">
+
+  <!-- Navigation -->
+  <link rel="stylesheet" href="styles/c2-navigation.css">
+
+  <!-- Footer -->
+  <link rel="stylesheet" href="styles/i2-footer.css">
+  <link rel="stylesheet" href="styles/i5-footer-global.css">
+
+  <!-- Hero System -->
+  <link rel="stylesheet" href="styles/j2-hero.css">
+
+  <!-- Loader -->
+  <script src="loader.js" defer></script>
+  <script src="scripts/c3-navigation.js" defer></script>
+  <script src="scripts/i3-footer.js" defer></script>
+  <script src="scripts/j3-hero.js" defer></script>
 
   <style>
     body {
@@ -33,12 +70,18 @@
 
 <body>
 
+  <!-- Navigation -->
+  <div data-include="c1-navigation.html"></div>
+
+  <!-- Hero Section -->
+  <div data-include="j1-hero.html"></div>
+
   <!-- HERO SECTION -->
   <section class="nw-section nw-section-hero">
     <div class="nw-section-container">
       <h1 class="nw-section-title">Northwild Mooncrest</h1>
       <p class="nw-section-subtitle">Cinematic nature photography & wilderness exploration</p>
-      <button class="nw-btn nw-btn-primary nw-btn-lg">Explore the Wild</button>
+      <a href="g1-gallery.html" class="nw-btn nw-btn-primary nw-btn-lg">Explore the Wild</a>
     </div>
   </section>
 
@@ -52,7 +95,7 @@
           moonlit ridges, and the untamed beauty of the Northwild.
         </p>
         <div class="nw-block-footer">
-          <button class="nw-btn nw-btn-secondary">Learn More</button>
+          <a href="about.html" class="nw-btn nw-btn-secondary">Learn More</a>
         </div>
       </div>
     </div>
@@ -65,7 +108,7 @@
       <p class="nw-section-subtitle">
         Every frame is crafted with depth, emotion, and cinematic storytelling.
       </p>
-      <button class="nw-btn nw-btn-ghost">View Gallery</button>
+      <a href="g1-gallery.html" class="nw-btn nw-btn-ghost">View Gallery</a>
     </div>
 
     <div class="nw-block-media">
@@ -109,10 +152,13 @@
           Follow the Northwild expedition — new photography, wilderness stories,
           and cinematic adventures.
         </p>
-        <button class="nw-btn nw-btn-accent">Subscribe</button>
+        <a href="contact.html" class="nw-btn nw-btn-accent">Subscribe</a>
       </div>
     </div>
   </section>
+
+  <!-- Footer -->
+  <div data-include="i4-footer-global.html"></div>
 
 </body>
 </html>
