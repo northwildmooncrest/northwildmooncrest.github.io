@@ -1,70 +1,72 @@
-{
-  "ariaMap": {
-    "global": {
-      "role": "document",
-      "aria-label": "Northwild Mooncrest — Cinematic World",
-      "description": "A mythic northern world created by John Robert."
-    },
+<!-- A4 — ARIA Map -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
 
+{
+  "landmarks": {
     "header": {
       "role": "banner",
-      "aria-label": "Site Header",
-      "description": "Contains the Northwild Mooncrest identity and global navigation."
+      "label": "Site Header"
     },
-
     "navigation": {
       "role": "navigation",
-      "aria-label": "Primary Navigation",
-      "description": "Guides explorers through the world of Northwild Mooncrest."
+      "label": "Primary Navigation"
     },
-
-    "hero": {
-      "role": "region",
-      "aria-label": "Cinematic Hero",
-      "description": "The atmospheric introduction to the northern world."
+    "main": {
+      "role": "main",
+      "label": "Main Content"
     },
-
-    "gallery": {
-      "role": "region",
-      "aria-label": "Gallery",
-      "description": "A curated collection of visual stories from the Northwild Mooncrest universe."
-    },
-
-    "journeys": {
-      "role": "region",
-      "aria-label": "Journeys",
-      "description": "Narrative paths and explorations within the world."
-    },
-
-    "about": {
-      "role": "region",
-      "aria-label": "About the Creator",
-      "description": "Information about John Robert, creator of Northwild Mooncrest."
-    },
-
-    "contact": {
-      "role": "form",
-      "aria-label": "Contact Form",
-      "description": "Allows explorers to reach out to the creator."
-    },
-
     "footer": {
       "role": "contentinfo",
-      "aria-label": "Footer",
-      "description": "Global information and links for the Northwild Mooncrest world."
-    },
+      "label": "Site Footer"
+    }
+  },
 
-    "accessibility": {
-      "role": "region",
-      "aria-label": "Accessibility Hub",
-      "description": "Controls for screenreader mode, high contrast mode, dyslexia mode, and keyboard navigation."
-    },
-
-    "liveRegion": {
+  "regions": {
+    "live": {
+      "id": "nw-live-region",
       "role": "status",
       "aria-live": "polite",
-      "aria-label": "Accessibility Announcements",
-      "description": "Announces accessibility changes to screenreader users."
+      "description": "Announces accessibility changes and system updates."
+    },
+    "alerts": {
+      "id": "nw-alert-region",
+      "role": "alert",
+      "aria-live": "assertive",
+      "description": "Announces urgent accessibility or system messages."
+    }
+  },
+
+  "controls": {
+    "highContrast": {
+      "id": "nw-high-contrast-toggle",
+      "role": "button",
+      "aria-pressed": "false",
+      "label": "Toggle High Contrast Mode"
+    },
+    "largeText": {
+      "id": "nw-large-text-toggle",
+      "role": "button",
+      "aria-pressed": "false",
+      "label": "Toggle Large Text Mode"
+    },
+    "dyslexia": {
+      "id": "nw-dyslexia-toggle",
+      "role": "button",
+      "aria-pressed": "false",
+      "label": "Toggle Dyslexia-Friendly Mode"
+    },
+    "motionReduction": {
+      "id": "nw-motion-reduction-toggle",
+      "role": "button",
+      "aria-pressed": "false",
+      "label": "Toggle Motion Reduction Mode"
+    },
+    "cognitiveLoad": {
+      "id": "nw-cognitive-load-toggle",
+      "role": "button",
+      "aria-pressed": "false",
+      "label": "Toggle Reduced Cognitive Load Mode"
     }
   }
 }
