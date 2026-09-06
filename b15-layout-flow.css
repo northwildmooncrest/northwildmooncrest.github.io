@@ -1,0 +1,123 @@
+<!-- B15 — Cinematic Layout Flow -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
+/* B15 — Cinematic Layout Flow */
+
+/* Vertical Rhythm */
+.nw-flow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nw-space-xl);
+}
+
+/* Flow Compression (tight storytelling) */
+.nw-flow-tight {
+  gap: var(--nw-space-md);
+}
+
+.nw-flow-tighter {
+  gap: var(--nw-space-sm);
+}
+
+/* Flow Expansion (cinematic breathing room) */
+.nw-flow-loose {
+  gap: var(--nw-space-xxl);
+}
+
+.nw-flow-looser {
+  gap: var(--nw-space-hero);
+}
+
+/* Section Sequencing */
+.nw-sequence {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nw-space-xxl);
+}
+
+.nw-sequence-tight {
+  gap: var(--nw-space-lg);
+}
+
+.nw-sequence-loose {
+  gap: var(--nw-space-hero);
+}
+
+/* Storytelling Flow Blocks */
+.nw-story-flow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nw-space-xl);
+  padding-top: var(--nw-space-xl);
+  padding-bottom: var(--nw-space-xl);
+}
+
+.nw-story-flow-tight {
+  padding-top: var(--nw-space-md);
+  padding-bottom: var(--nw-space-md);
+  gap: var(--nw-space-md);
+}
+
+.nw-story-flow-loose {
+  padding-top: var(--nw-space-hero);
+  padding-bottom: var(--nw-space-hero);
+  gap: var(--nw-space-xxl);
+}
+
+/* Cinematic Pacing */
+.nw-pace-slow {
+  gap: var(--nw-space-hero);
+}
+
+.nw-pace-medium {
+  gap: var(--nw-space-xl);
+}
+
+.nw-pace-fast {
+  gap: var(--nw-space-sm);
+}
+
+/* Layout Grouping */
+.nw-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nw-space-lg);
+}
+
+.nw-group-tight {
+  gap: var(--nw-space-sm);
+}
+
+.nw-group-loose {
+  gap: var(--nw-space-xxl);
+}
+
+/* Breathing Room Utilities */
+.nw-breathe {
+  padding-top: var(--nw-space-xl);
+  padding-bottom: var(--nw-space-xl);
+}
+
+.nw-breathe-more {
+  padding-top: var(--nw-space-hero);
+  padding-bottom: var(--nw-space-hero);
+}
+
+/* Tight Narrative Utilities */
+.nw-tight {
+  padding-top: var(--nw-space-sm);
+  padding-bottom: var(--nw-space-sm);
+}
+
+.nw-tighter {
+  padding-top: var(--nw-space-xs);
+  padding-bottom: var(--nw-space-xs);
+}
+
+/* Motion Reduction Compatibility */
+.motion-reduction-mode .nw-flow,
+.motion-reduction-mode .nw-sequence,
+.motion-reduction-mode .nw-story-flow {
+  transition: none !important;
+}
