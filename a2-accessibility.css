@@ -1,88 +1,93 @@
-/* A2 — Global Accessibility Styles */
-/* Cinematic Edition for Northwild Mooncrest */
-/* Creator: John Robert */
+<!-- A2 — Global Accessibility Styles -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
 
-/* Root adjustments for all accessibility modes */
-:root {
-  --nw-focus-color: #3fa9f5;
-  --nw-contrast-bg: #0b1118;
-  --nw-contrast-text: #e9f7ff;
-  --nw-dyslexia-font: "OpenDyslexic", "Arial", sans-serif;
+/* A2 — Cinematic Global Accessibility Styles */
+
+/* Universal reset for accessibility consistency */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/* Skip Navigation Link */
-.skip-nav {
-  position: absolute;
-  top: -100px;
-  left: 0;
-  background: #3fa9f5;
+/* Base typography */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  background: #ffffff;
   color: #0b1118;
-  padding: 1rem 1.5rem;
-  z-index: 9999;
-  border-radius: 6px;
+  line-height: 1.75;
+  margin: 0;
+  padding: 0;
+}
+
+/* High-contrast text defaults */
+strong,
+b {
   font-weight: 700;
-  transition: top 0.3s ease;
 }
 
-.skip-nav:focus {
-  top: 20px;
+em,
+i {
+  font-style: italic;
 }
 
-/* Focus Ring System */
-:focus {
-  outline: 3px solid var(--nw-focus-color);
-  outline-offset: 4px;
+/* Link accessibility */
+a {
+  color: #0056b3;
+  text-decoration: underline;
 }
 
-/* Screenreader Mode */
-.screenreader-mode * {
-  font-size: 1.25rem !important;
-  line-height: 1.9 !important;
-  letter-spacing: 0.02em !important;
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 3px solid #3fa9f5;
+  outline-offset: 3px;
 }
 
-/* High Contrast Mode */
-.high-contrast-mode {
-  background: var(--nw-contrast-bg) !important;
-  color: var(--nw-contrast-text) !important;
+/* Buttons */
+button {
+  font-size: 1rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  border: 2px solid #0b1118;
+  background: #f2f4f7;
+  cursor: pointer;
 }
 
-.high-contrast-mode a {
-  color: #5fc0ff !important;
-  text-decoration: underline !important;
+/* Inputs */
+input,
+textarea,
+select {
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 2px solid #0b1118;
+  background: #ffffff;
+  color: #0b1118;
 }
 
-/* Dyslexia-Friendly Mode */
-.dyslexia-mode {
-  font-family: var(--nw-dyslexia-font) !important;
-  letter-spacing: 0.03em !important;
-  word-spacing: 0.15em !important;
-  line-height: 1.9 !important;
-  background: #f7f9fb !important;
-  color: #0b1118 !important;
+/* Structural spacing */
+section {
+  margin-bottom: 3rem;
 }
 
-.dyslexia-mode p {
-  max-width: 70ch !important;
-  margin-bottom: 1.4rem !important;
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* Keyboard Navigation Enhancements */
-.keyboard-nav *:focus {
-  outline: 3px solid #5fc0ff !important;
-  outline-offset: 6px !important;
-}
-
-/* Hide animations for accessibility modes */
-.screenreader-mode *,
-.dyslexia-mode *,
-.high-contrast-mode *,
-.keyboard-nav * {
-  transition: none !important;
-  animation: none !important;
-}
-
-/* ARIA Live Region */
+/* Accessibility live region */
 #nw-live-region {
   position: absolute;
   left: -9999px;
@@ -90,5 +95,4 @@
   width: 1px;
   height: 1px;
   overflow: hidden;
-  aria-live: polite;
 }
