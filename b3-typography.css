@@ -1,0 +1,44 @@
+<!-- B3 — Typography -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
+/* B3 — Typography */
+
+/* Base Text */
+body {
+  font-family: var(--nw-font-primary);
+  color: var(--nw-color-mooncrest-mid);
+  line-height: 1.6;
+  font-size: 1rem;
+  background: var(--nw-surface-primary);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--nw-font-secondary);
+  color: var(--nw-color-mooncrest-light);
+  margin: var(--nw-space-md) 0 var(--nw-space-sm);
+  line-height: 1.25;
+}
+
+/* Paragraphs */
+p {
+  margin: var(--nw-space-sm) 0 var(--nw-space-md);
+}
+
+/* Links */
+a {
+  color: var(--nw-color-accent);
+  text-decoration: none;
+  transition: color var(--nw-transition-fast);
+}
+
+a:hover {
+  color: var(--nw-color-accent-soft);
+}
+
+/* Small Text */
+small {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
