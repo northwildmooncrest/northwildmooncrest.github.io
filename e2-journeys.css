@@ -36,11 +36,22 @@
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+  /* Reveal animation base state */
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .journey-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+.journey-card.journey-visible {
+  /* Reveal animation active state */
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .journey-img {
