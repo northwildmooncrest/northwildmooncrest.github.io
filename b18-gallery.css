@@ -1,0 +1,103 @@
+<!-- B18 — Cinematic Gallery System -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: Northwild Mooncrest™ -->
+
+/* B18 — Cinematic Gallery System */
+
+/* Gallery Container */
+.nw-gallery {
+  width: 100%;
+  display: grid;
+  gap: var(--nw-space-xl);
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  padding: var(--nw-space-xl) 0;
+}
+
+/* Gallery Item */
+.nw-gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--nw-radius-lg);
+  box-shadow: var(--nw-shadow-soft);
+  transition: all var(--nw-interaction-medium);
+}
+
+/* Image */
+.nw-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all var(--nw-interaction-medium);
+}
+
+/* Hover Depth */
+.nw-gallery-item:hover {
+  transform: var(--nw-hover-lift);
+  box-shadow: var(--nw-shadow-medium);
+}
+
+.nw-gallery-item:hover img {
+  filter: brightness(1.1);
+}
+
+/* Cinematic Overlay */
+.nw-gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--nw-space-md);
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  color: #fff;
+  font-family: var(--nw-font-secondary);
+  font-size: 1.1rem;
+  opacity: 0;
+  transition: all var(--nw-interaction-medium);
+}
+
+.nw-gallery-item:hover .nw-gallery-overlay {
+  opacity: 1;
+}
+
+/* Aspect Ratio Utilities */
+.nw-ratio-16x9 {
+  aspect-ratio: 16 / 9;
+}
+
+.nw-ratio-4x5 {
+  aspect-ratio: 4 / 5;
+}
+
+.nw-ratio-square {
+  aspect-ratio: 1 / 1;
+}
+
+/* Wilderness-Themed Gallery Variants */
+.nw-gallery-forest .nw-gallery-item {
+  border: 3px solid var(--nw-color-forest-light);
+}
+
+.nw-gallery-summit .nw-gallery-item {
+  border: 3px solid var(--nw-accent-blue-mid);
+}
+
+.nw-gallery-ember .nw-gallery-item {
+  border: 3px solid var(--nw-accent-ember-light);
+}
+
+/* Gallery Flow Modifiers */
+.nw-gallery-tight {
+  gap: var(--nw-space-md);
+}
+
+.nw-gallery-loose {
+  gap: var(--nw-space-xxl);
+}
+
+/* Motion Reduction Compatibility */
+.motion-reduction-mode .nw-gallery-item,
+.motion-reduction-mode .nw-gallery-item img {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+}
