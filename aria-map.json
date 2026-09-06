@@ -1,0 +1,28 @@
+{
+  "landmarks": {
+    "header": "Site header containing navigation",
+    "main": "Primary content area",
+    "footer": "Site footer with legal and contact information",
+    "nav": "Main navigation menu",
+    "aside": "Complementary sidebar content"
+  },
+
+  "roles": {
+    "banner": "Header banner area",
+    "contentinfo": "Footer information area",
+    "navigation": "Navigation region",
+    "search": "Search input and results",
+    "dialog": "Modal dialog window",
+    "button": "Clickable button element",
+    "link": "Navigational link element"
+  },
+
+  "labels": {
+    "menuToggle": "Toggle navigation menu",
+    "searchInput": "Search the site",
+    "chatOpen": "Open chat assistant",
+    "chatClose": "Close chat assistant",
+    "themeSwitch": "Toggle light or dark theme",
+    "accessibilityPanel": "Open accessibility settings"
+  }
+}
