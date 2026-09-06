@@ -1,0 +1,173 @@
+<!-- B9 — Cinematic Button System -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
+/* B9 — Cinematic Button System */
+
+/* Base Button */
+.nw-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--nw-space-xs);
+  padding: 0.85rem 1.4rem;
+  font-family: var(--nw-font-accent);
+  font-weight: var(--nw-weight-bold);
+  font-size: 1.05rem;
+  border-radius: var(--nw-radius-md);
+  border: var(--nw-border-bold) solid transparent;
+  cursor: pointer;
+  transition: all var(--nw-interaction-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* Primary Button */
+.nw-btn-primary {
+  background: var(--nw-accent-blue-mid);
+  color: #ffffff;
+  border-color: var(--nw-accent-blue-deep);
+}
+
+.nw-btn-primary:hover {
+  filter: var(--nw-hover-brighten);
+  transform: var(--nw-hover-lift);
+}
+
+.nw-btn-primary:active {
+  filter: var(--nw-active-darken);
+  transform: var(--nw-active-press);
+}
+
+.nw-btn-primary:focus {
+  box-shadow: var(--nw-focus-ring);
+}
+
+/* Secondary Button */
+.nw-btn-secondary {
+  background: var(--nw-surface-secondary);
+  color: var(--nw-color-mooncrest-mid);
+  border-color: var(--nw-border-mid);
+}
+
+.nw-btn-secondary:hover {
+  filter: var(--nw-hover-brighten);
+}
+
+.nw-btn-secondary:active {
+  filter: var(--nw-active-darken);
+}
+
+.nw-btn-secondary:focus {
+  box-shadow: var(--nw-focus-ring);
+}
+
+/* Ghost Button */
+.nw-btn-ghost {
+  background: transparent;
+  color: var(--nw-accent-blue-mid);
+  border-color: var(--nw-accent-blue-mid);
+}
+
+.nw-btn-ghost:hover {
+  background: var(--nw-summit-mid);
+  filter: var(--nw-hover-brighten);
+}
+
+.nw-btn-ghost:active {
+  filter: var(--nw-active-darken);
+}
+
+.nw-btn-ghost:focus {
+  box-shadow: var(--nw-focus-ring);
+}
+
+/* Accent Button (Gold) */
+.nw-btn-accent {
+  background: var(--nw-accent-gold-mid);
+  color: #ffffff;
+  border-color: var(--nw-accent-gold-deep);
+}
+
+.nw-btn-accent:hover {
+  filter: var(--nw-hover-brighten);
+}
+
+.nw-btn-accent:active {
+  filter: var(--nw-active-darken);
+}
+
+.nw-btn-accent:focus {
+  box-shadow: var(--nw-focus-ring-strong);
+}
+
+/* Destructive Button */
+.nw-btn-danger {
+  background: var(--nw-semantic-error);
+  color: #ffffff;
+  border-color: #b71c1c;
+}
+
+.nw-btn-danger:hover {
+  filter: var(--nw-hover-brighten);
+}
+
+.nw-btn-danger:active {
+  filter: var(--nw-active-darken);
+}
+
+.nw-btn-danger:focus {
+  box-shadow: var(--nw-focus-ring-strong);
+}
+
+/* Disabled Button */
+.nw-btn-disabled,
+.nw-btn-disabled:hover,
+.nw-btn-disabled:active {
+  opacity: var(--nw-disabled-opacity);
+  filter: var(--nw-disabled-filter);
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* Button Sizes */
+.nw-btn-sm {
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+}
+
+.nw-btn-lg {
+  padding: 1.1rem 1.75rem;
+  font-size: 1.2rem;
+}
+
+/* Full Width Button */
+.nw-btn-full {
+  width: 100%;
+}
+
+/* Icon Buttons */
+.nw-btn-icon {
+  padding: 0.75rem;
+  border-radius: var(--nw-radius-full);
+}
+
+/* Cinematic Depth */
+.nw-btn-depth {
+  box-shadow: var(--nw-shadow-soft);
+}
+
+.nw-btn-depth:hover {
+  box-shadow: var(--nw-shadow-medium);
+}
+
+.nw-btn-depth:active {
+  box-shadow: var(--nw-shadow-soft);
+}
+
+/* Motion Reduction Compatibility */
+.motion-reduction-mode .nw-btn {
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+}
