@@ -1,71 +1,85 @@
-/* A7 — Screenreader Mode */
-/* Updated for Northwild Mooncrest cinematic global-brand design */
+/* A7 — Cinematic Screenreader-Only Styles */
+/* World of Northwild Mooncrest */
+/* Creator: John Robert */
 
-/* Activate screenreader mode */
+/* Global adjustments for screenreader mode */
 .screenreader-mode * {
-  visibility: visible !important;
-  opacity: 1 !important;
+  font-size: 1.25rem !important;
+  line-height: 1.9 !important;
+  letter-spacing: 0.02em !important;
+  word-spacing: 0.1em !important;
 }
 
-/* Hide decorative elements */
-.screenreader-mode .hero,
-.screenreader-mode .gallery-filters,
-.screenreader-mode .gallery-item img,
-.screenreader-mode .footer-global,
-.screenreader-mode .header-subtitle {
-  display: none !important;
-}
-
-/* Improve text visibility */
-.screenreader-mode body {
-  background: #ffffff !important;
-  color: #000000 !important;
-  font-size: 1.2rem !important;
-  line-height: 1.8 !important;
-}
-
-/* Ensure headings are clear */
-.screenreader-mode h1,
-.screenreader-mode h2,
-.screenreader-mode h3 {
-  font-weight: 700 !important;
-  margin-bottom: 1rem !important;
-}
-
-/* Ensure links are obvious */
-.screenreader-mode a {
-  color: #005fcc !important;
-  text-decoration: underline !important;
-}
-
-/* Ensure buttons are readable */
-.screenreader-mode button {
-  background: #005fcc !important;
-  color: #ffffff !important;
-  padding: 1rem 1.5rem !important;
-  border-radius: 6px !important;
-  font-size: 1.1rem !important;
-}
-
-/* Remove animations */
-.screenreader-mode * {
+/* Remove animations for clarity */
+.screenreader-mode *,
+.screenreader-mode *::before,
+.screenreader-mode *::after {
   transition: none !important;
   animation: none !important;
 }
 
-/* Improve spacing */
-.screenreader-mode section,
-.screenreader-mode div {
-  padding: 1.5rem !important;
-  margin: 0 !important;
+/* Increase spacing between sections */
+.screenreader-mode section {
+  margin-bottom: 3rem !important;
 }
 
-/* Force linear reading order */
-.screenreader-mode {
+/* Improve readability for paragraphs */
+.screenreader-mode p {
+  max-width: 75ch !important;
+  margin-bottom: 1.6rem !important;
+}
+
+/* Headings more pronounced */
+.screenreader-mode h1,
+.screenreader-mode h2,
+.screenreader-mode h3,
+.screenreader-mode h4 {
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+  font-weight: 700 !important;
+}
+
+/* Links more visible */
+.screenreader-mode a {
+  text-decoration: underline !important;
+  font-weight: 600 !important;
+}
+
+/* Buttons more readable */
+.screenreader-mode button {
+  padding: 1rem 1.5rem !important;
+  font-size: 1.2rem !important;
+  border-radius: 6px !important;
+}
+
+/* Forms more accessible */
+.screenreader-mode input,
+.screenreader-mode textarea,
+.screenreader-mode select {
+  padding: 1rem !important;
+  font-size: 1.2rem !important;
+  border: 2px solid #3fa9f5 !important;
+  border-radius: 6px !important;
+}
+
+/* Navigation spacing */
+.screenreader-mode nav a {
   display: block !important;
+  margin-bottom: 1rem !important;
 }
 
-.screenreader-mode * {
-  float: none !important;
-  position: static !important;
+/* Hide decorative elements */
+.screenreader-mode .decorative,
+.screenreader-mode .visual-only {
+  display: none !important;
+}
+
+/* ARIA live region visibility (still offscreen) */
+#nw-live-region {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
