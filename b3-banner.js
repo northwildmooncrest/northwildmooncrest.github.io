@@ -1,34 +1,39 @@
-/* B3 — banner.js */
-/* Interactive behavior for the cinematic hero banner */
+/* B3 — Cinematic Hero Banner Logic */
+/* Updated for Northwild Mooncrest global-brand design */
 
+/* Reveal banner when page loads */
 document.addEventListener("DOMContentLoaded", () => {
-  const cta = document.querySelector(".banner-cta");
-
-  // Smooth scroll to target section
-  if (cta) {
-    cta.addEventListener("click", () => {
-      const target = cta.getAttribute("data-scroll-target");
-      const el = document.querySelector(target);
-
-      if (el) {
-        el.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-      }
-    });
+  const banner = document.querySelector(".hero-banner");
+  if (banner) {
+    banner.classList.add("hero-banner-visible");
   }
+});
 
-  // Fade-in animation on load
-  const bannerInner = document.querySelector(".banner-inner");
-  if (bannerInner) {
-    bannerInner.style.opacity = 0;
-    bannerInner.style.transform = "translateY(20px)";
+/* Fade banner slightly on scroll for cinematic depth */
+window.addEventListener("scroll", () => {
+  const banner = document.querySelector(".hero-banner");
+  if (!banner) return;
 
-    setTimeout(() => {
-      bannerInner.style.transition = "opacity 1.2s ease, transform 1.2s ease";
-      bannerInner.style.opacity = 1;
-      bannerInner.style.transform = "translateY(0)";
-    }, 150);
-  }
+  const scrollY = window.scrollY;
+  const fadeAmount = Math.min(scrollY / 600, 0.35);
+
+  banner.style.opacity = `${1 - fadeAmount}`;
+});
+
+/* Smooth scroll for CTA buttons */
+const ctaButtons = document.querySelectorAll(".hero-banner-btn");
+
+ctaButtons.forEach((btn) => {
+  btn.addEventListener("click", (event) => {
+    event.preventDefault();
+    const targetId = btn.getAttribute("href");
+    const target = document.querySelector(targetId);
+
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  });
 });
