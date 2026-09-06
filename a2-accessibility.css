@@ -1,44 +1,119 @@
-/* A2 — accessibility.css */
-/* Core accessibility styling */
+/* A2 — Accessibility Styles */
+/* Updated for Northwild Mooncrest cinematic global-brand design */
 
-.skip-nav {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: #000;
-  color: #fff;
-  padding: 8px 16px;
-  z-index: 9999;
-  transition: top 0.3s ease;
+/* Container */
+.accessibility {
+  padding: 4rem 2rem;
+  background: #0b1118;
+  color: #e9f7ff;
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
-.skip-nav:focus {
-  top: 0;
+.accessibility-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.accessibility-toolbar {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #111;
-  padding: 12px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+.accessibility-inner {
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
-  gap: 8px;
-  z-index: 9999;
+  flex-direction: column;
+  gap: 3rem;
 }
 
-.a11y-btn {
-  background: #222;
+/* Header */
+.accessibility-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+.accessibility-description {
+  text-align: center;
+  font-size: 1.1rem;
+  opacity: 0.85;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Controls */
+.accessibility-controls {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+.accessibility-control {
+  background: #0f1a24;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.accessibility-control:hover {
+  background: #13202c;
+  transform: translateY(-3px);
+}
+
+.accessibility-control h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.accessibility-control p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+.accessibility-control button {
+  padding: 0.8rem 1.6rem;
+  background: #3fa9f5;
+  color: #0b1118;
+  font-size: 1rem;
+  font-weight: 600;
   border: none;
-  padding: 8px 12px;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  color: #fff;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.a11y-btn:hover {
-  background: #0af;
-  color: #fff;
+.accessibility-control button:hover {
+  background: #5fc0ff;
+  transform: translateY(-2px);
+}
+
+.accessibility-control button:active {
+  transform: translateY(0);
+}
+
+/* ARIA Map */
+.accessibility-aria {
+  text-align: center;
+  font-size: 0.95rem;
+  opacity: 0.75;
+}
+
+.accessibility-aria a {
+  color: #3fa9f5;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.accessibility-aria a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .accessibility-controls {
+    grid-template-columns: 1fr;
+  }
 }
