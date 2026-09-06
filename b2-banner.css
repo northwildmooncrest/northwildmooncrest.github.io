@@ -1,105 +1,92 @@
-/* B2 — Cinematic Hero Banner Styles */
-/* Updated for Northwild Mooncrest global-brand design */
+<!-- B2 — Cinematic Logo System -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
 
-/* Banner Container */
-.hero-banner {
-  width: 100%;
-  padding: 8rem 2rem;
-  background: linear-gradient(
-      rgba(0, 0, 0, 0.55),
-      rgba(0, 0, 0, 0.55)
-    ),
-    url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') center/cover no-repeat;
-  color: #e9f7ff;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(25px);
-  transition: opacity 1s ease, transform 1s ease;
+/* B2 — Cinematic Logo System */
+
+/* Logo Container */
+.nw-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--nw-space-sm);
+  padding: var(--nw-space-sm);
 }
 
-.hero-banner-visible {
-  opacity: 1;
-  transform: translateY(0);
+/* Logo Image */
+.nw-logo img {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+  image-rendering: auto;
 }
 
-/* Inner Layout */
-.hero-banner-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-/* Title */
-.hero-banner-title {
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+/* Logo Text */
+.nw-logo-text {
+  font-family: var(--nw-font-accent);
+  font-weight: var(--nw-weight-black);
+  font-size: 2rem;
+  letter-spacing: 0.03em;
+  color: var(--nw-color-mooncrest);
   text-transform: uppercase;
 }
 
-/* Subtitle */
-.hero-banner-subtitle {
-  font-size: 1.2rem;
-  opacity: 0.85;
-  line-height: 1.6;
-  max-width: 700px;
-  margin: 0 auto;
+/* Safe Zone */
+.nw-logo-safe {
+  padding: var(--nw-space-lg);
 }
 
-/* CTA Buttons */
-.hero-banner-actions {
-  display: flex;
+/* Logo Sizes */
+.nw-logo-sm img {
+  height: 40px;
+}
+
+.nw-logo-md img {
+  height: 64px;
+}
+
+.nw-logo-lg img {
+  height: 96px;
+}
+
+/* Logo Color Modes */
+.nw-logo-light img,
+.nw-logo-light .nw-logo-text {
+  filter: brightness(1.1);
+  color: #ffffff;
+}
+
+.nw-logo-dark img,
+.nw-logo-dark .nw-logo-text {
+  filter: brightness(0.9);
+  color: var(--nw-color-mooncrest);
+}
+
+/* Cinematic Gradient Logo */
+.nw-logo-gradient .nw-logo-text {
+  background: var(--nw-gradient-mooncrest);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Logo Placement Rules */
+header .nw-logo {
+  margin-left: var(--nw-space-md);
+}
+
+footer .nw-logo {
+  margin-top: var(--nw-space-lg);
+  margin-bottom: var(--nw-space-lg);
   justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1rem;
 }
 
-.hero-banner-btn {
-  padding: 0.9rem 2rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.3s ease, transform 0.3s ease;
+/* Logo Accessibility */
+.nw-logo img {
+  alt: "Northwild Mooncrest Logo";
 }
 
-/* Primary Button */
-.hero-banner-btn.primary {
-  background: #3fa9f5;
-  color: #0b1118;
-}
-
-.hero-banner-btn.primary:hover {
-  background: #5fc0ff;
-  transform: translateY(-3px);
-}
-
-/* Secondary Button */
-.hero-banner-btn.secondary {
-  background: transparent;
-  border: 2px solid #e9f7ff;
-  color: #e9f7ff;
-}
-
-.hero-banner-btn.secondary:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-3px);
-}
-
-/* Responsive */
-@media (max-width: 800px) {
-  .hero-banner-title {
-    font-size: 2.4rem;
-  }
-
-  .hero-banner-actions {
-    flex-direction: column;
-  }
-
-  .hero-banner-btn {
-    width: 100%;
-    text-align: center;
-  }
+/* Motion Reduction Compatibility */
+.motion-reduction-mode .nw-logo img {
+  transition: none !important;
+  animation: none !important;
 }
