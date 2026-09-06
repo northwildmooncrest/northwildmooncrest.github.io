@@ -1,0 +1,79 @@
+<!-- A17 — Colorblind Mode -->
+<!-- Cinematic Edition for Northwild Mooncrest -->
+<!-- Creator: John Robert -->
+
+/* A17 — Cinematic Colorblind Mode */
+
+/* Global adjustments for colorblind accessibility */
+.colorblind-mode {
+  color: #0b1118 !important;
+  background: #ffffff !important;
+}
+
+/* Replace color-only indicators with patterns or borders */
+.colorblind-mode .status-success {
+  background: #d8f5d0 !important;
+  border-left: 6px solid #4caf50 !important;
+}
+
+.colorblind-mode .status-warning {
+  background: #fff4d0 !important;
+  border-left: 6px solid #ffb300 !important;
+}
+
+.colorblind-mode .status-error {
+  background: #ffe0e0 !important;
+  border-left: 6px solid #e53935 !important;
+}
+
+/* Links more distinguishable */
+.colorblind-mode a {
+  text-decoration: underline !important;
+  font-weight: 600 !important;
+  color: #005bbb !important;
+}
+
+/* Buttons with high-contrast borders */
+.colorblind-mode button {
+  padding: 1rem 1.25rem !important;
+  font-size: 1.1rem !important;
+  border-radius: 6px !important;
+  background: #e9f7ff !important;
+  color: #0b1118 !important;
+  border: 3px solid #005bbb !important;
+}
+
+/* Charts and graphs: add patterns */
+.colorblind-mode .chart-bar {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #005bbb,
+    #005bbb 10px,
+    #e9f7ff 10px,
+    #e9f7ff 20px
+  ) !important;
+}
+
+.colorblind-mode .chart-line {
+  border: 3px dashed #005bbb !important;
+}
+
+/* Inputs */
+.colorblind-mode input,
+.colorblind-mode textarea,
+.colorblind-mode select {
+  padding: 1rem !important;
+  font-size: 1.1rem !important;
+  border-radius: 6px !important;
+  border: 3px solid #005bbb !important;
+  background: #ffffff !important;
+  color: #0b1118 !important;
+}
+
+/* Disable animations */
+.colorblind-mode *,
+.colorblind-mode *::before,
+.colorblind-mode *::after {
+  transition: none !important;
+  animation: none !important;
+}
