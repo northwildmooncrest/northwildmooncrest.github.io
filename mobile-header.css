@@ -1,0 +1,73 @@
+/* -----------------------------------------------------------
+   Mobile Header — Responsive layout for small screens
+   Clean, simple, modular styling for mobile header behavior.
+----------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    /* Header layout stacks vertically */
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px;
+    }
+
+    /* Logo centered */
+    .logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 12px;
+    }
+
+    /* Navigation becomes vertical */
+    .main-nav ul {
+        flex-direction: column;
+        gap: 14px;
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .main-nav li {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Utility bar centered */
+    .utility-bar {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 12px;
+        gap: 24px;
+    }
+
+    /* Dropdown panels reposition for mobile */
+    .panel {
+        right: 50%;
+        transform: translateX(50%);
+        top: 120px;
+        width: 90%;
+        max-width: 320px;
+    }
+
+    /* Menu dropdown full width */
+    .menu-dropdown {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 320px;
+        top: 100px;
+    }
+
+    /* Larger tap targets */
+    .utility-icon svg {
+        height: 28px;
+        width: 28px;
+    }
+
+    .menu-btn {
+        font-size: 18px;
+        padding: 10px 14px;
+    }
+}
