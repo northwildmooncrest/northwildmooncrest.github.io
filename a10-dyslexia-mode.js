@@ -1,51 +1,47 @@
-/* A10 — Dyslexia Mode Logic */
-/* Updated for Northwild Mooncrest cinematic global-brand design */
+/* A10 — Cinematic Dyslexia Mode Logic */
+/* World of Northwild Mooncrest */
+/* Creator: John Robert */
 
 /* Toggle dyslexia mode */
-function toggleDyslexiaMode() {
-  document.body.classList.toggle("dyslexia-mode");
+function nwToggleDyslexia() {
+  const body = document.body;
 
-  const enabled = document.body.classList.contains("dyslexia-mode");
-  localStorage.setItem("dyslexiaMode", enabled);
+  // Flip state
+  const current = body.classList.contains("dyslexia-mode");
+  const newState = !current;
 
-  announceDyslexiaChange(enabled);
-}
+  // Apply mode
+  body.classList.toggle("dyslexia-mode", newState);
 
-/* Screenreader-friendly announcement */
-function announceDyslexiaChange(enabled) {
-  const msg = enabled
-    ? "Dyslexia-friendly mode enabled."
-    : "Dyslexia-friendly mode disabled.";
+  // Save state
+  const saved = localStorage.getItem("nw-accessibility");
+  let parsed = saved ? JSON.parse(saved) : {};
 
-  const liveRegion = document.getElementById("dyslexia-live-region");
+  parsed.dyslexia = newState;
+  localStorage.setItem("nw-accessibility", JSON.stringify(parsed));
 
-  if (liveRegion) {
-    liveRegion.textContent = msg;
+  // Announce change
+  const region = document.getElementById("nw-live-region");
+  if (region) {
+    region.textContent = newState
+      ? "Dyslexia-friendly mode enabled."
+      : "Dyslexia-friendly mode disabled.";
   }
 }
 
-/* Restore saved setting on load */
+/* Restore dyslexia mode on load */
 document.addEventListener("DOMContentLoaded", () => {
-  const saved = localStorage.getItem("dyslexiaMode");
+  const saved = localStorage.getItem("nw-accessibility");
+  if (!saved) return;
 
-  if (saved === "true") {
+  const parsed = JSON.parse(saved);
+
+  if (parsed.dyslexia) {
     document.body.classList.add("dyslexia-mode");
-    announceDyslexiaChange(true);
+
+    const region = document.getElementById("nw-live-region");
+    if (region) {
+      region.textContent = "Dyslexia-friendly mode restored.";
+    }
   }
 });
-
-/* Create ARIA live region if missing */
-(function ensureLiveRegion() {
-  if (!document.getElementById("dyslexia-live-region")) {
-    const region = document.createElement("div");
-    region.id = "dyslexia-live-region";
-    region.setAttribute("aria-live", "polite");
-    region.style.position = "absolute";
-    region.style.left = "-9999px";
-    region.style.top = "auto";
-    region.style.width = "1px";
-    region.style.height = "1px";
-    region.style.overflow = "hidden";
-    document.body.appendChild(region);
-  }
-})();
